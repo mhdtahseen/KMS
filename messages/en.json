@@ -1,0 +1,161 @@
+{
+  "nav": {
+    "services": "Services",
+    "countries": "Countries",
+    "process": "Process",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "cta": "Get Consultation",
+    "home": "Home",
+    "about": "About"
+  },
+  "footer": {
+    "tagline": "Pioneering ethical immigration consulting for the Middle East's elite families and professionals since 2019.",
+    "services": "Services",
+    "company": "Company",
+    "connect": "Connect",
+    "process": "Our Process",
+    "countries": "Countries",
+    "testimonials": "Testimonials",
+    "contactUs": "Contact Us",
+    "skilledMigration": "Skilled Migration",
+    "studyPermits": "Study Permits",
+    "businessResidency": "Business Residency",
+    "legalAppeals": "Legal Appeals",
+    "copyright": "© 2024 KMS Consultants. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "office": "Office",
+    "address": "Tornado Tower, Level 22\nWest Bay, P.O. Box 27750\nDoha, State of Qatar",
+    "phone": "+974 4400 9000",
+    "email": "concierge@kmsconsultants.qa"
+  },
+  "home": {
+    "hero": {
+      "badge": "Global Mobility Experts",
+      "headline": "Making Dreams Come True,",
+      "headlineAccent": "One Visa at a Time",
+      "subtext": "Trusted immigration consultancy helping families and professionals seamlessly move to Canada, UK, Australia, USA and Europe.",
+      "ctaPrimary": "Check Your Eligibility",
+      "ctaSecondary": "Our Success Stories",
+      "liveCount": "Live Success Count: 1,482+"
+    },
+    "trust": {
+      "clients": "Happy Clients",
+      "years": "Years Experience",
+      "countries": "Countries Served",
+      "successRate": "Success Rate"
+    },
+    "services": {
+      "heading": "Specialized Immigration Pathways",
+      "subtext": "We don't just process papers; we engineer futures through curated legal strategies.",
+      "seeAll": "See All Services →"
+    },
+    "process": {
+      "heading": "The KMS Four-Step Protocol"
+    },
+    "destinations": {
+      "heading": "Global Destinations"
+    },
+    "testimonials": {
+      "heading": "Successful Transitions"
+    },
+    "cta": {
+      "heading": "Your journey begins with a conversation.",
+      "description": "Fill out our eligibility form and one of our senior consultants will reach out to schedule a private briefing.",
+      "features": {
+        "confidential": {
+          "title": "Confidential Assessment",
+          "description": "Your personal data is protected by strict privacy protocols."
+        },
+        "response": {
+          "title": "Rapid Response",
+          "description": "Initial eligibility results typically shared within 24 business hours."
+        }
+      },
+      "form": {
+        "termsPrefix": "By submitting this form, you agree to our",
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy"
+      },
+      "submit": "Submit Free Assessment"
+    }
+  },
+  "form": {
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "service": "Intended Service",
+    "destination": "Destination Country",
+    "message": "Confidential Message",
+    "namePlaceholder": "Hassan Al-Mahmoud",
+    "emailPlaceholder": "h.mahmoud@example.com",
+    "phonePlaceholder": "+974 5500 0000",
+    "destinationPlaceholder": "e.g. United Kingdom, Canada, European Union",
+    "messagePlaceholder": "Describe your current status and migration objectives...",
+    "submit": "Request Private Briefing",
+    "successToast": "Inquiry Submitted — We'll be in touch shortly.",
+    "errorToast": "Something went wrong — please try again or call us directly.",
+    "privacy": "Your data is encrypted under KMS Privacy Shield Protocol"
+  },
+  "booking": {
+    "badge": "Connect With Excellence",
+    "heading": "Begin Your Bespoke Journey",
+    "subtext": "Our team of immigration specialists in Doha is ready to provide the discreet, authoritative guidance required for your relocation and residency needs.",
+    "officeHeading": "Office Headquarters",
+    "formHeading": "Inquiry Request",
+    "liveOps": "Live Operations: Tornado Tower"
+  },
+  "thankYou": {
+    "heading": "Your Inquiry Has Been Received",
+    "subtext": "A senior consultant will contact you within 24 business hours to arrange your private briefing.",
+    "returnHome": "Return Home",
+    "exploreServices": "Explore Our Services"
+  },
+  "services": {
+    "hero": {
+      "badge": "Elite Global Mobility"
+    },
+    "overview": {
+      "cta": "Start Assessment",
+      "download": "Download Brochure"
+    },
+    "destinations": {
+      "heading": "Strategic Destinations",
+      "subtext": "Selected jurisdictions offering high-priority processing for skilled professionals from the GCC region.",
+      "exploreAll": "Explore All Countries"
+    },
+    "eligibility": {
+      "heading": "Eligibility Matrix",
+      "subtext": "Assess your standing against international standards of professional excellence."
+    },
+    "cta": {
+      "button": "Book Consultation"
+    }
+  },
+  "countries": {
+    "hero": {
+      "badge": "Destination Portfolio",
+      "ctaPrimary": "Begin Your Journey",
+      "ctaSecondary": "View Pathways"
+    },
+    "whyChoose": {
+      "prefix": "Why Global Leaders Choose"
+    },
+    "pathways": {
+      "badge": "Strategic Routes",
+      "heading": "Available Visa Pathways"
+    },
+    "requirements": {
+      "heading": "Residency Requirements",
+      "citizenshipHeading": "The Pathway to Citizenship"
+    },
+    "cta": {
+      "prefix": "Ready to Call",
+      "suffix": "Your Home?",
+      "subtext": "Our team of ICCRC certified consultants provides end-to-end bespoke solutions for your immigration journey.",
+      "button": "Book a Private Consultation",
+      "trust": "Confidentiality Assured • Expert Legal Guidance • Bespoke Planning"
+    }
+  }
+}

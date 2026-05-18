@@ -2,88 +2,92 @@
 
 ## Overview
 
-Rebuilding the KMS Consultants digital presence as a bespoke, high-end Next.js application with robust English/Arabic localization. The project will progress from foundational setup and design system implementation through core pages, service details, and finally lead-generation integration.
+This roadmap tracks milestone `v1.1` focused on prototype parity while preserving reusable templates for future service/country expansion.
+
+## Active Milestone
+
+- **Version:** `v1.1`
+- **Name:** `Prototype Parity & Reusable Templates`
+- **Objective:** Match the Stitch screens for Home, Skilled Immigration, Canada, and Booking flows with correct route behavior, while keeping shared global header/footer and reusable template architecture.
 
 ## Phases
 
-**Phase Numbering:**
-- Integer phases (1, 2, 3): Planned milestone work
-- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
-
-- [ ] **Phase 1: Foundation & Design System** - Next.js, Tailwind, i18n setup, and base styles.
-- [ ] **Phase 2: Core User Experience (Home Page)** - High-fidelity hero, process timelines, and service grid.
-- [ ] **Phase 3: Service & Destination Guides** - Internal page templates for services and destination countries.
-- [ ] **Phase 4: Conversion & Interaction** - Private consultation form and Framer Motion polish.
+- [ ] **Phase 1: Baseline & Routing Map** - Lock visual baseline from fetched Stitch assets and map CTA behavior to locale-aware routes.
+- [ ] **Phase 2: Home Service Cards Parity** - Align Home service cards content/order/labels/links to the prototype.
+- [ ] **Phase 3: Skilled Service Template Parity** - Make `skilled-immigration` output match prototype exactly (template-driven).
+- [ ] **Phase 4: Canada Country Template Parity** - Make `canada` output match prototype exactly (template-driven).
+- [ ] **Phase 5: Verification & Report** - Build + route checks + parity report and deferred items.
 
 ## Phase Details
 
-### Phase 1: Foundation & Design System
-**Goal**: Setup robust Next.js 14 project with dual-language support and a bespoke design system.
+### Phase 1: Baseline & Routing Map
+**Goal**: Confirm source-of-truth screens and finalize CTA destination mapping.
 **Depends on**: Nothing
-**Requirements**: [FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-07]
-**Success Criteria** (what must be TRUE):
-  1. Next.js App Router runs without errors.
-  2. Language switcher perfectly flips the layout between LTR (English) and RTL (Arabic).
-  3. Base colors (#0D0D0D, gold) and typography are globally available.
-**Plans**: TBD
+**Success Criteria**:
+1. All four Stitch screens are available locally for comparison.
+2. CTA behavior map is finalized for Home, Skilled, Canada, Booking.
+3. Shared global header/footer constraints are explicitly preserved.
 
 Plans:
-- [ ] 01-01: Initialize Next.js, Tailwind, and Framer Motion
-- [ ] 01-02: Configure `next-intl` for routing and RTL support
-- [ ] 01-03: Implement Global Header and Footer
+- [ ] 01-01: Create section-by-section parity checklist from Stitch assets
+- [ ] 01-02: Define and validate locale-aware CTA route map
 
-### Phase 2: Core User Experience (Home Page)
-**Goal**: Implement the high-fidelity Home Page to establish trust and exclusivity.
+### Phase 2: Home Service Cards Parity
+**Goal**: Match Home service card content and structure to prototype.
 **Depends on**: Phase 1
-**Requirements**: [HOM-01, HOM-02, HOM-03, HOM-04, HOM-05, HOM-06, HOM-07]
-**Success Criteria** (what must be TRUE):
-  1. The hero section renders with the dynamic map and correct typography.
-  2. The process timeline correctly renders visually on desktop and mobile.
-  3. The home page components adapt cleanly for Arabic localization.
-**Plans**: TBD
+**Success Criteria**:
+1. Home service cards match prototype order/content/labels.
+2. Card links route correctly to available locale-aware service pages.
+3. Reusability of Home component remains intact.
 
 Plans:
-- [ ] 02-01: Build Hero Section and Statistics Row
-- [ ] 02-02: Implement Service Grid and Global Destinations
-- [ ] 02-03: Construct the Process Timeline and Testimonials
-- [ ] 02-04: Finalize Home Page layout and CTA section
+- [ ] 02-01: Update card dataset/selection logic to prototype-aligned set
+- [ ] 02-02: Tune card markup/text hierarchy/links for parity
 
-### Phase 3: Service & Destination Guides
-**Goal**: Provide detailed, template-driven pages for specific services and destinations.
-**Depends on**: Phase 2
-**Requirements**: [SRV-01, SRV-02, SRV-03, SRV-04, SRV-05, SRV-06, SRV-07, SRV-08]
-**Success Criteria** (what must be TRUE):
-  1. "Skilled Immigration" template displays eligibility matrices clearly.
-  2. "Canada Destination" template displays pathway grids correctly.
-  3. Both pages maintain the premium design aesthetic and RTL compliance.
-**Plans**: TBD
+### Phase 3: Skilled Service Template Parity
+**Goal**: Achieve exact prototype parity for `skilled-immigration`.
+**Depends on**: Phase 1
+**Success Criteria**:
+1. Hero, overview, destinations, eligibility, process, and CTA sections visually match prototype.
+2. CTA behavior maps to intended routes.
+3. Template remains reusable for other service slugs.
 
 Plans:
-- [ ] 03-01: Build Skilled Immigration Service Template
-- [ ] 03-02: Build Canada Destination Guide Template
+- [ ] 03-01: Implement section-level parity for Skilled service template output
+- [ ] 03-02: Validate route behavior and locale correctness for all Skilled CTAs
 
-### Phase 4: Conversion & Interaction
-**Goal**: Implement lead generation and refine the interactive "bespoke" feel.
-**Depends on**: Phase 3
-**Requirements**: [BKG-01, BKG-02, BKG-03]
-**Success Criteria** (what must be TRUE):
-  1. The Private Consultation form validates inputs client-side.
-  2. Form submission state works correctly.
-  3. Page transitions and hover effects execute smoothly without layout shifts.
-**Plans**: TBD
+### Phase 4: Canada Country Template Parity
+**Goal**: Achieve exact prototype parity for `canada`.
+**Depends on**: Phase 1
+**Success Criteria**:
+1. Hero, why, pathways, requirements, citizenship, and final CTA sections match prototype.
+2. CTA behavior maps to intended routes.
+3. Template remains reusable for other country slugs.
 
 Plans:
-- [ ] 04-01: Build Private Consultation Form UI with validation
-- [ ] 04-02: Implement global Framer Motion micro-interactions
+- [ ] 04-01: Implement section-level parity for Canada country template output
+- [ ] 04-02: Validate route behavior and locale correctness for all Canada CTAs
+
+### Phase 5: Verification & Report
+**Goal**: Confirm parity and ship a clear progress report.
+**Depends on**: Phases 2, 3, 4
+**Success Criteria**:
+1. `npm run build` passes.
+2. Target pages verify on `/en`, `/en/services/skilled-immigration`, `/en/countries/canada`, `/en/book`.
+3. Final report lists exact matches and intentional deferrals.
+
+Plans:
+- [ ] 05-01: Execute build + route verification checks
+- [ ] 05-02: Publish milestone parity report
 
 ## Progress
 
-**Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+**Execution Order:** `1 -> 2 -> 3 -> 4 -> 5`
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Design System | 0/3 | Not started | - |
-| 2. Core User Experience (Home Page) | 0/4 | Not started | - |
-| 3. Service & Destination Guides | 0/2 | Not started | - |
-| 4. Conversion & Interaction | 0/2 | Not started | - |
+| 1. Baseline & Routing Map | 0/2 | Not started | - |
+| 2. Home Service Cards Parity | 0/2 | Not started | - |
+| 3. Skilled Service Template Parity | 0/2 | Not started | - |
+| 4. Canada Country Template Parity | 0/2 | Not started | - |
+| 5. Verification & Report | 0/2 | Not started | - |

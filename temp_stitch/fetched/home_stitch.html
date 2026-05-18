@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KMS Consultants | Elite Immigration Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#3f2e00",
+                        "secondary-container": "#b38b21",
+                        "surface-variant": "#39342e",
+                        "on-tertiary": "#02315c",
+                        "surface-container-high": "#2d2923",
+                        "on-primary-fixed": "#271900",
+                        "surface-tint": "#ecc06f",
+                        "primary": "#ecc06f",
+                        "on-primary-fixed-variant": "#5d4200",
+                        "error-container": "#93000a",
+                        "surface-container": "#231f19",
+                        "tertiary-container": "#426593",
+                        "on-secondary-container": "#372700",
+                        "error": "#ffb4ab",
+                        "secondary": "#eec053",
+                        "outline-variant": "#4e4638",
+                        "primary-fixed": "#ffdea5",
+                        "on-surface": "#eae1d8",
+                        "on-surface-variant": "#d1c5b3",
+                        "surface": "#16130d",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#224874",
+                        "tertiary-fixed": "#d4e3ff",
+                        "tertiary-fixed-dim": "#a6c9fc",
+                        "inverse-on-surface": "#343029",
+                        "secondary-fixed": "#ffdf9b",
+                        "on-error": "#690005",
+                        "background": "#181918",
+                        "inverse-primary": "#79590f",
+                        "surface-dim": "#16130d",
+                        "on-primary": "#412d00",
+                        "surface-container-highest": "#39342e",
+                        "on-tertiary-container": "#d1e2ff",
+                        "surface-container-low": "#1f1b15",
+                        "on-background": "#eae1d8",
+                        "primary-container": "#7f5e15",
+                        "tertiary": "#a6c9fc",
+                        "on-primary-container": "#ffdc9e",
+                        "surface-bright": "#3d3932",
+                        "on-tertiary-fixed": "#001c39",
+                        "primary-fixed-dim": "#ecc06f",
+                        "secondary-fixed-dim": "#eec053",
+                        "inverse-surface": "#eae1d8",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "on-secondary-fixed": "#251a00",
+                        "outline": "#9a8f7f",
+                        "surface-container-lowest": "#110e09"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Serif"],
+                        display: ["Noto Serif"],
+                        body: ["Manrope"],
+                        label: ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.12);
+        }
+        .gold-glow {
+            box-shadow: 0 0 40px rgba(127, 94, 21, 0.2);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- Header Section -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 glass-card border-none bg-background/80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-on-background text-xl font-headline font-bold">KMS Consultants</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Process</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Countries</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Testimonials</a>
+</nav>
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-all gold-glow">
+            Free Assessment
+        </button>
+</header>
+<!-- Hero Section -->
+<main class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<!-- Ambient Glow Background -->
+<div class="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -left-[5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="container mx-auto px-8 md:px-16 grid lg:grid-cols-2 items-center gap-16 relative z-10">
+<div class="space-y-10 max-w-2xl">
+<div class="space-y-6">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-[0.2em]">Global Mobility Experts</span>
+<h1 class="text-5xl md:text-7xl font-headline font-bold leading-[1.1] text-on-background">
+                        Making Dreams <br/>
+<span class="italic text-primary font-normal">Come True</span>, One Visa at a Time
+                    </h1>
+<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed font-light">
+                        Trusted immigration consultancy helping families and professionals seamlessly move to Canada, UK, Australia, USA and Europe.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-gold-gradient text-on-primary px-8 py-5 rounded-2xl font-bold text-lg tracking-tight hover:scale-105 transition-transform gold-glow">
+                        Check Your Eligibility
+                    </button>
+<button class="glass-card px-8 py-5 rounded-2xl font-bold text-lg border-white/10 hover:bg-white/10 transition-colors">
+                        Our Success Stories
+                    </button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="relative z-10 glass-card rounded-[40px] p-4 overflow-hidden border-white/5 rotate-3 hover:rotate-0 transition-transform duration-700">
+<img class="rounded-[32px] w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000 opacity-80" data-alt="stylized elegant gold and black world map on a textured wall with cinematic spotlighting and floating dust particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLxrTPy0eOjHnux7EMHeuNFUWVScHUybpYoohBjHkO257DO5VxaWO82FzWAt8sw3DviN-yq6WIuc_FAgRskWu7QaWwT0kgiyMKiM1mf7iYvlGT6D1qbNM_DKgdsN4INxt0T1uhcDGcCD7A7MOEu0OGumi4siQkEE7xQhA_eDdEJ0AVczQlnj2lfKppdMEylvv2dIgCCTECuCTaCPnSrAqd_PnAhix0f5kMfNosaRihH_o9-z0k5gdk9P1poau_NPjz1ScchxM6M06o"/>
+<!-- Overlay Glow -->
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -bottom-8 -left-8 glass-card p-6 rounded-2xl gold-glow border-primary/20">
+<div class="flex items-center gap-3">
+<div class="size-3 bg-green-500 rounded-full animate-pulse"></div>
+<p class="text-xs font-bold uppercase tracking-widest text-primary">Live Success Count: 1,482+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Trust Strip -->
+<section class="border-y border-outline-variant/30 py-16 bg-surface-container-lowest/50 backdrop-blur-sm">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center text-center">
+<div class="space-y-2 group">
+<div class="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">1000+</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Happy Clients</div>
+</div>
+<div class="space-y-2 group border-l border-outline-variant/20">
+<div class="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">5+</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Years Experience</div>
+</div>
+<div class="space-y-2 group border-l border-outline-variant/20">
+<div class="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">15+</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Countries Served</div>
+</div>
+<div class="space-y-2 group border-l border-outline-variant/20">
+<div class="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">98%</div>
+<div class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Success Rate</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section (Staggered Blocks) -->
+<section class="py-32 container mx-auto px-8">
+<div class="mb-20 text-center space-y-4">
+<h2 class="text-4xl md:text-5xl font-headline font-semibold">Specialized Immigration Pathways</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">We don't just process papers; we engineer futures through curated legal strategies.</p>
+</div>
+<div class="space-y-24">
+<!-- Block 1 -->
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-3/5 glass-card rounded-[32px] overflow-hidden aspect-[16/9] relative group">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="prestigious library hall with high ceilings and students studying in soft sunlight, representing elite global education opportunities" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz-thz0QwBg3xZcddohq2JvnrIttxQdyHLDPe1dVmiavCCfozRv_uVUbALNW9MUBUoRJ3kMlXmrqzNB9sP0sQdeQITLIsqNW4r5BkH_-Q6Qm9C6GsFEJRxr7ZpgrvvO--JSaKpj3xCGKLqXDad5oZ6xfWimkUv1DnxrRRfprkxCmUDCWDMzMShs2ZR_6Fmo60JGWAHbqwa0D3EFvYtdh_sSBqOsycolll-X9hSlaX4K7X9C42cUx-xLh4tCUxc0cgTiCQ4gcl9st1V"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="text-primary text-xs font-bold tracking-widest uppercase mb-2 block">Academic Excellence</span>
+<h3 class="text-3xl font-headline font-bold">Study Visas</h3>
+</div>
+</div>
+<div class="w-full md:w-2/5 space-y-6">
+<p class="text-lg text-on-surface-variant leading-relaxed">Admission and visa assistance for top-tier universities across the globe. We manage the complexity of scholarships and compliance.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-sm font-medium">Ivy League &amp; Russell Group Expertise</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-sm font-medium">Post-Study Work Permit Strategy</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Block 2 (Reversed) -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-16">
+<div class="w-full md:w-3/5 glass-card rounded-[32px] overflow-hidden aspect-[16/9] relative group">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="modern glass skyscrapers reflecting the blue sky at dawn, signifying global career progression and professional growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE1FRaIQs21rmCUN7UjjQjsNVTHDpsBcibEb0oHBz6A52UJHqDudCb1DwjoOy_L4Sdn1-0mkg0dICnStOUj2SglpE9F-wC02ej1EY_dm8kru7aj6_ncHAAAC9BqZ4iUpK7wLlnwnbjNpbuZkEgOmCDXYmcRGv1iag4ZWsrNff7efj8H0O71tAjfJJDR3ssZuIF1XTV8-QbAP58iZm_9GN3tlURaWl5DeA-HiVfj77azBtu8iARy2qpJAGvK9J2Dc_rCSzw-qmNIej6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-left">
+<span class="text-primary text-xs font-bold tracking-widest uppercase mb-2 block">Corporate Mobility</span>
+<h3 class="text-3xl font-headline font-bold">Work Permits</h3>
+</div>
+</div>
+<div class="w-full md:w-2/5 space-y-6">
+<p class="text-lg text-on-surface-variant leading-relaxed">For high-achieving professionals and intra-company transfers. Secure your right to work in the world's most vibrant economies.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-sm font-medium">Critical Skills Occupations</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-sm font-medium">Executive &amp; Specialized Talent Visas</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Block 3 -->
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-3/5 glass-card rounded-[32px] overflow-hidden aspect-[16/9] relative group">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="professional luxury workspace with a view of a modern city, representing investment and business immigration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCBfCcKovXSmnVeIS3BTdnuugjkFxMgnx-8Bwv_NrX3CfnE3P2fay_t9GmgnPaFykmW70x1hYysDJguHPH4Zz9DtTWCmm1Mqtwa__DzQ-U5qziH4kE2hfsNKm-kXsM8PbdLrmjOEcEEcyn3BUHJFv3KAfweCu6g2_JRuXPcznJVNrGTcIIVglHmQxktlVEO28N8anD5B7GY74OPrhBK08kvbH0soCTOT3IJ4nM6F98U3r2HWTwiS2aW5sfnq6R--xkeOG38R27hMhW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="text-primary text-xs font-bold tracking-widest uppercase mb-2 block">Foundational Security</span>
+<h3 class="text-3xl font-headline font-bold">Permanent Residency</h3>
+</div>
+</div>
+<div class="w-full md:w-2/5 space-y-6">
+<p class="text-lg text-on-surface-variant leading-relaxed">The ultimate goal: permanent status. We specialize in point-based systems and investment-based residency pathways.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-sm font-medium">Express Entry &amp; State Sponsorship</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-sm font-medium">High Net Worth Individual (HNWI) Residency</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Timeline -->
+<section class="py-32 bg-surface-container-low/30 relative overflow-hidden">
+<div class="container mx-auto px-8">
+<h2 class="text-4xl font-headline text-center mb-24">The KMS Four-Step Protocol</h2>
+<div class="grid md:grid-cols-4 gap-8 relative">
+<!-- Connector Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<!-- Step 1 -->
+<div class="relative group text-center space-y-6">
+<div class="size-24 rounded-full bg-surface-container-high border border-primary/20 flex items-center justify-center mx-auto relative z-10 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">clinical_notes</span>
+<div class="absolute -top-2 -right-2 size-8 bg-primary text-on-primary rounded-full flex items-center justify-center text-xs font-black">01</div>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-xl">Initial Audit</h4>
+<p class="text-sm text-on-surface-variant">Thorough assessment of your profile and eligibility against global standards.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative group text-center space-y-6">
+<div class="size-24 rounded-full bg-surface-container-high border border-primary/20 flex items-center justify-center mx-auto relative z-10 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">architecture</span>
+<div class="absolute -top-2 -right-2 size-8 bg-primary text-on-primary rounded-full flex items-center justify-center text-xs font-black">02</div>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-xl">Strategy Design</h4>
+<p class="text-sm text-on-surface-variant">Architecting a bespoke legal roadmap tailored to your specific goals.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative group text-center space-y-6">
+<div class="size-24 rounded-full bg-surface-container-high border border-primary/20 flex items-center justify-center mx-auto relative z-10 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">inventory_2</span>
+<div class="absolute -top-2 -right-2 size-8 bg-primary text-on-primary rounded-full flex items-center justify-center text-xs font-black">03</div>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-xl">Execution</h4>
+<p class="text-sm text-on-surface-variant">Full documentation management and precise submission to authorities.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative group text-center space-y-6">
+<div class="size-24 rounded-full bg-surface-container-high border border-primary/20 flex items-center justify-center mx-auto relative z-10 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">flight_takeoff</span>
+<div class="absolute -top-2 -right-2 size-8 bg-primary text-on-primary rounded-full flex items-center justify-center text-xs font-black">04</div>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-xl">Onboarding</h4>
+<p class="text-sm text-on-surface-variant">Post-approval support and relocation assistance for a smooth transition.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Countries Horizontal Scroll -->
+<section class="py-32">
+<div class="container mx-auto px-8 flex justify-between items-end mb-12">
+<h2 class="text-4xl font-headline font-semibold">Global Destinations</h2>
+<div class="flex gap-2">
+<button class="size-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary/20">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+</button>
+<button class="size-10 rounded-full border border-outline-variant flex items-center justify-center bg-primary/10 hover:bg-primary/20">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-8 px-8 md:px-[calc((100vw-1280px)/2)] hide-scrollbar snap-x">
+<!-- Country 1 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start relative group rounded-3xl overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="iconic toronto skyline with the cn tower at dusk, purple and orange sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATxzHKdh_RLdAydsvY6nZI7shSgTTUJNTs23VimeU90Pe8cZi8wNNhnfRVlSIn23TuAhY5QvJt3PY4-Mv4thUSmZpOhdEEjXxbwyrGJwQhqaPzvfVJ5OirO2K-VIK2v8hdk5fOTa36QPM1d_TXtAJt0Tk3cZE9nKDaP863eJnSEMx0wCHCJk4CrJAr5jnIoTZTtCbedh-ztizB3BoBgH09BhubMAXDh8-yo6JSRb95xKYrexZ8aWyyB4oU260tn03nVD_7sk-z5Sw3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<h4 class="text-2xl font-bold mb-2">Canada</h4>
+<p class="text-sm text-primary font-bold uppercase tracking-widest">Express Entry • Provincial Nominee</p>
+</div>
+</div>
+<!-- Country 2 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start relative group rounded-3xl overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="london city view with big ben and the houses of parliament, soft atmospheric light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY_mxwR0hBNeK-ko7Qt62XlqaCl1y5VLUvVfYSJgKbpN8ZPywLAWHStvI98W4WKxaDTErb28OxF1iiBVrtm47-YvwhIdvFaUZqPEec_0Put_7Ssd15lrsBLCiHDGC-Y0Y3q1pkqcWkewAlmle8C1F7O40teOGYpbz0W4jEgxNGno0geYMaZ7jPeBZwC2HZFs8Q9F8p-nE5CmjWmLSan9-xIoMtSaj3pxWEjUjjj40h2o6ugaktwMAWIh2VGTMPH2AO33mL2okCuV16"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<h4 class="text-2xl font-bold mb-2">United Kingdom</h4>
+<p class="text-sm text-primary font-bold uppercase tracking-widest">Skilled Worker • Global Talent</p>
+</div>
+</div>
+<!-- Country 3 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start relative group rounded-3xl overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="sydney opera house and harbour bridge at sunrise with clear skies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV-4_OarjIg9lquBoD2YtELh5fe-5YrMA8kCpTnrgbd72KvyNsjPZphpxWG2WGJl2gXO-51FxSvBl2bSsT171--kKGv9HBGSpJqSE6-GPQOvkVSlQUV_vPQ-YOhhps1eiD_CSKJjk6fmcYxSxgMNsbqjxnnY8ZF_zvRYEnXh1M6uw7Y0qUtLfHCpewZCJ5VhByG7tO0yVpxmtNKQyg1TpzUjyHxPI5M2xUE2dPNvo_80SM1MkfcrB9iVbkNSF8OxG0G3lwLVSr7Agg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<h4 class="text-2xl font-bold mb-2">Australia</h4>
+<p class="text-sm text-primary font-bold uppercase tracking-widest">Subclass 189 • Subclass 190</p>
+</div>
+</div>
+<!-- Country 4 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start relative group rounded-3xl overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="new york city times square at night with neon lights and urban motion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6I1buuDVATChAJOyjkRfeKIRoE-BPbvAx98cjw69XtXlmKwtzb8sfOU84cF0ZTaeFXY-DraC-CRoWKm6uZ8u1-TNrF9i9jUmJIl1wVEnNybkP3ODhkNGKdj32We6BLsGk-RhE-95kMurj92fTkMNJwbkIk9S4c2gXSo5hnae3gTwP72mqHZStUEMRJIMVqdRyEB_giqXUwgDh44JFhLcKCVw0YjM54IupLyqFYcdcc8mqoJHeIbi5ybusUXslvZjBvwflqylY1dlH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<h4 class="text-2xl font-bold mb-2">USA</h4>
+<p class="text-sm text-primary font-bold uppercase tracking-widest">H-1B • EB-5 Investor</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials (Case-Study Style) -->
+<section class="py-32 bg-surface-container-lowest relative">
+<div class="container mx-auto px-8">
+<h2 class="text-4xl font-headline mb-16">Successful Transitions</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="glass-card p-10 rounded-[32px] space-y-8 group border-primary/10">
+<div class="flex items-center gap-4">
+<img class="size-16 rounded-full object-cover border-2 border-primary/30" data-alt="headshot of a middle-aged professional man with a confident expression in a business setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEZ93evDwvfOIQ50dcq9EZ8NhsHdYsBauMhXvijpulSI-AoG6gA0Q4xY_W1dO8DK3JDHJQ8PXrKmBR-HTRi5pylNy7WoiXq6UpyEu9DGE02eW6FyXnkP5N5UxMN7ktzyMl0Epes_t4ug6HvAMkShr7Nz1WHCGNpbH2qlqbhSEaW9kwz3BqsRSzNwB5KGO5irSk2LCj3fkx0HpTWCHEtFH3kfYmShXgxCvlXLX7SG2PC_x4--2929Uio6QTTmSgz_88pWu6lmlNSS4a"/>
+<div>
+<h4 class="font-bold text-lg">Dr. Ahmed Al-Farsi</h4>
+<p class="text-sm text-on-surface-variant italic">Relocated to London, UK</p>
+</div>
+</div>
+<blockquote class="text-2xl font-headline leading-snug">
+                        "KMS Consultants navigated the complex Tier 2 visa process for my family with absolute precision. Their attention to legal detail is unmatched."
+                    </blockquote>
+<div class="flex gap-4 items-center">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">Health Care Sector</span>
+<span class="text-xs text-on-surface-variant">Approved in 45 Days</span>
+</div>
+</div>
+<div class="glass-card p-10 rounded-[32px] space-y-8 group border-primary/10">
+<div class="flex items-center gap-4">
+<img class="size-16 rounded-full object-cover border-2 border-primary/30" data-alt="headshot of a professional young woman smiling confidently, representing a successful tech career transition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZayEQ8gSFG_UT-CA4MmWgaD8C_kRrTeQAQbJBDqlLeMfL6Apz9By7h2iymU-rOo9ZKFUoiYLHIU0PLeveeIoDLdqjW5r3EHwGxZpjwwcXHz6Byi367B7Ptovn2sZA50DpjRZFclomXl0sn-FtMtZeUwTIm95tyt8pdbNax9ZxQUO10lGFqjNMQJMGG3rmU-bnRF9Uv1h3g_fANKb7Qw54ZdtQW42RQonTG4K2_L7NwiS0UsKXX6Gatz4TCl9FS4E1de-eR_LosZOQ"/>
+<div>
+<h4 class="font-bold text-lg">Sarah Jenkins</h4>
+<p class="text-sm text-on-surface-variant italic">Moved to Vancouver, Canada</p>
+</div>
+</div>
+<blockquote class="text-2xl font-headline leading-snug">
+                        "The Express Entry route seemed daunting until KMS took over. They optimized my profile and handled every piece of paperwork perfectly."
+                    </blockquote>
+<div class="flex gap-4 items-center">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">Tech Industry</span>
+<span class="text-xs text-on-surface-variant">Permanent Residency Awarded</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Form -->
+<section class="py-32 container mx-auto px-8">
+<div class="glass-card rounded-[48px] overflow-hidden grid lg:grid-cols-2">
+<div class="p-12 md:p-20 space-y-8">
+<h2 class="text-4xl md:text-5xl font-headline font-bold">Your journey begins with a conversation.</h2>
+<p class="text-on-surface-variant text-lg">Fill out our eligibility form and one of our senior consultants will reach out to schedule a private briefing.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold">Confidential Assessment</h4>
+<p class="text-sm text-on-surface-variant">Your personal data is protected by strict privacy protocols.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h4 class="font-bold">Rapid Response</h4>
+<p class="text-sm text-on-surface-variant">Initial eligibility results typically shared within 24 business hours.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high/50 p-12 md:p-20 border-l border-white/5">
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Full Name</label>
+<input class="w-full bg-background/50 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Email Address</label>
+<input class="w-full bg-background/50 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Preferred Destination</label>
+<select class="w-full bg-background/50 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all text-on-surface-variant">
+<option>Canada</option>
+<option>United Kingdom</option>
+<option>Australia</option>
+<option>USA</option>
+<option>European Union</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Message</label>
+<textarea class="w-full bg-background/50 border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Tell us about your background..." rows="4"></textarea>
+</div>
+<button class="w-full bg-gold-gradient text-on-primary py-5 rounded-xl font-bold text-lg gold-glow transition-transform hover:scale-[1.02]">
+                        Submit Free Assessment
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-20 border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="container mx-auto px-8">
+<div class="grid md:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-headline font-bold">KMS Consultants</h2>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Pioneering ethical immigration consulting for the Middle East's elite families and professionals since 2019.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold uppercase text-xs tracking-widest text-primary">Services</h4>
+<nav class="flex flex-col gap-4 text-sm text-on-surface-variant">
+<a class="hover:text-primary" href="#">Skilled Migration</a>
+<a class="hover:text-primary" href="#">Study Permits</a>
+<a class="hover:text-primary" href="#">Business Residency</a>
+<a class="hover:text-primary" href="#">Legal Appeals</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold uppercase text-xs tracking-widest text-primary">Company</h4>
+<nav class="flex flex-col gap-4 text-sm text-on-surface-variant">
+<a class="hover:text-primary" href="#">Our Process</a>
+<a class="hover:text-primary" href="#">Countries</a>
+<a class="hover:text-primary" href="#">Testimonials</a>
+<a class="hover:text-primary" href="#">Contact Us</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold uppercase text-xs tracking-widest text-primary">Connect</h4>
+<div class="flex gap-4">
+<a class="size-10 rounded-full glass-card flex items-center justify-center hover:text-primary" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="size-10 rounded-full glass-card flex items-center justify-center hover:text-primary" href="#"><span class="material-symbols-outlined text-sm">alternate_email</span></a>
+<a class="size-10 rounded-full glass-card flex items-center justify-center hover:text-primary" href="#"><span class="material-symbols-outlined text-sm">call</span></a>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+<p>© 2024 KMS Consultants. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

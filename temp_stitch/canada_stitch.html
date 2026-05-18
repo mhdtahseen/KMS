@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Canada | KMS Consultants</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#16130d",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#a6c9fc",
+                        "on-secondary": "#3f2e00",
+                        "surface-variant": "#39342e",
+                        "surface-dim": "#16130d",
+                        "on-secondary-fixed": "#251a00",
+                        "surface-container-high": "#2d2923",
+                        "surface-container-lowest": "#110e09",
+                        "primary-container": "#7f5e15",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#224874",
+                        "secondary-fixed-dim": "#eec053",
+                        "on-tertiary-fixed": "#001c39",
+                        "primary": "#ecc06f",
+                        "tertiary": "#a6c9fc",
+                        "surface-container-highest": "#39342e",
+                        "on-primary": "#412d00",
+                        "inverse-surface": "#eae1d8",
+                        "inverse-on-surface": "#343029",
+                        "primary-fixed-dim": "#ecc06f",
+                        "on-primary-container": "#ffdc9e",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "outline-variant": "#4e4638",
+                        "surface-container-low": "#1f1b15",
+                        "secondary-fixed": "#ffdf9b",
+                        "primary-fixed": "#ffdea5",
+                        "on-tertiary": "#02315c",
+                        "surface-bright": "#3d3932",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#d4e3ff",
+                        "secondary": "#eec053",
+                        "on-surface-variant": "#d1c5b3",
+                        "inverse-primary": "#79590f",
+                        "outline": "#9a8f7f",
+                        "surface-tint": "#ecc06f",
+                        "surface-container": "#231f19",
+                        "on-tertiary-container": "#d1e2ff",
+                        "on-primary-fixed-variant": "#5d4200",
+                        "on-secondary-container": "#372700",
+                        "on-error-container": "#ffdad6",
+                        "background": "#16130d",
+                        "tertiary-container": "#426593",
+                        "on-background": "#eae1d8",
+                        "on-surface": "#eae1d8",
+                        "on-primary-fixed": "#271900",
+                        "secondary-container": "#b38b21"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding": "120px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Noto Serif"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "h2": ["Noto Serif"],
+                        "h1": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "h3": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "h2": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+        }
+        .gold-glow {
+            background: radial-gradient(circle at center, rgba(127, 94, 21, 0.15) 0%, transparent 70%);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(22, 19, 13, 0.2), #16130d);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="sticky top-0 w-full z-50 bg-[#181918]/60 backdrop-blur-md border-b border-white/12 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-24">
+<div class="text-2xl font-serif text-[#7F5E15] font-bold">KMS Consultants</div>
+<div class="hidden md:flex items-center gap-8 font-noto-serif text-lg tracking-wide">
+<a class="text-gray-300 hover:text-[#7F5E15] transition-colors duration-300" href="#">Home</a>
+<a class="text-gray-300 hover:text-[#7F5E15] transition-colors duration-300" href="#">About</a>
+<a class="text-gray-300 hover:text-[#7F5E15] transition-colors duration-300" href="#">Services</a>
+<a class="text-[#7F5E15] border-b-2 border-[#7F5E15] pb-1 hover:text-[#7F5E15] transition-colors duration-300" href="#">Countries</a>
+<a class="text-gray-300 hover:text-[#7F5E15] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-[#7F5E15] text-[#ffdc9e] px-6 py-3 rounded-lg font-bold text-sm tracking-wide scale-95 active:duration-150 hover:opacity-90 transition-all">
+                Get Consultation
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Canadian Rockies" class="w-full h-full object-cover grayscale opacity-40" data-alt="Cinematic wide shot of the snow-capped Canadian Rockies reflected in a glass-still turquoise lake with dark evergreen forests and soft dramatic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoM5GHKUNqhbgGylRNS4PdjQKMHUd4Pp0HvkNtrTSu2K-Oip0w5EgDM1tXh9SvaHm4a7eBCYR7v66-g2l7dD_0TXVnQcRO4FwbHujgBiZPMry5p6xEf_t7tRcuUaQlfpva86KsMmbYxHBP97ZJe6LboKyA_Lm0K7dZJhUH5KjG25JKD-xS4u17STzTon44HXbDB4xP8gZgYwfeRMhqsJYSrdtdqXGD9lcsiXvCXKZPA0FsZhwgxCHw0Luwu53Rs_Kbw7ZeJtUroEy9"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-8">
+<span class="font-label-caps text-primary tracking-[0.3em] uppercase mb-4 block">Destination Portfolio</span>
+<h1 class="font-h1 text-[84px] leading-tight text-on-background mb-6">Canada</h1>
+<p class="font-h3 text-on-surface-variant font-light mb-12">A Land of Opportunity</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg font-semibold text-body-lg shadow-lg hover:brightness-110 transition-all">
+                        Begin Your Journey
+                    </button>
+<button class="glass-card px-10 py-5 rounded-lg font-semibold text-body-lg hover:bg-white/10 transition-all">
+                        View Pathways
+                    </button>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary text-3xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Why Canada Section -->
+<section class="py-[120px] px-8 relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] gold-glow -z-10"></div>
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-h2 text-on-background mb-8">Why Global Leaders <span class="text-primary">Choose Canada</span></h2>
+<p class="font-body-lg text-on-surface-variant mb-12">Canada offers an unparalleled quality of life, a stable economy, and a welcoming multicultural landscape, making it the premier choice for skilled professionals and investors from the Middle East.</p>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<div class="bg-primary-container/20 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h4 class="font-h3 text-xl mb-2">Social Security &amp; Stability</h4>
+<p class="text-on-surface-variant">Access to world-class universal healthcare and a robust social safety net for you and your family.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="bg-primary-container/20 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+</div>
+<div>
+<h4 class="font-h3 text-xl mb-2">Elite Education</h4>
+<p class="text-on-surface-variant">Home to some of the world's most prestigious universities and high-standard primary education systems.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="bg-primary-container/20 p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h4 class="font-h3 text-xl mb-2">Economic Prosperity</h4>
+<p class="text-on-surface-variant">A G7 economy with diverse industries and significant opportunities for entrepreneurs and innovators.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6 h-fit">
+<div class="space-y-6 pt-12">
+<div class="rounded-2xl overflow-hidden aspect-[4/5]">
+<img alt="Toronto Skyline" class="w-full h-full object-cover" data-alt="Modern Toronto skyline with the CN Tower at twilight, glowing urban lights reflecting on the dark blue water of Lake Ontario." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMp1evYlOpM0ZuDcwfwHgfqZDW7C5kLBlyenYSXonraWAe3tvM7OxpQyzxNUAny0-G_F9IW8Gi7UZU1cNynW43uNZjZFHi7Qbu5NEymp7nMdeyqmFwx8fKTJXuzRkfKaTk4k5gx-2rqNM6jWZ7uQG3pNv9NdYUEUwnO101uHtAp1099p0KlauV1vnWAqcYtgugzfdOfOq8Rs4gsiTe5eapBPuGwKivFev79znQYPC24hzX9zLvU7UCyzlQsm7lT1BYZcBdRmq_QO_k"/>
+</div>
+<div class="glass-card p-8 rounded-2xl">
+<span class="text-primary font-h1 block mb-2">#1</span>
+<p class="font-label-caps opacity-70">Best Quality of Life Globally</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="glass-card p-8 rounded-2xl">
+<span class="text-primary font-h1 block mb-2">93%</span>
+<p class="font-label-caps opacity-70">Immigrant Satisfaction Rate</p>
+</div>
+<div class="rounded-2xl overflow-hidden aspect-[4/5]">
+<img alt="Canadian Nature" class="w-full h-full object-cover" data-alt="Close up of bright red maple leaves against a soft focus forest background in autumn, warm golden sunlight filtering through branches." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHj0DxO6R6drT6QKPSGy5hllixI8GtEb81Ya2HfAD_zTmytR5_n6RqhOhANC_WjqmxvFyRylh2LaaDun_z74QO_KyGMaI8xbpHCgvYxMNm3NtYe4g1SX6yHhe40zwouQXCEXykWPsLvQKGZShXvbfEtkUZabHLNmqNWkEFL1Ls3IK4A9hxzNBGCUZClvmoVWODCyL2V2Me9d1jiOe3AhoEcLBeXbeTzBdVx9iyzF2LOH_8fBoNrXAQxwRgrcPaee0j2qw_HpJ89OQT"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visa Pathways Bento Grid -->
+<section class="py-[120px] bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<span class="font-label-caps text-primary tracking-widest mb-4 block">Strategic Routes</span>
+<h2 class="font-h2">Available Visa Pathways</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 glass-card rounded-3xl overflow-hidden group">
+<div class="p-10 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-h3 text-3xl mb-4">Express Entry System</h3>
+<p class="text-on-surface-variant font-body-lg mb-8 max-w-lg">The fastest route for skilled workers. We specialize in Federal Skilled Worker (FSW) and Canadian Experience Class (CEC) applications with high success rates.</p>
+<div class="mt-auto">
+<a class="inline-flex items-center gap-2 text-primary font-semibold hover:underline" href="#">
+                                    Explore Pathway <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-3xl overflow-hidden p-10 flex flex-col">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="business_center">business_center</span>
+<h3 class="font-h3 text-2xl mb-4">Investor &amp; Entrepreneur</h3>
+<p class="text-on-surface-variant mb-6">Bespoke solutions for high-net-worth individuals seeking Start-up Visas or Provincial Business programs.</p>
+<a class="mt-auto text-primary font-semibold flex items-center gap-2" href="#">
+                            Consult <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="glass-card rounded-3xl overflow-hidden p-10 flex flex-col">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="groups">groups</span>
+<h3 class="font-h3 text-2xl mb-4">Family Sponsorship</h3>
+<p class="text-on-surface-variant mb-6">Reunite with your loved ones through our expert-guided spousal and parental sponsorship services.</p>
+<a class="mt-auto text-primary font-semibold flex items-center gap-2" href="#">
+                            Consult <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-2 glass-card rounded-3xl overflow-hidden relative min-h-[300px]">
+<div class="absolute inset-0 opacity-20">
+<img alt="Professional Meeting" class="w-full h-full object-cover" data-alt="Modern professional office space in Vancouver with glass walls and views of the city mountains, warm wood accents and minimalist furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLU4M-0CD2TGBLfMr8KKQdTp2DPYnyiSAS7TA_Jhc8tXtxfdpo_oHh_jRPQen_ig3XHlyd8F0uVBKyWhWWPOrbIMvLqhKDnTD2o9WMwLrstDT5jzfTFiInet0sC3Q0g0mRsI9eVXv2L7vdI9Pqtv6Gg6dm-d_RU-snCIlB7frSeiHtmbvrL-OlTC5ChsFkh9Ox9L-ZM7vBTrswGr0F66iAaDHb8EG6i_1zIK5Tvz6YP94MPN07xMxFBcNSd2FkxR5VhS-HqCiEFVkm"/>
+</div>
+<div class="relative p-10 z-10">
+<h3 class="font-h3 text-2xl mb-4">Provincial Nominee Programs (PNP)</h3>
+<p class="text-on-surface-variant max-w-md mb-6">Tailored routes for specific provinces like Ontario, British Columbia, and Alberta based on local labor market needs.</p>
+<a class="inline-flex items-center gap-2 text-primary font-semibold" href="#">
+                                View Provinces <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Residency Requirements -->
+<section class="py-[120px] px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="font-h2 mb-12">Residency Requirements</h2>
+<div class="space-y-6">
+<div class="border-b border-white/10 pb-6">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-h3 text-xl">Physical Presence</h4>
+<span class="bg-secondary-container/20 text-secondary px-4 py-1 rounded-full text-sm font-bold">Mandatory</span>
+</div>
+<p class="text-on-surface-variant">You must have been physically present in Canada for at least 1,095 days during the five years right before the date you sign your application.</p>
+</div>
+<div class="border-b border-white/10 pb-6">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-h3 text-xl">Language Proficiency</h4>
+<span class="bg-secondary-container/20 text-secondary px-4 py-1 rounded-full text-sm font-bold">Level 4+</span>
+</div>
+<p class="text-on-surface-variant">Ability to communicate in either English or French. Candidates between 18-54 must provide proof of proficiency (CLB 4 or higher).</p>
+</div>
+<div class="border-b border-white/10 pb-6">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-h3 text-xl">Income Tax Filing</h4>
+<span class="bg-secondary-container/20 text-secondary px-4 py-1 rounded-full text-sm font-bold">3 Years</span>
+</div>
+<p class="text-on-surface-variant">Filing personal income tax returns for at least 3 years that are fully or partially within the 5 years before you apply.</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<div class="glass-card p-12 rounded-[40px] relative w-full">
+<div class="absolute -top-6 -right-6 bg-primary-container p-6 rounded-2xl shadow-xl">
+<span class="material-symbols-outlined text-on-primary text-4xl" data-icon="policy">policy</span>
+</div>
+<h3 class="font-h3 text-2xl mb-8">The Pathway to Citizenship</h3>
+<div class="relative pl-8 border-l-2 border-primary/30 space-y-12">
+<div class="relative">
+<div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-primary ring-8 ring-background"></div>
+<p class="font-bold text-primary mb-1">Step 01</p>
+<p class="font-h3 text-lg mb-2">Obtain Permanent Residency</p>
+<p class="text-sm text-on-surface-variant">Through skilled worker, investment, or family programs.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-primary/50 ring-8 ring-background"></div>
+<p class="font-bold text-primary mb-1">Step 02</p>
+<p class="font-h3 text-lg mb-2">Maintain Residency Obligation</p>
+<p class="text-sm text-on-surface-variant">Live in Canada for 3 out of 5 years to qualify for citizenship.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-primary/30 ring-8 ring-background"></div>
+<p class="font-bold text-primary mb-1">Step 03</p>
+<p class="font-h3 text-lg mb-2">Citizenship Application</p>
+<p class="text-sm text-on-surface-variant">Pass the citizenship test and attend the oath ceremony.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Consultation CTA -->
+<section class="py-[120px] px-8">
+<div class="max-w-7xl mx-auto">
+<div class="glass-card rounded-[48px] p-16 md:p-24 text-center relative overflow-hidden">
+<div class="absolute inset-0 gold-glow opacity-30 -z-10"></div>
+<div class="max-w-2xl mx-auto relative z-10">
+<h2 class="font-h2 text-5xl mb-8">Ready to Call <span class="text-primary">Canada</span> Your Home?</h2>
+<p class="font-body-lg text-on-surface-variant mb-12">Our team of ICCRC certified consultants provides end-to-end bespoke solutions for your immigration journey from Doha to any Canadian province.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-[#7F5E15] text-[#ffdc9e] px-12 py-5 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-xl">
+                                Book a Private Consultation
+                            </button>
+</div>
+<p class="mt-8 text-sm text-on-surface-variant/60 font-medium">Confidentiality Assured • Expert Legal Guidance • Bespoke Planning</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#181918] border-t-2 border-[#7F5E15]/30 w-full py-16">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<div class="text-xl font-serif text-[#7F5E15]">KMS Consultants</div>
+<p class="text-gray-400 max-w-xs font-sans text-sm tracking-tight">Expert immigration solutions catering to the elite professional landscape of the Middle East.</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h5 class="text-white font-bold text-sm tracking-widest uppercase">Navigation</h5>
+<ul class="space-y-2 text-gray-400 font-sans text-sm">
+<li><a class="hover:text-white transition-all" href="#">Company</a></li>
+<li><a class="hover:text-white transition-all" href="#">Services</a></li>
+<li><a class="hover:text-white transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-white font-bold text-sm tracking-widest uppercase">Legal</h5>
+<ul class="space-y-2 text-gray-400 font-sans text-sm">
+<li><a class="hover:text-white transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-all" href="#">Terms of Service</a></li>
+<li><a class="hover:text-white transition-all" href="#">Disclaimer</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-bold text-sm tracking-widest uppercase">Connect</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+<p class="text-gray-400 font-sans text-xs tracking-tight">© 2024 KMS Consultants. Bespoke Immigration Solutions.</p>
+</div>
+</div>
+</footer>
+</body></html>

@@ -8,6 +8,19 @@ A bespoke, premium dual-language (English and Arabic) Next.js website for an imm
 
 Project a high-end, bespoke aesthetic that instantly communicates trust, exclusivity, and professionalism to high-net-worth and skilled immigration clients in Qatar.
 
+## Current Milestone: v1.1 Prototype Parity & Reusable Templates
+
+**Goal:** Make the reusable KMS templates match Stitch prototypes exactly for the current target pages while preserving shared global layout components.
+
+**Target features:**
+- Keep shared global `Header` and `Footer`, but align page internals to prototype parity.
+- Fix CTA behaviors so page actions map to the right locale-aware routes/screens.
+- Align Home service cards to the prototype content/order.
+- Deliver exact prototype parity for:
+  - Service: `skilled-immigration`
+  - Country: `canada`
+- Keep service/country pages template-driven for future expansion.
+
 ## Requirements
 
 ### Validated
@@ -20,14 +33,12 @@ Project a high-end, bespoke aesthetic that instantly communicates trust, exclusi
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] Next.js 14 App Router foundation with Tailwind CSS and Framer Motion.
-- [ ] i18n support (English/Arabic) with full RTL layout support.
-- [ ] Custom design system implementing dark mode (#0D0D0D approx) with metallic gold accents.
-- [ ] High-fidelity Home Page with dynamic maps, process timelines, and service grid.
-- [ ] "Skilled Immigration" service template page.
-- [ ] "Canada Destination Guide" country template page.
-- [ ] Private Consultation Booking form.
-- [ ] Smooth page transitions and micro-interactions (hover states, scroll reveals).
+- [ ] Preserve global shared `Header` + `Footer` across pages.
+- [ ] Fix CTA route behavior for Home, Skilled service, Canada country, and Booking pages.
+- [ ] Match Home service cards to prototype content and hierarchy.
+- [ ] Make `skilled-immigration` service output exactly match prototype while staying template-driven.
+- [ ] Make `canada` country output exactly match prototype while staying template-driven.
+- [ ] Keep other service/country slugs functional as reusable template outputs.
 
 ### Out of Scope
 
@@ -60,7 +71,7 @@ Project a high-end, bespoke aesthetic that instantly communicates trust, exclusi
 | Prototype Assets | Fast-tracks the build without waiting for finalized copy/images | — Pending |
 
 ---
-*Last updated: 2026-04-28 after initialization*
+*Last updated: 2026-04-30 for milestone v1.1 setup*
 
 ## Evolution
 
