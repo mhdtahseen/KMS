@@ -15,21 +15,26 @@ export function useBookingForm(successMessage: string, errorMessage: string, loc
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
-  const submitForm = async (_data: BookingFormData) => {
+  const submitForm = async (data: BookingFormData) => {
     setIsSubmitting(true);
-    void _data;
-    
+
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const json = await res.json().catch(() => ({}));
+        throw new Error((json as { error?: string }).error ?? 'Request failed');
+      }
+
       toast.success(successMessage);
-      
-      // Redirect to thank you page after success
+
       setTimeout(() => {
         router.push(`/${locale}/thank-you`);
       }, 1000);
-      
     } catch {
       toast.error(errorMessage);
     } finally {

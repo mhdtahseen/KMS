@@ -177,6 +177,7 @@ export const services: Service[] = [
     ],
     destinations: ['canada', 'united-kingdom', 'australia', 'usa'],
     ctaHeading: 'Begin Your Educational Legacy.',
+    isPublished: true,
   },
   {
     slug: 'business-residency',
@@ -217,6 +218,7 @@ export const services: Service[] = [
     ],
     destinations: ['united-kingdom', 'canada', 'usa', 'european-union'],
     ctaHeading: 'Invest in Global Freedom.',
+    isPublished: true,
   },
   {
     slug: 'work-permits',
@@ -257,6 +259,7 @@ export const services: Service[] = [
     ],
     destinations: ['canada', 'united-kingdom', 'australia'],
     ctaHeading: 'Take Your Career Global.',
+    isPublished: true,
   },
   {
     slug: 'permanent-residency',
@@ -297,6 +300,7 @@ export const services: Service[] = [
     ],
     destinations: ['canada', 'australia', 'united-kingdom', 'european-union'],
     ctaHeading: 'Claim Your Permanent Home.',
+    isPublished: true,
   },
   {
     slug: 'family-sponsorship',
@@ -337,6 +341,7 @@ export const services: Service[] = [
     ],
     destinations: ['canada', 'united-kingdom', 'usa', 'australia'],
     ctaHeading: 'Bring Them Home.',
+    isPublished: true,
   },
 ];
 

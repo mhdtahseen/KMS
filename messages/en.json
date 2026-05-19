@@ -22,13 +22,16 @@
     "studyPermits": "Study Permits",
     "businessResidency": "Business Residency",
     "legalAppeals": "Legal Appeals",
-    "copyright": "© 2024 KMS Consultants. All rights reserved.",
+    "copyright": "© 2025 KMS Consultants. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "office": "Office",
-    "address": "Tornado Tower, Level 22\nWest Bay, P.O. Box 27750\nDoha, State of Qatar",
-    "phone": "+974 4400 9000",
-    "email": "concierge@kmsconsultants.qa"
+    "address": "Bldg 3, Shk Adullah Al Jaber Bldg\nAin Khaled, Salwa Rd, P.O. Box 17409\nDoha, Qatar",
+    "phone": "+974 4412 0578",
+    "phone2": "+974 4412 0580",
+    "email": "info@kms-consultants.com",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
   },
   "home": {
     "hero": {
@@ -104,7 +107,53 @@
     "subtext": "Our team of immigration specialists in Doha is ready to provide the discreet, authoritative guidance required for your relocation and residency needs.",
     "officeHeading": "Office Headquarters",
     "formHeading": "Inquiry Request",
-    "liveOps": "Live Operations: Tornado Tower"
+    "liveOps": "Live Operations: Doha HQ",
+    "helpTitle": "We're Here to Help",
+    "helpSubtext": "We welcome all questions regarding immigration requirements, qualification parameters, or implementation timelines. Our experts deliver precise, actionable information to support your decision-making.",
+    "callUs": "Call Us",
+    "mailUs": "Mail Us",
+    "visitUs": "Visit Us",
+    "hours": "Available 09:00 – 18:00 AST",
+    "responseTime": "Expected response within 4 hours",
+    "address": "Bldg 3, Shk Adullah Al Jaber Bldg, Ain Khaled, Salwa Rd, P.O. Box 17409, Doha"
+  },
+  "about": {
+    "badge": "Our Story",
+    "heading": "Who We Are",
+    "intro": "At KMS, we specialize in helping individuals and families achieve their dreams of immigrating to Canada, Australia, the USA, and other popular destinations. With over 5 years of experience, we've successfully guided thousands of clients through the complex immigration process, ensuring a smooth and stress-free journey.",
+    "missionLabel": "Mission",
+    "mission": "To empower individuals and families by providing expert immigration guidance, transparent processes, and unwavering support, helping them achieve their dreams of a better future.",
+    "visionLabel": "Vision",
+    "vision": "To be the most trusted and reliable immigration consultancy, recognized for our commitment to excellence, integrity, and client success.",
+    "whyTitle": "Why Choose Us?",
+    "whySubtext": "Choosing the right immigration consultant can make all the difference. Here's why clients trust us:",
+    "values": {
+      "certified": {
+        "title": "Certified Experts",
+        "description": "Our team consists of licensed and experienced immigration consultants."
+      },
+      "personalized": {
+        "title": "Personalized Guidance",
+        "description": "We tailor our services to meet your specific needs and goals."
+      },
+      "transparent": {
+        "title": "Transparent Processes",
+        "description": "No hidden fees or surprises – we keep you informed at every step."
+      },
+      "track": {
+        "title": "Proven Track Record",
+        "description": "Thousands of successful visa approvals and satisfied clients."
+      },
+      "support": {
+        "title": "End-to-End Support",
+        "description": "From eligibility assessment to visa approval, we're with you all the way."
+      }
+    },
+    "cta": {
+      "heading": "Ready to Start Your Immigration Journey?",
+      "subtext": "Let us help you take the first step toward a brighter future.",
+      "button": "Book a Free Consultation"
+    }
   },
   "thankYou": {
     "heading": "Your Inquiry Has Been Received",
@@ -130,7 +179,8 @@
       "subtext": "Assess your standing against international standards of professional excellence."
     },
     "cta": {
-      "button": "Book Consultation"
+      "button": "Book Consultation",
+      "subtext": "Our experts will chart a bespoke path for your immigration journey. Begin with a single, confidential consultation."
     }
   },
   "countries": {

@@ -6,17 +6,18 @@ import { Country } from '@/data/countries';
 export function CountryCard({ country }: { country: Country }) {
   const locale = useLocale();
   const highlight = country.homeHighlight || country.pathways.slice(0, 2).map((p) => p.title).join(' • ');
-  const href = country.isPublished ? `/${locale}/countries/${country.slug}` : `/${locale}/book`;
+  const href = country.isPublished ? `/${locale}/countries/${country.slug}` : `/${locale}/contact`;
   return (
     <Link 
       href={href}
-      className="min-w-[300px] md:min-w-[400px] snap-start relative group rounded-3xl overflow-hidden aspect-[3/4] block"
+      className="min-w-[300px] md:min-w-[400px] snap-start relative group rounded-3xl overflow-hidden aspect-[3/4] block focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <Image 
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" 
           alt={country.heroSubtext} 
           src={country.homeImage || country.heroImage}
           fill
+          sizes="(max-width: 768px) 100vw, 400px"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
       <div className="absolute bottom-8 left-8 right-8">

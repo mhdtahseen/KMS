@@ -10,25 +10,27 @@
     "about": "About"
   },
   "footer": {
-    "tagline": "Pioneering ethical immigration consulting for the Middle East's elite families and professionals since 2019.",
-    "services": "Services",
-    "company": "Company",
-    "connect": "Connect",
-    "process": "Our Process",
-    "countries": "Countries",
-    "testimonials": "Testimonials",
-    "contactUs": "Contact Us",
-    "skilledMigration": "Skilled Migration",
-    "studyPermits": "Study Permits",
-    "businessResidency": "Business Residency",
-    "legalAppeals": "Legal Appeals",
-    "copyright": "© 2024 KMS Consultants. All rights reserved.",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "office": "Office",
-    "address": "Tornado Tower, Level 22\nWest Bay, P.O. Box 27750\nDoha, State of Qatar",
-    "phone": "+974 4400 9000",
-    "email": "concierge@kmsconsultants.qa"
+    "tagline": "رواد الاستشارات الأخلاقية في مجال الهجرة لنخبة عائلات ومهنيي الشرق الأوسط منذ عام 2019.",
+    "services": "الخدمات",
+    "company": "الشركة",
+    "connect": "تواصل",
+    "process": "آلية عملنا",
+    "countries": "الدول",
+    "testimonials": "تجارب العملاء",
+    "contactUs": "اتصل بنا",
+    "aboutUs": "من نحن",
+    "skilledMigration": "الهجرة الماهرة",
+    "studyPermits": "تصاريح الدراسة",
+    "businessResidency": "الإقامة التجارية",
+    "legalAppeals": "الطعون القانونية",
+    "copyright": "© 2025 KMS Consultants. جميع الحقوق محفوظة.",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "office": "المكتب",
+    "address": "مبنى 3، مبنى الشيخ عبدالله الجابر\nعين خالد، طريق السلوى، ص.ب. 17409\nالدوحة، قطر",
+    "phone": "+974 4412 0578",
+    "phone2": "+974 4412 0580",
+    "email": "info@kms-consultants.com"
   },
   "home": {
     "hero": {
@@ -99,18 +101,64 @@
     "privacy": "Your data is encrypted under KMS Privacy Shield Protocol"
   },
   "booking": {
-    "badge": "Connect With Excellence",
-    "heading": "Begin Your Bespoke Journey",
-    "subtext": "Our team of immigration specialists in Doha is ready to provide the discreet, authoritative guidance required for your relocation and residency needs.",
-    "officeHeading": "Office Headquarters",
-    "formHeading": "Inquiry Request",
-    "liveOps": "Live Operations: Tornado Tower"
+    "badge": "تواصل مع التميز",
+    "heading": "ابدأ رحلتك المخصصة",
+    "subtext": "فريقنا من المتخصصين في الهجرة في الدوحة مستعد لتقديم التوجيه الموثوق والسري اللازم لاحتياجاتك في الإقامة والانتقال.",
+    "officeHeading": "المقر الرئيسي",
+    "formHeading": "طلب الاستفسار",
+    "liveOps": "عمليات مباشرة: المقر الرئيسي الدوحة",
+    "helpTitle": "نحن هنا للمساعدة",
+    "helpSubtext": "نرحب بجميع الاستفسارات المتعلقة بمتطلبات الهجرة ومعايير التأهل أو الجداول الزمنية. يقدم خبراؤنا معلومات دقيقة وقابلة للتنفيذ لدعم قراراتك.",
+    "callUs": "اتصل بنا",
+    "mailUs": "راسلنا",
+    "visitUs": "زورنا",
+    "hours": "متاح من 09:00 – 18:00 بتوقيت الخليج",
+    "responseTime": "الرد المتوقع خلال 4 ساعات",
+    "address": "مبنى 3، مبنى الشيخ عبدالله الجابر، عين خالد، طريق السلوى، ص.ب. 17409، الدوحة"
   },
   "thankYou": {
-    "heading": "Your Inquiry Has Been Received",
-    "subtext": "A senior consultant will contact you within 24 business hours to arrange your private briefing.",
-    "returnHome": "Return Home",
-    "exploreServices": "Explore Our Services"
+    "heading": "تم استلام استفساركم",
+    "subtext": "سيتواصل معكم أحد كبار المستشارين خلال 24 ساعة عمل لترتيب الاجتماع الخاص.",
+    "returnHome": "العودة للرئيسية",
+    "exploreServices": "تصفح خدماتنا"
+  },
+  "about": {
+    "badge": "قصتنا",
+    "heading": "من نحن",
+    "intro": "في KMS، نتخصص في مساعدة الأفراد والعائلات على تحقيق أحلامهم في الهجرة إلى كندا وأستراليا والولايات المتحدة وغيرها. بخبرة تمتد لأكثر من 5 سنوات، أرشدنا آلاف العملاء عبر رحلة الهجرة المعقدة.",
+    "missionLabel": "رسالتنا",
+    "mission": "تمكين الأفراد والعائلات من خلال توفير التوجيه المتخصص والعمليات الشفافة والدعم الثابت.",
+    "visionLabel": "رؤيتنا",
+    "vision": "أن نكون مستشار الهجرة الأكثر ثقة، المعروف بالتزامنا بالتميز والنزاهة وتحقيق نجاح عملائنا.",
+    "whyTitle": "لماذا تختارنا؟",
+    "whySubtext": "اختيار المستشار المناسب في مجال الهجرة يُحدث فارقاً كبيراً. إليك لماذا يثق بنا عملاؤنا:",
+    "values": {
+      "certified": {
+        "title": "خبراء معتمدون",
+        "description": "فريقنا يتكون من مستشاري هجرة مرخصين وذوي خبرة."
+      },
+      "personalized": {
+        "title": "توجيه شخصي",
+        "description": "نصمم خدماتنا لتلبية احتياجاتك وأهدافك المحددة."
+      },
+      "transparent": {
+        "title": "عمليات شفافة",
+        "description": "لا رسوم مخفية أو مفاجآت – نبقيك على علم بكل خطوة."
+      },
+      "track": {
+        "title": "سجل حافل بالإنجازات",
+        "description": "آلاف الموافقات الناجحة على التأشيرات وعملاء راضون."
+      },
+      "support": {
+        "title": "دعم شامل",
+        "description": "من تقييم الأهلية إلى الحصول على التأشيرة، نحن معك في كل خطوة."
+      }
+    },
+    "cta": {
+      "heading": "هل أنت مستعد لبدء رحلتك؟",
+      "subtext": "دعنا نساعدك في اتخاذ الخطوة الأولى نحو مستقبل أفضل.",
+      "button": "احجز استشارة مجانية"
+    }
   },
   "services": {
     "hero": {
@@ -130,7 +178,8 @@
       "subtext": "Assess your standing against international standards of professional excellence."
     },
     "cta": {
-      "button": "Book Consultation"
+      "button": "احجز استشارة",
+      "subtext": "سيضع خبراؤنا مساراً مخصصاً لرحلة هجرتك. ابدأ باستشارة سرية واحدة."
     }
   },
   "countries": {

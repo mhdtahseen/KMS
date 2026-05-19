@@ -99,11 +99,23 @@ export function BookingForm() {
           <div className="md:col-span-2 pt-6">
             <button 
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-primary/80 to-primary text-on-primary font-bold py-5 rounded-xl text-lg hover:shadow-[0_8px_24px_-4px_rgba(236,192,111,0.3)] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed" 
+              className="w-full bg-gradient-to-r from-primary/80 to-primary text-on-primary font-bold py-5 rounded-xl text-lg hover:shadow-[0_8px_24px_-4px_rgba(236,192,111,0.3)] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed" 
               type="submit"
             >
-              {isSubmitting ? 'Processing...' : t('submit')}
-              {!isSubmitting && <span className="material-symbols-outlined">chevron_right</span>}
+              {isSubmitting ? (
+                <>
+                  <svg className="animate-spin size-5 text-on-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                  <span>Processing…</span>
+                </>
+              ) : (
+                <>
+                  <span>{t('submit')}</span>
+                  <span className="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                </>
+              )}
             </button>
             <p className="text-center text-on-surface-variant/60 text-[11px] mt-6 italic">
               {t('privacy')}

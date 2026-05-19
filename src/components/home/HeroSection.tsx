@@ -28,7 +28,7 @@ export function HeroSection() {
                     </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href={`/${locale}/book`} className="bg-gold-gradient text-on-primary px-8 py-5 rounded-2xl font-bold text-lg tracking-tight hover:scale-105 transition-transform gold-glow text-center">
+                    <Link href={`/${locale}/contact`} className="bg-gold-gradient text-on-primary px-8 py-5 rounded-2xl font-bold text-lg tracking-tight hover:scale-105 transition-transform gold-glow text-center">
                         {t('ctaPrimary')}
                     </Link>
                     <Link href={`/${locale}#testimonials`} className="glass-card px-8 py-5 rounded-2xl font-bold text-lg border-white/10 hover:bg-white/10 transition-colors text-center">

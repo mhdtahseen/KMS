@@ -2,15 +2,18 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Country } from '@/data/countries';
+import { StickyCtaBar } from '@/components/shared/StickyCtaBar';
 
 export function CountryPageTemplate({ country }: { country: Country }) {
   const locale = useLocale();
+  const t = useTranslations('countries');
 
   return (
     <main className="bg-background text-on-background font-sans overflow-x-hidden">
+      <StickyCtaBar title={`${country.name} Immigration`} ctaText={t('cta.button')} />
       {/* Hero Section */}
       <section className="relative min-h-[921px] flex items-center justify-center overflow-hidden">
         <motion.div 
@@ -36,7 +39,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
             transition={{ delay: 0.5 }}
             className="font-sans text-xs font-bold text-primary tracking-[0.3em] uppercase mb-4 block"
           >
-            Destination Portfolio
+            {t('hero.badge')}
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -60,23 +63,18 @@ export function CountryPageTemplate({ country }: { country: Country }) {
             transition={{ delay: 1.2 }}
             className="flex flex-col md:flex-row gap-6 justify-center"
           >
-            <Link href={`/${locale}/book`} className="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg font-semibold text-lg shadow-lg hover:brightness-110 transition-all">
-              Begin Your Journey
+            <Link href={`/${locale}/contact`} className="bg-gold-gradient text-on-primary px-10 py-5 rounded-lg font-bold text-lg shadow-lg gold-glow hover:scale-[1.02] transition-transform">
+              {t('hero.ctaPrimary')}
             </Link>
             <Link href={`/${locale}/countries/${country.slug}#pathways`} className="glass-card px-10 py-5 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all">
-              View Pathways
+              {t('hero.ctaSecondary')}
             </Link>
           </motion.div>
         </div>
         
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        >
-          <span className="material-symbols-outlined text-primary text-3xl">keyboard_double_arrow_down</span>
-        </motion.div>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+          <span className="material-symbols-outlined text-primary text-3xl" aria-hidden="true">keyboard_double_arrow_down</span>
+        </div>
       </section>
 
       {/* Why Section */}
@@ -99,7 +97,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
               <div className="space-y-8">
                 <div className="flex items-start gap-6">
                   <div className="bg-primary-container/20 p-4 rounded-xl">
-                    <span className="material-symbols-outlined text-primary">verified_user</span>
+                    <span className="material-symbols-outlined text-primary" aria-hidden="true">verified_user</span>
                   </div>
                   <div>
                     <h4 className="font-serif text-xl font-medium mb-2">Social Security & Stability</h4>
@@ -108,7 +106,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                 </div>
                 <div className="flex items-start gap-6">
                   <div className="bg-primary-container/20 p-4 rounded-xl">
-                    <span className="material-symbols-outlined text-primary">school</span>
+                    <span className="material-symbols-outlined text-primary" aria-hidden="true">school</span>
                   </div>
                   <div>
                     <h4 className="font-serif text-xl font-medium mb-2">Elite Education</h4>
@@ -117,7 +115,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                 </div>
                 <div className="flex items-start gap-6">
                   <div className="bg-primary-container/20 p-4 rounded-xl">
-                    <span className="material-symbols-outlined text-primary">trending_up</span>
+                    <span className="material-symbols-outlined text-primary" aria-hidden="true">trending_up</span>
                   </div>
                   <div>
                     <h4 className="font-serif text-xl font-medium mb-2">Economic Prosperity</h4>
@@ -136,7 +134,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
             >
               <div className="space-y-6 pt-12">
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
-                  <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[0]} fill />
+                  <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[0]} fill sizes="(max-width: 768px) 50vw, 25vw" />
                 </div>
                 <div className="glass-card p-8 rounded-2xl">
                   <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[0].value}</span>
@@ -149,7 +147,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                   <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[1].label}</p>
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
-                  <Image alt="Nature" className="w-full h-full object-cover" src={country.whyChooseImages[1]} fill />
+                  <Image alt="Nature" className="w-full h-full object-cover" src={country.whyChooseImages[1]} fill sizes="(max-width: 768px) 50vw, 25vw" />
                 </div>
               </div>
             </motion.div>
@@ -161,8 +159,8 @@ export function CountryPageTemplate({ country }: { country: Country }) {
       <section id="pathways" className="py-[120px] bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-20">
-            <span className="font-sans text-xs font-bold text-primary tracking-widest mb-4 block uppercase">Strategic Routes</span>
-            <h2 className="font-serif text-[36px] font-semibold text-on-background">Available Visa Pathways</h2>
+            <span className="font-sans text-xs font-bold text-primary tracking-widest mb-4 block uppercase">{t('pathways.badge')}</span>
+            <h2 className="font-serif text-[36px] font-semibold text-on-background">{t('pathways.heading')}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {country.pathways.map((pathway, idx) => {
@@ -187,7 +185,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                     </div>
                   )}
                   <div className="relative z-10 p-10 flex flex-col h-full">
-                    <span className="material-symbols-outlined text-primary text-4xl mb-6">
+                    <span className="material-symbols-outlined text-primary text-4xl mb-6" aria-hidden="true">
                       {pathway.icon}
                     </span>
                     <h3 className="font-serif text-[28px] font-medium mb-4">{pathway.title}</h3>
@@ -195,8 +193,8 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                       {pathway.description}
                     </p>
                     <div className="mt-auto">
-                      <Link className="inline-flex items-center gap-2 text-primary font-semibold hover:underline" href={pathway.link || `/${locale}/book`}>
-                        {pathway.ctaLabel || (isLarge ? "Explore Pathway" : "Consult")} <span className="material-symbols-outlined">arrow_forward</span>
+                      <Link className="inline-flex items-center gap-2 text-primary font-semibold hover:underline" href={pathway.link || `/${locale}/contact`}>
+                        {pathway.ctaLabel || (isLarge ? "Explore Pathway" : "Consult")} <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
                       </Link>
                     </div>
                   </div>
@@ -216,7 +214,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-serif text-[36px] font-semibold mb-12">Residency Requirements</h2>
+              <h2 className="font-serif text-[36px] font-semibold mb-12">{t('requirements.heading')}</h2>
               <div className="space-y-6">
                 {country.requirements.map((req, idx) => (
                   <div key={idx} className="border-b border-white/10 pb-6">
@@ -238,9 +236,9 @@ export function CountryPageTemplate({ country }: { country: Country }) {
             >
               <div className="glass-card p-12 rounded-[40px] relative w-full">
                 <div className="absolute -top-6 -right-6 bg-primary-container p-6 rounded-2xl shadow-xl">
-                  <span className="material-symbols-outlined text-on-primary text-4xl">policy</span>
+                  <span className="material-symbols-outlined text-on-primary text-4xl" aria-hidden="true">policy</span>
                 </div>
-                <h3 className="font-serif text-2xl font-medium mb-8">The Pathway to Citizenship</h3>
+                <h3 className="font-serif text-2xl font-medium mb-8">{t('requirements.citizenshipHeading')}</h3>
                 <div className="relative pl-8 border-l-2 border-primary/30 space-y-12">
                   {country.citizenshipSteps.map((step, idx) => (
                     <div key={idx} className="relative">
@@ -258,7 +256,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
       </section>
 
       {/* Final Consultation CTA */}
-      <section className="py-[120px] px-8">
+      <section className="py-[120px] px-8" data-cta-section>
         <div className="max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
@@ -268,14 +266,14 @@ export function CountryPageTemplate({ country }: { country: Country }) {
           >
             <div className="absolute inset-0 gold-glow opacity-30 -z-10"></div>
             <div className="max-w-2xl mx-auto relative z-10">
-              <h2 className="font-serif text-[48px] font-semibold mb-8">Ready to Call <span className="text-primary">{country.name}</span> Your Home?</h2>
-              <p className="font-sans text-lg text-on-surface-variant mb-12">Our team of ICCRC certified consultants provides end-to-end bespoke solutions for your immigration journey from Doha to any {country.name === 'Canada' ? 'Canadian province' : 'destination'}.</p>
+              <h2 className="font-serif text-[48px] font-semibold mb-8">{country.ctaHeading}</h2>
+              <p className="font-sans text-lg text-on-surface-variant mb-12">{t('cta.subtext')}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href={`/${locale}/book`} className="bg-primary-container text-on-primary-container px-12 py-5 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-xl">
-                  Book a Private Consultation
+                <Link href={`/${locale}/contact`} className="bg-gold-gradient text-on-primary px-12 py-5 rounded-xl font-bold text-lg gold-glow hover:scale-[1.02] transition-transform shadow-xl">
+                  {t('cta.button')}
                 </Link>
               </div>
-              <p className="mt-8 text-sm text-on-surface-variant/60 font-medium font-sans">Confidentiality Assured • Expert Legal Guidance • Bespoke Planning</p>
+              <p className="mt-8 text-sm text-on-surface-variant/60 font-medium font-sans">{t('cta.trust')}</p>
             </div>
           </motion.div>
         </div>

@@ -149,6 +149,12 @@ export default function Header() {
           <Link href={`/${locale}#testimonials`} className={navLinkClass()}>
             {t("testimonials")}
           </Link>
+          <Link href={`/${locale}/about`} className={navLinkClass(pathname.includes("/about"))}>
+            {t("about")}
+          </Link>
+          <Link href={`/${locale}/contact`} className={navLinkClass(pathname.includes("/contact"))}>
+            {t("contact")}
+          </Link>
 
           {/* Language Switcher */}
           <button
@@ -161,7 +167,7 @@ export default function Header() {
 
         {/* CTA */}
         <Link
-          href={`/${locale}/book`}
+          href={`/${locale}/contact`}
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-xl font-bold text-sm tracking-wide transition-all gold-glow hover:opacity-90 hover:scale-105"
           style={{
             background: "linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%)",
@@ -173,11 +179,13 @@ export default function Header() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden p-2 text-[#d1c5b3]"
+          className="md:hidden p-2 text-[#d1c5b3] focus-visible:ring-2 focus-visible:ring-primary rounded-lg transition-colors hover:bg-white/10"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
-          <span className="material-symbols-outlined">
+          <span className="material-symbols-outlined" aria-hidden="true">
             {mobileOpen ? "close" : "menu"}
           </span>
         </button>
@@ -187,6 +195,7 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -221,6 +230,22 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
+              <div className="border-t border-white/10 pt-4 space-y-1">
+                <Link
+                  href={`/${locale}/about`}
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-sm text-[#d1c5b3] hover:text-[#ecc06f] py-1"
+                >
+                  {t("about")}
+                </Link>
+                <Link
+                  href={`/${locale}/contact`}
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-sm text-[#d1c5b3] hover:text-[#ecc06f] py-1"
+                >
+                  {t("contact")}
+                </Link>
+              </div>
               <div className="border-t border-white/10 pt-4 flex items-center gap-4">
                 <button
                   onClick={switchLocale}
@@ -229,7 +254,7 @@ export default function Header() {
                   {locale === "en" ? "AR" : "EN"}
                 </button>
                 <Link
-                  href={`/${locale}/book`}
+                  href={`/${locale}/contact`}
                   className="flex-1 text-center px-4 py-2.5 rounded-xl font-bold text-sm"
                   style={{
                     background: "linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%)",

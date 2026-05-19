@@ -177,9 +177,47 @@ export const countries: Country[] = [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
       'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
     ],
-    requirements: [],
-    citizenshipSteps: [],
+    requirements: [
+      {
+        title: 'Skilled Worker Sponsorship',
+        description: 'Must have a confirmed job offer from a UK Home Office–licensed sponsor in an eligible occupation.',
+        badge: 'Mandatory',
+      },
+      {
+        title: 'Salary Threshold',
+        description: 'Meet the minimum salary requirement for the specific occupation (generally £38,700 or the going rate, whichever is higher).',
+        badge: '£38,700+',
+      },
+      {
+        title: 'English Language Proficiency',
+        description: 'Demonstrate English at B1 level or above on the CEFR scale via an approved test or degree.',
+        badge: 'B1+ Required',
+      },
+      {
+        title: 'Financial Maintenance',
+        description: 'Hold at least £1,270 in a bank account for 28 consecutive days unless your employer certifies maintenance.',
+        badge: '£1,270',
+      },
+    ],
+    citizenshipSteps: [
+      {
+        step: '01',
+        title: 'Obtain Skilled Worker Visa',
+        description: 'Secure employer sponsorship and ILR after 5 years of lawful residence.',
+      },
+      {
+        step: '02',
+        title: 'Indefinite Leave to Remain (ILR)',
+        description: 'Apply for ILR after 5 continuous years in the UK with no extended absences.',
+      },
+      {
+        step: '03',
+        title: 'British Citizenship',
+        description: 'Apply for naturalisation after 12 months of ILR, passing the Life in the UK test.',
+      },
+    ],
     ctaHeading: 'Architect Your UK Future.',
+    isPublished: true,
   },
   {
     slug: 'australia',
@@ -215,9 +253,47 @@ export const countries: Country[] = [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
     ],
-    requirements: [],
-    citizenshipSteps: [],
+    requirements: [
+      {
+        title: 'Points Test Score',
+        description: 'Score at least 65 points under the SkillSelect points system, considering age, English, experience, and qualifications.',
+        badge: '65+ Points',
+      },
+      {
+        title: 'Skills Assessment',
+        description: 'Receive a positive skills assessment from the relevant Australian assessing authority for your occupation.',
+        badge: 'Mandatory',
+      },
+      {
+        title: 'English Language',
+        description: 'Achieve at least competent English (IELTS 6.0 or equivalent) for Subclass 189/190; higher for some streams.',
+        badge: 'IELTS 6.0+',
+      },
+      {
+        title: 'Health & Character',
+        description: 'Meet Australian health requirements and pass a character check with a clean criminal record.',
+        badge: 'Mandatory',
+      },
+    ],
+    citizenshipSteps: [
+      {
+        step: '01',
+        title: 'Obtain Permanent Residency',
+        description: 'Apply for a Subclass 189 (independent) or 190 (state-nominated) visa.',
+      },
+      {
+        step: '02',
+        title: 'Maintain Residency',
+        description: 'Reside in Australia for at least 4 years, including 1 year as a permanent resident.',
+      },
+      {
+        step: '03',
+        title: 'Citizenship Application',
+        description: 'Pass the citizenship test, demonstrate commitment to Australia, and attend the ceremony.',
+      },
+    ],
     ctaHeading: 'Launch Your Australian Life.',
+    isPublished: true,
   },
   {
     slug: 'usa',
@@ -253,9 +329,47 @@ export const countries: Country[] = [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
     ],
-    requirements: [],
-    citizenshipSteps: [],
+    requirements: [
+      {
+        title: 'Priority Date & Category',
+        description: 'Qualify under an employment-based (EB) or family-based preference category, subject to annual visa caps.',
+        badge: 'Category-Based',
+      },
+      {
+        title: 'PERM Labor Certification',
+        description: 'For most EB-2 and EB-3 categories, employer must obtain PERM certification from the Department of Labor.',
+        badge: 'Employer-Filed',
+      },
+      {
+        title: 'Admissibility Standards',
+        description: 'Pass background checks, medical examination, and demonstrate no bars to admissibility (criminal, health, financial).',
+        badge: 'Strict',
+      },
+      {
+        title: 'Affidavit of Support',
+        description: 'Sponsor must demonstrate financial ability to support the applicant above 125% of the federal poverty line.',
+        badge: '125% FPG',
+      },
+    ],
+    citizenshipSteps: [
+      {
+        step: '01',
+        title: 'Obtain Green Card',
+        description: 'Secure permanent residency through employment, family, or investment pathways.',
+      },
+      {
+        step: '02',
+        title: 'Maintain Continuous Residence',
+        description: 'Reside in the US for 5 years (3 years if married to a US citizen) without extended departures.',
+      },
+      {
+        step: '03',
+        title: 'Naturalization',
+        description: 'Pass the civics and English tests, attend an interview, and take the Oath of Allegiance.',
+      },
+    ],
     ctaHeading: 'Secure Your American Green Card.',
+    isPublished: true,
   },
   {
     slug: 'european-union',
@@ -289,9 +403,47 @@ export const countries: Country[] = [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
       'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
     ],
-    requirements: [],
-    citizenshipSteps: [],
+    requirements: [
+      {
+        title: 'Minimum Investment',
+        description: 'Meet the capital threshold for the target country (e.g., Portugal €500K real estate or €250K cultural investment).',
+        badge: 'Capital Required',
+      },
+      {
+        title: 'Clean Criminal Record',
+        description: 'Provide authenticated police clearance from all countries of residence in the past 5 years.',
+        badge: 'Mandatory',
+      },
+      {
+        title: 'Health Insurance',
+        description: 'Obtain valid health insurance covering the entire Schengen Area for yourself and all dependents.',
+        badge: 'Full Schengen',
+      },
+      {
+        title: 'Minimum Stay Compliance',
+        description: 'Maintain the minimum physical presence required by the specific program (e.g., 7 days/year for Portugal Golden Visa).',
+        badge: 'Program-Specific',
+      },
+    ],
+    citizenshipSteps: [
+      {
+        step: '01',
+        title: 'Obtain Golden Visa / Residency',
+        description: 'Qualify through investment (real estate, capital, or job creation) in the target EU country.',
+      },
+      {
+        step: '02',
+        title: 'Maintain Investment & Residence',
+        description: 'Sustain the qualifying investment and meet minimum annual stay requirements for 5 years.',
+      },
+      {
+        step: '03',
+        title: 'Permanent Residency & Citizenship',
+        description: 'Apply for permanent residency after 5 years, then citizenship after meeting language and integration criteria.',
+      },
+    ],
     ctaHeading: 'Unlock European Mobility.',
+    isPublished: true,
   },
 ];
 

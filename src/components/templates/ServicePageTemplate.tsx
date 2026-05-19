@@ -2,20 +2,23 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Service } from '@/data/services';
+import { StickyCtaBar } from '@/components/shared/StickyCtaBar';
 
 export function ServicePageTemplate({ service }: { service: Service }) {
   const locale = useLocale();
+  const t = useTranslations('services');
 
   const destinationCards = service.destinationCards ?? [];
 
   return (
     <main className="bg-background text-on-background font-body-md overflow-x-hidden">
+      <StickyCtaBar title={service.title} ctaText={t('cta.button')} />
       <section className="relative min-h-[819px] flex items-center justify-center pt-24 pb-section-padding px-6 md:px-margin-desktop overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image className="w-full h-full object-cover opacity-30" src={service.heroImage} alt={service.title} fill priority />
+          <Image className="w-full h-full object-cover opacity-30" src={service.heroImage} alt={service.title} fill priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background"></div>
         </div>
         <div className="relative z-10 max-w-container-max mx-auto text-center">
@@ -46,11 +49,11 @@ export function ServicePageTemplate({ service }: { service: Service }) {
             {service.heroSubtext}
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <Link href={`/${locale}/book`} className="px-10 py-5 bg-primary-container text-on-primary-container font-label-caps uppercase tracking-widest rounded-none hover:bg-primary transition-all">
-              Start Assessment
+            <Link href={`/${locale}/contact`} className="px-10 py-5 bg-primary-container text-on-primary-container font-label-caps uppercase tracking-widest rounded-none hover:bg-primary transition-all">
+              {t('overview.cta')}
             </Link>
-            <Link href={`/${locale}/book`} className="px-10 py-5 glass-card text-on-background font-label-caps uppercase tracking-widest rounded-none hover:bg-white/10 transition-all">
-              Download Brochure
+            <Link href={`/${locale}/contact`} className="px-10 py-5 glass-card text-on-background font-label-caps uppercase tracking-widest rounded-none hover:bg-white/10 transition-all">
+              {t('overview.download')}
             </Link>
           </motion.div>
         </div>
@@ -85,8 +88,8 @@ export function ServicePageTemplate({ service }: { service: Service }) {
           <div className="max-w-container-max mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div className="max-w-xl">
-                <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-4">Strategic Destinations</h2>
-                <p className="font-body-md text-on-surface-variant">Selected jurisdictions offering high-priority processing for skilled professionals from the GCC region.</p>
+                <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-4">{t('destinations.heading')}</h2>
+                <p className="font-body-md text-on-surface-variant">{t('destinations.subtext')}</p>
               </div>
               <Link href={`/${locale}/countries/canada`} className="text-primary font-label-caps uppercase flex items-center gap-2 hover:gap-4 transition-all group">
                 Explore All Countries <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -115,8 +118,8 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       <section className="py-section-padding px-6 md:px-margin-desktop bg-surface-container-low" id="eligibility">
         <div className="max-w-container-max mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-4">Eligibility Matrix</h2>
-            <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto">Assess your standing against international standards of professional excellence.</p>
+            <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-4">{t('eligibility.heading')}</h2>
+            <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto">{t('eligibility.subtext')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {service.eligibilityCriteria.map((criterion) => {
@@ -124,14 +127,14 @@ export function ServicePageTemplate({ service }: { service: Service }) {
                 return (
                   <div key={criterion.title} className="glass-card p-10 bg-primary/5 border-primary/30 flex flex-col justify-between md:row-span-2">
                     <div>
-                      <span className="material-symbols-outlined text-primary text-4xl mb-6">{criterion.icon}</span>
+                      <span className="material-symbols-outlined text-primary text-4xl mb-6" aria-hidden="true">{criterion.icon}</span>
                       <h4 className="font-headline text-2xl md:text-h3 mb-4">{criterion.title}</h4>
                       <p className="font-body-md text-on-surface-variant mb-6">{criterion.description}</p>
                       {criterion.checkPoints ? (
                         <ul className="space-y-4">
                           {criterion.checkPoints.map((point) => (
                             <li key={point} className="flex items-start gap-3">
-                              <span className="material-symbols-outlined text-primary text-xl mt-1">check_circle</span>
+                              <span className="material-symbols-outlined text-primary text-xl mt-1" aria-hidden="true">check_circle</span>
                               <span className="font-body-md">{point}</span>
                             </li>
                           ))}
@@ -153,7 +156,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
               return (
                 <div key={criterion.title} className={`glass-card p-10 flex flex-col justify-between min-h-[320px] ${criterion.accent ? 'bg-[#7F5E15]/20' : ''}`}>
                   <div>
-                    <span className="material-symbols-outlined text-primary text-4xl mb-6">{criterion.icon}</span>
+                    <span className="material-symbols-outlined text-primary text-4xl mb-6" aria-hidden="true">{criterion.icon}</span>
                     <h4 className="font-headline text-2xl md:text-h3 mb-4">{criterion.title}</h4>
                     <p className="font-body-md text-on-surface-variant">{criterion.description}</p>
                   </div>
@@ -187,17 +190,17 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </div>
       </section>
 
-      <section className="py-section-padding px-6 md:px-margin-desktop bg-surface-container-lowest">
+      <section className="py-section-padding px-6 md:px-margin-desktop bg-surface-container-lowest" data-cta-section>
         <div className="max-w-container-max mx-auto">
           <div className="glass-card p-12 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="absolute top-0 right-0 w-96 h-96 gold-halo opacity-30 -mr-48 -mt-48 pointer-events-none"></div>
             <div className="relative z-10 max-w-2xl">
               <h2 className="font-headline text-4xl md:text-[42px] mb-8 leading-tight">{service.ctaHeading}</h2>
-              <p className="font-body-lg text-on-surface-variant/80 mb-0">Your journey from Doha to global leadership begins with a single, confidential consultation. Let our experts chart your path.</p>
+              <p className="font-body-lg text-on-surface-variant/80 mb-0">{t('cta.subtext')}</p>
             </div>
             <div className="relative z-10 shrink-0">
-              <Link href={`/${locale}/book`} className="inline-block bg-primary text-on-primary px-12 py-6 font-label-caps uppercase tracking-[0.2em] shadow-2xl hover:bg-secondary transition-all">
-                Book Consultation
+              <Link href={`/${locale}/contact`} className="inline-block bg-gold-gradient text-on-primary px-12 py-6 font-label-caps uppercase tracking-[0.2em] shadow-2xl gold-glow hover:scale-[1.02] transition-transform rounded-xl">
+                {t('cta.button')}
               </Link>
             </div>
           </div>

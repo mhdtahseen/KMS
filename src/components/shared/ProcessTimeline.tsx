@@ -63,8 +63,8 @@ export function ProcessTimeline({ heading, steps }: ProcessTimelineProps) {
             {displaySteps.map((step, index) => (
                 <div key={index} className="relative group text-center space-y-6">
                     <div className="size-24 rounded-full bg-surface-container-high border border-primary/20 flex items-center justify-center mx-auto relative z-10 group-hover:bg-primary transition-colors duration-500">
-                        <span className="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary">{step.icon}</span>
-                        <div className="absolute -top-2 -right-2 size-8 bg-primary text-on-primary rounded-full flex items-center justify-center text-xs font-black">
+                        <span className="material-symbols-outlined text-3xl text-primary group-hover:text-on-primary" aria-hidden="true">{step.icon}</span>
+                        <div className="absolute -top-2 -right-2 size-8 bg-primary text-on-primary rounded-full flex items-center justify-center text-xs font-black" aria-hidden="true">
                             {(index + 1).toString().padStart(2, '0')}
                         </div>
                     </div>

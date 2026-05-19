@@ -22,9 +22,9 @@ export default function Footer() {
       />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-16">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-2">
             <span
               className="text-xl font-bold block mb-4"
               style={{ fontFamily: "var(--font-serif)", color: "#eae1d8" }}
@@ -36,15 +36,21 @@ export default function Footer() {
             </p>
             {/* Social icons */}
             <div className="flex gap-3">
-              {["link", "mail", "call"].map((icon) => (
-                <button
-                  key={icon}
+              {([
+                { icon: "public", href: "https://linkedin.com/in/kmsconsultants/", label: "LinkedIn" },
+                { icon: "alternate_email", href: `mailto:${t("email")}`, label: "Email" },
+                { icon: "call", href: `tel:${t("phone").replace(/\s/g, "")}`, label: "Phone" },
+              ] as const).map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  aria-label={item.label}
                   className="glass-card-light w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:border-[#ecc06f]/40"
                 >
                   <span className="material-symbols-outlined text-base" style={{ color: "#9a8f7f", fontSize: "18px" }}>
-                    {icon}
+                    {item.icon}
                   </span>
-                </button>
+                </a>
               ))}
             </div>
           </div>
@@ -95,7 +101,35 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Office & Connect */}
+          {/* Company */}
+          <div>
+            <p
+              className="text-xs font-bold uppercase tracking-[0.15em] mb-5"
+              style={{ color: "#ecc06f" }}
+            >
+              {t("company")}
+            </p>
+            <ul className="space-y-3">
+              {([
+                { label: t("aboutUs"), href: `/${locale}/about` },
+                { label: t("contactUs"), href: `/${locale}/contact` },
+                { label: t("process"), href: `/${locale}#process` },
+                { label: t("testimonials"), href: `/${locale}#testimonials` },
+              ] as const).map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-sm transition-colors hover:text-[#ecc06f]"
+                    style={{ color: "#d1c5b3" }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Office */}
           <div>
             <p
               className="text-xs font-bold uppercase tracking-[0.15em] mb-5"
@@ -104,20 +138,25 @@ export default function Footer() {
               {t("office")}
             </p>
             <address className="not-italic space-y-3">
-              <p className="text-sm leading-relaxed" style={{ color: "#d1c5b3" }}>
-                Tornado Tower, Level 22<br />
-                West Bay, P.O. Box 27750<br />
-                Doha, State of Qatar
+              <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: "#d1c5b3" }}>
+                {t("address")}
               </p>
               <a
-                href="tel:+97444009000"
+                href={`tel:${t("phone").replace(/\s/g, "")}`}
                 className="text-sm block hover:text-[#ecc06f] transition-colors"
                 style={{ color: "#d1c5b3" }}
               >
                 {t("phone")}
               </a>
               <a
-                href="mailto:concierge@kmsconsultants.qa"
+                href={`tel:${t("phone2").replace(/\s/g, "")}`}
+                className="text-sm block hover:text-[#ecc06f] transition-colors"
+                style={{ color: "#d1c5b3" }}
+              >
+                {t("phone2")}
+              </a>
+              <a
+                href={`mailto:${t("email")}`}
                 className="text-sm block hover:text-[#ecc06f] transition-colors"
                 style={{ color: "#d1c5b3" }}
               >
