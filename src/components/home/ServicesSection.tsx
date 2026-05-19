@@ -2,12 +2,13 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { publishedServices } from '@/data/services';
+import { getPublishedServices } from '@/data/services';
 
 export function ServicesSection() {
   const t = useTranslations('home.services');
   const locale = useLocale();
 
+  const publishedServices = getPublishedServices(locale);
   const featured = publishedServices.slice(0, 3);
 
   return (

@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { publishedServices } from "@/data/services";
-import { publishedCountries } from "@/data/countries";
+import { getPublishedServices } from "@/data/services";
+import { getPublishedCountries } from "@/data/countries";
 
 const KMSLogo = () => (
   <svg
@@ -97,7 +97,7 @@ export default function Header() {
                   transition={{ duration: 0.15 }}
                   className="absolute top-full left-0 mt-2 w-56 glass-card rounded-xl overflow-hidden py-2"
                 >
-                  {publishedServices.map((s) => (
+                  {getPublishedServices(locale).map((s) => (
                     <Link
                       key={s.slug}
                       href={`/${locale}/services/${s.slug}`}
@@ -129,7 +129,7 @@ export default function Header() {
                   transition={{ duration: 0.15 }}
                   className="absolute top-full left-0 mt-2 w-48 glass-card rounded-xl overflow-hidden py-2"
                 >
-                  {publishedCountries.map((c) => (
+                  {getPublishedCountries(locale).map((c) => (
                     <Link
                       key={c.slug}
                       href={`/${locale}/countries/${c.slug}`}
@@ -205,7 +205,7 @@ export default function Header() {
               <p className="text-xs font-bold uppercase tracking-widest text-[#ecc06f]">
                 Services
               </p>
-              {publishedServices.map((s) => (
+              {getPublishedServices(locale).map((s) => (
                 <Link
                   key={s.slug}
                   href={`/${locale}/services/${s.slug}`}
@@ -219,7 +219,7 @@ export default function Header() {
                 <p className="text-xs font-bold uppercase tracking-widest text-[#ecc06f] mb-3">
                   Countries
                 </p>
-                {publishedCountries.map((c) => (
+                {getPublishedCountries(locale).map((c) => (
                   <Link
                     key={c.slug}
                     href={`/${locale}/countries/${c.slug}`}

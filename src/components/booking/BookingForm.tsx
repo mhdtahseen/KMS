@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { useBookingForm } from '@/hooks/useBookingForm';
-import { services } from '@/data/services';
+import { getPublishedServices } from '@/data/services';
 
 export function BookingForm() {
   const t = useTranslations('form');
@@ -71,7 +71,7 @@ export function BookingForm() {
               name="service"
               className="bg-white/5 border-0 border-b-2 border-outline-variant/30 py-3 px-1 text-on-surface focus:ring-0 focus:border-primary focus:bg-white/10 transition-all appearance-none cursor-pointer"
             >
-              {services.map(s => (
+              {getPublishedServices(locale).map(s => (
                 <option key={s.slug} value={s.slug} className="bg-surface-container-high">{s.title}</option>
               ))}
             </select>

@@ -1,12 +1,12 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { publishedCountries } from '@/data/countries';
+import { getPublishedCountries } from '@/data/countries';
 import { CountryPageTemplate } from '@/components/templates/CountryPageTemplate';
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
-  return publishedCountries.flatMap((country) =>
+  return getPublishedCountries('en').flatMap((country) =>
     ['en', 'ar'].map((locale) => ({ locale, slug: country.slug }))
   );
 }
@@ -16,8 +16,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const country = publishedCountries.find((c) => c.slug === slug);
+  const { locale, slug } = await params;
+  const country = getPublishedCountries(locale).find((c) => c.slug === slug);
   if (!country) return {};
 
   const title = `${country.name} Immigration & Visa Services`;
@@ -53,7 +53,7 @@ export default async function CountryPage({ params }: { params: Promise<{ locale
   const { locale, slug } = await params;
   setRequestLocale(locale);
   
-  const country = publishedCountries.find((c) => c.slug === slug);
+  const country = getPublishedCountries(locale).find((c) => c.slug === slug);
 
   if (!country) {
     notFound();

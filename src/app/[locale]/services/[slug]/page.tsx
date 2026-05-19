@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { publishedServices } from '@/data/services';
+import { getPublishedServices } from '@/data/services';
 import { ServicePageTemplate } from '@/components/templates/ServicePageTemplate';
 import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
+  const publishedServices = getPublishedServices('en');
   return publishedServices.flatMap((service) =>
     ['en', 'ar'].map((locale) => ({ locale, slug: service.slug }))
   );
@@ -16,7 +17,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  const publishedServices = getPublishedServices(locale);
   const service = publishedServices.find((s) => s.slug === slug);
   if (!service) return {};
 
@@ -53,6 +55,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
   const { locale, slug } = await params;
   setRequestLocale(locale);
   
+  const publishedServices = getPublishedServices(locale);
   const service = publishedServices.find((s) => s.slug === slug);
 
   if (!service) {

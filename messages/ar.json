@@ -1,21 +1,21 @@
 {
   "nav": {
-    "services": "Services",
-    "countries": "Countries",
-    "process": "Process",
-    "testimonials": "Testimonials",
-    "contact": "Contact",
-    "cta": "Get Consultation",
-    "home": "Home",
-    "about": "About"
+    "services": "الخدمات",
+    "countries": "الوجهات",
+    "process": "آلية العمل",
+    "testimonials": "تجارب العملاء",
+    "contact": "اتصل بنا",
+    "cta": "احصل على استشارة",
+    "home": "الرئيسية",
+    "about": "من نحن"
   },
   "footer": {
     "tagline": "رواد الاستشارات الأخلاقية في مجال الهجرة لنخبة عائلات ومهنيي الشرق الأوسط منذ عام 2019.",
     "services": "الخدمات",
     "company": "الشركة",
-    "connect": "تواصل",
+    "connect": "تواصل معنا",
     "process": "آلية عملنا",
-    "countries": "الدول",
+    "countries": "الوجهات",
     "testimonials": "تجارب العملاء",
     "contactUs": "اتصل بنا",
     "aboutUs": "من نحن",
@@ -26,7 +26,7 @@
     "copyright": "© 2025 KMS Consultants. جميع الحقوق محفوظة.",
     "privacy": "سياسة الخصوصية",
     "terms": "شروط الخدمة",
-    "office": "المكتب",
+    "office": "المقر الرئيسي",
     "address": "مبنى 3، مبنى الشيخ عبدالله الجابر\nعين خالد، طريق السلوى، ص.ب. 17409\nالدوحة، قطر",
     "phone": "+974 4412 0578",
     "phone2": "+974 4412 0580",
@@ -34,85 +34,85 @@
   },
   "home": {
     "hero": {
-      "badge": "Global Mobility Experts",
-      "headline": "Making Dreams Come True,",
-      "headlineAccent": "One Visa at a Time",
-      "subtext": "Trusted immigration consultancy helping families and professionals seamlessly move to Canada, UK, Australia, USA and Europe.",
-      "ctaPrimary": "Check Your Eligibility",
-      "ctaSecondary": "Our Success Stories",
-      "liveCount": "Live Success Count: 1,482+"
+      "badge": "خبراء التنقل العالمي",
+      "headline": "نجعل الأحلام حقيقة،",
+      "headlineAccent": "تأشيرة تلو الأخرى",
+      "subtext": "شركة استشارات هجرة موثوقة تساعد العائلات والمهنيين على الانتقال بسلاسة إلى كندا، المملكة المتحدة، أستراليا، الولايات المتحدة الأمريكية وأوروبا.",
+      "ctaPrimary": "تحقق من أهليتك",
+      "ctaSecondary": "قصص نجاحنا",
+      "liveCount": "عدد الحالات الناجحة: +1,482"
     },
     "trust": {
-      "clients": "Happy Clients",
-      "years": "Years Experience",
-      "countries": "Countries Served",
-      "successRate": "Success Rate"
+      "clients": "عملاء سعداء",
+      "years": "سنوات من الخبرة",
+      "countries": "دولة نخدمها",
+      "successRate": "نسبة النجاح"
     },
     "services": {
-      "heading": "Specialized Immigration Pathways",
-      "subtext": "We don't just process papers; we engineer futures through curated legal strategies.",
-      "seeAll": "See All Services →"
+      "heading": "مسارات الهجرة المتخصصة",
+      "subtext": "نحن لا نقوم فقط بتخليص المعاملات؛ بل نبني مستقبلاً من خلال استراتيجيات قانونية مدروسة.",
+      "seeAll": "عرض جميع الخدمات ←"
     },
     "process": {
-      "heading": "The KMS Four-Step Protocol"
+      "heading": "بروتوكول KMS المكون من أربع خطوات"
     },
     "destinations": {
-      "heading": "Global Destinations"
+      "heading": "الوجهات العالمية"
     },
     "testimonials": {
-      "heading": "Successful Transitions"
+      "heading": "انتقالات ناجحة"
     },
     "cta": {
-      "heading": "Your journey begins with a conversation.",
-      "description": "Fill out our eligibility form and one of our senior consultants will reach out to schedule a private briefing.",
+      "heading": "رحلتك تبدأ بمحادثة.",
+      "description": "يرجى ملء نموذج تقييم الأهلية وسيقوم أحد كبار مستشارينا بالتواصل معك لتحديد موعد لاجتماع خاص.",
       "features": {
         "confidential": {
-          "title": "Confidential Assessment",
-          "description": "Your personal data is protected by strict privacy protocols."
+          "title": "تقييم سري",
+          "description": "بياناتك الشخصية محمية ببروتوكولات خصوصية صارمة."
         },
         "response": {
-          "title": "Rapid Response",
-          "description": "Initial eligibility results typically shared within 24 business hours."
+          "title": "استجابة سريعة",
+          "description": "عادة ما يتم إرسال نتائج التقييم المبدئي خلال 24 ساعة عمل."
         }
       },
       "form": {
-        "termsPrefix": "By submitting this form, you agree to our",
-        "terms": "Terms of Service",
-        "privacy": "Privacy Policy"
+        "termsPrefix": "بإرسالك لهذا النموذج، فإنك توافق على",
+        "terms": "شروط الخدمة",
+        "privacy": "سياسة الخصوصية"
       },
-      "submit": "Submit Free Assessment"
+      "submit": "إرسال التقييم المجاني"
     }
   },
   "form": {
-    "fullName": "Full Name",
-    "email": "Email Address",
-    "phone": "Phone Number",
-    "service": "Intended Service",
-    "destination": "Destination Country",
-    "message": "Confidential Message",
-    "namePlaceholder": "Hassan Al-Mahmoud",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "service": "الخدمة المطلوبة",
+    "destination": "بلد الوجهة",
+    "message": "رسالة سرية",
+    "namePlaceholder": "حسن المحمود",
     "emailPlaceholder": "h.mahmoud@example.com",
     "phonePlaceholder": "+974 5500 0000",
-    "destinationPlaceholder": "e.g. United Kingdom, Canada, European Union",
-    "messagePlaceholder": "Describe your current status and migration objectives...",
-    "submit": "Request Private Briefing",
-    "successToast": "Inquiry Submitted — We'll be in touch shortly.",
-    "errorToast": "Something went wrong — please try again or call us directly.",
-    "privacy": "Your data is encrypted under KMS Privacy Shield Protocol"
+    "destinationPlaceholder": "مثال: المملكة المتحدة، كندا، الاتحاد الأوروبي",
+    "messagePlaceholder": "صف وضعك الحالي وأهداف الهجرة...",
+    "submit": "طلب اجتماع خاص",
+    "successToast": "تم إرسال الاستفسار — سنتواصل معك قريباً.",
+    "errorToast": "حدث خطأ ما — يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.",
+    "privacy": "بياناتك مشفرة بموجب بروتوكول حماية الخصوصية الخاص بنا"
   },
   "booking": {
     "badge": "تواصل مع التميز",
     "heading": "ابدأ رحلتك المخصصة",
     "subtext": "فريقنا من المتخصصين في الهجرة في الدوحة مستعد لتقديم التوجيه الموثوق والسري اللازم لاحتياجاتك في الإقامة والانتقال.",
     "officeHeading": "المقر الرئيسي",
-    "formHeading": "طلب الاستفسار",
-    "liveOps": "عمليات مباشرة: المقر الرئيسي الدوحة",
+    "formHeading": "طلب استفسار",
+    "liveOps": "عمليات مباشرة: المقر الرئيسي في الدوحة",
     "helpTitle": "نحن هنا للمساعدة",
     "helpSubtext": "نرحب بجميع الاستفسارات المتعلقة بمتطلبات الهجرة ومعايير التأهل أو الجداول الزمنية. يقدم خبراؤنا معلومات دقيقة وقابلة للتنفيذ لدعم قراراتك.",
     "callUs": "اتصل بنا",
     "mailUs": "راسلنا",
-    "visitUs": "زورنا",
-    "hours": "متاح من 09:00 – 18:00 بتوقيت الخليج",
+    "visitUs": "تفضل بزيارتنا",
+    "hours": "متاح من 09:00 إلى 18:00 بتوقيت مكة المكرمة",
     "responseTime": "الرد المتوقع خلال 4 ساعات",
     "address": "مبنى 3، مبنى الشيخ عبدالله الجابر، عين خالد، طريق السلوى، ص.ب. 17409، الدوحة"
   },
@@ -125,86 +125,86 @@
   "about": {
     "badge": "قصتنا",
     "heading": "من نحن",
-    "intro": "في KMS، نتخصص في مساعدة الأفراد والعائلات على تحقيق أحلامهم في الهجرة إلى كندا وأستراليا والولايات المتحدة وغيرها. بخبرة تمتد لأكثر من 5 سنوات، أرشدنا آلاف العملاء عبر رحلة الهجرة المعقدة.",
+    "intro": "في KMS، نتخصص في مساعدة الأفراد والعائلات على تحقيق أحلامهم في الهجرة إلى كندا وأستراليا والولايات المتحدة وغيرها من الوجهات المفضلة. بخبرة تمتد لأكثر من 5 سنوات، أرشدنا آلاف العملاء عبر رحلة الهجرة المعقدة، لضمان رحلة سلسة وخالية من التوتر.",
     "missionLabel": "رسالتنا",
-    "mission": "تمكين الأفراد والعائلات من خلال توفير التوجيه المتخصص والعمليات الشفافة والدعم الثابت.",
+    "mission": "تمكين الأفراد والعائلات من خلال توفير التوجيه المتخصص والعمليات الشفافة والدعم الدائم، لمساعدتهم في تحقيق أحلامهم بمستقبل أفضل.",
     "visionLabel": "رؤيتنا",
-    "vision": "أن نكون مستشار الهجرة الأكثر ثقة، المعروف بالتزامنا بالتميز والنزاهة وتحقيق نجاح عملائنا.",
+    "vision": "أن نكون شركة استشارات الهجرة الأكثر ثقة وموثوقية، والمعروفة بالتزامنا بالتميز والنزاهة وتحقيق نجاح عملائنا.",
     "whyTitle": "لماذا تختارنا؟",
-    "whySubtext": "اختيار المستشار المناسب في مجال الهجرة يُحدث فارقاً كبيراً. إليك لماذا يثق بنا عملاؤنا:",
+    "whySubtext": "اختيار المستشار المناسب في مجال الهجرة يُحدث فارقاً كبيراً. إليك أسباب ثقة عملائنا بنا:",
     "values": {
       "certified": {
         "title": "خبراء معتمدون",
-        "description": "فريقنا يتكون من مستشاري هجرة مرخصين وذوي خبرة."
+        "description": "فريقنا يتكون من مستشاري هجرة مرخصين وذوي خبرة عالية."
       },
       "personalized": {
-        "title": "توجيه شخصي",
-        "description": "نصمم خدماتنا لتلبية احتياجاتك وأهدافك المحددة."
+        "title": "توجيه شخصي مخصص",
+        "description": "نصمم خدماتنا لتلبية احتياجاتك وأهدافك المحددة بدقة."
       },
       "transparent": {
         "title": "عمليات شفافة",
-        "description": "لا رسوم مخفية أو مفاجآت – نبقيك على علم بكل خطوة."
+        "description": "لا رسوم مخفية أو مفاجآت – نبقيك على علم بكل خطوة من الطريق."
       },
       "track": {
         "title": "سجل حافل بالإنجازات",
         "description": "آلاف الموافقات الناجحة على التأشيرات وعملاء راضون."
       },
       "support": {
-        "title": "دعم شامل",
+        "title": "دعم شامل ومتكامل",
         "description": "من تقييم الأهلية إلى الحصول على التأشيرة، نحن معك في كل خطوة."
       }
     },
     "cta": {
-      "heading": "هل أنت مستعد لبدء رحلتك؟",
-      "subtext": "دعنا نساعدك في اتخاذ الخطوة الأولى نحو مستقبل أفضل.",
+      "heading": "هل أنت مستعد لبدء رحلة الهجرة؟",
+      "subtext": "دعنا نساعدك في اتخاذ الخطوة الأولى نحو مستقبل مشرق.",
       "button": "احجز استشارة مجانية"
     }
   },
   "services": {
     "hero": {
-      "badge": "Elite Global Mobility"
+      "badge": "التنقل العالمي للنخبة"
     },
     "overview": {
-      "cta": "Start Assessment",
-      "download": "Download Brochure"
+      "cta": "ابدأ التقييم",
+      "download": "تحميل الكتيب المرجعي"
     },
     "destinations": {
-      "heading": "Strategic Destinations",
-      "subtext": "Selected jurisdictions offering high-priority processing for skilled professionals from the GCC region.",
-      "exploreAll": "Explore All Countries"
+      "heading": "الوجهات الاستراتيجية",
+      "subtext": "دول مختارة توفر أولوية في المعالجة للمهنيين ذوي المهارات العالية من منطقة الخليج العربي.",
+      "exploreAll": "استكشف جميع الدول"
     },
     "eligibility": {
-      "heading": "Eligibility Matrix",
-      "subtext": "Assess your standing against international standards of professional excellence."
+      "heading": "مصفوفة الأهلية",
+      "subtext": "قيّم وضعك وفقاً للمعايير الدولية للتميز المهني."
     },
     "cta": {
       "button": "احجز استشارة",
-      "subtext": "سيضع خبراؤنا مساراً مخصصاً لرحلة هجرتك. ابدأ باستشارة سرية واحدة."
+      "subtext": "سيضع خبراؤنا مساراً مخصصاً لرحلة هجرتك. ابدأ الآن باستشارة سرية."
     }
   },
   "countries": {
     "hero": {
-      "badge": "Destination Portfolio",
-      "ctaPrimary": "Begin Your Journey",
-      "ctaSecondary": "View Pathways"
+      "badge": "مجموعة الوجهات",
+      "ctaPrimary": "ابدأ رحلتك",
+      "ctaSecondary": "عرض المسارات"
     },
     "whyChoose": {
-      "prefix": "Why Global Leaders Choose"
+      "prefix": "لماذا يختار قادة العالم"
     },
     "pathways": {
-      "badge": "Strategic Routes",
-      "heading": "Available Visa Pathways"
+      "badge": "طرق استراتيجية",
+      "heading": "مسارات التأشيرات المتاحة"
     },
     "requirements": {
-      "heading": "Residency Requirements",
-      "citizenshipHeading": "The Pathway to Citizenship"
+      "heading": "متطلبات الإقامة",
+      "citizenshipHeading": "الطريق إلى المواطنة"
     },
     "cta": {
-      "prefix": "Ready to Call",
-      "suffix": "Your Home?",
-      "subtext": "Our team of ICCRC certified consultants provides end-to-end bespoke solutions for your immigration journey.",
-      "button": "Book a Private Consultation",
-      "trust": "Confidentiality Assured • Expert Legal Guidance • Bespoke Planning"
+      "prefix": "هل أنت مستعد لجعل",
+      "suffix": "وطناً لك؟",
+      "subtext": "يوفر فريقنا من المستشارين المعتمدين من ICCRC حلولاً مخصصة متكاملة لرحلة هجرتك.",
+      "button": "احجز استشارة خاصة",
+      "trust": "السرية مضمونة • توجيه قانوني من الخبراء • تخطيط مخصص"
     }
   }
 }

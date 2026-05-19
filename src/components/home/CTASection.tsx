@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import { countries } from '@/data/countries';
+import { getPublishedCountries } from '@/data/countries';
 
 export function CTASection() {
   const t = useTranslations('home.cta');
@@ -114,7 +114,7 @@ export function CTASection() {
                   defaultValue=""
                 >
                   <option value="" disabled hidden>{tForm('destinationPlaceholder')}</option>
-                  {countries.map((c) => (
+                  {getPublishedCountries(locale).map((c) => (
                     <option key={c.slug} value={c.name} className="bg-surface-container-high">
                       {c.name}
                     </option>

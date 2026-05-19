@@ -1,13 +1,15 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { testimonials } from '@/data/testimonials';
+import { getTestimonials } from '@/data/testimonials';
 
 export function TestimonialsSection() {
   const t = useTranslations('home.testimonials');
+  const locale = useLocale();
+  const testimonials = getTestimonials(locale);
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const total = testimonials.length;

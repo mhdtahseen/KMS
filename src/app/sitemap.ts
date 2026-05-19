@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
-import { publishedCountries } from '@/data/countries';
-import { publishedServices } from '@/data/services';
+import { getPublishedCountries } from '@/data/countries';
+import { getPublishedServices } from '@/data/services';
 
 const BASE_URL = 'https://www.kms-consultants.com';
 const locales = ['en', 'ar'] as const;
@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Country pages
+  const publishedCountries = getPublishedCountries('en');
   for (const country of publishedCountries) {
     const path = `/countries/${country.slug}`;
     for (const locale of locales) {
@@ -45,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Service pages
+  const publishedServices = getPublishedServices('en');
   for (const service of publishedServices) {
     const path = `/services/${service.slug}`;
     for (const locale of locales) {

@@ -446,5 +446,3 @@ export const countries: Country[] = [
     isPublished: true,
   },
 ];
-
-export const publishedCountries = countries.filter((country) => country.isPublished);

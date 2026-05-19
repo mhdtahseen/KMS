@@ -1,12 +1,13 @@
 'use client';
 
 import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
-import { countries } from '@/data/countries';
+import { useTranslations, useLocale } from 'next-intl';
+import { getPublishedCountries } from '@/data/countries';
 import { CountryCard } from '@/components/shared/CountryCard';
 
 export function DestinationsScroll() {
   const t = useTranslations('home.destinations');
+  const locale = useLocale();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: 'prev' | 'next') => {
@@ -42,7 +43,7 @@ export function DestinationsScroll() {
         ref={scrollRef}
         className="flex overflow-x-auto gap-8 px-8 md:px-[calc((100vw-1280px)/2)] hide-scrollbar snap-x snap-mandatory"
       >
-        {countries.map((country) => (
+        {getPublishedCountries(locale).map((country) => (
           <CountryCard key={country.slug} country={country} />
         ))}
       </div>

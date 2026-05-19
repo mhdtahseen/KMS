@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { publishedServices } from "@/data/services";
-import { publishedCountries } from "@/data/countries";
+import { getPublishedServices } from "@/data/services";
+import { getPublishedCountries } from "@/data/countries";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -64,7 +64,7 @@ export default function Footer() {
               {t("services")}
             </p>
             <ul className="space-y-3">
-              {publishedServices.map((s) => (
+              {getPublishedServices(locale).map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/${locale}/services/${s.slug}`}
@@ -87,7 +87,7 @@ export default function Footer() {
               {t("countries")}
             </p>
             <ul className="space-y-3">
-              {publishedCountries.map((c) => (
+              {getPublishedCountries(locale).map((c) => (
                 <li key={c.slug}>
                   <Link
                     href={`/${locale}/countries/${c.slug}`}
