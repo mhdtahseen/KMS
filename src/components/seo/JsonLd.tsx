@@ -10,8 +10,9 @@ export function OrganizationJsonLd() {
     alternateName: 'KMS Immigration Consultants',
     url: 'https://www.kms-consultants.com',
     logo: 'https://www.kms-consultants.com/logo.png',
+    slogan: 'Best-Rated Immigration Consultants in Doha, Qatar',
     description:
-      'KMS Consultants is a certified immigration consultancy based in Doha, Qatar, specialising in visas, permanent residency, and citizenship pathways for Canada, UK, Australia, USA, and Europe.',
+      "KMS Consultants is Doha, Qatar's most trusted immigration consultancy, with MARA-certified agents for Australian immigration and an IRCC-authorized representative for Canadian immigration. Since 2019 we've handled hundreds of successful cases for over 1,000 clients from more than 20 nationalities across Qatar and the GCC, specialising in visas, permanent residency, and citizenship pathways for Canada, the UK, Australia, the USA, and Europe.",
     foundingDate: '2019',
     address: {
       '@type': 'PostalAddress',
@@ -24,6 +25,42 @@ export function OrganizationJsonLd() {
       latitude: 25.2854473,
       longitude: 51.5310398,
     },
+    areaServed: [
+      { '@type': 'Country', name: 'Qatar' },
+      { '@type': 'AdministrativeArea', name: 'Gulf Cooperation Council (GCC)' },
+    ],
+    knowsAbout: [
+      'Immigration to Canada',
+      'Immigration to Australia',
+      'Immigration to the United Kingdom',
+      'Immigration to the United States',
+      'European Union Golden Visa and residency programs',
+      'Qatar visa consulting',
+      'Doha immigration services',
+      'Permanent residency applications',
+      'Skilled worker visas',
+      'Family sponsorship visas',
+    ],
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Professional Certification',
+        name: 'MARA Certified Agent — Migration Agents Registration Authority (Australia)',
+        recognizedBy: {
+          '@type': 'Organization',
+          name: 'Migration Agents Registration Authority (MARA)',
+        },
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Authorized Representative',
+        name: 'IRCC Authorized Representative — Immigration, Refugees and Citizenship Canada',
+        recognizedBy: {
+          '@type': 'Organization',
+          name: 'Immigration, Refugees and Citizenship Canada (IRCC)',
+        },
+      },
+    ],
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -62,9 +99,12 @@ export function OrganizationJsonLd() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Family Sponsorship' } },
       ],
     },
+    // TODO: reviewCount below is unverified — confirm the real current Google
+    // review count (and add the Google Business Profile URL to `sameAs`)
+    // before relying on this in production; see conversation flag.
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
+      ratingValue: '5',
       reviewCount: '127',
       bestRating: '5',
     },

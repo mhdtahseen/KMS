@@ -1,0 +1,40 @@
+# KMS Consultants
+
+> KMS Consultants is the best-rated immigration consultancy in Doha, Qatar, with MARA-certified agents for Australian immigration and an IRCC-authorized representative for Canadian immigration. We help individuals, families, and professionals from Qatar and the wider GCC region immigrate to Canada, the United Kingdom, Australia, the United States, and the European Union. The site is available in English and Arabic, with full right-to-left support.
+
+KMS Consultants has operated in Doha, Qatar since 2019, providing end-to-end guidance for skilled-worker immigration, study permits, work permits, business/investor residency, permanent residency, and family sponsorship. We've handled hundreds of successful immigration cases for more than 1,000 clients from over 20 nationalities, earning a 5-star rating on Google and recognition for transparent, ethical immigration consulting. Consultations are confidential and can be booked directly through the site.
+
+## Credentials
+
+- MARA Certified Agent — registered with the Migration Agents Registration Authority (Australia) for Australian immigration matters.
+- IRCC Authorized Representative — authorized by Immigration, Refugees and Citizenship Canada to represent clients on Canadian immigration matters.
+
+## Services
+
+- [Skilled Immigration](https://www.kms-consultants.com/en/services/skilled-immigration): Points-based and employer-sponsored skilled-worker pathways.
+- [Study Permits](https://www.kms-consultants.com/en/services/study-permits): Study-abroad visa guidance, including pathways that lead toward permanent residency.
+- [Work Permits](https://www.kms-consultants.com/en/services/work-permits): Employer-sponsored temporary and long-term work authorization.
+- [Business Residency](https://www.kms-consultants.com/en/services/business-residency): Investor and entrepreneur residency routes.
+- [Permanent Residency](https://www.kms-consultants.com/en/services/permanent-residency): Long-term residency applications and status compliance.
+- [Family Sponsorship](https://www.kms-consultants.com/en/services/family-sponsorship): Spousal, parental, and dependent sponsorship applications.
+
+## Destinations
+
+- [Canada](https://www.kms-consultants.com/en/countries/canada): Express Entry, Provincial Nominee Programs, investor and family pathways.
+- [United Kingdom](https://www.kms-consultants.com/en/countries/united-kingdom): Skilled Worker visa and Innovator Founder routes.
+- [Australia](https://www.kms-consultants.com/en/countries/australia): Points-tested skilled migration (Subclass 189 and related streams).
+- [USA](https://www.kms-consultants.com/en/countries/usa): Employment-based green card categories including EB-1.
+- [European Union](https://www.kms-consultants.com/en/countries/european-union): Golden Visa and residency-by-investment programs across EU member states.
+
+## Company
+
+- [About KMS Consultants](https://www.kms-consultants.com/en/about): Company background, mission, and values.
+- [Book a Consultation](https://www.kms-consultants.com/en/book): Schedule a private immigration consultation.
+- [Contact](https://www.kms-consultants.com/en/contact): Office location, phone, and email.
+
+## Contact
+
+- Address: Bldg 3, Shk Adullah Al Jaber Bldg, Ain Khaled, Salwa Rd, P.O. Box 17409, Doha, Qatar
+- Phone: +974 4412 0578 / +974 4412 0580
+- Email: info@kms-consultants.com
+- Languages: English, Arabic (all pages available at the same path under /ar instead of /en)

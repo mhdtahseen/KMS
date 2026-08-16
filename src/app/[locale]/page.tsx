@@ -6,6 +6,7 @@ import { ServicesSection } from '@/components/home/ServicesSection';
 import { ProcessTimeline } from '@/components/shared/ProcessTimeline';
 import { DestinationsScroll } from '@/components/home/DestinationsScroll';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
+import { FaqSection } from '@/components/home/FaqSection';
 import { CTASection } from '@/components/home/CTASection';
 import { FadeInSection } from '@/components/shared/FadeInSection';
 
@@ -31,6 +32,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <FadeInSection delay={0.05}><ProcessTimeline /></FadeInSection>
       <FadeInSection delay={0.05}><DestinationsScroll /></FadeInSection>
       <FadeInSection delay={0.05}><TestimonialsSection /></FadeInSection>
+      <FadeInSection delay={0.05}><FaqSection /></FadeInSection>
       <FadeInSection delay={0.05}><CTASection /></FadeInSection>
     </div>
   );

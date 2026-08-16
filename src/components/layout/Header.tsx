@@ -62,7 +62,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-card border-b border-white/10" : "bg-transparent"
+        scrolled ? "nav-dropdown border-b border-white/10" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
@@ -95,7 +95,7 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-56 glass-card rounded-xl overflow-hidden py-2"
+                  className="absolute top-full left-0 mt-2 w-56 nav-dropdown rounded-xl overflow-hidden py-2"
                 >
                   {getPublishedServices(locale).map((s) => (
                     <Link
@@ -127,7 +127,7 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-48 glass-card rounded-xl overflow-hidden py-2"
+                  className="absolute top-full left-0 mt-2 w-48 nav-dropdown rounded-xl overflow-hidden py-2"
                 >
                   {getPublishedCountries(locale).map((c) => (
                     <Link
@@ -199,7 +199,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-card border-t border-white/10"
+            className="md:hidden nav-dropdown border-t border-white/10"
           >
             <div className="px-6 py-6 space-y-4">
               <p className="text-xs font-bold uppercase tracking-widest text-[#ecc06f]">

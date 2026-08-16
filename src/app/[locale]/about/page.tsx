@@ -5,9 +5,9 @@ import type { Metadata } from 'next';
 import { FadeInSection } from '@/components/shared/FadeInSection';
 
 export const metadata: Metadata = {
-  title: 'About KMS Consultants — Certified Immigration Experts in Qatar',
+  title: 'About KMS Consultants — Best-Rated Immigration Consultants in Qatar',
   description:
-    'KMS Consultants — 5+ years of expert immigration guidance in Doha, Qatar. Certified specialists with a 98% success rate helping 1,000+ families reach Canada, Australia, USA, and Europe.',
+    'KMS Consultants — MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities, 98% success rate, 5-star rated on Google.',
   alternates: {
     canonical: 'https://www.kms-consultants.com/en/about',
     languages: {
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'About KMS Consultants | Certified Immigration Experts, Doha Qatar',
-    description: '5+ years, 1,000+ successful cases, 98% success rate. KMS Consultants is the trusted immigration partner for Middle East families and professionals.',
+    title: 'About KMS Consultants | Best-Rated Immigration Consultants, Doha Qatar',
+    description: 'MARA-certified & IRCC-authorized. 1,000+ successful cases, 20+ nationalities served, 98% success rate. The trusted immigration partner for Qatar and the GCC.',
     url: 'https://www.kms-consultants.com/en/about',
   },
 };
@@ -143,9 +143,10 @@ export default async function AboutPage({
         className="py-16 px-8 border-y"
         style={{ borderColor: 'rgba(127,94,21,0.2)', background: 'rgba(22,19,13,0.8)' }}
       >
-        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
           {[
             { value: '1,000+', label: 'Happy Clients' },
+            { value: '20+', label: 'Nationalities Served' },
             { value: '5+', label: 'Years Experience' },
             { value: '15+', label: 'Countries Served' },
             { value: '98%', label: 'Success Rate' },

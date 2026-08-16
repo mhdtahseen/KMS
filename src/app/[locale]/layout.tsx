@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "sonner";
+import { MotionConfig } from "framer-motion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { BackToTop } from "@/components/shared/BackToTop";
@@ -32,10 +33,15 @@ export const metadata: Metadata = {
     template: "%s | KMS Consultants",
   },
   description:
-    "KMS Consultants — certified immigration specialists based in Doha, Qatar. Expert visa and residency solutions for Canada, UK, Australia, USA and Europe. 1,000+ successful cases.",
+    "KMS Consultants — the best-rated, MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities. Canada, UK, Australia, USA, Europe.",
   keywords: [
     "immigration consultants Qatar",
+    "best immigration consultants in Qatar",
+    "immigration consultants in Doha Qatar",
+    "trusted immigration consultants Doha",
     "visa services Doha",
+    "MARA certified agent Qatar",
+    "IRCC authorized representative Qatar",
     "Canada immigration consultants",
     "UK visa Qatar",
     "Australia immigration",
@@ -46,6 +52,7 @@ export const metadata: Metadata = {
     "work permit consultant Doha",
     "family sponsorship visa",
     "business residency",
+    "ethical immigration consulting Qatar",
     "RCIC consultant",
     "immigration lawyer Qatar",
     "KMS Consultants",
@@ -61,7 +68,7 @@ export const metadata: Metadata = {
     siteName: "KMS Consultants",
     title: "KMS Consultants | Elite Immigration & Visa Services",
     description:
-      "Bespoke immigration solutions for high-net-worth individuals and skilled professionals in the Middle East. Based in Doha, Qatar.",
+      "MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities, 5-star rated on Google. Bespoke solutions for the GCC's high-net-worth and skilled professionals.",
     images: [
       {
         url: "/og-image.jpg",
@@ -75,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "KMS Consultants | Elite Immigration & Visa Services",
     description:
-      "Certified immigration consultants in Doha, Qatar. Expert solutions for Canada, UK, Australia, USA and Europe.",
+      "MARA-certified & IRCC-authorized immigration consultants in Doha, Qatar. Trusted by 1,000+ clients from 20+ nationalities across Canada, UK, Australia, USA and Europe.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -122,6 +129,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <meta name="theme-color" content="#16130d" />
         <meta name="color-scheme" content="dark" />
         <OrganizationJsonLd />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
@@ -135,25 +144,27 @@ export default async function LocaleLayout({ children, params }: Props) {
           Skip to content
         </a>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <div id="main-content">
-            {children}
-          </div>
-          <Footer />
-          <BackToTop />
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                backdropFilter: "blur(20px)",
-                borderLeft: "3px solid #ecc06f",
-                color: "#eae1d8",
-                fontFamily: "var(--font-sans)",
-              },
-            }}
-          />
+          <MotionConfig reducedMotion="user">
+            <Header />
+            <div id="main-content">
+              {children}
+            </div>
+            <Footer />
+            <BackToTop />
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                style: {
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  backdropFilter: "blur(20px)",
+                  borderLeft: "3px solid #ecc06f",
+                  color: "#eae1d8",
+                  fontFamily: "var(--font-sans)",
+                },
+              }}
+            />
+          </MotionConfig>
         </NextIntlClientProvider>
       </body>
     </html>

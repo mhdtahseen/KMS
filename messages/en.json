@@ -45,6 +45,7 @@
     },
     "trust": {
       "clients": "Happy Clients",
+      "nationalities": "Nationalities Served",
       "years": "Years Experience",
       "countries": "Countries Served",
       "successRate": "Success Rate"
@@ -62,6 +63,45 @@
     },
     "testimonials": {
       "heading": "Successful Transitions"
+    },
+    "faq": {
+      "eyebrow": "Frequently Asked",
+      "heading": "Questions, Answered",
+      "subtext": "Straightforward answers to what clients ask us most before booking a consultation.",
+      "items": {
+        "countries": {
+          "q": "Which countries does KMS Consultants help clients immigrate to?",
+          "a": "We specialize in immigration pathways to Canada, the United Kingdom, Australia, the United States, and the European Union — covering skilled migration, study permits, work permits, business residency, permanent residency, and family sponsorship."
+        },
+        "location": {
+          "q": "Where is KMS Consultants based?",
+          "a": "Our headquarters is in Doha, Qatar. We serve clients across Qatar and the wider GCC region, with every service available in both English and Arabic."
+        },
+        "services": {
+          "q": "What services does KMS Consultants provide?",
+          "a": "Six core services: Skilled Immigration, Study Permits, Work Permits, Business Residency, Permanent Residency, and Family Sponsorship — each tailored to your destination country's specific requirements."
+        },
+        "booking": {
+          "q": "How do I book a consultation?",
+          "a": "Request a private consultation directly through our booking page, or reach us by phone or email. A senior consultant will follow up to schedule your confidential assessment."
+        },
+        "arabic": {
+          "q": "Is your service available in Arabic?",
+          "a": "Yes. Our entire website and consultation process is available in English and Arabic, with full right-to-left support for Arabic-speaking clients."
+        },
+        "firstStep": {
+          "q": "What's the first step in the immigration process?",
+          "a": "It begins with a confidential eligibility assessment, where we review your profile against your target country's requirements before recommending a tailored pathway."
+        },
+        "credentials": {
+          "q": "Is KMS Consultants a licensed and certified immigration consultancy?",
+          "a": "Yes. Our team includes MARA-certified agents for Australian immigration and an IRCC-authorized representative for Canadian immigration, giving clients direct access to regulator-recognized expertise for two of our five core destinations."
+        },
+        "trackRecord": {
+          "q": "How many clients has KMS Consultants helped, and where are they from?",
+          "a": "We've handled hundreds of successful immigration cases for more than 1,000 clients from over 20 nationalities across Qatar and the GCC, maintaining a 5-star rating on Google based on post-service client feedback."
+        }
+      }
     },
     "cta": {
       "heading": "Your journey begins with a conversation.",
@@ -120,7 +160,7 @@
   "about": {
     "badge": "Our Story",
     "heading": "Who We Are",
-    "intro": "At KMS, we specialize in helping individuals and families achieve their dreams of immigrating to Canada, Australia, the USA, and other popular destinations. With over 5 years of experience, we've successfully guided thousands of clients through the complex immigration process, ensuring a smooth and stress-free journey.",
+    "intro": "KMS Consultants is Doha, Qatar's most trusted immigration consultancy — home to MARA-certified agents for Australian immigration and an IRCC-authorized representative for Canadian immigration. Since 2019, we've handled hundreds of successful cases for more than 1,000 clients from over 20 nationalities across Qatar and the GCC, earning a 5-star reputation on Google for transparent, ethical immigration consulting.",
     "missionLabel": "Mission",
     "mission": "To empower individuals and families by providing expert immigration guidance, transparent processes, and unwavering support, helping them achieve their dreams of a better future.",
     "visionLabel": "Vision",
@@ -130,7 +170,7 @@
     "values": {
       "certified": {
         "title": "Certified Experts",
-        "description": "Our team consists of licensed and experienced immigration consultants."
+        "description": "Our team includes MARA-certified agents for Australian immigration and an IRCC-authorized representative for Canadian immigration."
       },
       "personalized": {
         "title": "Personalized Guidance",
@@ -190,7 +230,19 @@
       "ctaSecondary": "View Pathways"
     },
     "whyChoose": {
-      "prefix": "Why Global Leaders Choose"
+      "prefix": "Why Global Leaders Choose",
+      "stability": {
+        "title": "Social Security & Stability",
+        "description": "Access to world-class universal healthcare and a robust social safety net for you and your family."
+      },
+      "education": {
+        "title": "Elite Education",
+        "description": "Home to some of the world's most prestigious universities and high-standard primary education systems."
+      },
+      "prosperity": {
+        "title": "Economic Prosperity",
+        "description": "A dynamic, diversified economy with significant opportunities for entrepreneurs, investors, and skilled professionals."
+      }
     },
     "pathways": {
       "badge": "Strategic Routes",

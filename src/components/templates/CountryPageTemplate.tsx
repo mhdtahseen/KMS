@@ -10,6 +10,9 @@ import { StickyCtaBar } from '@/components/shared/StickyCtaBar';
 export function CountryPageTemplate({ country }: { country: Country }) {
   const locale = useLocale();
   const t = useTranslations('countries');
+  const pathwayCount = country.pathways.length;
+  const pathwaysGridColsClass = pathwayCount === 1 ? 'md:grid-cols-1' : pathwayCount === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3';
+  const hasDuplicateWhyChooseImages = country.whyChooseImages[0] === country.whyChooseImages[1];
 
   return (
     <main className="bg-background text-on-background font-sans overflow-x-hidden">
@@ -89,7 +92,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
               transition={{ duration: 0.8 }}
             >
               <h2 className="font-serif text-[36px] font-semibold text-on-background mb-8">
-                Why Global Leaders <span className="text-primary">Choose {country.name}</span>
+                {t('whyChoose.prefix')} <span className="text-primary">{country.name}</span>
               </h2>
               <p className="font-sans text-lg text-on-surface-variant mb-12 leading-relaxed">
                 {country.overviewBody}
@@ -100,8 +103,8 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                     <span className="material-symbols-outlined text-primary" aria-hidden="true">verified_user</span>
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl font-medium mb-2">Social Security & Stability</h4>
-                    <p className="text-on-surface-variant font-sans">Access to world-class universal healthcare and a robust social safety net for you and your family.</p>
+                    <h4 className="font-serif text-xl font-medium mb-2">{t('whyChoose.stability.title')}</h4>
+                    <p className="text-on-surface-variant font-sans">{t('whyChoose.stability.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
@@ -109,8 +112,8 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                     <span className="material-symbols-outlined text-primary" aria-hidden="true">school</span>
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl font-medium mb-2">Elite Education</h4>
-                    <p className="text-on-surface-variant font-sans">Home to some of the world&apos;s most prestigious universities and high-standard primary education systems.</p>
+                    <h4 className="font-serif text-xl font-medium mb-2">{t('whyChoose.education.title')}</h4>
+                    <p className="text-on-surface-variant font-sans">{t('whyChoose.education.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
@@ -118,8 +121,8 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                     <span className="material-symbols-outlined text-primary" aria-hidden="true">trending_up</span>
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl font-medium mb-2">Economic Prosperity</h4>
-                    <p className="text-on-surface-variant font-sans">A G7 economy with diverse industries and significant opportunities for entrepreneurs and innovators.</p>
+                    <h4 className="font-serif text-xl font-medium mb-2">{t('whyChoose.prosperity.title')}</h4>
+                    <p className="text-on-surface-variant font-sans">{t('whyChoose.prosperity.description')}</p>
                   </div>
                 </div>
               </div>
@@ -132,24 +135,44 @@ export function CountryPageTemplate({ country }: { country: Country }) {
               transition={{ duration: 1 }}
               className="grid grid-cols-2 gap-6 h-fit"
             >
-              <div className="space-y-6 pt-12">
-                <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
-                  <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[0]} fill sizes="(max-width: 768px) 50vw, 25vw" />
-                </div>
-                <div className="glass-card p-8 rounded-2xl">
-                  <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[0].value}</span>
-                  <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[0].label}</p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div className="glass-card p-8 rounded-2xl">
-                  <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[1].value}</span>
-                  <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[1].label}</p>
-                </div>
-                <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
-                  <Image alt="Nature" className="w-full h-full object-cover" src={country.whyChooseImages[1]} fill sizes="(max-width: 768px) 50vw, 25vw" />
-                </div>
-              </div>
+              {hasDuplicateWhyChooseImages ? (
+                <>
+                  <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
+                    <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[0]} fill sizes="(max-width: 768px) 50vw, 25vw" />
+                  </div>
+                  <div className="space-y-6">
+                    <div className="glass-card p-8 rounded-2xl">
+                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[0].value}</span>
+                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[0].label}</p>
+                    </div>
+                    <div className="glass-card p-8 rounded-2xl">
+                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[1].value}</span>
+                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[1].label}</p>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="space-y-6 pt-12">
+                    <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
+                      <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[0]} fill sizes="(max-width: 768px) 50vw, 25vw" />
+                    </div>
+                    <div className="glass-card p-8 rounded-2xl">
+                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[0].value}</span>
+                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[0].label}</p>
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="glass-card p-8 rounded-2xl">
+                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[1].value}</span>
+                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[1].label}</p>
+                    </div>
+                    <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
+                      <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[1]} fill sizes="(max-width: 768px) 50vw, 25vw" />
+                    </div>
+                  </div>
+                </>
+              )}
             </motion.div>
           </div>
         </div>
@@ -162,9 +185,9 @@ export function CountryPageTemplate({ country }: { country: Country }) {
             <span className="font-sans text-xs font-bold text-primary tracking-widest mb-4 block uppercase">{t('pathways.badge')}</span>
             <h2 className="font-serif text-[36px] font-semibold text-on-background">{t('pathways.heading')}</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className={`grid grid-cols-1 ${pathwaysGridColsClass} gap-6`}>
             {country.pathways.map((pathway, idx) => {
-              const isLarge = idx === 0 || idx === 3;
+              const isLarge = pathwayCount >= 3 && (idx === 0 || idx === 3);
               return (
                 <motion.div 
                   key={pathway.id}
