@@ -6,6 +6,12 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getTestimonials } from '@/data/testimonials';
 
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 export function TestimonialsSection() {
   const t = useTranslations('home.testimonials');
   const locale = useLocale();
@@ -69,18 +75,30 @@ export function TestimonialsSection() {
                 className="glass-card p-10 rounded-[32px] space-y-8 group border-primary/10"
               >
                 <div className="flex items-center gap-4">
-                  <div className="relative size-16 rounded-full overflow-hidden border-2 border-primary/30 shrink-0">
-                    <Image
-                      src={testimonial.image}
-                      alt={`Headshot of ${testimonial.name}`}
-                      fill
-                      className="object-cover"
-                      sizes="64px"
-                    />
+                  <div className="relative size-16 rounded-full overflow-hidden border-2 border-primary/30 shrink-0 flex items-center justify-center bg-primary/10">
+                    {testimonial.image ? (
+                      <Image
+                        src={testimonial.image}
+                        alt={`Headshot of ${testimonial.name}`}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
+                    ) : (
+                      <span className="font-headline font-bold text-lg text-primary" aria-hidden="true">
+                        {getInitials(testimonial.name)}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">{testimonial.name}</h4>
                     <p className="text-sm text-on-surface-variant/80 italic">{testimonial.role}</p>
+                    <div className="flex items-center gap-1 mt-1">
+                      <span className="material-symbols-outlined text-primary" style={{ fontSize: '14px' }} aria-hidden="true">
+                        star
+                      </span>
+                      <span className="text-xs text-on-surface-variant/60">{t('googleReview')}</span>
+                    </div>
                   </div>
                 </div>
                 <blockquote className="text-2xl font-headline leading-snug">
