@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import { FadeInSection } from '@/components/shared/FadeInSection';
 
 export const metadata: Metadata = {
-  title: 'About KMS Consultants — Best-Rated Immigration Consultants in Qatar',
+  title: 'About KMS Consultants | Elite Immigration & Visa Services — Doha, Qatar',
   description:
     'KMS Consultants — MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities, 98% success rate, 5-star rated on Google.',
   alternates: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'About KMS Consultants | Best-Rated Immigration Consultants, Doha Qatar',
+    title: 'About KMS Consultants | Elite Immigration & Visa Services — Doha, Qatar',
     description: 'MARA-certified & IRCC-authorized. 1,000+ successful cases, 20+ nationalities served, 98% success rate. The trusted immigration partner for Qatar and the GCC.',
     url: 'https://www.kms-consultants.com/en/about',
   },

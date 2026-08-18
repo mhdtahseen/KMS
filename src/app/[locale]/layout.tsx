@@ -29,7 +29,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kms-consultants.com"),
   title: {
-    default: "KMS Consultants | Elite Immigration & Visa Services — Doha, Qatar",
+    default: "KMS Consultants — Best-Rated Immigration Consultants in Qatar",
     template: "%s | KMS Consultants",
   },
   description:
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     alternateLocale: "ar_QA",
     url: "https://www.kms-consultants.com",
     siteName: "KMS Consultants",
-    title: "KMS Consultants | Elite Immigration & Visa Services",
+    title: "KMS Consultants — Best-Rated Immigration Consultants in Qatar",
     description:
       "MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities, 5-star rated on Google. Bespoke solutions for the GCC's high-net-worth and skilled professionals.",
     images: [
@@ -74,13 +74,13 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "KMS Consultants — Elite Immigration Services, Doha Qatar",
+        alt: "KMS Consultants — Best-Rated Immigration Consultants in Qatar",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KMS Consultants | Elite Immigration & Visa Services",
+    title: "KMS Consultants — Best-Rated Immigration Consultants in Qatar",
     description:
       "MARA-certified & IRCC-authorized immigration consultants in Doha, Qatar. Trusted by 1,000+ clients from 20+ nationalities across Canada, UK, Australia, USA and Europe.",
     images: ["/og-image.jpg"],

@@ -59,7 +59,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </div>
       </section>
 
-      <section className="py-section-padding px-6 md:px-margin-desktop bg-surface-container-lowest">
+      <section className="py-section-padding p-6 md:px-margin-desktop bg-surface-container-lowest">
         <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           <div>
             <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-8">{service.overviewHeading}</h2>
@@ -84,7 +84,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
       </section>
 
       {destinationCards.length > 0 && (
-        <section className="py-section-padding px-6 md:px-margin-desktop bg-background">
+        <section className="py-section-padding p-6 md:px-margin-desktop bg-background">
           <div className="max-w-container-max mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
               <div className="max-w-xl">
@@ -115,7 +115,7 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </section>
       )}
 
-      <section className="py-section-padding px-6 md:px-margin-desktop bg-surface-container-low" id="eligibility">
+      <section className="py-section-padding p-6 md:px-margin-desktop bg-surface-container-low" id="eligibility">
         <div className="max-w-container-max mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-4">{t('eligibility.heading')}</h2>
@@ -173,24 +173,39 @@ export function ServicePageTemplate({ service }: { service: Service }) {
         </div>
       </section>
 
-      <section className="py-section-padding px-6 md:px-margin-desktop bg-background overflow-hidden">
+      <section className="py-section-padding p-6 md:px-margin-desktop bg-background overflow-hidden">
         <div className="max-w-container-max mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 relative">
-            <div className="hidden lg:block absolute top-[4.5rem] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0"></div>
-            {service.processSteps.map((step) => (
-              <div key={step.title} className="relative z-10 px-6 py-12 text-center group">
-                <div className="w-20 h-20 mx-auto glass-card flex items-center justify-center mb-8 border-primary/40 group-hover:bg-primary transition-all duration-500">
-                  <span className="font-headline text-2xl text-primary group-hover:text-background">{step.icon}</span>
+          <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-center gap-8 lg:gap-0 relative isolate">
+            {/* Horizontal Line (Commented out for easy reversion)
+            <div className="hidden lg:block absolute top-[4.5rem] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent -z-10"></div>
+            */}
+            {service.processSteps.map((step, index) => (
+              <div key={step.title} className="w-full lg:w-1/5 max-w-[280px] relative z-10 px-6 py-12 text-center group">
+                <div className="w-20 h-20 mx-auto glass-card flex items-center justify-center mb-8 border-primary/10 group-hover:!border-primary/10 group-hover:!shadow-[0_0_20px_#ecc06f80] transition-all duration-500">
+                  {isNaN(Number(step.icon)) ? (
+                    <span className="material-symbols-outlined text-3xl text-primary" aria-hidden="true">
+                      {step.icon}
+                    </span>
+                  ) : (
+                    <span className="font-headline text-2xl text-primary">
+                      {step.icon}
+                    </span>
+                  )}
                 </div>
                 <h5 className="font-label-caps text-on-background mb-4 uppercase tracking-widest">{step.title}</h5>
                 <p className="text-sm text-on-surface-variant/70">{step.description}</p>
+                {index < service.processSteps.length - 1 && (
+                  <div className="hidden lg:flex absolute top-[5.5rem] right-0 transform translate-x-1/2 -translate-y-1/2 items-center justify-center text-primary/30 pointer-events-none">
+                    <span className="material-symbols-outlined text-3xl">chevron_right</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-section-padding px-6 md:px-margin-desktop bg-surface-container-lowest" data-cta-section>
+      <section className="py-section-padding p-6 md:px-margin-desktop bg-surface-container-lowest" data-cta-section>
         <div className="max-w-container-max mx-auto">
           <div className="glass-card p-12 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="absolute top-0 right-0 w-96 h-96 gold-halo opacity-30 -mr-48 -mt-48 pointer-events-none"></div>
