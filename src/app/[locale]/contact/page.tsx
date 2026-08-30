@@ -37,7 +37,7 @@ export default async function ContactPage({
       icon: 'call',
       label: t('callUs'),
       value: ft('phone'),
-      sub: ft('phone2'),
+      sub: `WhatsApp: ${ft('whatsapp')}`,
       href: `tel:${ft('phone').replace(/\s/g, '')}`,
     },
     {
@@ -157,9 +157,13 @@ export default async function ContactPage({
                   <span className="material-symbols-outlined text-base">call</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-on-surface text-sm mb-1">Phone</h4>
-                  <p className="text-on-surface-variant text-sm">{ft('phone')}</p>
-                  <p className="text-on-surface-variant text-sm">{ft('phone2')}</p>
+                  <h4 className="font-bold text-on-surface text-sm mb-1">Phone & WhatsApp</h4>
+                  <p className="text-on-surface-variant text-sm">
+                    <a href={`tel:${ft('phone').replace(/\s/g, '')}`} className="hover:text-primary transition-colors">{ft('phone')}</a>
+                  </p>
+                  <p className="text-on-surface-variant text-sm">
+                    <a href={`https://wa.me/${ft('whatsapp').replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp: {ft('whatsapp')}</a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

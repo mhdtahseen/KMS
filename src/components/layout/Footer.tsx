@@ -149,11 +149,13 @@ export default function Footer() {
                 {t("phone")}
               </a>
               <a
-                href={`tel:${t("phone2").replace(/\s/g, "")}`}
+                href={`https://wa.me/${t("whatsapp").replace(/[^0-9]/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm block hover:text-[#ecc06f] transition-colors"
                 style={{ color: "#d1c5b3" }}
               >
-                {t("phone2")}
+                WhatsApp: {t("whatsapp")}
               </a>
               <a
                 href={`mailto:${t("email")}`}
