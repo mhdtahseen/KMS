@@ -140,7 +140,22 @@
     "submit": "Request Private Briefing",
     "successToast": "Inquiry Submitted — We'll be in touch shortly.",
     "errorToast": "Something went wrong — please try again or call us directly.",
-    "privacy": "Your data is encrypted under KMS Privacy Shield Protocol"
+    "privacy": "Your data is encrypted under KMS Privacy Shield Protocol",
+    "validation": {
+      "nameRequired": "Full Name is required",
+      "nameTooShort": "Name must be at least 2 characters",
+      "nameInvalid": "Name should only contain letters and spaces",
+      "emailRequired": "Email Address is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneRequired": "Phone Number is required",
+      "phoneTooShort": "Phone number must be at least 8 digits",
+      "phoneInvalid": "Please enter a valid phone number",
+      "serviceRequired": "Please select a service",
+      "destinationRequired": "Please select a destination",
+      "messageRequired": "Message is required",
+      "messageTooShort": "Message must be at least 10 characters",
+      "messageTooLong": "Message cannot exceed 1000 characters"
+    }
   },
   "booking": {
     "badge": "Connect With Excellence",

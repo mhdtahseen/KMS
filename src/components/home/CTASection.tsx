@@ -15,16 +15,104 @@ export function CTASection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    destination: '',
+    message: '',
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const validateField = (name: string, value: string): string => {
+    switch (name) {
+      case 'fullName':
+        if (!value.trim()) return tForm('validation.nameRequired');
+        if (value.trim().length < 2) return tForm('validation.nameTooShort');
+        if (!/^[a-zA-Z\s\u0600-\u06FF]+$/.test(value)) return tForm('validation.nameInvalid');
+        return '';
+      case 'email':
+        if (!value.trim()) return tForm('validation.emailRequired');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return tForm('validation.emailInvalid');
+        return '';
+      case 'phone':
+        if (!value.trim()) return tForm('validation.phoneRequired');
+        const cleanPhone = value.replace(/[^\d+]/g, '');
+        const digits = cleanPhone.replace(/[^\d]/g, '');
+        if (digits.length < 8) return tForm('validation.phoneTooShort');
+        if (!/^\+?[\d\s-]{8,15}$/.test(cleanPhone)) return tForm('validation.phoneInvalid');
+        return '';
+      case 'destination':
+        if (!value) return tForm('validation.destinationRequired');
+        return '';
+      case 'message':
+        if (value.length > 1000) return tForm('validation.messageTooLong');
+        return '';
+      default:
+        return '';
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (touched[name]) {
+      setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+    }
+  };
+
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+  };
+
+  const handlePhoneFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (!formData.phone) {
+      setFormData((prev) => ({ ...prev, phone: '+974 ' }));
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+
+    const allFields = ['fullName', 'email', 'phone', 'destination', 'message'];
+    const newTouched: Record<string, boolean> = {};
+    allFields.forEach((f) => {
+      newTouched[f] = true;
+    });
+    setTouched(newTouched);
+
+    const newErrors: Record<string, string> = {};
+    allFields.forEach((f) => {
+      const err = validateField(f, formData[f as keyof typeof formData]);
+      if (err) {
+        newErrors[f] = err;
+      }
+    });
+    setErrors(newErrors);
+
+    const firstInvalidField = Object.keys(newErrors)[0];
+    if (firstInvalidField) {
+      const element = document.getElementsByName(firstInvalidField)[0];
+      if (element) {
+        element.focus();
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
     setSubmitError(null);
     setIsSubmitting(true);
 
-    // Honeypot check on the client side as a first pass
-    const gotcha = fd.get('_gotcha') as string;
+    const gotcha = (e.currentTarget.elements.namedItem('_gotcha') as HTMLInputElement)?.value || '';
     if (gotcha) {
-      // Silently succeed for bots
       setIsSubmitting(false);
       toast.success(tForm('successToast'));
       setTimeout(() => router.push(`/${locale}/thank-you`), 1000);
@@ -36,10 +124,7 @@ export function CTASection() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          fullName: fd.get('fullName'),
-          email: fd.get('email'),
-          destination: fd.get('destination'),
-          message: fd.get('message'),
+          ...formData,
           _gotcha: gotcha,
           locale,
         }),
@@ -63,6 +148,22 @@ export function CTASection() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const getInputClassName = (fieldName: string) => {
+    const baseClass =
+      'w-full bg-background/50 border rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary transition-all outline-none';
+    const isTouched = touched[fieldName];
+    const error = errors[fieldName];
+    const value = formData[fieldName as keyof typeof formData];
+
+    if (isTouched && error) {
+      return `${baseClass} border-red-500/80 focus:border-red-500`;
+    }
+    if (isTouched && value && !error) {
+      return `${baseClass} border-green-500/50 focus:border-green-500`;
+    }
+    return `${baseClass} border-white/10 focus:border-primary`;
   };
 
   return (
@@ -101,7 +202,7 @@ export function CTASection() {
           <div className="absolute w-[600px] h-[600px] rounded-full border border-primary/10 -right-[300px] -bottom-[300px]"></div>
           <div className="absolute w-[400px] h-[400px] rounded-full border border-primary/20 -right-[200px] -bottom-[200px]"></div>
 
-          <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+          <form onSubmit={handleSubmit} className="relative z-10 space-y-6" noValidate>
             {/* Honeypot — off-screen, invisible to real users */}
             <div
               aria-hidden="true"
@@ -127,63 +228,138 @@ export function CTASection() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
+              {/* Name */}
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-                  {tForm('fullName')}
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center">
+                  <span>{tForm('fullName')}</span>
+                  <span className="text-[#ecc06f] ms-1">*</span>
                 </label>
                 <input
                   name="fullName"
-                  required
                   type="text"
                   placeholder={tForm('namePlaceholder')}
-                  className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none"
+                  className={getInputClassName('fullName')}
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 />
+                {touched.fullName && errors.fullName && (
+                  <span className="text-red-400 text-xs mt-1 flex items-center gap-1 animate-fadeIn">
+                    <span className="material-symbols-outlined text-[14px]">error</span>
+                    <span>{errors.fullName}</span>
+                  </span>
+                )}
               </div>
+
+              {/* Email */}
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-                  {tForm('email')}
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center">
+                  <span>{tForm('email')}</span>
+                  <span className="text-[#ecc06f] ms-1">*</span>
                 </label>
                 <input
                   name="email"
-                  required
                   type="email"
                   placeholder={tForm('emailPlaceholder')}
-                  className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none"
+                  className={getInputClassName('email')}
+                  value={formData.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 />
+                {touched.email && errors.email && (
+                  <span className="text-red-400 text-xs mt-1 flex items-center gap-1 animate-fadeIn">
+                    <span className="material-symbols-outlined text-[14px]">error</span>
+                    <span>{errors.email}</span>
+                  </span>
+                )}
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-                {tForm('destination')}
-              </label>
-              <div className="relative">
-                <select
-                  name="destination"
-                  className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none appearance-none cursor-pointer"
-                  defaultValue=""
-                >
-                  <option value="" disabled hidden>{tForm('destinationPlaceholder')}</option>
-                  {getPublishedCountries(locale).map((c) => (
-                    <option key={c.slug} value={c.name} className="bg-surface-container-high">
-                      {c.name}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Phone */}
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center">
+                  <span>{tForm('phone')}</span>
+                  <span className="text-[#ecc06f] ms-1">*</span>
+                </label>
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder={tForm('phonePlaceholder')}
+                  className={getInputClassName('phone')}
+                  value={formData.phone}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  onFocus={handlePhoneFocus}
+                />
+                {touched.phone && errors.phone && (
+                  <span className="text-red-400 text-xs mt-1 flex items-center gap-1 animate-fadeIn">
+                    <span className="material-symbols-outlined text-[14px]">error</span>
+                    <span>{errors.phone}</span>
+                  </span>
+                )}
+              </div>
+
+              {/* Destination */}
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center">
+                  <span>{tForm('destination')}</span>
+                  <span className="text-[#ecc06f] ms-1">*</span>
+                </label>
+                <div className="relative">
+                  <select
+                    name="destination"
+                    className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none appearance-none cursor-pointer"
+                    value={formData.destination}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  >
+                    <option value="" disabled className="text-on-surface-variant/40">
+                      {tForm('destinationPlaceholder')}
                     </option>
-                  ))}
-                </select>
-                <span className="material-symbols-outlined absolute right-4 top-3 text-on-surface-variant pointer-events-none">expand_more</span>
+                    {getPublishedCountries(locale).map((c) => (
+                      <option key={c.slug} value={c.name} className="bg-surface-container-high">
+                        {c.name}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="material-symbols-outlined absolute right-4 top-3 text-on-surface-variant pointer-events-none text-base">expand_more</span>
+                </div>
+                {touched.destination && errors.destination && (
+                  <span className="text-red-400 text-xs mt-1 flex items-center gap-1 animate-fadeIn">
+                    <span className="material-symbols-outlined text-[14px]">error</span>
+                    <span>{errors.destination}</span>
+                  </span>
+                )}
               </div>
             </div>
 
+            {/* Message */}
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">
-                {tForm('message')}
-              </label>
+              <div className="flex justify-between items-center">
+                <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+                  {tForm('message')}
+                </label>
+                <span className="text-[10px] text-on-surface-variant/40">
+                  {formData.message.length} / 1000
+                </span>
+              </div>
               <textarea
                 name="message"
                 rows={4}
+                maxLength={1000}
                 placeholder={tForm('messagePlaceholder')}
-                className="w-full bg-background/50 border border-white/10 rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none resize-none"
+                className={getInputClassName('message')}
+                value={formData.message}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />
+              {touched.message && errors.message && (
+                <span className="text-red-400 text-xs mt-1 flex items-center gap-1 animate-fadeIn">
+                  <span className="material-symbols-outlined text-[14px]">error</span>
+                  <span>{errors.message}</span>
+                </span>
+              )}
             </div>
 
             <button
@@ -193,7 +369,7 @@ export function CTASection() {
             >
               {isSubmitting ? (
                 <>
-                  <svg className="animate-spin size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="animate-spin size-5 text-on-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                   </svg>
