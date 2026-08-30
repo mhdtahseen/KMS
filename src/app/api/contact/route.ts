@@ -77,8 +77,15 @@ export async function POST(req: NextRequest) {
   const recipientEmail =
     process.env.CONTACT_EMAIL ?? 'info@kms-consultants.com';
 
+  // Detailed diagnostics — logs which specific var is missing (values never logged)
   if (!smtpHost || !smtpUser || !smtpPass) {
-    console.error('[contact/route] SMTP environment variables not configured');
+    const missing = [
+      !smtpHost && 'SMTP_HOST',
+      !smtpUser && 'SMTP_USER',
+      !smtpPass && 'SMTP_PASS',
+    ].filter(Boolean);
+    console.error('[contact/route] Missing SMTP env vars:', missing.join(', '));
+    console.error('[contact/route] NODE_ENV:', process.env.NODE_ENV);
     return NextResponse.json(
       { error: 'Email service not configured' },
       { status: 503 }
