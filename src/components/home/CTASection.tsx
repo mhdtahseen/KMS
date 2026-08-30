@@ -13,11 +13,24 @@ export function CTASection() {
   const locale = useLocale();
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
+    setSubmitError(null);
     setIsSubmitting(true);
+
+    // Honeypot check on the client side as a first pass
+    const gotcha = fd.get('_gotcha') as string;
+    if (gotcha) {
+      // Silently succeed for bots
+      setIsSubmitting(false);
+      toast.success(tForm('successToast'));
+      setTimeout(() => router.push(`/${locale}/thank-you`), 1000);
+      return;
+    }
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -27,13 +40,26 @@ export function CTASection() {
           email: fd.get('email'),
           destination: fd.get('destination'),
           message: fd.get('message'),
+          _gotcha: gotcha,
+          locale,
         }),
       });
-      if (!res.ok) throw new Error();
+
+      if (!res.ok) {
+        const json = await res.json().catch(() => ({}));
+        const errorMsg =
+          (json as { error?: string }).error ?? tForm('errorToast');
+        setSubmitError(errorMsg);
+        toast.error(errorMsg);
+        return;
+      }
+
       toast.success(tForm('successToast'));
       setTimeout(() => router.push(`/${locale}/thank-you`), 1000);
     } catch {
-      toast.error(tForm('errorToast'));
+      const errorMsg = tForm('errorToast');
+      setSubmitError(errorMsg);
+      toast.error(errorMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -76,6 +102,30 @@ export function CTASection() {
           <div className="absolute w-[400px] h-[400px] rounded-full border border-primary/20 -right-[200px] -bottom-[200px]"></div>
 
           <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+            {/* Honeypot — off-screen, invisible to real users */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                top: '-9999px',
+                width: '1px',
+                height: '1px',
+                overflow: 'hidden',
+                opacity: 0,
+                pointerEvents: 'none',
+              }}
+            >
+              <label htmlFor="cta-gotcha">Leave this field blank</label>
+              <input
+                id="cta-gotcha"
+                name="_gotcha"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">
@@ -151,6 +201,18 @@ export function CTASection() {
                 </>
               ) : tForm('submit')}
             </button>
+
+            {/* Inline error — user's form data preserved, no page redirect on failure */}
+            {submitError && (
+              <div
+                role="alert"
+                className="flex items-start gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm"
+              >
+                <span className="material-symbols-outlined text-base shrink-0 mt-0.5" aria-hidden="true">error</span>
+                <span>{submitError}</span>
+              </div>
+            )}
+
             <p className="text-xs text-center text-on-surface-variant">
               {t('form.termsPrefix')}{' '}
               <a className="text-primary hover:underline" href="#">{t('form.terms')}</a>
@@ -163,4 +225,3 @@ export function CTASection() {
     </section>
   );
 }
-

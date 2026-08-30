@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import {
+  buildNotificationEmail,
+  buildConfirmationEmail,
+  type EmailData,
+} from '@/lib/email-templates';
 
 const ALLOWED_SERVICES = [
   'skilled-immigration',
@@ -12,12 +17,13 @@ const ALLOWED_SERVICES = [
   '',
 ];
 
-function sanitize(value: unknown): string {
+function sanitize(value: unknown, maxLen = 1000): string {
   if (typeof value !== 'string') return '';
-  return value.trim().slice(0, 1000);
+  return value.trim().slice(0, maxLen);
 }
 
 export async function POST(req: NextRequest) {
+  // ── 1. Parse body ──────────────────────────────────────────────────────────
   let body: Record<string, unknown>;
   try {
     body = await req.json();
@@ -25,33 +31,58 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
+  // ── 2. Honeypot check ──────────────────────────────────────────────────────
+  // If the hidden _gotcha field is filled, silently succeed without sending
+  // any email (bots fill all fields; real users never see this field).
+  const gotcha = sanitize(body._gotcha, 200);
+  if (gotcha) {
+    return NextResponse.json({ success: true });
+  }
+
+  // ── 3. Extract & sanitise fields ──────────────────────────────────────────
   const fullName = sanitize(body.fullName);
-  const email = sanitize(body.email);
+  const email = sanitize(body.email, 320);
   const phone = sanitize(body.phone);
   const service = sanitize(body.service);
   const destination = sanitize(body.destination);
-  const message = sanitize(body.message);
+  const message = sanitize(body.message, 4000);
+  const rawLocale = sanitize(body.locale, 5);
+  const locale: 'en' | 'ar' = rawLocale === 'ar' ? 'ar' : 'en';
 
-  // Basic validation
+  // ── 4. Validation ─────────────────────────────────────────────────────────
   if (!fullName || fullName.length < 2) {
-    return NextResponse.json({ error: 'Full name is required' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'Full name is required (minimum 2 characters)' },
+      { status: 400 }
+    );
   }
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: 'A valid email address is required' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'A valid email address is required' },
+      { status: 400 }
+    );
   }
   if (service && !ALLOWED_SERVICES.includes(service)) {
-    return NextResponse.json({ error: 'Invalid service selection' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'Invalid service selection' },
+      { status: 400 }
+    );
   }
 
+  // ── 5. SMTP configuration ─────────────────────────────────────────────────
   const smtpHost = process.env.SMTP_HOST;
   const smtpPort = parseInt(process.env.SMTP_PORT ?? '465', 10);
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
-  const recipientEmail = process.env.CONTACT_EMAIL ?? 'info@kms-consultants.com';
+  const recipientEmail =
+    process.env.CONTACT_EMAIL ?? 'info@kms-consultants.com';
 
   if (!smtpHost || !smtpUser || !smtpPass) {
-    console.error('SMTP environment variables not configured');
-    return NextResponse.json({ error: 'Email service not configured' }, { status: 503 });
+    console.error('[contact/route] SMTP environment variables not configured');
+    return NextResponse.json(
+      { error: 'Email service not configured' },
+      { status: 503 }
+    );
   }
 
   const transporter = nodemailer.createTransport({
@@ -61,34 +92,47 @@ export async function POST(req: NextRequest) {
     auth: { user: smtpUser, pass: smtpPass },
   });
 
-  const htmlBody = `
-    <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#1a1710;color:#eae1d8;border:1px solid #7f5e15;border-radius:12px;">
-      <h2 style="color:#ecc06f;margin-top:0;">New Inquiry — KMS Consultants</h2>
-      <table style="width:100%;border-collapse:collapse;">
-        <tr><td style="padding:8px 0;color:#9a8f7f;width:160px;vertical-align:top;">Full Name</td><td style="padding:8px 0;">${fullName}</td></tr>
-        <tr><td style="padding:8px 0;color:#9a8f7f;vertical-align:top;">Email</td><td style="padding:8px 0;"><a href="mailto:${email}" style="color:#ecc06f;">${email}</a></td></tr>
-        <tr><td style="padding:8px 0;color:#9a8f7f;vertical-align:top;">Phone</td><td style="padding:8px 0;">${phone || '—'}</td></tr>
-        <tr><td style="padding:8px 0;color:#9a8f7f;vertical-align:top;">Service</td><td style="padding:8px 0;">${service || '—'}</td></tr>
-        <tr><td style="padding:8px 0;color:#9a8f7f;vertical-align:top;">Destination</td><td style="padding:8px 0;">${destination || '—'}</td></tr>
-        <tr><td style="padding:8px 0;color:#9a8f7f;vertical-align:top;">Message</td><td style="padding:8px 0;white-space:pre-wrap;">${message || '—'}</td></tr>
-      </table>
-      <hr style="border-color:#7f5e15;margin:20px 0;" />
-      <p style="color:#9a8f7f;font-size:12px;margin:0;">Submitted via kms-consultants.com contact form</p>
-    </div>
-  `;
+  // ── 6. Build email data ──────────────────────────────────────────────────
+  const emailData: EmailData = {
+    fullName,
+    email,
+    phone: phone || undefined,
+    service: service || undefined,
+    destination: destination || undefined,
+    message: message || undefined,
+    locale,
+  };
 
+  // ── 7. Send both emails ──────────────────────────────────────────────────
   try {
+    // (a) Internal notification to KMS team
     await transporter.sendMail({
       from: `"KMS Website" <${smtpUser}>`,
       to: recipientEmail,
       replyTo: email,
       subject: `New Inquiry from ${fullName}${service ? ` — ${service}` : ''}`,
-      html: htmlBody,
+      html: buildNotificationEmail(emailData),
+    });
+
+    // (b) Confirmation / thank-you to the submitter
+    const confirmationSubject =
+      locale === 'ar'
+        ? 'KMS Consultants — تم استلام استفسارك'
+        : 'KMS Consultants — We Have Received Your Inquiry';
+
+    await transporter.sendMail({
+      from: `"KMS Consultants" <${smtpUser}>`,
+      to: email,
+      subject: confirmationSubject,
+      html: buildConfirmationEmail(emailData),
     });
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error('Email send error:', err);
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    console.error('[contact/route] Email send error:', err);
+    return NextResponse.json(
+      { success: false, error: 'Failed to send email — please try again or contact us directly.' },
+      { status: 500 }
+    );
   }
 }
