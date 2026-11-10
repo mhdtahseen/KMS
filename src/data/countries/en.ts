@@ -40,18 +40,15 @@ export const countries: Country[] = [
     slug: 'canada',
     name: 'Canada',
     tagline: 'A Land of Opportunity',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuATxzHKdh_RLdAydsvY6nZI7shSgTTUJNTs23VimeU90Pe8cZi8wNNhnfRVlSIn23TuAhY5QvJt3PY4-Mv4thUSmZpOhdEEjXxbwyrGJwQhqaPzvfVJ5OirO2K-VIK2v8hdk5fOTa36QPM1d_TXtAJt0Tk3cZE9nKDaP863eJnSEMx0wCHCJk4CrJAr5jnIoTZTtCbedh-ztizB3BoBgH09BhubMAXDh8-yo6JSRb95xKYrexZ8aWyyB4oU260tn03nVD_7sk-z5Sw3',
+    homeImage: '/images/countries/canada-home.jpg',
     homeHighlight: 'Express Entry • Provincial Nominee',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBoM5GHKUNqhbgGylRNS4PdjQKMHUd4Pp0HvkNtrTSu2K-Oip0w5EgDM1tXh9SvaHm4a7eBCYR7v66-g2l7dD_0TXVnQcRO4FwbHujgBiZPMry5p6xEf_t7tRcuUaQlfpva86KsMmbYxHBP97ZJe6LboKyA_Lm0K7dZJhUH5KjG25JKD-xS4u17STzTon44HXbDB4xP8gZgYwfeRMhqsJYSrdtdqXGD9lcsiXvCXKZPA0FsZhwgxCHw0Luwu53Rs_Kbw7ZeJtUroEy9',
+    heroImage: '/images/countries/canada-hero.jpg',
     heroHeadline: 'Canada',
     heroSubtext: 'A Land of Opportunity',
     overviewHeading: 'Why Global Leaders Choose Canada',
     overviewBody:
       'Canada offers an unparalleled quality of life, a stable economy, and a welcoming multicultural landscape, making it the premier choice for skilled professionals and investors from the Middle East.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMp1evYlOpM0ZuDcwfwHgfqZDW7C5kLBlyenYSXonraWAe3tvM7OxpQyzxNUAny0-G_F9IW8Gi7UZU1cNynW43uNZjZFHi7Qbu5NEymp7nMdeyqmFwx8fKTJXuzRkfKaTk4k5gx-2rqNM6jWZ7uQG3pNv9NdYUEUwnO101uHtAp1099p0KlauV1vnWAqcYtgugzfdOfOq8Rs4gsiTe5eapBPuGwKivFev79znQYPC24hzX9zLvU7UCyzlQsm7lT1BYZcBdRmq_QO_k',
+    overviewImage: '/images/countries/canada-overview.jpg',
     overviewStats: [
       { value: '#1', label: 'Best Quality of Life Globally' },
       { value: '93%', label: 'Immigrant Satisfaction Rate' },
@@ -87,14 +84,13 @@ export const countries: Country[] = [
         description:
           'Tailored routes for specific provinces like Ontario, British Columbia, and Alberta based on local labor market needs.',
         icon: 'policy',
-        bgImage:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCLU4M-0CD2TGBLfMr8KKQdTp2DPYnyiSAS7TA_Jhc8tXtxfdpo_oHh_jRPQen_ig3XHlyd8F0uVBKyWhWWPOrbIMvLqhKDnTD2o9WMwLrstDT5jzfTFiInet0sC3Q0g0mRsI9eVXv2L7vdI9Pqtv6Gg6dm-d_RU-snCIlB7frSeiHtmbvrL-OlTC5ChsFkh9Ox9L-ZM7vBTrswGr0F66iAaDHb8EG6i_1zIK5Tvz6YP94MPN07xMxFBcNSd2FkxR5VhS-HqCiEFVkm',
+        bgImage: '/images/countries/canada-bg.jpg',
         ctaLabel: 'View Provinces',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMp1evYlOpM0ZuDcwfwHgfqZDW7C5kLBlyenYSXonraWAe3tvM7OxpQyzxNUAny0-G_F9IW8Gi7UZU1cNynW43uNZjZFHi7Qbu5NEymp7nMdeyqmFwx8fKTJXuzRkfKaTk4k5gx-2rqNM6jWZ7uQG3pNv9NdYUEUwnO101uHtAp1099p0KlauV1vnWAqcYtgugzfdOfOq8Rs4gsiTe5eapBPuGwKivFev79znQYPC24hzX9zLvU7UCyzlQsm7lT1BYZcBdRmq_QO_k',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBHj0DxO6R6drT6QKPSGy5hllixI8GtEb81Ya2HfAD_zTmytR5_n6RqhOhANC_WjqmxvFyRylh2LaaDun_z74QO_KyGMaI8xbpHCgvYxMNm3NtYe4g1SX6yHhe40zwouQXCEXykWPsLvQKGZShXvbfEtkUZabHLNmqNWkEFL1Ls3IK4A9hxzNBGCUZClvmoVWODCyL2V2Me9d1jiOe3AhoEcLBeXbeTzBdVx9iyzF2LOH_8fBoNrXAQxwRgrcPaee0j2qw_HpJ89OQT',
+      '/images/countries/canada-why.jpg',
+      '/images/countries/canada-why-2.jpg',
     ],
     requirements: [
       {
@@ -140,19 +136,16 @@ export const countries: Country[] = [
     slug: 'united-kingdom',
     name: 'United Kingdom',
     tagline: 'Global Financial Center',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAY_mxwR0hBNeK-ko7Qt62XlqaCl1y5VLUvVfYSJgKbpN8ZPywLAWHStvI98W4WKxaDTErb28OxF1iiBVrtm47-YvwhIdvFaUZqPEec_0Put_7Ssd15lrsBLCiHDGC-Y0Y3q1pkqcWkewAlmle8C1F7O40teOGYpbz0W4jEgxNGno0geYMaZ7jPeBZwC2HZFs8Q9F8p-nE5CmjWmLSan9-xIoMtSaj3pxWEjUjjj40h2o6ugaktwMAWIh2VGTMPH2AO33mL2okCuV16',
+    homeImage: '/images/countries/united-kingdom-home.jpg',
     homeHighlight: 'Skilled Worker • Global Talent',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+    heroImage: '/images/countries/united-kingdom-hero.jpg',
     heroHeadline: 'Elite Residency in the United Kingdom',
     heroSubtext:
       'Access unparalleled financial opportunities and world-class education through curated UK residency and citizenship pathways.',
     overviewHeading: 'Tradition Meets Modern Ambition',
     overviewBody:
       'The United Kingdom remains a premier destination for global professionals and investors. With its robust legal system, world-leading universities, and strategic position in global trade, it offers a secure and prosperous environment for your family.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+    overviewImage: '/images/countries/united-kingdom-overview.jpg',
     overviewStats: [
       { value: 'Top 5', label: 'Global Economy' },
       { value: '150+', label: 'Visa Categories' },
@@ -174,8 +167,8 @@ export const countries: Country[] = [
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+      '/images/countries/united-kingdom-why.jpg',
+      '/images/countries/united-kingdom-why-2.jpg',
     ],
     requirements: [
       {
@@ -223,19 +216,16 @@ export const countries: Country[] = [
     slug: 'australia',
     name: 'Australia',
     tagline: 'Southern Cross Opportunities',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAV-4_OarjIg9lquBoD2YtELh5fe-5YrMA8kCpTnrgbd72KvyNsjPZphpxWG2WGJl2gXO-51FxSvBl2bSsT171--kKGv9HBGSpJqSE6-GPQOvkVSlQUV_vPQ-YOhhps1eiD_CSKJjk6fmcYxSxgMNsbqjxnnY8ZF_zvRYEnXh1M6uw7Y0qUtLfHCpewZCJ5VhByG7tO0yVpxmtNKQyg1TpzUjyHxPI5M2xUE2dPNvo_80SM1MkfcrB9iVbkNSF8OxG0G3lwLVSr7Agg',
+    homeImage: '/images/countries/australia-home.jpg',
     homeHighlight: 'Subclass 189 • Subclass 190',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+    heroImage: '/images/countries/australia-hero.jpg',
     heroHeadline: 'Bespoke Australian Immigration',
     heroSubtext:
       'Discover a lifestyle of excellence and a thriving economy. Our experts navigate the complex Australian points system for you.',
     overviewHeading: 'Unrivaled Quality of Life',
     overviewBody:
       'Australia offers more than just a vibrant lifestyle; it is a land of economic opportunity and social security. With a strong demand for skilled professionals and a transparent immigration system, it is a top choice for GCC families.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+    overviewImage: '/images/countries/australia-overview.jpg',
     overviewStats: [
       { value: '25+', label: 'Years Economic Growth' },
       { value: '92%', label: 'PR Grant Rate' },
@@ -250,8 +240,8 @@ export const countries: Country[] = [
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+      '/images/countries/australia-why.jpg',
+      '/images/countries/australia-why-2.jpg',
     ],
     requirements: [
       {
@@ -299,19 +289,16 @@ export const countries: Country[] = [
     slug: 'usa',
     name: 'USA',
     tagline: 'The American Dream',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA6I1buuDVATChAJOyjkRfeKIRoE-BPbvAx98cjw69XtXlmKwtzb8sfOU84cF0ZTaeFXY-DraC-CRoWKm6uZ8u1-TNrF9i9jUmJIl1wVEnNybkP3ODhkNGKdj32We6BLsGk-RhE-95kMurj92fTkMNJwbkIk9S4c2gXSo5hnae3gTwP72mqHZStUEMRJIMVqdRyEB_giqXUwgDh44JFhLcKCVw0YjM54IupLyqFYcdcc8mqoJHeIbi5ybusUXslvZjBvwflqylY1dlH',
+    homeImage: '/images/countries/usa-home.jpg',
     homeHighlight: 'H-1B • EB-5 Investor',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+    heroImage: '/images/countries/usa-hero.jpg',
     heroHeadline: 'Strategic US Visa Solutions',
     heroSubtext:
       'From employment-based green cards to investor visas, we provide the legal precision required for US immigration success.',
     overviewHeading: "The World's Economic Engine",
     overviewBody:
       "The United States remains the global leader in innovation and entrepreneurship. Whether through specialized employment or strategic investment, a US Green Card provides unparalleled access to the world's largest market.",
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+    overviewImage: '/images/countries/usa-overview.jpg',
     overviewStats: [
       { value: '#1', label: 'Innovation Hub' },
       { value: '1M+', label: 'Green Cards Issued' },
@@ -326,8 +313,8 @@ export const countries: Country[] = [
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+      '/images/countries/usa-why.jpg',
+      '/images/countries/usa-why-2.jpg',
     ],
     requirements: [
       {
@@ -375,17 +362,16 @@ export const countries: Country[] = [
     slug: 'european-union',
     name: 'European Union',
     tagline: 'Continental Freedom',
+    homeImage: '/images/countries/european-union-home.jpg',
     homeHighlight: 'Golden Visa • Schengen Access',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+    heroImage: '/images/countries/european-union-hero.jpg',
     heroHeadline: 'European Residency & Citizenship',
     heroSubtext:
       'Gain the freedom to live, work, and study across the EU through strategic investment and residency programs.',
     overviewHeading: 'A Gateway to the Old World',
     overviewBody:
       'The European Union offers a unique blend of heritage, modern infrastructure, and high social standards. Through Golden Visa programs and specialized residency streams, we help you secure a foothold in the Schengen Area.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+    overviewImage: '/images/countries/european-union-overview.jpg',
     overviewStats: [
       { value: '27', label: 'Member States' },
       { value: 'No. 1', label: 'Health Systems' },
@@ -400,8 +386,8 @@ export const countries: Country[] = [
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+      '/images/countries/european-union-why.jpg',
+      '/images/countries/european-union-why-2.jpg',
     ],
     requirements: [
       {

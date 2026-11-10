@@ -10,13 +10,14 @@ export function OrganizationJsonLd() {
     alternateName: 'KMS Immigration Consultants',
     url: 'https://www.kms-consultants.com',
     logo: 'https://www.kms-consultants.com/logo.png',
+    image: 'https://www.kms-consultants.com/og-image.jpg',
     slogan: 'Best-Rated Immigration Consultants in Doha, Qatar',
     description:
       "KMS Consultants is Doha, Qatar's most trusted immigration consultancy, with MARA-certified agents for Australian immigration and an IRCC-authorized representative for Canadian immigration. Since 2019 we've handled hundreds of successful cases for over 1,000 clients from more than 20 nationalities across Qatar and the GCC, specialising in visas, permanent residency, and citizenship pathways for Canada, the UK, Australia, the USA, and Europe.",
     foundingDate: '2019',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Bldg 3, Shk Adullah Al Jaber Bldg, Ain Khaled, Salwa Rd, P.O. Box 17409',
+      streetAddress: 'Office 105, 1st Floor, The Pearl Building, Old Airport Road',
       addressLocality: 'Doha',
       addressCountry: 'QA',
     },
@@ -64,22 +65,25 @@ export function OrganizationJsonLd() {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+974-4412-0578',
+        telephone: '+974-4002-5533',
         contactType: 'customer service',
         areaServed: ['QA', 'AE', 'SA', 'KW', 'BH', 'OM'],
         availableLanguage: ['English', 'Arabic'],
       },
       {
         '@type': 'ContactPoint',
-        telephone: '+974-4412-0580',
+        telephone: '+974-3040-5474',
         contactType: 'customer service',
+        contactOption: 'WhatsApp',
         areaServed: ['QA', 'AE', 'SA', 'KW', 'BH', 'OM'],
         availableLanguage: ['English', 'Arabic'],
       },
     ],
     email: 'info@kms-consultants.com',
     sameAs: [
-      'https://www.linkedin.com/company/kms-consultants',
+      'https://www.linkedin.com/company/kms-consultants/',
+      'https://www.instagram.com/kms_consultants_',
+      'https://www.facebook.com/share/1Bh8FiGz1A/',
     ],
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',

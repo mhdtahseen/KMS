@@ -2,187 +2,123 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { getPublishedServices } from "@/data/services";
 import { getPublishedCountries } from "@/data/countries";
+import { KMSWordmark } from "@/components/layout/Wordmark";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
   const locale = useLocale();
 
-  return (
-    <footer
-      className="relative border-t"
-      style={{
-        background: "var(--color-surface-container-lowest)",
-        borderColor: "rgba(127,94,21,0.3)",
-      }}
-    >
-      {/* Gold top accent line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, #ecc06f55, transparent)" }}
-      />
+  const phone = t("phone");
+  const whatsapp = t("whatsapp");
+  const email = t("email");
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-16">
+  const columns = [
+    {
+      title: t("services"),
+      links: getPublishedServices(locale).map((s) => ({ label: s.title, href: `/${locale}/services/${s.slug}` })),
+    },
+    {
+      title: t("countries"),
+      links: getPublishedCountries(locale).map((c) => ({ label: c.name, href: `/${locale}/countries/${c.slug}` })),
+    },
+    {
+      title: t("company"),
+      links: [
+        { label: t("aboutUs"), href: `/${locale}/about` },
+        { label: t("contactUs"), href: `/${locale}/contact` },
+        { label: t("process"), href: `/${locale}#process` },
+        { label: t("testimonials"), href: `/${locale}#testimonials` },
+      ],
+    },
+  ];
+
+  const social = [
+    { icon: "public", href: "https://linkedin.com/in/kmsconsultants/", label: "LinkedIn" },
+    { icon: "alternate_email", href: `mailto:${email}`, label: "Email" },
+    { icon: "call", href: `tel:${phone.replace(/\s/g, "")}`, label: "Phone" },
+  ];
+
+  const headingClass = "text-[0.6875rem] font-bold uppercase tracking-[0.26em] text-gold-soft mb-6";
+  const linkClass = "text-sm text-on-surface-variant transition-colors duration-300 hover:text-champagne";
+
+  return (
+    <footer className="relative overflow-hidden bg-surface-container-lowest">
+      <div className="gold-rule" />
+      <div aria-hidden="true" className="absolute -top-56 left-1/2 -translate-x-1/2 h-[420px] w-[900px] rounded-full bg-gold/15 blur-[150px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 md:px-8 pt-20 md:pt-24 pb-10">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-14 lg:grid-cols-12">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <span
-              className="text-xl font-bold block mb-4"
-              style={{ fontFamily: "var(--font-serif)", color: "#eae1d8" }}
-            >
-              KMS Consultants
-            </span>
-            <p className="text-sm leading-relaxed mb-6" style={{ color: "#d1c5b3" }}>
-              {t("tagline")}
-            </p>
-            {/* Social icons */}
-            <div className="flex gap-3">
-              {([
-                { icon: "public", href: "https://linkedin.com/in/kmsconsultants/", label: "LinkedIn" },
-                { icon: "alternate_email", href: `mailto:${t("email")}`, label: "Email" },
-                { icon: "call", href: `tel:${t("phone").replace(/\s/g, "")}`, label: "Phone" },
-              ] as const).map((item) => (
+          <div className="col-span-2 lg:col-span-3">
+            <Link href={`/${locale}`} aria-label="KMS Consultants" className="inline-block">
+              <KMSWordmark />
+            </Link>
+            <p className="mt-6 max-w-sm font-headline text-2xl leading-snug text-on-background/85">{t("tagline")}</p>
+            <div className="mt-8 flex gap-3">
+              {social.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
-                  className="glass-card-light w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:border-[#ecc06f]/40"
+                  className="grid size-11 place-items-center rounded-full border border-white/12 bg-white/[0.05] text-on-surface-variant transition-all duration-500 hover:border-gold-soft/70 hover:text-champagne"
                 >
-                  <span className="material-symbols-outlined text-base" style={{ color: "#9a8f7f", fontSize: "18px" }}>
-                    {item.icon}
-                  </span>
+                  <span className="material-symbols-outlined !text-[18px]" aria-hidden="true">{item.icon}</span>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <p
-              className="text-xs font-bold uppercase tracking-[0.15em] mb-5"
-              style={{ color: "#ecc06f" }}
-            >
-              {t("services")}
-            </p>
-            <ul className="space-y-3">
-              {getPublishedServices(locale).map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/${locale}/services/${s.slug}`}
-                    className="text-sm transition-colors hover:text-[#ecc06f]"
-                    style={{ color: "#d1c5b3" }}
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Countries */}
-          <div>
-            <p
-              className="text-xs font-bold uppercase tracking-[0.15em] mb-5"
-              style={{ color: "#ecc06f" }}
-            >
-              {t("countries")}
-            </p>
-            <ul className="space-y-3">
-              {getPublishedCountries(locale).map((c) => (
-                <li key={c.slug}>
-                  <Link
-                    href={`/${locale}/countries/${c.slug}`}
-                    className="text-sm transition-colors hover:text-[#ecc06f]"
-                    style={{ color: "#d1c5b3" }}
-                  >
-                    {c.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <p
-              className="text-xs font-bold uppercase tracking-[0.15em] mb-5"
-              style={{ color: "#ecc06f" }}
-            >
-              {t("company")}
-            </p>
-            <ul className="space-y-3">
-              {([
-                { label: t("aboutUs"), href: `/${locale}/about` },
-                { label: t("contactUs"), href: `/${locale}/contact` },
-                { label: t("process"), href: `/${locale}#process` },
-                { label: t("testimonials"), href: `/${locale}#testimonials` },
-              ] as const).map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-sm transition-colors hover:text-[#ecc06f]"
-                    style={{ color: "#d1c5b3" }}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Link columns */}
+          {columns.map((col) => (
+            <nav key={col.title} aria-label={col.title} className="lg:col-span-2">
+              <p className={headingClass}>{col.title}</p>
+              <ul className="space-y-3.5">
+                {col.links.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className={linkClass}>{item.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
 
           {/* Office */}
-          <div>
-            <p
-              className="text-xs font-bold uppercase tracking-[0.15em] mb-5"
-              style={{ color: "#ecc06f" }}
-            >
-              {t("office")}
-            </p>
-            <address className="not-italic space-y-3">
-              <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: "#d1c5b3" }}>
-                {t("address")}
-              </p>
-              <a
-                href={`tel:${t("phone").replace(/\s/g, "")}`}
-                className="text-sm block hover:text-[#ecc06f] transition-colors"
-                style={{ color: "#d1c5b3" }}
-              >
-                {t("phone")}
+          <div className="col-span-2 sm:col-span-1 lg:col-span-3 lg:ps-8">
+            <p className={headingClass}>{t("office")}</p>
+            <address className="not-italic space-y-3.5">
+              <p className="text-sm leading-relaxed whitespace-pre-line text-on-surface-variant">{t("address")}</p>
+              <a href={`tel:${phone.replace(/\s/g, "")}`} className={`${linkClass} block`} dir="ltr">
+                <span className="rtl:block rtl:text-end">{phone}</span>
               </a>
               <a
-                href={`https://wa.me/${t("whatsapp").replace(/[^0-9]/g, "")}`}
+                href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm block hover:text-[#ecc06f] transition-colors"
-                style={{ color: "#d1c5b3" }}
+                className={`${linkClass} block`}
+                dir="ltr"
               >
-                WhatsApp: {t("whatsapp")}
+                <span className="rtl:block rtl:text-end">WhatsApp {whatsapp}</span>
               </a>
-              <a
-                href={`mailto:${t("email")}`}
-                className="text-sm block hover:text-[#ecc06f] transition-colors"
-                style={{ color: "#d1c5b3" }}
-              >
-                {t("email")}
+              <a href={`mailto:${email}`} className={`${linkClass} block`} dir="ltr">
+                <span className="rtl:block rtl:text-end">{email}</span>
               </a>
             </address>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div
-          className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t"
-          style={{ borderColor: "rgba(78,70,56,0.5)" }}
-        >
-          <p className="text-xs" style={{ color: "#9a8f7f" }}>
-            {t("copyright")}
-          </p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-xs hover:text-[#ecc06f] transition-colors" style={{ color: "#9a8f7f" }}>
-              {t("privacy")}
+        <div className="mt-20">
+          <div className="hairline" />
+          <div className="flex flex-col md:flex-row items-center justify-between gap-5 pt-8">
+            <p className="text-xs text-outline">{t("copyright")}</p>
+            <Link href={`/${locale}/contact`} className="text-[0.6875rem] font-bold uppercase tracking-[0.24em] text-gold-soft hover:text-champagne transition-colors duration-300">
+              {tNav("cta")}
             </Link>
-            <Link href="#" className="text-xs hover:text-[#ecc06f] transition-colors" style={{ color: "#9a8f7f" }}>
-              {t("terms")}
-            </Link>
+            <div className="flex gap-7">
+              <Link href="#" className="text-xs text-outline hover:text-champagne transition-colors duration-300">{t("privacy")}</Link>
+              <Link href="#" className="text-xs text-outline hover:text-champagne transition-colors duration-300">{t("terms")}</Link>
+            </div>
           </div>
         </div>
       </div>

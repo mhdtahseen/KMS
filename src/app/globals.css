@@ -1,37 +1,52 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════════════
+   KMS Consultants — design system
+   Brand palette (strict):
+     background   #181918   deep charcoal black
+     gold / CTA   #7F5E15   luxury gold
+     gold glow    #C49A30   soft gold (accents, icons, hairlines)
+     glass        rgba(255,255,255,0.08)
+     glass border rgba(255,255,255,0.12)
+   ══════════════════════════════════════════════════════════════ */
+
 @theme {
-  /* ─── Colors ──────────────────────────────────── */
-  --color-background: #16130d;
-  --color-surface: #16130d;
-  --color-surface-dim: #16130d;
-  --color-surface-bright: #3d3932;
-  --color-surface-container-lowest: #110e09;
-  --color-surface-container-low: #1f1b15;
-  --color-surface-container: #231f19;
-  --color-surface-container-high: #2d2923;
-  --color-surface-container-highest: #39342e;
-  --color-surface-variant: #39342e;
-  --color-surface-tint: #ecc06f;
+  /* ─── Surfaces: neutral charcoal built around #181918 ───── */
+  --color-background: #181918;
+  --color-surface: #181918;
+  --color-surface-dim: #141514;
+  --color-surface-bright: #3a3b39;
+  --color-surface-container-lowest: #111211;
+  --color-surface-container-low: #1c1d1c;
+  --color-surface-container: #212221;
+  --color-surface-container-high: #292a28;
+  --color-surface-container-highest: #333432;
+  --color-surface-variant: #333432;
+  --color-surface-tint: #c49a30;
 
-  --color-primary: #ecc06f;
-  --color-primary-fixed: #ffdea5;
-  --color-primary-fixed-dim: #ecc06f;
+  /* ─── Gold ──────────────────────────────────────────────── */
+  --color-gold: #7f5e15;
+  --color-gold-soft: #c49a30;
+  --color-champagne: #ead9a8;
+
+  --color-primary: #c49a30;
+  --color-primary-fixed: #ead9a8;
+  --color-primary-fixed-dim: #c49a30;
   --color-primary-container: #7f5e15;
-  --color-on-primary: #412d00;
-  --color-on-primary-fixed: #271900;
-  --color-on-primary-fixed-variant: #5d4200;
-  --color-on-primary-container: #ffdc9e;
-  --color-inverse-primary: #79590f;
+  --color-on-primary: #171306;
+  --color-on-primary-fixed: #171306;
+  --color-on-primary-fixed-variant: #5d4410;
+  --color-on-primary-container: #fbf4e2;
+  --color-inverse-primary: #7f5e15;
 
-  --color-secondary: #eec053;
-  --color-secondary-fixed: #ffdf9b;
-  --color-secondary-fixed-dim: #eec053;
-  --color-secondary-container: #b38b21;
-  --color-on-secondary: #3f2e00;
-  --color-on-secondary-fixed: #251a00;
-  --color-on-secondary-fixed-variant: #5b4300;
-  --color-on-secondary-container: #372700;
+  --color-secondary: #c49a30;
+  --color-secondary-fixed: #ead9a8;
+  --color-secondary-fixed-dim: #c49a30;
+  --color-secondary-container: #7f5e15;
+  --color-on-secondary: #171306;
+  --color-on-secondary-fixed: #171306;
+  --color-on-secondary-fixed-variant: #5d4410;
+  --color-on-secondary-container: #fbf4e2;
 
   --color-tertiary: #a6c9fc;
   --color-tertiary-fixed: #d4e3ff;
@@ -42,100 +57,480 @@
   --color-on-tertiary-fixed-variant: #224874;
   --color-on-tertiary-container: #d1e2ff;
 
-  --color-on-background: #eae1d8;
-  --color-on-surface: #eae1d8;
-  --color-on-surface-variant: #d1c5b3;
-  --color-inverse-surface: #eae1d8;
-  --color-inverse-on-surface: #343029;
+  /* ─── Text ──────────────────────────────────────────────── */
+  --color-on-background: #f2ede3;
+  --color-on-surface: #f2ede3;
+  --color-on-surface-variant: #b4aea2;
+  --color-inverse-surface: #f2ede3;
+  --color-inverse-on-surface: #2c2d2b;
 
-  --color-outline: #9a8f7f;
-  --color-outline-variant: #4e4638;
+  --color-outline: #8b8678;
+  --color-outline-variant: #41423e;
 
   --color-error: #ffb4ab;
   --color-error-container: #93000a;
   --color-on-error: #690005;
   --color-on-error-container: #ffdad6;
 
-  /* ─── Typography ────────────────────────────────── */
-  --font-serif: "Noto Serif", Georgia, serif;
-  --font-sans: "Manrope", system-ui, sans-serif;
-
-  /* ─── Spacing ───────────────────────────────────── */
+  /* ─── Layout ────────────────────────────────────────────── */
   --spacing-section: 120px;
   --spacing-container: 1280px;
   --spacing-gutter: 24px;
+
+  /* ─── Motion ────────────────────────────────────────────── */
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ─── Base ──────────────────────────────────────── */
+/* Fonts are loaded with next/font and exposed as variables on <html>.
+   `inline` makes each utility read the variable where it is used. */
+@theme inline {
+  --font-serif: var(--kms-display);
+  --font-headline: var(--kms-display);
+  --font-sans: var(--kms-text);
+  --font-body: var(--kms-text);
+  --font-label: var(--kms-text);
+}
+
+:root {
+  --kms-display: var(--font-cormorant), "Cormorant Garamond", "Times New Roman", serif;
+  --kms-text: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  /* legacy aliases used by inline styles on inner pages */
+  --font-serif: var(--kms-display);
+  --font-sans: var(--kms-text);
+
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --hairline: rgba(255, 255, 255, 0.09);
+}
+
+/* Arabic: Cairo for both display and text. Letter-spacing breaks the
+   joins between Arabic letters, so tracking is switched off entirely. */
+html[lang="ar"] {
+  --kms-display: var(--font-cairo), "Cairo", system-ui, sans-serif;
+  --kms-text: var(--font-cairo), "Cairo", system-ui, sans-serif;
+}
+
+html[lang="ar"] *:not(.latin, .latin *) {
+  letter-spacing: 0 !important;
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  background-color: var(--color-background);
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-on-background);
-  font-family: var(--font-sans);
+  font-family: var(--kms-text);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* ─── Utility Classes ───────────────────────────── */
+/* Fine film grain over the whole page — keeps large dark areas from
+   looking flat and gives the glass something to sit on. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: rgba(196, 154, 48, 0.35);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-soft);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+.font-headline,
+.font-serif {
+  font-feature-settings: "lnum" 1, "kern" 1, "liga" 1;
+}
+
+/* ─── Glass ─────────────────────────────────────────────── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
-}
-
-.nav-dropdown {
-  background: rgba(22, 19, 13, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(60px);
-  -webkit-backdrop-filter: blur(60px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.085) 0%,
+    rgba(255, 255, 255, 0.035) 100%
+  );
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
   box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.28);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 30px 60px -36px rgba(0, 0, 0, 0.7);
 }
 
 .glass-card-light {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid var(--hairline);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
 }
 
-.gold-halo {
-  background: radial-gradient(
-    circle at center,
-    rgba(127, 94, 21, 0.15) 0%,
-    transparent 70%
+.nav-dropdown {
+  background: rgba(24, 25, 24, 0.82);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(40px) saturate(150%);
+  -webkit-backdrop-filter: blur(40px) saturate(150%);
+  box-shadow:
+    0 24px 60px -20px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glass card with a gold hairline that fades around the edge, plus a
+   soft gold light that follows the cursor (set by <Spotlight>). */
+.glass-luxe {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 60%,
+    rgba(255, 255, 255, 0.05) 100%
   );
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 30px 60px -36px rgba(0, 0, 0, 0.75);
+  transition:
+    transform 0.6s var(--ease-luxe),
+    box-shadow 0.6s var(--ease-luxe);
 }
 
+.glass-luxe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    150deg,
+    rgba(196, 154, 48, 0.55) 0%,
+    rgba(255, 255, 255, 0.12) 28%,
+    rgba(255, 255, 255, 0.06) 62%,
+    rgba(196, 154, 48, 0.3) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.glass-luxe::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 0%),
+    rgba(196, 154, 48, 0.16),
+    transparent 62%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glass-luxe:hover::after,
+.glass-luxe:focus-visible::after {
+  opacity: 1;
+}
+
+a.glass-luxe:hover,
+.glass-luxe.is-liftable:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 40px 70px -36px rgba(0, 0, 0, 0.85),
+    0 22px 60px -30px rgba(196, 154, 48, 0.35);
+}
+
+/* ─── Gold ──────────────────────────────────────────────── */
+.gold-halo,
 .gold-glow {
   background: radial-gradient(
     circle at center,
-    rgba(127, 94, 21, 0.15) 0%,
+    rgba(196, 154, 48, 0.14) 0%,
+    rgba(127, 94, 21, 0.08) 35%,
     transparent 70%
   );
 }
 
 .hero-gradient {
-  background: linear-gradient(to bottom, rgba(22, 19, 13, 0.2), #16130d);
+  background: linear-gradient(to bottom, rgba(24, 25, 24, 0.25), #181918);
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%);
+  background: linear-gradient(100deg, #ead9a8 0%, #c49a30 42%, #9a7420 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  /* italics overhang their box; without this the last glyph is clipped */
+  padding-inline-end: 0.12em;
 }
 
+/* Brand CTA surface — #7F5E15 with a brushed-metal light edge. */
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%);
+  background: linear-gradient(180deg, #9a7420 0%, #7f5e15 48%, #684c10 100%);
+  color: #fbf4e2;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 233, 170, 0.45),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(196, 154, 48, 0.3),
+    0 14px 34px -14px rgba(196, 154, 48, 0.6);
 }
 
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(196, 154, 48, 0.55) 50%,
+    transparent
+  );
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent
+  );
+}
+
+/* ─── Buttons ───────────────────────────────────────────── */
+.btn-gold,
+.btn-ghost {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+  padding: 0 1.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    transform 0.5s var(--ease-luxe),
+    box-shadow 0.5s var(--ease-luxe),
+    border-color 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+html[lang="ar"] .btn-gold,
+html[lang="ar"] .btn-ghost {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.btn-gold {
+  color: #fbf4e2;
+  background: linear-gradient(180deg, #9a7420 0%, #7f5e15 48%, #684c10 100%);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 233, 170, 0.5),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(196, 154, 48, 0.35),
+    0 16px 36px -14px rgba(196, 154, 48, 0.65);
+}
+
+/* light sweep across the metal on hover */
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 240, 200, 0.35) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.9s var(--ease-luxe);
+  pointer-events: none;
+}
+
+.btn-gold:hover::after {
+  transform: translateX(120%);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 233, 170, 0.6),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(196, 154, 48, 0.6),
+    0 22px 44px -14px rgba(196, 154, 48, 0.8);
+}
+
+.btn-gold:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-ghost {
+  color: var(--color-on-background);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.btn-ghost:hover {
+  border-color: rgba(196, 154, 48, 0.7);
+  color: var(--color-champagne);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  min-height: 2.6rem;
+  padding: 0 1.35rem;
+  font-size: 0.6875rem;
+}
+
+/* ─── Editorial type helpers ────────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-gold-soft);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2.25rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-soft));
+}
+
+[dir="rtl"] .eyebrow::before {
+  background: linear-gradient(270deg, transparent, var(--color-gold-soft));
+}
+
+.eyebrow-center::after {
+  content: "";
+  width: 2.25rem;
+  height: 1px;
+  background: linear-gradient(270deg, transparent, var(--color-gold-soft));
+}
+
+[dir="rtl"] .eyebrow-center::after {
+  background: linear-gradient(90deg, transparent, var(--color-gold-soft));
+}
+
+html[lang="ar"] .eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.display-1 {
+  font-family: var(--kms-display);
+  font-weight: 500;
+  font-size: clamp(2.75rem, 6.3vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: -0.022em;
+}
+
+.display-2 {
+  font-family: var(--kms-display);
+  font-weight: 500;
+  font-size: clamp(2.35rem, 4.7vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+}
+
+/* Cairo sits taller and wider than Cormorant — bring Arabic display down. */
+html[lang="ar"] .display-1 {
+  font-size: clamp(2.3rem, 5.4vw, 4.6rem);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+html[lang="ar"] .display-2 {
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+html[lang="ar"] .italic {
+  font-style: normal;
+}
+
+.numeral {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  font-feature-settings: "lnum" 1;
+}
+
+/* Labels inside the hero route map (sized in map units) */
+.map-label {
+  font-family: var(--kms-text);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.map-label-origin {
+  font-weight: 700;
+}
+
+/* Map used as a backdrop: the page title already names the destination. */
+.map-quiet .route-end .map-label {
+  display: none;
+}
+
+/* On phones the map is too small for five legible labels: keep Doha only. */
+@media (max-width: 640px) {
+  .route-end .map-label {
+    display: none;
+  }
+
+  .map-label-origin {
+    font-size: 3px;
+  }
+}
+
+/* ─── Scrollers ─────────────────────────────────────────── */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -145,34 +540,238 @@ body {
   scrollbar-width: none;
 }
 
-/* ─── Custom Input Style (Booking form) ─────────── */
+/* ─── Inputs ────────────────────────────────────────────── */
+.field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 0.95rem 1.1rem;
+  color: var(--color-on-surface);
+  font-size: 0.9375rem;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.field::placeholder {
+  color: rgba(180, 174, 162, 0.45);
+}
+
+.field:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.field:focus {
+  border-color: var(--color-gold-soft);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 0 0 4px rgba(196, 154, 48, 0.14),
+    0 10px 30px -12px rgba(196, 154, 48, 0.35);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+}
+
+html[lang="ar"] .field-label {
+  font-size: 0.8125rem;
+}
+
+/* Booking form (inner pages) */
 .custom-input {
   background: rgba(255, 255, 255, 0.05);
   border: none;
-  border-bottom: 2px solid rgba(154, 143, 127, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.3s ease;
   color: var(--color-on-surface);
   width: 100%;
   padding: 12px 4px;
-  font-family: var(--font-sans);
+  font-family: var(--kms-text);
 }
 
 .custom-input:focus {
   outline: none;
-  border-bottom-color: #ecc06f;
+  border-bottom-color: var(--color-gold-soft);
   background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 12px -2px rgba(127, 94, 21, 0.2);
+  box-shadow: 0 8px 20px -10px rgba(196, 154, 48, 0.4);
 }
 
 .custom-input::placeholder {
-  color: var(--color-outline-variant);
+  color: rgba(180, 174, 162, 0.45);
 }
 
-/* ─── Material Symbols ──────────────────────────── */
+/* ─── Material Symbols — thin stroke reads more refined ─── */
 .material-symbols-outlined {
   font-variation-settings:
     "FILL" 0,
-    "wght" 400,
+    "wght" 300,
     "GRAD" 0,
     "opsz" 24;
+}
+
+.icon-fine {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 200,
+    "GRAD" 0,
+    "opsz" 40;
+}
+
+.icon-filled {
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 20;
+}
+
+/* ─── Motion ────────────────────────────────────────────── */
+@keyframes kms-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 6%, 0) scale(1.12);
+  }
+}
+
+@keyframes kms-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes kms-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes kms-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes kms-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kms-pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(3.4);
+    opacity: 0;
+  }
+}
+
+@keyframes kms-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes kms-marquee-rtl {
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.animate-drift {
+  animation: kms-drift 18s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: kms-float 7s ease-in-out infinite;
+}
+
+.rise {
+  opacity: 0;
+  animation: kms-rise 1.1s var(--ease-luxe) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+.route-arc {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: kms-draw 2.2s var(--ease-luxe) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+.route-end {
+  opacity: 0;
+  animation: kms-fade-in 0.8s ease forwards;
+  animation-delay: var(--d, 0s);
+}
+
+.pulse-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: kms-pulse-ring 3s ease-out infinite;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: kms-marquee 48s linear infinite;
+}
+
+[dir="rtl"] .marquee-track {
+  animation-name: kms-marquee-rtl;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-drift,
+  .animate-float,
+  .pulse-ring,
+  .marquee-track {
+    animation: none;
+  }
+
+  .rise,
+  .route-end {
+    opacity: 1;
+    animation: none;
+  }
+
+  .route-arc {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+
+  .route-spark {
+    display: none;
+  }
 }

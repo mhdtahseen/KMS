@@ -24,7 +24,8 @@ export async function generateMetadata({
 
   const title = `${service.title} | Visa & Immigration Services`;
   const description = `${service.tagline} — ${service.heroSubtext.slice(0, 140)}. KMS Consultants, Doha Qatar.`;
-  const url = `https://www.kms-consultants.com/en/services/${slug}`;
+  const url = `https://www.kms-consultants.com/${locale}/services/${slug}`;
+  const enUrl = `https://www.kms-consultants.com/en/services/${slug}`;
 
   return {
     title,
@@ -32,7 +33,7 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        en: url,
+        en: enUrl,
         ar: `https://www.kms-consultants.com/ar/services/${slug}`,
       },
     },

@@ -7,27 +7,9 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { getPublishedServices } from "@/data/services";
 import { getPublishedCountries } from "@/data/countries";
+import { KMSWordmark } from "@/components/layout/Wordmark";
 
-const KMSLogo = () => (
-  <svg
-    className="size-8 text-primary"
-    fill="none"
-    viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg"
-    style={{ color: "#ecc06f" }}
-  >
-    <path
-      d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z"
-      fill="currentColor"
-    />
-    <path
-      clipRule="evenodd"
-      d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764Z"
-      fill="currentColor"
-      fillRule="evenodd"
-    />
-  </svg>
-);
+type MenuKey = "services" | "countries" | null;
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -36,14 +18,25 @@ export default function Header() {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [countriesOpen, setCountriesOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<MenuKey>(null);
+
+  const services = getPublishedServices(locale);
+  const countries = getPublishedCountries(locale);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Lock the page behind the full-screen mobile menu
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   const switchLocale = () => {
     const next = locale === "en" ? "ar" : "en";
@@ -52,218 +45,206 @@ export default function Header() {
     router.push(segments.join("/"));
   };
 
-  const navLinkClass = (active?: boolean) =>
-    `text-sm font-medium tracking-wide transition-colors duration-200 ${
-      active
-        ? "text-[#ecc06f] border-b border-[#ecc06f] pb-0.5"
-        : "text-[#d1c5b3] hover:text-[#ecc06f]"
+  const linkClass = (active?: boolean) =>
+    `group/link relative py-2 text-[0.8125rem] font-medium tracking-[0.06em] transition-colors duration-300 ${
+      active ? "text-champagne" : "text-on-surface-variant hover:text-on-background"
     }`;
 
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "nav-dropdown border-b border-white/10" : "bg-transparent"
+  const underline = (active?: boolean) => (
+    <span
+      aria-hidden="true"
+      className={`absolute inset-x-0 -bottom-0.5 h-px origin-center bg-gold-soft transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        active ? "scale-x-100" : "scale-x-0 group-hover/link:scale-x-100"
       }`}
+    />
+  );
+
+  const dropdown = (key: Exclude<MenuKey, null>, label: string, items: { href: string; label: string }[], active: boolean) => (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpenMenu(key)}
+      onMouseLeave={() => setOpenMenu(null)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setOpenMenu(null);
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <Link href={`/${locale}`} className="flex items-center gap-3 group">
-          <KMSLogo />
-          <span
-            className="text-xl font-bold"
-            style={{ fontFamily: "var(--font-serif)", color: "#eae1d8" }}
+      <button
+        type="button"
+        className={`${linkClass(active)} inline-flex items-center gap-1`}
+        aria-expanded={openMenu === key}
+        aria-haspopup="true"
+        onClick={() => setOpenMenu(openMenu === key ? null : key)}
+        onFocus={() => setOpenMenu(key)}
+      >
+        {label}
+        <span
+          className={`material-symbols-outlined !text-[16px] opacity-60 transition-transform duration-300 ${openMenu === key ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        >
+          expand_more
+        </span>
+        {underline(active)}
+      </button>
+      <AnimatePresence>
+        {openMenu === key && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 6, scale: 0.98 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute top-full start-0 pt-4"
           >
-            KMS Consultants
-          </span>
+            <div className="nav-dropdown w-64 rounded-2xl p-2">
+              {items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpenMenu(null)}
+                  className="group/item flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm text-on-surface-variant transition-colors duration-300 hover:bg-white/[0.06] hover:text-on-background"
+                >
+                  {item.label}
+                  <span
+                    className="material-symbols-outlined !text-[16px] text-gold-soft opacity-0 -translate-x-1 rtl:translate-x-1 rtl:rotate-180 transition-all duration-300 group-hover/item:opacity-100 group-hover/item:translate-x-0"
+                    aria-hidden="true"
+                  >
+                    arrow_forward
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+
+  const serviceItems = services.map((s) => ({ href: `/${locale}/services/${s.slug}`, label: s.title }));
+  const countryItems = countries.map((c) => ({ href: `/${locale}/countries/${c.slug}`, label: c.name }));
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 px-3 md:px-6 pointer-events-none">
+      <div
+        className={`pointer-events-auto mx-auto flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          scrolled || mobileOpen
+            ? "nav-dropdown mt-3 h-16 max-w-6xl rounded-full ps-6 pe-3"
+            : "mt-0 h-24 max-w-7xl rounded-none border border-transparent px-3 md:px-2"
+        }`}
+      >
+        <Link href={`/${locale}`} aria-label="KMS Consultants" onClick={() => setMobileOpen(false)}>
+          <KMSWordmark />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {/* Services Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <button className={navLinkClass(pathname.includes("/services"))}>
-              {t("services")}
-            </button>
-            <AnimatePresence>
-              {servicesOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-56 nav-dropdown rounded-xl overflow-hidden py-2"
-                >
-                  {getPublishedServices(locale).map((s) => (
-                    <Link
-                      key={s.slug}
-                      href={`/${locale}/services/${s.slug}`}
-                      className="block px-4 py-2.5 text-sm text-[#d1c5b3] hover:text-[#ecc06f] hover:bg-white/5 transition-colors"
-                    >
-                      {s.title}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Countries Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setCountriesOpen(true)}
-            onMouseLeave={() => setCountriesOpen(false)}
-          >
-            <button className={navLinkClass(pathname.includes("/countries"))}>
-              {t("countries")}
-            </button>
-            <AnimatePresence>
-              {countriesOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-48 nav-dropdown rounded-xl overflow-hidden py-2"
-                >
-                  {getPublishedCountries(locale).map((c) => (
-                    <Link
-                      key={c.slug}
-                      href={`/${locale}/countries/${c.slug}`}
-                      className="block px-4 py-2.5 text-sm text-[#d1c5b3] hover:text-[#ecc06f] hover:bg-white/5 transition-colors"
-                    >
-                      {c.name}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          <Link href={`/${locale}#process`} className={navLinkClass()}>
+        {/* Desktop navigation */}
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8" aria-label="Primary">
+          {dropdown("services", t("services"), serviceItems, pathname.includes("/services"))}
+          {dropdown("countries", t("countries"), countryItems, pathname.includes("/countries"))}
+          <Link href={`/${locale}#process`} className={linkClass()}>
             {t("process")}
+            {underline()}
           </Link>
-          <Link href={`/${locale}#testimonials`} className={navLinkClass()}>
+          <Link href={`/${locale}#testimonials`} className={linkClass()}>
             {t("testimonials")}
+            {underline()}
           </Link>
-          <Link href={`/${locale}/about`} className={navLinkClass(pathname.includes("/about"))}>
+          <Link href={`/${locale}/about`} className={linkClass(pathname.includes("/about"))}>
             {t("about")}
+            {underline(pathname.includes("/about"))}
           </Link>
-          <Link href={`/${locale}/contact`} className={navLinkClass(pathname.includes("/contact"))}>
-            {t("contact")}
-          </Link>
-
-          {/* Language Switcher */}
-          <button
-            onClick={switchLocale}
-            className="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1.5 rounded-full border border-[#4e4638] text-[#d1c5b3] hover:text-[#ecc06f] hover:border-[#ecc06f] transition-all"
-          >
-            {locale === "en" ? "AR" : "EN"}
-          </button>
         </nav>
 
-        {/* CTA */}
-        <Link
-          href={`/${locale}/contact`}
-          className="hidden md:inline-flex items-center px-5 py-2.5 rounded-xl font-bold text-sm tracking-wide transition-all gold-glow hover:opacity-90 hover:scale-105"
-          style={{
-            background: "linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%)",
-            color: "#412d00",
-          }}
-        >
-          {t("cta")}
-        </Link>
+        <div className="hidden lg:flex items-center gap-4 xl:gap-5">
+          <button
+            type="button"
+            onClick={switchLocale}
+            className="text-sm font-medium text-on-surface-variant hover:text-champagne transition-colors duration-300"
+            style={locale === "en" ? { fontFamily: "var(--font-cairo)" } : undefined}
+            lang={locale === "en" ? "ar" : "en"}
+          >
+            {locale === "en" ? "العربية" : "English"}
+          </button>
+          <Link href={`/${locale}/contact`} className="btn-gold btn-sm">
+            {t("cta")}
+          </Link>
+        </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-[#d1c5b3] focus-visible:ring-2 focus-visible:ring-primary rounded-lg transition-colors hover:bg-white/10"
+          type="button"
+          className="lg:hidden grid size-11 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-on-background"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
         >
-          <span className="material-symbols-outlined" aria-hidden="true">
+          <span className="material-symbols-outlined !text-[22px]" aria-hidden="true">
             {mobileOpen ? "close" : "menu"}
           </span>
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden nav-dropdown border-t border-white/10"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="pointer-events-auto lg:hidden nav-dropdown mt-3 rounded-[28px] max-h-[calc(100svh-6.5rem)] overflow-y-auto"
           >
-            <div className="px-6 py-6 space-y-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#ecc06f]">
-                Services
-              </p>
-              {getPublishedServices(locale).map((s) => (
-                <Link
-                  key={s.slug}
-                  href={`/${locale}/services/${s.slug}`}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-sm text-[#d1c5b3] hover:text-[#ecc06f] py-1"
-                >
-                  {s.title}
-                </Link>
-              ))}
-              <div className="border-t border-white/10 pt-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#ecc06f] mb-3">
-                  Countries
-                </p>
-                {getPublishedCountries(locale).map((c) => (
-                  <Link
-                    key={c.slug}
-                    href={`/${locale}/countries/${c.slug}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="block text-sm text-[#d1c5b3] hover:text-[#ecc06f] py-1"
-                  >
-                    {c.name}
-                  </Link>
-                ))}
+            <div className="p-7 space-y-7">
+              <div>
+                <p className="eyebrow mb-4">{t("services")}</p>
+                <div className="grid gap-1">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="font-headline text-2xl text-on-background/90 py-1.5"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="border-t border-white/10 pt-4 space-y-1">
-                <Link
-                  href={`/${locale}/about`}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-sm text-[#d1c5b3] hover:text-[#ecc06f] py-1"
-                >
-                  {t("about")}
-                </Link>
-                <Link
-                  href={`/${locale}/contact`}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-sm text-[#d1c5b3] hover:text-[#ecc06f] py-1"
-                >
-                  {t("contact")}
-                </Link>
+              <div className="hairline" />
+              <div>
+                <p className="eyebrow mb-4">{t("countries")}</p>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                  {countryItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="font-headline text-xl text-on-background/90 py-1.5"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="border-t border-white/10 pt-4 flex items-center gap-4">
-                <button
-                  onClick={switchLocale}
-                  className="text-xs font-bold uppercase tracking-[0.15em] px-3 py-1.5 rounded-full border border-[#4e4638] text-[#d1c5b3]"
-                >
-                  {locale === "en" ? "AR" : "EN"}
-                </button>
-                <Link
-                  href={`/${locale}/contact`}
-                  className="flex-1 text-center px-4 py-2.5 rounded-xl font-bold text-sm"
-                  style={{
-                    background: "linear-gradient(135deg, #ecc06f 0%, #7f5e15 100%)",
-                    color: "#412d00",
-                  }}
-                  onClick={() => setMobileOpen(false)}
-                >
+              <div className="hairline" />
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-on-surface-variant">
+                <Link href={`/${locale}#process`} onClick={() => setMobileOpen(false)}>{t("process")}</Link>
+                <Link href={`/${locale}#testimonials`} onClick={() => setMobileOpen(false)}>{t("testimonials")}</Link>
+                <Link href={`/${locale}/about`} onClick={() => setMobileOpen(false)}>{t("about")}</Link>
+                <Link href={`/${locale}/contact`} onClick={() => setMobileOpen(false)}>{t("contact")}</Link>
+              </div>
+              <div className="flex items-center gap-4">
+                <Link href={`/${locale}/contact`} className="btn-gold flex-1" onClick={() => setMobileOpen(false)}>
                   {t("cta")}
                 </Link>
+                <button
+                  type="button"
+                  onClick={switchLocale}
+                  className="btn-ghost !px-5"
+                  style={locale === "en" ? { fontFamily: "var(--font-cairo)", fontSize: "0.9375rem", letterSpacing: 0 } : undefined}
+                  lang={locale === "en" ? "ar" : "en"}
+                >
+                  {locale === "en" ? "العربية" : "EN"}
+                </button>
               </div>
             </div>
           </motion.div>

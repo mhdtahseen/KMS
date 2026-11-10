@@ -213,7 +213,7 @@ function buildConfirmationEn(fullName: string): string {
         <!-- Contact fallback -->
         <p style="margin:28px 0 0;text-align:center;color:${BRAND_MUTED};font-size:13px;">
           Need to reach us sooner? Call us at
-          <a href="tel:+97444120578" style="color:${BRAND_GOLD};text-decoration:none;">+974 4412 0578</a>
+          <a href="tel:+97440025533" style="color:${BRAND_GOLD};text-decoration:none;">+974 4002 5533</a>
           or email
           <a href="mailto:info@kms-consultants.com" style="color:${BRAND_GOLD};text-decoration:none;">info@kms-consultants.com</a>
         </p>
@@ -291,7 +291,7 @@ function buildConfirmationAr(fullName: string): string {
         <!-- Contact fallback -->
         <p style="margin:28px 0 0;text-align:center;color:${BRAND_MUTED};font-size:13px;">
           هل تحتاج إلى التواصل معنا بشكل أسرع؟ اتصل على
-          <a href="tel:+97444120578" style="color:${BRAND_GOLD};text-decoration:none;">+974 4412 0578</a>
+          <a href="tel:+97440025533" style="color:${BRAND_GOLD};text-decoration:none;">+974 4002 5533</a>
           أو راسلنا على
           <a href="mailto:info@kms-consultants.com" style="color:${BRAND_GOLD};text-decoration:none;">info@kms-consultants.com</a>
         </p>

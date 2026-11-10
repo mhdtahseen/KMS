@@ -14,27 +14,28 @@ export default async function ThankYouPage({ params }: { params: Promise<{ local
   const t = await getTranslations('thankYou');
   
   return (
-    <main className="min-h-screen flex items-center justify-center pt-20 px-8 relative overflow-hidden bg-background">
-      {/* Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-      
-      <div className="max-w-2xl w-full text-center space-y-12 relative z-10 glass-card p-12 md:p-20 rounded-[48px]">
-        <div className="size-24 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mx-auto mb-8">
-            <span className="material-symbols-outlined text-4xl">task_alt</span>
+    <main className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 pb-20">
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[820px] rounded-full bg-gold/25 blur-[150px]" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[900px] rounded-full border border-gold-soft/10" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[1200px] rounded-full border border-gold-soft/[0.06]" />
+      </div>
+
+      <div className="rise glass-luxe w-full max-w-2xl rounded-[32px] px-8 py-14 md:px-16 md:py-20 text-center">
+        <div className="mx-auto grid size-20 place-items-center rounded-full border border-gold-soft/40 bg-gold/20 text-champagne shadow-[0_0_50px_-8px_rgba(196,154,48,0.6)]">
+          <span className="material-symbols-outlined icon-fine !text-[36px]" aria-hidden="true">check</span>
         </div>
-        
-        <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-headline font-bold leading-tight">{t('heading')}</h1>
-            <p className="text-lg text-on-surface-variant max-w-lg mx-auto">{t('subtext')}</p>
-        </div>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-            <Link href={`/${locale}`} className="px-8 py-4 rounded-xl bg-primary-container text-white font-bold tracking-wide hover:opacity-90 transition-all gold-glow w-full sm:w-auto">
-                {t('returnHome')}
-            </Link>
-            <Link href={`/${locale}/services/skilled-immigration`} className="px-8 py-4 rounded-xl border border-outline-variant font-bold tracking-wide hover:bg-surface-container-low transition-colors w-full sm:w-auto">
-                {t('exploreServices')}
-            </Link>
+
+        <h1 className="display-2 mt-10 text-on-background">{t('heading')}</h1>
+        <p className="mx-auto mt-6 max-w-md text-base md:text-lg leading-relaxed text-on-surface-variant">{t('subtext')}</p>
+
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link href={`/${locale}`} className="btn-gold w-full sm:w-auto">
+            {t('returnHome')}
+          </Link>
+          <Link href={`/${locale}#services`} className="btn-ghost w-full sm:w-auto">
+            {t('exploreServices')}
+          </Link>
         </div>
       </div>
     </main>

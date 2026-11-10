@@ -22,7 +22,8 @@ export async function generateMetadata({
 
   const title = `${country.name} Immigration & Visa Services`;
   const description = `Expert ${country.name} immigration consultants in Doha, Qatar. ${country.tagline}. KMS Consultants guides you through visas, PR, and citizenship pathways.`;
-  const url = `https://www.kms-consultants.com/en/countries/${slug}`;
+  const url = `https://www.kms-consultants.com/${locale}/countries/${slug}`;
+  const enUrl = `https://www.kms-consultants.com/en/countries/${slug}`;
 
   return {
     title,
@@ -30,7 +31,7 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        en: url,
+        en: enUrl,
         ar: `https://www.kms-consultants.com/ar/countries/${slug}`,
       },
     },

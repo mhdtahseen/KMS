@@ -31,11 +31,15 @@ export function BookingForm() {
   };
 
   return (
-    <div className="glass-card p-10 lg:p-16 rounded-3xl relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full -mr-32 -mt-32"></div>
+    <div className="glass-luxe relative h-full overflow-hidden rounded-[28px] p-8 md:p-12">
+      <div aria-hidden="true" className="absolute -bottom-52 -end-52 size-[520px] rounded-full border border-gold-soft/15" />
+      <div aria-hidden="true" className="absolute -bottom-36 -end-36 size-[360px] rounded-full border border-gold-soft/20" />
+      <div aria-hidden="true" className="absolute -bottom-40 -end-40 size-[420px] rounded-full bg-gold-soft/10 blur-[110px]" />
+
       <div className="relative z-10">
-        <h2 className="font-headline text-3xl text-on-background mb-10">{bt('formHeading')}</h2>
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+        <h2 className="font-headline text-3xl md:text-4xl leading-tight font-medium text-on-background">{bt('formHeading')}</h2>
+
+        <form onSubmit={handleSubmit} className="mt-9 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Honeypot — visually hidden, off-screen; real users never fill this */}
           <div
             aria-hidden="true"
@@ -51,114 +55,69 @@ export function BookingForm() {
             }}
           >
             <label htmlFor="booking-gotcha">Leave this field blank</label>
-            <input
-              id="booking-gotcha"
-              name="_gotcha"
-              type="text"
-              tabIndex={-1}
-              autoComplete="off"
-            />
+            <input id="booking-gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
           </div>
 
-          {/* Name */}
-          <div className="flex flex-col gap-2">
-            <label className="text-[10px] font-bold text-primary uppercase tracking-widest">{t('fullName')}</label>
-            <input
-              name="fullName"
-              required
-              className="bg-white/5 border-0 border-b-2 border-outline-variant/30 py-3 px-1 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:border-primary focus:bg-white/10 transition-all"
-              placeholder={t('namePlaceholder')}
-              type="text"
-            />
+          <div>
+            <label htmlFor="booking-name" className="field-label">{t('fullName')}</label>
+            <input id="booking-name" name="fullName" required type="text" autoComplete="name" placeholder={t('namePlaceholder')} className="field" />
           </div>
-          {/* Email */}
-          <div className="flex flex-col gap-2">
-            <label className="text-[10px] font-bold text-primary uppercase tracking-widest">{t('email')}</label>
-            <input
-              name="email"
-              required
-              className="bg-white/5 border-0 border-b-2 border-outline-variant/30 py-3 px-1 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:border-primary focus:bg-white/10 transition-all"
-              placeholder={t('emailPlaceholder')}
-              type="email"
-            />
+          <div>
+            <label htmlFor="booking-email" className="field-label">{t('email')}</label>
+            <input id="booking-email" name="email" required type="email" autoComplete="email" placeholder={t('emailPlaceholder')} className="field" dir="ltr" />
           </div>
-          {/* Phone */}
-          <div className="flex flex-col gap-2">
-            <label className="text-[10px] font-bold text-primary uppercase tracking-widest">{t('phone')}</label>
-            <input
-              name="phone"
-              required
-              className="bg-white/5 border-0 border-b-2 border-outline-variant/30 py-3 px-1 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:border-primary focus:bg-white/10 transition-all"
-              placeholder={t('phonePlaceholder')}
-              type="tel"
-            />
+          <div>
+            <label htmlFor="booking-phone" className="field-label">{t('phone')}</label>
+            <input id="booking-phone" name="phone" required type="tel" autoComplete="tel" placeholder={t('phonePlaceholder')} className="field" dir="ltr" />
           </div>
-          {/* Service */}
-          <div className="flex flex-col gap-2">
-            <label className="text-[10px] font-bold text-primary uppercase tracking-widest">{t('service')}</label>
-            <select
-              name="service"
-              className="bg-white/5 border-0 border-b-2 border-outline-variant/30 py-3 px-1 text-on-surface focus:ring-0 focus:border-primary focus:bg-white/10 transition-all appearance-none cursor-pointer"
-            >
-              {getPublishedServices(locale).map(s => (
-                <option key={s.slug} value={s.slug} className="bg-surface-container-high">{s.title}</option>
-              ))}
-            </select>
+          <div>
+            <label htmlFor="booking-service" className="field-label">{t('service')}</label>
+            <div className="relative">
+              <select id="booking-service" name="service" className="field appearance-none cursor-pointer pe-12">
+                {getPublishedServices(locale).map((s) => (
+                  <option key={s.slug} value={s.slug} className="bg-surface-container-high">{s.title}</option>
+                ))}
+              </select>
+              <span className="material-symbols-outlined pointer-events-none absolute end-4 top-1/2 -translate-y-1/2 text-gold-soft" aria-hidden="true">expand_more</span>
+            </div>
           </div>
-          {/* Country */}
-          <div className="md:col-span-2 flex flex-col gap-2">
-            <label className="text-[10px] font-bold text-primary uppercase tracking-widest">{t('destination')}</label>
-            <input
-              name="destination"
-              className="bg-white/5 border-0 border-b-2 border-outline-variant/30 py-3 px-1 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:border-primary focus:bg-white/10 transition-all"
-              placeholder={t('destinationPlaceholder')}
-              type="text"
-            />
+          <div className="md:col-span-2">
+            <label htmlFor="booking-destination" className="field-label">{t('destination')}</label>
+            <input id="booking-destination" name="destination" type="text" placeholder={t('destinationPlaceholder')} className="field" />
           </div>
-          {/* Message */}
-          <div className="md:col-span-2 flex flex-col gap-2">
-            <label className="text-[10px] font-bold text-primary uppercase tracking-widest">{t('message')}</label>
-            <textarea
-              name="message"
-              className="bg-white/5 border-0 border-b-2 border-outline-variant/30 py-3 px-1 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:border-primary focus:bg-white/10 transition-all resize-none"
-              placeholder={t('messagePlaceholder')}
-              rows={4}
-            ></textarea>
+          <div className="md:col-span-2">
+            <label htmlFor="booking-message" className="field-label">{t('message')}</label>
+            <textarea id="booking-message" name="message" rows={4} placeholder={t('messagePlaceholder')} className="field resize-none" />
           </div>
-          <div className="md:col-span-2 pt-6">
-            <button
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-primary/80 to-primary text-on-primary font-bold py-5 rounded-xl text-lg hover:shadow-[0_8px_24px_-4px_rgba(236,192,111,0.3)] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
-              type="submit"
-            >
+
+          <div className="md:col-span-2 pt-2">
+            <button disabled={isSubmitting} type="submit" className="btn-gold w-full !min-h-[3.75rem]">
               {isSubmitting ? (
                 <>
-                  <svg className="animate-spin size-5 text-on-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="animate-spin size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                   </svg>
-                  <span>Processing…</span>
+                  <span>{t('processing')}</span>
                 </>
               ) : (
                 <>
                   <span>{t('submit')}</span>
-                  <span className="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                  <span className="material-symbols-outlined !text-[18px] rtl:rotate-180" aria-hidden="true">arrow_forward</span>
                 </>
               )}
             </button>
 
             {/* Inline error message — preserves form data, no page refresh */}
             {submitError && (
-              <div
-                role="alert"
-                className="mt-4 flex items-start gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm"
-              >
+              <div role="alert" className="mt-4 flex items-start gap-3 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
                 <span className="material-symbols-outlined text-base shrink-0 mt-0.5" aria-hidden="true">error</span>
                 <span>{submitError}</span>
               </div>
             )}
 
-            <p className="text-center text-on-surface-variant/60 text-[11px] mt-6 italic">
+            <p className="mt-6 flex items-center justify-center gap-2 text-center text-xs text-on-surface-variant">
+              <span className="material-symbols-outlined !text-[15px] text-gold-soft" aria-hidden="true">lock</span>
               {t('privacy')}
             </p>
           </div>
