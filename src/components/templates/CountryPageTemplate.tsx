@@ -1,306 +1,261 @@
-'use client';
-
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
 import { Country } from '@/data/countries';
 import { StickyCtaBar } from '@/components/shared/StickyCtaBar';
+import { FadeInSection } from '@/components/shared/FadeInSection';
+import { SmartImage } from '@/components/shared/SmartImage';
+import { Plate } from '@/components/shared/Plate';
+import { FlagChip, countryCode } from '@/components/shared/FlagChip';
+import { Spotlight } from '@/components/shared/Spotlight';
+import { SectionHeading } from '@/components/shared/SectionHeading';
+import { ConsultationBanner } from '@/components/shared/ConsultationBanner';
+import { WorldRoutes } from '@/components/home/WorldRoutes';
+
+const iconRing =
+  'grid size-12 shrink-0 place-items-center rounded-full border border-gold-soft/35 bg-gold/15 text-champagne';
+
+const WHY_FEATURES = [
+  { key: 'stability', icon: 'verified_user' },
+  { key: 'education', icon: 'school' },
+  { key: 'prosperity', icon: 'trending_up' },
+] as const;
 
 export function CountryPageTemplate({ country }: { country: Country }) {
   const locale = useLocale();
   const t = useTranslations('countries');
+  const tHero = useTranslations('home.hero');
+
+  const code = countryCode(country.slug);
+  const tags = (country.homeHighlight ?? '')
+    .split('•')
+    .map((s) => s.trim())
+    .filter(Boolean);
   const pathwayCount = country.pathways.length;
-  const pathwaysGridColsClass = pathwayCount === 1 ? 'md:grid-cols-1' : pathwayCount === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3';
-  const hasDuplicateWhyChooseImages = country.whyChooseImages[0] === country.whyChooseImages[1];
+  const pathwayCols = pathwayCount === 1 ? '' : pathwayCount === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3';
 
   return (
-    <main className="bg-background text-on-background font-sans overflow-x-hidden">
-      <StickyCtaBar title={`${country.name} Immigration`} ctaText={t('cta.button')} />
-      {/* Hero Section */}
-      <section className="relative min-h-[921px] flex items-center justify-center overflow-hidden">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0 z-0"
-        >
-          <Image 
-            alt={country.name}
-            className="w-full h-full object-cover grayscale opacity-40" 
+    <main className="overflow-x-clip">
+      <StickyCtaBar title={country.name} ctaText={t('cta.button')} />
+
+      {/* ── Hero ───────────────────────────────────────── */}
+      <section className="relative isolate flex min-h-[92svh] flex-col justify-end overflow-hidden">
+        <div aria-hidden="true" className="absolute inset-0 -z-10">
+          <SmartImage
             src={country.heroImage}
+            alt=""
             fill
             priority
+            sizes="100vw"
+            className="object-cover grayscale opacity-45"
+            fallback={
+              // No photograph on file: show the route from Doha instead
+              <div className="map-quiet absolute -end-[6%] top-[4%] w-[120%] opacity-70 sm:w-[78%] [mask-image:radial-gradient(closest-side,#000_55%,transparent)]">
+                <WorldRoutes originLabel={tHero('origin')} destinations={[{ slug: country.slug, label: country.name }]} className="w-full h-auto" />
+              </div>
+            }
           />
-          <div className="absolute inset-0 hero-gradient"></div>
-        </motion.div>
-        
-        <div className="relative z-10 text-center max-w-4xl px-8">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="font-sans text-xs font-bold text-primary tracking-[0.3em] uppercase mb-4 block"
-          >
-            {t('hero.badge')}
-          </motion.span>
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="font-serif text-[84px] leading-tight text-on-background mb-6"
+          <div className="absolute inset-0 bg-gold-soft/35 mix-blend-color" />
+          <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_20%_10%,rgba(196,154,48,0.2),transparent_70%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/30" />
+          <div className="absolute inset-y-0 start-0 w-2/3 bg-gradient-to-r rtl:bg-gradient-to-l from-background/80 to-transparent" />
+        </div>
+
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-8 pt-40 pb-10 md:pb-14">
+          <div className="rise flex flex-wrap items-center gap-4" style={{ '--d': '0.1s' } as React.CSSProperties}>
+            <FlagChip slug={country.slug} />
+            <p className="eyebrow">{t('hero.badge')}</p>
+          </div>
+
+          <h1
+            className="rise mt-6 font-headline font-medium leading-[0.92] tracking-[-0.025em] text-on-background text-[clamp(3.5rem,11vw,10.5rem)] rtl:text-[clamp(2.75rem,8vw,6.5rem)] rtl:leading-[1.25] rtl:font-bold"
+            style={{ '--d': '0.22s' } as React.CSSProperties}
           >
             {country.name}
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="font-serif text-2xl text-on-surface-variant font-light mb-12"
+          </h1>
+          <p
+            className="rise mt-5 font-headline italic text-2xl md:text-4xl text-gradient-gold w-fit"
+            style={{ '--d': '0.36s' } as React.CSSProperties}
           >
             {country.tagline}
-          </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-            className="flex flex-col md:flex-row gap-6 justify-center"
-          >
-            <Link href={`/${locale}/contact`} className="bg-gold-gradient text-on-primary px-10 py-5 rounded-lg font-bold text-lg shadow-lg gold-glow hover:scale-[1.02] transition-transform">
+          </p>
+
+          <div className="rise mt-10 flex flex-col sm:flex-row gap-4" style={{ '--d': '0.5s' } as React.CSSProperties}>
+            <Link href={`/${locale}/contact`} className="btn-gold">
               {t('hero.ctaPrimary')}
+              <span className="material-symbols-outlined !text-[18px] rtl:rotate-180" aria-hidden="true">arrow_forward</span>
             </Link>
-            <Link href={`/${locale}/countries/${country.slug}#pathways`} className="glass-card px-10 py-5 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all">
+            <Link href="#pathways" className="btn-ghost">
               {t('hero.ctaSecondary')}
             </Link>
-          </motion.div>
-        </div>
-        
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <span className="material-symbols-outlined text-primary text-3xl" aria-hidden="true">keyboard_double_arrow_down</span>
+          </div>
+
+          {/* Facts bar */}
+          <div
+            className="rise glass-luxe mt-14 grid grid-cols-2 overflow-hidden rounded-3xl lg:grid-cols-[1fr_1fr_1.3fr]"
+            style={{ '--d': '0.66s' } as React.CSSProperties}
+          >
+            {country.overviewStats.slice(0, 2).map((stat) => (
+              <div key={stat.label} className="p-6 md:p-8 border-white/10 first:border-e lg:border-e">
+                <p className="latin numeral text-4xl sm:text-5xl md:text-6xl leading-none font-medium text-on-background">{stat.value}</p>
+                <p className="mt-3 text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-on-surface-variant">{stat.label}</p>
+              </div>
+            ))}
+            {tags.length > 0 && (
+              <div className="p-6 md:p-8 col-span-2 lg:col-span-1 border-t lg:border-t-0 border-white/10">
+                <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-on-surface-variant">{t('pathways.badge')}</p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <li key={tag} className="rounded-full border border-gold-soft/30 bg-gold/15 px-3.5 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-champagne">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
-      {/* Why Section */}
-      <section className="py-[120px] px-8 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] gold-glow -z-10"></div>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-serif text-[36px] font-semibold text-on-background mb-8">
-                {t('whyChoose.prefix')} <span className="text-primary">{country.name}</span>
-              </h2>
-              <p className="font-sans text-lg text-on-surface-variant mb-12 leading-relaxed">
-                {country.overviewBody}
-              </p>
-              <div className="space-y-8">
-                <div className="flex items-start gap-6">
-                  <div className="bg-primary-container/20 p-4 rounded-xl">
-                    <span className="material-symbols-outlined text-primary" aria-hidden="true">verified_user</span>
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-xl font-medium mb-2">{t('whyChoose.stability.title')}</h4>
-                    <p className="text-on-surface-variant font-sans">{t('whyChoose.stability.description')}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-6">
-                  <div className="bg-primary-container/20 p-4 rounded-xl">
-                    <span className="material-symbols-outlined text-primary" aria-hidden="true">school</span>
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-xl font-medium mb-2">{t('whyChoose.education.title')}</h4>
-                    <p className="text-on-surface-variant font-sans">{t('whyChoose.education.description')}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-6">
-                  <div className="bg-primary-container/20 p-4 rounded-xl">
-                    <span className="material-symbols-outlined text-primary" aria-hidden="true">trending_up</span>
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-xl font-medium mb-2">{t('whyChoose.prosperity.title')}</h4>
-                    <p className="text-on-surface-variant font-sans">{t('whyChoose.prosperity.description')}</p>
-                  </div>
+      {/* ── Why this country ───────────────────────────── */}
+      <FadeInSection>
+        <section className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-6 md:px-8 grid lg:grid-cols-12 gap-14 lg:gap-12 items-center">
+            <div className="lg:col-span-6">
+              <SectionHeading eyebrow={t('whyChoose.eyebrow')} heading={t('whyChoose.prefix')} accent={country.name} />
+              <p className="mt-8 font-headline text-2xl md:text-[1.7rem] leading-snug text-on-background/90">{country.overviewBody}</p>
+
+              <ul className="mt-10">
+                {WHY_FEATURES.map(({ key, icon }) => (
+                  <li key={key} className="flex items-start gap-5 border-t border-white/10 py-6">
+                    <span className={iconRing}>
+                      <span className="material-symbols-outlined icon-fine !text-[24px]" aria-hidden="true">{icon}</span>
+                    </span>
+                    <div>
+                      <h3 className="font-headline text-2xl leading-tight font-medium text-on-background">{t(`whyChoose.${key}.title`)}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-on-surface-variant">{t(`whyChoose.${key}.description`)}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="relative lg:col-span-5 lg:col-start-8">
+              <div aria-hidden="true" className="absolute -inset-10 -z-10 rounded-full bg-gold/20 blur-[100px]" />
+              <div className="glass-luxe rounded-[28px] p-3">
+                <div className="group relative aspect-[4/5] overflow-hidden rounded-[20px]">
+                  <SmartImage
+                    src={country.whyChooseImages[0]}
+                    alt={country.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 480px"
+                    className="object-cover grayscale transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] group-hover:grayscale-0"
+                    fallback={<Plate mark={code} />}
+                  />
                 </div>
               </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="grid grid-cols-2 gap-6 h-fit"
-            >
-              {hasDuplicateWhyChooseImages ? (
-                <>
-                  <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
-                    <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[0]} fill sizes="(max-width: 768px) 50vw, 25vw" />
-                  </div>
-                  <div className="space-y-6">
-                    <div className="glass-card p-8 rounded-2xl">
-                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[0].value}</span>
-                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[0].label}</p>
-                    </div>
-                    <div className="glass-card p-8 rounded-2xl">
-                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[1].value}</span>
-                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[1].label}</p>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="space-y-6 pt-12">
-                    <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
-                      <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[0]} fill sizes="(max-width: 768px) 50vw, 25vw" />
-                    </div>
-                    <div className="glass-card p-8 rounded-2xl">
-                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[0].value}</span>
-                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[0].label}</p>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <div className="glass-card p-8 rounded-2xl">
-                      <span className="text-primary font-serif text-[48px] font-semibold block mb-2">{country.overviewStats[1].value}</span>
-                      <p className="font-sans text-xs font-bold tracking-widest uppercase opacity-70">{country.overviewStats[1].label}</p>
-                    </div>
-                    <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
-                      <Image alt={country.name} className="w-full h-full object-cover" src={country.whyChooseImages[1]} fill sizes="(max-width: 768px) 50vw, 25vw" />
-                    </div>
-                  </div>
-                </>
-              )}
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInSection>
 
-      {/* Visa Pathways Bento Grid */}
-      <section id="pathways" className="py-[120px] bg-surface-container-low">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-20">
-            <span className="font-sans text-xs font-bold text-primary tracking-widest mb-4 block uppercase">{t('pathways.badge')}</span>
-            <h2 className="font-serif text-[36px] font-semibold text-on-background">{t('pathways.heading')}</h2>
-          </div>
-          <div className={`grid grid-cols-1 ${pathwaysGridColsClass} gap-6`}>
-            {country.pathways.map((pathway, idx) => {
-              const isLarge = pathwayCount >= 3 && (idx === 0 || idx === 3);
-              return (
-                <motion.div 
-                  key={pathway.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className={`${isLarge ? "md:col-span-2" : "col-span-1"} glass-card rounded-3xl overflow-hidden group relative flex flex-col h-full min-h-[300px]`}
-                >
-                  {pathway.bgImage && (
-                    <div className="absolute inset-0 z-0 opacity-20 transition-opacity group-hover:opacity-30">
-                      <Image 
-                        src={pathway.bgImage} 
-                        alt={pathway.title} 
-                        fill 
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="relative z-10 p-10 flex flex-col h-full">
-                    <span className="material-symbols-outlined text-primary text-4xl mb-6" aria-hidden="true">
-                      {pathway.icon}
-                    </span>
-                    <h3 className="font-serif text-[28px] font-medium mb-4">{pathway.title}</h3>
-                    <p className={`text-on-surface-variant font-sans text-lg mb-8 ${isLarge ? "max-w-lg" : ""}`}>
-                      {pathway.description}
-                    </p>
-                    <div className="mt-auto">
-                      <Link className="inline-flex items-center gap-2 text-primary font-semibold hover:underline" href={pathway.link || `/${locale}/contact`}>
-                        {pathway.ctaLabel || (isLarge ? "Explore Pathway" : "Consult")} <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* ── Pathways ───────────────────────────────────── */}
+      <FadeInSection>
+        <section id="pathways" className="relative py-20 md:py-28">
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-surface-container-lowest/70" />
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <SectionHeading align="center" eyebrow={t('pathways.badge')} heading={t('pathways.heading')} />
 
-      {/* Residency Requirements */}
-      <section className="py-[120px] px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="font-serif text-[36px] font-semibold mb-12">{t('requirements.heading')}</h2>
-              <div className="space-y-6">
-                {country.requirements.map((req, idx) => (
-                  <div key={idx} className="border-b border-white/10 pb-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <h4 className="font-serif text-xl font-medium">{req.title}</h4>
-                      <span className="bg-secondary-container/20 text-secondary px-4 py-1 rounded-full text-sm font-bold">{req.badge}</span>
+            <Spotlight className={`mt-16 grid gap-5 ${pathwayCols}`}>
+              {country.pathways.map((pathway, idx) => {
+                const isLarge = pathwayCount >= 3 && (idx === 0 || idx === 3 || idx === 5);
+                return (
+                  <article
+                    key={pathway.id}
+                    className={`glass-luxe is-liftable group flex min-h-[320px] flex-col overflow-hidden rounded-3xl p-8 md:p-10 ${isLarge ? 'md:col-span-2' : ''}`}
+                  >
+                    {pathway.bgImage && (
+                      <SmartImage src={pathway.bgImage} alt="" fill sizes="(max-width: 768px) 100vw, 800px" className="-z-10 object-cover grayscale opacity-20 transition-opacity duration-700 group-hover:opacity-30" />
+                    )}
+                    <div className="flex items-start justify-between gap-6">
+                      <span className={iconRing}>
+                        <span className="material-symbols-outlined icon-fine !text-[24px]" aria-hidden="true">{pathway.icon}</span>
+                      </span>
+                      <span className="latin numeral text-lg text-on-surface-variant/60" aria-hidden="true">{String(idx + 1).padStart(2, '0')}</span>
                     </div>
-                    <p className="text-on-surface-variant font-sans">{req.description}</p>
+                    <h3 className="mt-8 font-headline text-3xl md:text-[2.1rem] leading-tight font-medium text-on-background">{pathway.title}</h3>
+                    <p className={`mt-3 text-sm md:text-base leading-relaxed text-on-surface-variant ${isLarge ? 'max-w-xl' : ''}`}>{pathway.description}</p>
+                    <Link
+                      href={pathway.link || `/${locale}/contact`}
+                      className="mt-auto pt-8 inline-flex w-fit items-center gap-3 text-[0.6875rem] font-bold uppercase tracking-[0.22em] text-on-background/80 transition-colors duration-500 hover:text-champagne group-hover:text-champagne"
+                    >
+                      {pathway.ctaLabel || t('pathways.consult')}
+                      <span className="h-px w-8 bg-current transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:w-14" aria-hidden="true" />
+                    </Link>
+                  </article>
+                );
+              })}
+            </Spotlight>
+          </div>
+        </section>
+      </FadeInSection>
+
+      {/* ── Requirements & citizenship ─────────────────── */}
+      <FadeInSection>
+        <section className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-6 md:px-8 grid lg:grid-cols-12 gap-14 lg:gap-12">
+            <div className="lg:col-span-7">
+              <SectionHeading eyebrow={t('requirements.eyebrow')} heading={t('requirements.heading')} />
+              <dl className="mt-12 border-t border-white/10">
+                {country.requirements.map((req) => (
+                  <div key={req.title} className="border-b border-white/10 py-7">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <dt className="font-headline text-2xl md:text-[1.7rem] leading-tight font-medium text-on-background">{req.title}</dt>
+                      <span className="rounded-full border border-gold-soft/30 bg-gold/15 px-3.5 py-1 text-[0.6875rem] font-semibold tracking-[0.08em] text-champagne">{req.badge}</span>
+                    </div>
+                    <dd className="mt-3 max-w-2xl text-sm md:text-base leading-relaxed text-on-surface-variant">{req.description}</dd>
                   </div>
                 ))}
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-center"
-            >
-              <div className="glass-card p-12 rounded-[40px] relative w-full">
-                <div className="absolute -top-6 -right-6 bg-primary-container p-6 rounded-2xl shadow-xl">
-                  <span className="material-symbols-outlined text-on-primary text-4xl" aria-hidden="true">policy</span>
-                </div>
-                <h3 className="font-serif text-2xl font-medium mb-8">{t('requirements.citizenshipHeading')}</h3>
-                <div className="relative pl-8 border-l-2 border-primary/30 space-y-12">
-                  {country.citizenshipSteps.map((step, idx) => (
-                    <div key={idx} className="relative">
-                      <div className={`absolute -left-[41px] top-0 w-4 h-4 rounded-full ${idx === 0 ? 'bg-primary' : idx === 1 ? 'bg-primary/50' : 'bg-primary/30'} ring-8 ring-background`}></div>
-                      <p className="font-bold text-primary mb-1">Step {step.step}</p>
-                      <p className="font-serif text-lg font-medium mb-2">{step.title}</p>
-                      <p className="text-sm text-on-surface-variant font-sans">{step.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final Consultation CTA */}
-      <section className="py-[120px] px-8" data-cta-section>
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass-card rounded-[48px] p-16 md:p-24 text-center relative overflow-hidden"
-          >
-            <div className="absolute inset-0 gold-glow opacity-30 -z-10"></div>
-            <div className="max-w-2xl mx-auto relative z-10">
-              <h2 className="font-serif text-[48px] font-semibold mb-8">{country.ctaHeading}</h2>
-              <p className="font-sans text-lg text-on-surface-variant mb-12">{t('cta.subtext')}</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href={`/${locale}/contact`} className="bg-gold-gradient text-on-primary px-12 py-5 rounded-xl font-bold text-lg gold-glow hover:scale-[1.02] transition-transform shadow-xl">
-                  {t('cta.button')}
-                </Link>
-              </div>
-              <p className="mt-8 text-sm text-on-surface-variant/60 font-medium font-sans">{t('cta.trust')}</p>
+              </dl>
             </div>
-          </motion.div>
-        </div>
-      </section>
+
+            <div className="lg:col-span-5">
+              <div className="glass-luxe rounded-3xl p-8 md:p-10 lg:sticky lg:top-28">
+                <div aria-hidden="true" className="absolute inset-0 -z-10 rounded-[inherit] bg-[radial-gradient(90%_60%_at_100%_0%,rgba(127,94,21,0.35),transparent_70%)]" />
+                <div className="flex items-center gap-5">
+                  <span className={iconRing}>
+                    <span className="material-symbols-outlined icon-fine !text-[24px]" aria-hidden="true">policy</span>
+                  </span>
+                  <h3 className="font-headline text-[1.75rem] leading-tight font-medium text-on-background">{t('requirements.citizenshipHeading')}</h3>
+                </div>
+
+                <ol className="mt-10 space-y-9 border-s border-gold-soft/30 ps-8">
+                  {country.citizenshipSteps.map((step) => (
+                    <li key={step.step} className="relative">
+                      <span aria-hidden="true" className="absolute -start-[38px] top-1.5 size-[11px] rounded-full border border-gold-soft bg-background" />
+                      <p className="text-[0.6875rem] font-bold uppercase tracking-[0.24em] text-gold-soft">
+                        {t('requirements.step')} <span className="latin numeral text-base tracking-normal">{step.step}</span>
+                      </p>
+                      <p className="mt-2 font-headline text-2xl leading-tight font-medium text-on-background">{step.title}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">{step.description}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeInSection>
+
+      {/* ── Consultation ───────────────────────────────── */}
+      <FadeInSection>
+        <ConsultationBanner
+          eyebrow={t('cta.eyebrow')}
+          heading={country.ctaHeading}
+          subtext={t('cta.subtext')}
+          button={t('cta.button')}
+          trust={t('cta.trust')}
+        />
+      </FadeInSection>
     </main>
   );
 }

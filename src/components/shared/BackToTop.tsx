@@ -22,9 +22,9 @@ export function BackToTop() {
           transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Back to top"
-          className="fixed bottom-6 right-6 z-50 size-11 rounded-full bg-surface-container-high border border-primary/30 flex items-center justify-center hover:bg-primary/20 hover:border-primary/60 transition-colors backdrop-blur-sm shadow-lg"
+          className="nav-dropdown fixed bottom-4 end-4 z-50 grid size-12 place-items-center rounded-full text-gold-soft transition-colors duration-300 hover:border-gold-soft/70 hover:text-champagne"
         >
-          <span className="material-symbols-outlined text-primary text-xl" aria-hidden="true">arrow_upward</span>
+          <span className="material-symbols-outlined !text-[20px]" aria-hidden="true">arrow_upward</span>
         </motion.button>
       )}
     </AnimatePresence>

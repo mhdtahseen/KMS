@@ -5,8 +5,7 @@ export const servicesAr: Service[] = [
     slug: 'skilled-immigration',
     title: 'هجرة الكفاءات',
     tagline: 'تنقل النخبة عالمياً',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCbxli4H5rKHK1b5WKbMGad64EY6ryZP228sc9P_we55dgf7uJ5pukWB9jkhkOjW0LqaFI277UOxISQOsUUl4fGh4M70_J5lubJa8bgjz0hnWaZCN9BLrxlZ6pG1ZeSEAbFYL2Z_kUjydQO3boR6XpG-mR_gVbPLSm8vnK6fpUVxqcHr-pullh7ZEBXrLs38qJPDUmopdWKl4CDe8HuThZeIl4MV8p9APJOQUkrcX7lwoxcTQXx0f_dJ7vumIcB2fTpj3RLWO5NW-8H',
+    heroImage: '/images/services/skilled-immigration-hero.jpg',
     heroHeadline: 'هجرة الكفاءات',
     heroHeadlineAccent: 'للمحترفين عالمياً',
     heroSubtext:
@@ -20,8 +19,7 @@ export const servicesAr: Service[] = [
       { value: '98%', label: 'نسبة النجاح' },
       { value: '12+', label: 'وجهات عالمية' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCSywwJQk-Omxr8qXZS2M4e55Q23DDXQg_nTpGwT3nXF_pCofdDQDfUCWUle-GevqjZ6as8JCa67Qs1vIllMUfe62Tx9TIbeDvJQZGCzX7cXU5W868LJjnFFJAMy6VWPk8hfNVlVKn4gtAwlLV8igPi3WHAyLkBYFli541cyfJZc5IS3-llky_BVUqkLJOdaEMJ9iD9bZiU-4qGWP0EM6p9fM-9Vp6yg3pwG9hBYSbYdcTEpdqAX1anKB3Uaas13Kt8EOjXIVbY7zdS',
+    overviewImage: '/images/services/skilled-immigration-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'school',
@@ -69,7 +67,7 @@ export const servicesAr: Service[] = [
         title: 'كندا',
         description: 'برامج الدخول السريع وترشيح المقاطعات لمحترفي التكنولوجيا والرعاية الصحية.',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCmBfA-XOc4fPL679Rm2pzATdyC57yQ9IbC10LvA3sLK3t80KK6wCyZaUVN6VoqBeawbd32iCjYaN_bq2Ovw4DUGp4Is7LwEIIn2xoL10_y6_5CWEusZLkd3iIQ_MF_3qn2j8p7L3pBboh9QOHSJAyLGf5uXDBeQStx42GX3--I9oV5rEK5Zjt9MIwCspw4bJAEf2qrEs1KbPlGwsopzrriOtY4VE17BDqEa-vI19C65prUYdek4HqYJrt5Vz-1a--v9n_aT7K0YHcH',
+          '/images/countries/canada-card.jpg',
         status: 'متاح',
       },
       {
@@ -77,7 +75,7 @@ export const servicesAr: Service[] = [
         title: 'أستراليا',
         description: 'مسارات الفئة 189/190 لخبرات الهندسة المعمارية والمتخصصة.',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+          '/images/countries/australia-card.jpg',
         status: 'أولوية',
       },
       {
@@ -85,7 +83,7 @@ export const servicesAr: Service[] = [
         title: 'المملكة المتحدة',
         description: 'دعم رعاية تأشيرة العمالة الماهرة لأدوار القيادة العليا والمالية.',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+          '/images/countries/united-kingdom-card.jpg',
         status: 'مسار جديد',
       },
     ],
@@ -96,8 +94,7 @@ export const servicesAr: Service[] = [
     slug: 'study-permits',
     title: 'تصاريح الدراسة',
     tagline: 'مسارات التميز الأكاديمي',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/study-permits-hero.jpg',
     heroHeadline: 'بوابتك الأكاديمية للإقامة العالمية',
     heroSubtext:
       'أمّن مستقبلك مع توجيه خبراء التأشيرات لأرقى المؤسسات التعليمية في العالم.',
@@ -108,8 +105,7 @@ export const servicesAr: Service[] = [
       { value: '98%', label: 'نسبة القبول' },
       { value: '500+', label: 'مؤسسات شريكة' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/study-permits-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'school',
@@ -144,8 +140,7 @@ export const servicesAr: Service[] = [
     slug: 'business-residency',
     title: 'إقامة الأعمال',
     tagline: 'حلول التنقل التجاري',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/business-residency-hero.jpg',
     heroHeadline: 'إقامة الأعمال والمواطنة الاستراتيجية',
     heroSubtext:
       'أسس وجودك التجاري في الأسواق العالمية عبر مسارات الاستثمار وريادة الأعمال عالية القيمة.',
@@ -156,8 +151,7 @@ export const servicesAr: Service[] = [
       { value: '$1M+', label: 'رؤوس أموال مدارة' },
       { value: '100%', label: 'نسبة الامتثال' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/business-residency-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'account_balance',
@@ -185,8 +179,7 @@ export const servicesAr: Service[] = [
     slug: 'work-permits',
     title: 'تصاريح العمل',
     tagline: 'اندماج القوى العاملة العالمية',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/work-permits-hero.jpg',
     heroHeadline: 'تصاريح عمل موثوقة',
     heroSubtext:
       'جسّر الفجوة بين موهبتك والفرص الدولية من خلال تمثيل خبراء تصاريح العمل.',
@@ -197,8 +190,7 @@ export const servicesAr: Service[] = [
       { value: '45 يوماً', label: 'متوسط وقت المعالجة' },
       { value: 'نخبة', label: 'قاعدة العملاء' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/work-permits-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'work',
@@ -226,8 +218,7 @@ export const servicesAr: Service[] = [
     slug: 'permanent-residency',
     title: 'الإقامة الدائمة',
     tagline: 'أمان للأجيال القادمة',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/permanent-residency-hero.jpg',
     heroHeadline: 'أرقى درجات الإقامة حول العالم',
     heroSubtext:
       'تأمين الإقامة الدائمة الكاملة ومسار مضمون للحصول على الجنسية لك ولعائلتك.',
@@ -238,8 +229,7 @@ export const servicesAr: Service[] = [
       { value: '1,500+', label: 'إقامات دائمة مؤمنة' },
       { value: '99.2%', label: 'نسبة النجاح' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/permanent-residency-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'verified_user',
@@ -267,8 +257,7 @@ export const servicesAr: Service[] = [
     slug: 'family-sponsorship',
     title: 'رعاية الأسرة',
     tagline: 'لم شمل العائلات عالمياً',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/family-sponsorship-hero.jpg',
     heroHeadline: 'اجمع شمل عائلتك',
     heroSubtext:
       'تمثيل خبير لرعاية الأزواج والآباء والمعالين في الدول الأكثر ترحيباً في العالم.',
@@ -279,8 +268,7 @@ export const servicesAr: Service[] = [
       { value: '500+', label: 'عائلات تم لم شملها' },
       { value: 'خاصة', label: 'إدارة الحالات' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/family-sponsorship-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'favorite',
@@ -302,6 +290,63 @@ export const servicesAr: Service[] = [
     ],
     destinations: ['canada', 'united-kingdom', 'usa', 'australia'],
     ctaHeading: 'أحضرهم إلى المنزل.',
+    isPublished: true,
+  },
+  {
+    slug: 'travel-visas',
+    title: 'تأشيرات السفر',
+    tagline: 'تأشيرات الزيارة والسياحة',
+    heroImage: '/images/services/travel-visas-hero.jpg',
+    heroHeadline: 'اكتشف العالم',
+    heroHeadlineAccent: 'دون عناء الأوراق',
+    heroSubtext:
+      'تأشيرات الزيارة والسياحة وزيارات الأعمال للمقيمين في قطر من جميع الجنسيات — المملكة المتحدة، ومنطقة شنغن، والولايات المتحدة، وكندا، وأستراليا — مُعدّة وفق المعايير التي تتوقعها القنصليات.',
+    overviewHeading: 'إقامات قصيرة بإجراءات سليمة',
+    overviewBody:
+      'رفض تأشيرة الزيارة يبقى في سجلك ويُصعّب كل طلب لاحق. نُعدّ كل ملف بحيث يكون الغرض من السفر وروابطك بقطر ووضعك المالي موثقاً بوضوح من المرة الأولى.',
+    overviewBodySecondary:
+      'نغطي تأشيرة الزائر القياسية للمملكة المتحدة وتصريح ETA البريطاني، وتأشيرات شنغن قصيرة الإقامة لجميع الدول الأعضاء، وتأشيرات الزيارة الأمريكية B-1/B-2، وتأشيرات الزيارة الكندية (TRV) وتصاريح eTA، وتأشيرة الزائر الأسترالية (الفئة 600) — بما في ذلك حجز المواعيد والتحضير للمقابلة عند الحاجة.',
+    overviewStats: [
+      { value: '90', label: 'يوماً لكل 180 يوماً في شنغن' },
+      { value: '10 سنوات', label: 'صلاحية تأشيرة الزيارة الأمريكية (حتى)' },
+    ],
+    overviewImage: '/images/services/travel-visas-overview.jpg',
+    eligibilityCriteria: [
+      {
+        icon: 'flight_takeoff',
+        title: 'الغرض وبرنامج الرحلة',
+        description: 'غرض واضح من السفر مع حجوزات أو دعوة تتوافق مع نوع التأشيرة.',
+        badge: 'مطلوب',
+        featured: true,
+        checkPoints: ['برنامج رحلة مؤكد أو خطاب دعوة', 'تفاصيل الإقامة', 'إثبات رحلة العودة'],
+      },
+      {
+        icon: 'payments',
+        title: 'القدرة المالية',
+        description: 'كشوف حسابات بنكية وإثبات راتب يُظهر قدرتك على تمويل الرحلة.',
+        badge: 'مستندي',
+      },
+      {
+        icon: 'home',
+        title: 'الروابط بقطر',
+        description: 'العمل وتصريح الإقامة والروابط العائلية التي تُثبت عودتك.',
+        badge: 'عامل أساسي',
+      },
+      {
+        icon: 'health_and_safety',
+        title: 'تأمين السفر',
+        description: 'تأمين طبي يستوفي الحد الأدنى للتغطية في بلد الوجهة — إلزامي لطلبات شنغن.',
+        badge: 'شنغن',
+      },
+    ],
+    processSteps: [
+      { icon: 'fact_check', title: 'التقييم', description: 'اختيار نوع التأشيرة المناسب ومراجعة سجل سفرك وروابطك.' },
+      { icon: 'description', title: 'التوثيق', description: 'إعداد ملف كامل ومتسق وفق قائمة متطلبات القنصلية.' },
+      { icon: 'event', title: 'الموعد والبصمات', description: 'حجز موعد مركز التأشيرات وتحضيرك لأي مقابلة.' },
+      { icon: 'flight_takeoff', title: 'القرار والسفر', description: 'متابعة القرار وتقديم المشورة بشأن متطلبات الدخول قبل سفرك.' },
+    ],
+    destinations: ['united-kingdom', 'european-union', 'usa', 'canada', 'australia'],
+    ctaHeading: 'سافر بثقة.',
     isPublished: true,
   },
 ];

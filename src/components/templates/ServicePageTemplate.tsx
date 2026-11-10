@@ -1,226 +1,254 @@
-'use client';
-
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Service } from '@/data/services';
+import { Service, getPublishedServices } from '@/data/services';
+import { getPublishedCountries } from '@/data/countries';
 import { StickyCtaBar } from '@/components/shared/StickyCtaBar';
+import { FadeInSection } from '@/components/shared/FadeInSection';
+import { SmartImage } from '@/components/shared/SmartImage';
+import { Plate } from '@/components/shared/Plate';
+import { FlagChip } from '@/components/shared/FlagChip';
+import { Spotlight } from '@/components/shared/Spotlight';
+import { SectionHeading } from '@/components/shared/SectionHeading';
+import { ProcessTimeline } from '@/components/shared/ProcessTimeline';
+import { ConsultationBanner } from '@/components/shared/ConsultationBanner';
+
+const iconRing =
+  'grid size-14 shrink-0 place-items-center rounded-full border border-gold-soft/35 bg-gold/15 text-champagne';
 
 export function ServicePageTemplate({ service }: { service: Service }) {
   const locale = useLocale();
   const t = useTranslations('services');
 
+  const services = getPublishedServices(locale);
+  const position = services.findIndex((s) => s.slug === service.slug) + 1;
+  const publishedCountries = new Set(getPublishedCountries(locale).map((c) => c.slug));
   const destinationCards = service.destinationCards ?? [];
 
   return (
-    <main className="bg-background text-on-background font-body-md overflow-x-hidden">
+    <main className="overflow-x-clip">
       <StickyCtaBar title={service.title} ctaText={t('cta.button')} />
-      <section className="relative min-h-[819px] flex items-center justify-center pt-24 pb-section-padding px-6 md:px-margin-desktop overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image className="w-full h-full object-cover opacity-30" src={service.heroImage} alt={service.title} fill priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background"></div>
+
+      {/* ── Hero ───────────────────────────────────────── */}
+      <section className="relative isolate overflow-hidden">
+        <div aria-hidden="true" className="absolute inset-0 -z-10">
+          <SmartImage src={service.heroImage} alt="" fill priority sizes="100vw" className="object-cover grayscale opacity-30" />
+          <div className="absolute inset-0 bg-gold-soft/30 mix-blend-color" />
+          <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_50%_0%,rgba(196,154,48,0.2),transparent_70%)]" />
+          <div className="animate-drift absolute -top-[20%] start-[10%] size-[560px] rounded-full bg-gold/25 blur-[140px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/70 to-background" />
         </div>
-        <div className="relative z-10 max-w-container-max mx-auto text-center">
-          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="font-label-caps text-primary uppercase tracking-[0.3em] mb-6 block">
-            {service.tagline}
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-headline text-5xl md:text-[64px] text-on-background mb-8 leading-tight"
+
+        <div className="mx-auto max-w-5xl px-6 md:px-8 pt-36 md:pt-48 pb-20 md:pb-28 text-center">
+          <p
+            className="rise latin numeral text-sm tracking-[0.3em] text-on-surface-variant"
+            style={{ '--d': '0.05s' } as React.CSSProperties}
+            dir="ltr"
+            aria-hidden="true"
           >
+            {String(position).padStart(2, '0')} <span className="text-gold-soft">/</span> {String(services.length).padStart(2, '0')}
+          </p>
+          <p className="rise eyebrow eyebrow-center mt-6" style={{ '--d': '0.12s' } as React.CSSProperties}>
+            {service.tagline}
+          </p>
+          <h1 className="rise display-1 mt-8 text-on-background" style={{ '--d': '0.22s' } as React.CSSProperties}>
             {service.heroHeadline}
-            {service.heroHeadlineAccent ? (
+            {service.heroHeadlineAccent && (
               <>
-                {' '}
                 <br />
-                <span className="text-primary italic">{service.heroHeadlineAccent}</span>
+                <span className="italic font-normal text-gradient-gold">{service.heroHeadlineAccent}</span>
               </>
-            ) : null}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12"
+            )}
+          </h1>
+          <p
+            className="rise mx-auto mt-8 max-w-2xl text-base md:text-lg leading-relaxed text-on-surface-variant"
+            style={{ '--d': '0.36s' } as React.CSSProperties}
           >
             {service.heroSubtext}
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <Link href={`/${locale}/contact`} className="px-10 py-5 bg-primary-container text-on-primary-container font-label-caps uppercase tracking-widest rounded-none hover:bg-primary transition-all">
+          </p>
+          <div
+            className="rise mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            style={{ '--d': '0.5s' } as React.CSSProperties}
+          >
+            <Link href={`/${locale}/contact`} className="btn-gold w-full sm:w-auto">
               {t('overview.cta')}
+              <span className="material-symbols-outlined !text-[18px] rtl:rotate-180" aria-hidden="true">arrow_forward</span>
             </Link>
-            <Link href={`/${locale}/contact`} className="px-10 py-5 glass-card text-on-background font-label-caps uppercase tracking-widest rounded-none hover:bg-white/10 transition-all">
-              {t('overview.download')}
+            <Link href="#eligibility" className="btn-ghost w-full sm:w-auto">
+              {t('eligibility.heading')}
             </Link>
-          </motion.div>
+          </div>
         </div>
+        <div className="gold-rule" />
       </section>
 
-      <section className="py-section-padding p-6 md:px-margin-desktop bg-surface-container-lowest">
-        <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-          <div>
-            <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-8">{service.overviewHeading}</h2>
-            <p className="font-body-lg text-on-surface-variant mb-6">{service.overviewBody}</p>
-            {service.overviewBodySecondary ? <p className="font-body-md text-on-surface-variant/80 mb-10 leading-relaxed">{service.overviewBodySecondary}</p> : null}
-            <div className="grid grid-cols-2 gap-8">
-              {service.overviewStats.map((stat) => (
-                <div key={stat.label} className="border-l border-primary/40 pl-6">
-                  <span className="block text-4xl md:text-h3 font-headline text-primary mb-1">{stat.value}</span>
-                  <span className="text-label-caps text-on-surface-variant uppercase">{stat.label}</span>
+      {/* ── Overview ───────────────────────────────────── */}
+      <FadeInSection>
+        <section className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-6 md:px-8 grid lg:grid-cols-12 gap-14 lg:gap-12 items-center">
+            <div className="lg:col-span-6">
+              <p className="eyebrow">{t('overview.eyebrow')}</p>
+              <h2 className="display-2 mt-6 text-on-background">{service.overviewHeading}</h2>
+              <p className="mt-8 font-headline text-2xl md:text-[1.7rem] leading-snug text-on-background/90">{service.overviewBody}</p>
+              {service.overviewBodySecondary && (
+                <p className="mt-6 text-base leading-relaxed text-on-surface-variant">{service.overviewBodySecondary}</p>
+              )}
+
+              <dl className="mt-12 grid grid-cols-2 gap-x-8">
+                {service.overviewStats.map((stat) => (
+                  <div key={stat.label} className="border-t border-white/10 pt-7">
+                    <dd className="numeral text-6xl md:text-7xl leading-none font-medium text-gradient-gold w-fit">{stat.value}</dd>
+                    <dt className="mt-3 text-[0.6875rem] font-semibold uppercase tracking-[0.24em] text-on-surface-variant">{stat.label}</dt>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className="relative lg:col-span-5 lg:col-start-8">
+              <div aria-hidden="true" className="absolute -inset-10 -z-10 rounded-full bg-gold/20 blur-[100px]" />
+              <div className="glass-luxe rounded-[28px] p-3">
+                <div className="group relative aspect-[4/5] overflow-hidden rounded-[20px]">
+                  <SmartImage
+                    src={service.overviewImage}
+                    alt={service.overviewHeading}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 480px"
+                    className="object-cover grayscale transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] group-hover:grayscale-0"
+                    fallback={<Plate mark={service.overviewStats[0]?.value} />}
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-4 gold-halo rounded-full opacity-50 blur-3xl"></div>
-            <div className="glass-card p-4">
-              <Image src={service.overviewImage} alt={service.overviewHeading} width={800} height={1000} className="w-full aspect-[4/5] object-cover rounded-none grayscale hover:grayscale-0 transition-all duration-700" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {destinationCards.length > 0 && (
-        <section className="py-section-padding p-6 md:px-margin-desktop bg-background">
-          <div className="max-w-container-max mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-              <div className="max-w-xl">
-                <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-4">{t('destinations.heading')}</h2>
-                <p className="font-body-md text-on-surface-variant">{t('destinations.subtext')}</p>
               </div>
-              <Link href={`/${locale}/countries/canada`} className="text-primary font-label-caps uppercase flex items-center gap-2 hover:gap-4 transition-all group">
-                Explore All Countries <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-              {destinationCards.map((card) => (
-                <div key={card.slug} className="glass-card group overflow-hidden">
-                  <div className="h-64 overflow-hidden relative">
-                    <Image src={card.image} alt={card.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                  </div>
-                  <div className="p-8">
-                    <h3 className="font-headline text-2xl md:text-h3 text-on-background mb-4 capitalize">{card.title}</h3>
-                    <p className="font-body-md text-on-surface-variant mb-6">{card.description}</p>
-                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase">
-                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span> {card.status}
-                    </span>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
+      </FadeInSection>
+
+      {/* ── Destinations ───────────────────────────────── */}
+      {destinationCards.length > 0 && (
+        <FadeInSection>
+          <section className="relative py-20 md:py-28">
+            <div aria-hidden="true" className="absolute inset-0 -z-10 bg-surface-container-lowest/70" />
+            <div className="mx-auto max-w-7xl px-6 md:px-8">
+              <div className="flex flex-wrap items-end justify-between gap-8">
+                <SectionHeading eyebrow={t('destinations.eyebrow')} heading={t('destinations.heading')} subtext={t('destinations.subtext')} />
+                <Link
+                  href={`/${locale}#destinations`}
+                  className="group inline-flex items-center gap-3 text-[0.6875rem] font-bold uppercase tracking-[0.22em] text-gold-soft transition-colors duration-300 hover:text-champagne"
+                >
+                  {t('destinations.exploreAll')}
+                  <span className="h-px w-8 bg-current transition-all duration-500 group-hover:w-14" aria-hidden="true" />
+                </Link>
+              </div>
+
+              <Spotlight className="mt-14 grid gap-5 md:grid-cols-3">
+                {destinationCards.map((card) => {
+                  const href = publishedCountries.has(card.slug) ? `/${locale}/countries/${card.slug}` : `/${locale}/contact`;
+                  return (
+                    <Link key={card.slug} href={href} className="glass-luxe group flex flex-col overflow-hidden rounded-3xl">
+                      <div className="relative h-60 overflow-hidden">
+                        <SmartImage
+                          src={card.image}
+                          alt=""
+                          fill
+                          sizes="(max-width: 768px) 100vw, 400px"
+                          className="object-cover grayscale transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06] group-hover:grayscale-0"
+                          fallback={<Plate />}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" aria-hidden="true" />
+                        <FlagChip slug={card.slug} className="absolute top-4 start-4" />
+                      </div>
+                      <div className="flex flex-1 flex-col p-7 md:p-8">
+                        <h3 className="font-headline text-3xl leading-tight font-medium capitalize text-on-background">{card.title}</h3>
+                        <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">{card.description}</p>
+                        <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-gold-soft/30 bg-gold/15 px-3 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-champagne">
+                          <span className="size-1.5 rounded-full bg-gold-soft" aria-hidden="true" />
+                          {card.status}
+                        </span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </Spotlight>
+            </div>
+          </section>
+        </FadeInSection>
       )}
 
-      <section className="py-section-padding p-6 md:px-margin-desktop bg-surface-container-low" id="eligibility">
-        <div className="max-w-container-max mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-headline text-4xl md:text-h2 text-on-background mb-4">{t('eligibility.heading')}</h2>
-            <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto">{t('eligibility.subtext')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {service.eligibilityCriteria.map((criterion) => {
-              if (criterion.featured) {
-                return (
-                  <div key={criterion.title} className="glass-card p-10 bg-primary/5 border-primary/30 flex flex-col justify-between md:row-span-2">
-                    <div>
-                      <span className="material-symbols-outlined text-primary text-4xl mb-6" aria-hidden="true">{criterion.icon}</span>
-                      <h4 className="font-headline text-2xl md:text-h3 mb-4">{criterion.title}</h4>
-                      <p className="font-body-md text-on-surface-variant mb-6">{criterion.description}</p>
-                      {criterion.checkPoints ? (
-                        <ul className="space-y-4">
-                          {criterion.checkPoints.map((point) => (
-                            <li key={point} className="flex items-start gap-3">
-                              <span className="material-symbols-outlined text-primary text-xl mt-1" aria-hidden="true">check_circle</span>
-                              <span className="font-body-md">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
-                    </div>
-                    {criterion.pointsImportance ? (
-                      <div className="mt-12">
-                        <div className="h-1 bg-white/10 w-full mb-4">
-                          <motion.div initial={{ width: 0 }} whileInView={{ width: criterion.pointsImportance }} viewport={{ once: true }} transition={{ duration: 1.5 }} className="h-full bg-primary"></motion.div>
-                        </div>
-                        <p className="text-xs font-label-caps text-on-surface-variant uppercase tracking-widest">Weighted Score Importance: {criterion.pointsImportance}</p>
-                      </div>
-                    ) : null}
-                  </div>
-                );
-              }
+      {/* ── Eligibility ────────────────────────────────── */}
+      <FadeInSection>
+        <section id="eligibility" className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-6 md:px-8">
+            <SectionHeading align="center" eyebrow={t('eligibility.eyebrow')} heading={t('eligibility.heading')} subtext={t('eligibility.subtext')} />
 
-              return (
-                <div key={criterion.title} className={`glass-card p-10 flex flex-col justify-between min-h-[320px] ${criterion.accent ? 'bg-[#7F5E15]/20' : ''}`}>
-                  <div>
-                    <span className="material-symbols-outlined text-primary text-4xl mb-6" aria-hidden="true">{criterion.icon}</span>
-                    <h4 className="font-headline text-2xl md:text-h3 mb-4">{criterion.title}</h4>
-                    <p className="font-body-md text-on-surface-variant">{criterion.description}</p>
-                  </div>
-                  {criterion.badge ? (
-                    <div className="mt-6 flex items-center text-primary gap-2">
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      <span className="text-xs font-label-caps uppercase tracking-tighter">{criterion.badge}</span>
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-section-padding p-6 md:px-margin-desktop bg-background overflow-hidden">
-        <div className="max-w-container-max mx-auto">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-center gap-8 lg:gap-0 relative isolate">
-            {/* Horizontal Line (Commented out for easy reversion)
-            <div className="hidden lg:block absolute top-[4.5rem] left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent -z-10"></div>
-            */}
-            {service.processSteps.map((step, index) => (
-              <div key={step.title} className="w-full lg:w-1/5 max-w-[280px] relative z-10 px-6 py-12 text-center group">
-                <div className="w-20 h-20 mx-auto glass-card flex items-center justify-center mb-8 border-primary/10 group-hover:!border-primary/10 group-hover:!shadow-[0_0_20px_#ecc06f80] transition-all duration-500">
-                  {isNaN(Number(step.icon)) ? (
-                    <span className="material-symbols-outlined text-3xl text-primary" aria-hidden="true">
-                      {step.icon}
-                    </span>
-                  ) : (
-                    <span className="font-headline text-2xl text-primary">
-                      {step.icon}
-                    </span>
+            <Spotlight className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {service.eligibilityCriteria.map((criterion) => (
+                <article
+                  key={criterion.title}
+                  className={`glass-luxe is-liftable flex flex-col rounded-3xl p-8 md:p-9 ${criterion.featured ? 'lg:row-span-2' : 'min-h-[300px]'}`}
+                >
+                  {(criterion.featured || criterion.accent) && (
+                    <div aria-hidden="true" className="absolute inset-0 -z-10 rounded-[inherit] bg-[radial-gradient(90%_70%_at_0%_0%,rgba(127,94,21,0.35),transparent_70%)]" />
                   )}
-                </div>
-                <h5 className="font-label-caps text-on-background mb-4 uppercase tracking-widest">{step.title}</h5>
-                <p className="text-sm text-on-surface-variant/70">{step.description}</p>
-                {index < service.processSteps.length - 1 && (
-                  <div className="hidden lg:flex absolute top-[5.5rem] right-0 transform translate-x-1/2 -translate-y-1/2 items-center justify-center text-primary/30 pointer-events-none">
-                    <span className="material-symbols-outlined text-3xl">chevron_right</span>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <span className={iconRing}>
+                    <span className="material-symbols-outlined icon-fine !text-[26px]" aria-hidden="true">{criterion.icon}</span>
+                  </span>
+                  <h3 className="mt-8 font-headline text-[1.75rem] leading-tight font-medium text-on-background">{criterion.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">{criterion.description}</p>
 
-      <section className="py-section-padding p-6 md:px-margin-desktop bg-surface-container-lowest" data-cta-section>
-        <div className="max-w-container-max mx-auto">
-          <div className="glass-card p-12 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="absolute top-0 right-0 w-96 h-96 gold-halo opacity-30 -mr-48 -mt-48 pointer-events-none"></div>
-            <div className="relative z-10 max-w-2xl">
-              <h2 className="font-headline text-4xl md:text-[42px] mb-8 leading-tight">{service.ctaHeading}</h2>
-              <p className="font-body-lg text-on-surface-variant/80 mb-0">{t('cta.subtext')}</p>
-            </div>
-            <div className="relative z-10 shrink-0">
-              <Link href={`/${locale}/contact`} className="inline-block bg-gold-gradient text-on-primary px-12 py-6 font-label-caps uppercase tracking-[0.2em] shadow-2xl gold-glow hover:scale-[1.02] transition-transform rounded-xl">
-                {t('cta.button')}
-              </Link>
-            </div>
+                  {criterion.checkPoints && (
+                    <ul className="mt-7 space-y-3.5 border-t border-white/10 pt-7">
+                      {criterion.checkPoints.map((point) => (
+                        <li key={point} className="flex items-start gap-3 text-sm text-on-background/90">
+                          <span className="material-symbols-outlined !text-[18px] text-gold-soft mt-px" aria-hidden="true">check_circle</span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="mt-auto pt-8">
+                    {criterion.pointsImportance && (
+                      <div>
+                        <div className="flex items-end justify-between gap-4">
+                          <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-on-surface-variant">{t('eligibility.weight')}</span>
+                          <span className="latin numeral text-3xl leading-none text-champagne">{criterion.pointsImportance}</span>
+                        </div>
+                        <div className="mt-3 h-px w-full bg-white/12">
+                          <div className="h-px bg-gradient-to-r rtl:bg-gradient-to-l from-gold to-champagne shadow-[0_0_12px_rgba(196,154,48,0.8)]" style={{ width: criterion.pointsImportance }} />
+                        </div>
+                      </div>
+                    )}
+                    {criterion.badge && (
+                      <span className="inline-flex items-center gap-2 rounded-full border border-gold-soft/30 bg-gold/15 px-3 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-champagne">
+                        <span className="size-1.5 rounded-full bg-gold-soft" aria-hidden="true" />
+                        {criterion.badge}
+                      </span>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </Spotlight>
           </div>
+        </section>
+      </FadeInSection>
+
+      {/* ── Process ────────────────────────────────────── */}
+      <FadeInSection>
+        <div className="relative">
+          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-surface-container-lowest/70" />
+          <ProcessTimeline
+            eyebrow={t('process.eyebrow')}
+            heading={t('process.heading')}
+            accent={t('process.headingAccent')}
+            steps={service.processSteps}
+          />
         </div>
-      </section>
+      </FadeInSection>
+
+      {/* ── Consultation ───────────────────────────────── */}
+      <FadeInSection>
+        <ConsultationBanner eyebrow={t('cta.eyebrow')} heading={service.ctaHeading} subtext={t('cta.subtext')} button={t('cta.button')} />
+      </FadeInSection>
+
     </main>
   );
 }

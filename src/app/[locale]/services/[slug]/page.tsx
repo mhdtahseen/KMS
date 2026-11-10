@@ -22,9 +22,10 @@ export async function generateMetadata({
   const service = publishedServices.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const title = `${service.title} | Visa & Immigration Services`;
-  const description = `${service.tagline} — ${service.heroSubtext.slice(0, 140)}. KMS Consultants, Doha Qatar.`;
-  const url = `https://www.kms-consultants.com/en/services/${slug}`;
+  const title = `${service.title} Services in Doha, Qatar`;
+  const description = `${service.tagline}. ${service.heroSubtext.slice(0, 120).trim()}… KMS Consultants — immigration consultants in Doha, Qatar.`;
+  const url = `https://www.kms-consultants.com/${locale}/services/${slug}`;
+  const enUrl = `https://www.kms-consultants.com/en/services/${slug}`;
 
   return {
     title,
@@ -32,8 +33,9 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        en: url,
+        en: enUrl,
         ar: `https://www.kms-consultants.com/ar/services/${slug}`,
+        'x-default': enUrl,
       },
     },
     openGraph: {
@@ -73,7 +75,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         name={service.title}
         description={service.heroSubtext}
         url={`https://www.kms-consultants.com/${locale}/services/${slug}`}
-        image={service.heroImage}
+        image={`https://www.kms-consultants.com${service.heroImage}`}
       />
       <ServicePageTemplate service={service} />
     </>

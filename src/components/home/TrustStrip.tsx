@@ -1,34 +1,34 @@
 import { useTranslations } from 'next-intl';
 
+const ITEMS = ['mara', 'ircc', 'google', 'clients', 'nationalities', 'bilingual', 'est'] as const;
+
+/** Slow credentials ribbon beneath the hero. Pauses on hover. */
 export function TrustStrip() {
-  const t = useTranslations('home.trust');
-  
+  const t = useTranslations('home.marquee');
+
+  const row = (hidden: boolean) => (
+    <ul className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>
+      {ITEMS.map((key) => (
+        <li key={key} className="flex items-center">
+          <span className="font-headline italic text-xl md:text-2xl text-on-background/80 whitespace-nowrap px-8 md:px-12">
+            {t(key)}
+          </span>
+          <span className="size-1.5 rotate-45 bg-gold-soft/80" aria-hidden="true" />
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
-    <section className="border-y border-outline-variant/30 py-16 bg-surface-container-lowest/50 backdrop-blur-sm">
-      <div className="container mx-auto px-8">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6 items-center text-center">
-            <div className="space-y-2 group">
-                <div className="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">1000+</div>
-                <div className="text-sm font-label uppercase tracking-widest text-on-surface-variant">{t('clients')}</div>
-            </div>
-            <div className="space-y-2 group md:border-l border-outline-variant/20">
-                <div className="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">20+</div>
-                <div className="text-sm font-label uppercase tracking-widest text-on-surface-variant">{t('nationalities')}</div>
-            </div>
-            <div className="space-y-2 group border-l border-outline-variant/20">
-                <div className="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">5+</div>
-                <div className="text-sm font-label uppercase tracking-widest text-on-surface-variant">{t('years')}</div>
-            </div>
-            <div className="space-y-2 group md:border-l border-outline-variant/20">
-                <div className="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">15+</div>
-                <div className="text-sm font-label uppercase tracking-widest text-on-surface-variant">{t('countries')}</div>
-            </div>
-            <div className="space-y-2 group border-l border-outline-variant/20">
-                <div className="text-4xl md:text-5xl font-headline font-bold text-primary group-hover:scale-110 transition-transform">98%</div>
-                <div className="text-sm font-label uppercase tracking-widest text-on-surface-variant">{t('successRate')}</div>
-            </div>
+    <section aria-label="Credentials" className="relative">
+      <div className="gold-rule" />
+      <div className="marquee overflow-hidden py-7 [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]">
+        <div className="marquee-track">
+          {row(false)}
+          {row(true)}
         </div>
       </div>
+      <div className="gold-rule" />
     </section>
   );
 }

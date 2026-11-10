@@ -1,66 +1,99 @@
-import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
-import Image from 'next/image';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import { getPublishedCountries } from '@/data/countries';
+import { WorldRoutes } from './WorldRoutes';
 
 export function HeroSection() {
   const t = useTranslations('home.hero');
+  const tTrust = useTranslations('home.trust');
   const locale = useLocale();
-  
+
+  const destinations = getPublishedCountries(locale).map((c) => ({ slug: c.slug, label: c.name }));
+
+  const stats = [
+    { value: '1000', suffix: '+', label: tTrust('clients'), position: 'lg:start-[1%] lg:top-[56%]', delay: '0s' },
+    { value: '5', suffix: '+', label: tTrust('years'), position: 'lg:start-[39%] lg:top-[80%]', delay: '-2.4s' },
+    { value: '15', suffix: '+', label: tTrust('countries'), position: 'lg:end-[0%] lg:top-[20%]', delay: '-4.6s' },
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Ambient Glow Background */}
-        <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
-        <div className="absolute -bottom-[10%] -left-[5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]"></div>
-        
-        <div className="container mx-auto px-8 md:px-16 grid lg:grid-cols-2 items-center gap-16 relative z-10">
-            <div className="space-y-10 max-w-2xl">
-                <div className="space-y-6">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-[0.2em]">
-                        {t('badge')}
-                    </span>
-                    <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[1.1] text-on-background">
-                        {t('headline')} <br/>
-                        <span className="italic text-primary font-normal">{t('headlineAccent')}</span>
-                    </h1>
-                    <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed font-light">
-                        {t('subtext')}
-                    </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href={`/${locale}/contact`} className="bg-gold-gradient text-on-primary px-8 py-5 rounded-2xl font-bold text-lg tracking-tight hover:scale-105 transition-transform gold-glow text-center">
-                        {t('ctaPrimary')}
-                    </Link>
-                    <Link href={`/${locale}#testimonials`} className="glass-card px-8 py-5 rounded-2xl font-bold text-lg border-white/10 hover:bg-white/10 transition-colors text-center">
-                        {t('ctaSecondary')}
-                    </Link>
-                </div>
-            </div>
-            
-            <div className="relative hidden lg:block">
-                <div className="relative z-10 glass-card rounded-[40px] p-4 overflow-hidden border-white/5 rotate-3 hover:rotate-0 transition-transform duration-700">
-                    <Image 
-                        className="rounded-[32px] w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000 opacity-80" 
-                        alt="stylized elegant gold and black world map on a textured wall" 
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLxrTPy0eOjHnux7EMHeuNFUWVScHUybpYoohBjHkO257DO5VxaWO82FzWAt8sw3DviN-yq6WIuc_FAgRskWu7QaWwT0kgiyMKiM1mf7iYvlGT6D1qbNM_DKgdsN4INxt0T1uhcDGcCD7A7MOEu0OGumi4siQkEE7xQhA_eDdEJ0AVczQlnj2lfKppdMEylvv2dIgCCTECuCTaCPnSrAqd_PnAhix0f5kMfNosaRihH_o9-z0k5gdk9P1poau_NPjz1ScchxM6M06o"
-                        width={600}
-                        height={600}
-                        priority
-                    />
-                    {/* Overlay Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-                </div>
-                
-                {/* Decorative Elements */}
-                <div className="absolute -bottom-8 -left-8 glass-card p-6 rounded-2xl gold-glow border-primary/20">
-                    <div className="flex items-center gap-3">
-                        <div className="size-3 bg-green-500 rounded-full animate-pulse"></div>
-                        <p className="text-xs font-bold uppercase tracking-widest text-primary">{t('liveCount')}</p>
-                    </div>
-                </div>
-            </div>
+    <section className="relative isolate overflow-hidden">
+      {/* ── Atmosphere ─────────────────────────────────── */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_50%_0%,rgba(196,154,48,0.16),transparent_70%)]" />
+        <div className="animate-drift absolute -top-[18%] start-[8%] size-[620px] rounded-full bg-gold/25 blur-[140px]" />
+        <div
+          className="animate-drift absolute top-[30%] end-[2%] size-[520px] rounded-full bg-gold-soft/10 blur-[150px]"
+          style={{ animationDelay: '-9s' }}
+        />
+        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background to-transparent" />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 md:px-8 pt-32 md:pt-40">
+        {/* ── Statement ────────────────────────────────── */}
+        <div className="relative z-10 mx-auto max-w-6xl text-center">
+          <p className="rise eyebrow eyebrow-center" style={{ '--d': '0.1s' } as React.CSSProperties}>
+            {t('badge')}
+          </p>
+
+          <h1 className="rise display-1 mt-8 text-on-background" style={{ '--d': '0.22s' } as React.CSSProperties}>
+            {t('headline')}
+            <br />
+            <span className="italic font-normal text-gradient-gold">{t('headlineAccent')}</span>
+          </h1>
+
+          <p
+            className="rise mx-auto mt-8 max-w-xl text-base md:text-lg leading-relaxed text-on-surface-variant"
+            style={{ '--d': '0.38s' } as React.CSSProperties}
+          >
+            {t('subtext')}
+          </p>
+
+          <div
+            className="rise mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            style={{ '--d': '0.52s' } as React.CSSProperties}
+          >
+            <Link href={`/${locale}/contact`} className="btn-gold w-full sm:w-auto">
+              {t('ctaPrimary')}
+              <span className="material-symbols-outlined !text-[18px] rtl:rotate-180" aria-hidden="true">arrow_forward</span>
+            </Link>
+            <Link href={`/${locale}#testimonials`} className="btn-ghost w-full sm:w-auto">
+              {t('ctaSecondary')}
+            </Link>
+          </div>
         </div>
+
+        {/* ── Routes from Doha ─────────────────────────── */}
+        <div className="rise relative mx-auto mt-2 md:-mt-14 max-w-[1080px]" style={{ '--d': '0.7s' } as React.CSSProperties}>
+          <div className="[mask-image:linear-gradient(to_bottom,transparent_0%,#000_20%,#000_82%,transparent_100%)]">
+            <WorldRoutes
+              originLabel={t('origin')}
+              destinations={destinations}
+              className="w-full h-auto [mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]"
+            />
+          </div>
+
+          {/* Floating figures */}
+          <dl className="relative z-10 -mt-4 grid grid-cols-3 gap-3 pb-16 lg:static lg:mt-0 lg:block lg:pb-0">
+            {stats.map((s) => (
+              <div key={s.label} className={`lg:absolute ${s.position}`}>
+                <div
+                  className="animate-float glass-luxe rounded-2xl px-4 py-4 md:px-6 md:py-5 text-center lg:text-start"
+                  style={{ animationDelay: s.delay }}
+                >
+                  <dd className="numeral text-3xl md:text-[2.6rem] leading-none font-medium text-on-background">
+                    {s.value}
+                    <span className="text-gold-soft">{s.suffix}</span>
+                  </dd>
+                  <dt className="mt-2 text-[0.625rem] md:text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-on-surface-variant">
+                    {s.label}
+                  </dt>
+                </div>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
     </section>
   );
 }

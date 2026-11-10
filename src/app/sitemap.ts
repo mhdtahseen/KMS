@@ -8,13 +8,14 @@ const locales = ['en', 'ar'] as const;
 type Locale = (typeof locales)[number];
 
 function alternates(path: string) {
-  return Object.fromEntries(
-    locales.map((loc) => [loc, `${BASE_URL}/${loc}${path}`])
-  ) as Record<Locale, string>;
+  return {
+    ...(Object.fromEntries(locales.map((loc) => [loc, `${BASE_URL}/${loc}${path}`])) as Record<Locale, string>),
+    'x-default': `${BASE_URL}/en${path}`,
+  };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/about', '/contact'];
+  const staticRoutes = ['', '/about', '/contact', '/privacy'];
   const entries: MetadataRoute.Sitemap = [];
 
   // Static pages — one canonical entry per locale with hreflang alternates

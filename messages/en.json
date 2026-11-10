@@ -30,18 +30,18 @@
     "phone": "+974 4002 5533",
     "whatsapp": "+974 3040 5474",
     "email": "info@kms-consultants.com",
-    "aboutUs": "About Us",
-    "contactUs": "Contact Us"
+    "aboutUs": "About Us"
   },
   "home": {
     "hero": {
       "badge": "Global Mobility Experts",
       "headline": "Making Dreams Come True,",
       "headlineAccent": "One Visa at a Time",
-      "subtext": "Trusted immigration consultancy helping families and professionals seamlessly move to Canada, UK, Australia, USA and Europe.",
+      "subtext": "Trusted immigration consultants in Doha, Qatar, helping families and professionals move to Canada, the UK, Australia, the USA and Europe.",
       "ctaPrimary": "Check Your Eligibility",
       "ctaSecondary": "Our Success Stories",
-      "liveCount": "Live Success Count: 1,482+"
+      "liveCount": "Live Success Count: 1,482+",
+      "origin": "Doha"
     },
     "trust": {
       "clients": "Happy Clients",
@@ -51,23 +51,54 @@
       "successRate": "Success Rate"
     },
     "services": {
-      "heading": "Specialized Immigration Pathways",
+      "heading": "Specialized Immigration",
       "subtext": "We don't just process papers; we engineer futures through curated legal strategies.",
-      "seeAll": "See All Services →"
+      "seeAll": "See All Services →",
+      "eyebrow": "Our Expertise",
+      "headingAccent": "Pathways",
+      "featured": "Signature Service",
+      "explore": "Explore"
     },
     "process": {
-      "heading": "The KMS Four-Step Protocol"
+      "heading": "The KMS Four-Step",
+      "eyebrow": "How We Work",
+      "headingAccent": "Protocol",
+      "steps": {
+        "audit": {
+          "title": "Initial Audit",
+          "description": "Thorough assessment of your profile and eligibility against global standards."
+        },
+        "strategy": {
+          "title": "Strategy Design",
+          "description": "Architecting a bespoke legal roadmap tailored to your specific goals."
+        },
+        "execution": {
+          "title": "Execution",
+          "description": "Full documentation management and precise submission to authorities."
+        },
+        "onboarding": {
+          "title": "Onboarding",
+          "description": "Post-approval support and relocation assistance for a smooth transition."
+        }
+      }
     },
     "destinations": {
-      "heading": "Global Destinations"
+      "heading": "Global",
+      "eyebrow": "Where We Take You",
+      "headingAccent": "Destinations",
+      "subtext": "From Doha to the world's most sought-after addresses.",
+      "explore": "View pathways"
     },
     "testimonials": {
-      "heading": "Successful Transitions",
-      "googleReview": "Google Review"
+      "heading": "Successful",
+      "googleReview": "Google Review",
+      "eyebrow": "Client Stories",
+      "headingAccent": "Transitions",
+      "rating": "Rated 5 stars on Google"
     },
     "faq": {
       "eyebrow": "Frequently Asked",
-      "heading": "Questions, Answered",
+      "heading": "Questions,",
       "subtext": "Straightforward answers to what clients ask us most before booking a consultation.",
       "items": {
         "countries": {
@@ -102,10 +133,11 @@
           "q": "How many clients has KMS Consultants helped, and where are they from?",
           "a": "We've handled hundreds of successful immigration cases for more than 1,000 clients from over 20 nationalities across Qatar and the GCC, maintaining a 5-star rating on Google based on post-service client feedback."
         }
-      }
+      },
+      "headingAccent": "Answered"
     },
     "cta": {
-      "heading": "Your journey begins with a conversation.",
+      "heading": "Your journey begins with",
       "description": "Fill out our eligibility form and one of our senior consultants will reach out to schedule a private briefing.",
       "features": {
         "confidential": {
@@ -122,7 +154,44 @@
         "terms": "Terms of Service",
         "privacy": "Privacy Policy"
       },
-      "submit": "Submit Free Assessment"
+      "submit": "Submit Free Assessment",
+      "eyebrow": "Private Consultation",
+      "headingAccent": "a conversation.",
+      "direct": "Or speak with us directly",
+      "sending": "Sending…"
+    },
+    "marquee": {
+      "mara": "MARA-Certified Agents",
+      "ircc": "IRCC-Authorized Representative",
+      "google": "5-Star Rated on Google",
+      "clients": "1,000+ Clients Served",
+      "nationalities": "20+ Nationalities",
+      "bilingual": "English & Arabic",
+      "est": "Doha · Since 2019"
+    },
+    "why": {
+      "eyebrow": "Why KMS",
+      "heading": "Trusted counsel for",
+      "headingAccent": "life-changing moves.",
+      "subtext": "A Doha-based team of certified specialists, guiding families and professionals with honesty, discretion and precision.",
+      "cards": {
+        "certified": {
+          "title": "Regulator-Recognised Expertise",
+          "description": "MARA-certified agents for Australia and an IRCC-authorized representative for Canada."
+        },
+        "candid": {
+          "title": "Candid, Ethical Advice",
+          "description": "We review your profile against your destination's requirements before recommending any pathway."
+        },
+        "confidential": {
+          "title": "Absolute Discretion",
+          "description": "Your personal data is protected by strict privacy protocols."
+        },
+        "bilingual": {
+          "title": "English & Arabic",
+          "description": "Every service and every consultation is available in both languages."
+        }
+      }
     }
   },
   "form": {
@@ -140,7 +209,8 @@
     "submit": "Request Private Briefing",
     "successToast": "Inquiry Submitted — We'll be in touch shortly.",
     "errorToast": "Something went wrong — please try again or call us directly.",
-    "privacy": "Your data is encrypted under KMS Privacy Shield Protocol"
+    "privacy": "Your data is encrypted under KMS Privacy Shield Protocol",
+    "processing": "Processing…"
   },
   "booking": {
     "badge": "Connect With Excellence",
@@ -156,7 +226,8 @@
     "visitUs": "Visit Us",
     "hours": "Available 09:00 – 18:00 AST",
     "responseTime": "Expected response within 4 hours",
-    "address": "Office 105, 1st Floor, The Pearl Building, Old Airport Road, Next to HSBC Bank, Doha"
+    "address": "Office 105, 1st Floor, The Pearl Building, Old Airport Road, Next to HSBC Bank, Doha",
+    "openMap": "Open in Google Maps"
   },
   "about": {
     "badge": "Our Story",
@@ -194,7 +265,9 @@
       "heading": "Ready to Start Your Immigration Journey?",
       "subtext": "Let us help you take the first step toward a brighter future.",
       "button": "Book a Free Consultation"
-    }
+    },
+    "valuesEyebrow": "Our Principles",
+    "contactEyebrow": "Find Us"
   },
   "thankYou": {
     "heading": "Your Inquiry Has Been Received",
@@ -208,20 +281,30 @@
     },
     "overview": {
       "cta": "Start Assessment",
-      "download": "Download Brochure"
+      "download": "Download Brochure",
+      "eyebrow": "Overview"
     },
     "destinations": {
       "heading": "Strategic Destinations",
       "subtext": "Selected jurisdictions offering high-priority processing for skilled professionals from the GCC region.",
-      "exploreAll": "Explore All Countries"
+      "exploreAll": "Explore All Countries",
+      "eyebrow": "Destinations"
     },
     "eligibility": {
       "heading": "Eligibility Matrix",
-      "subtext": "Assess your standing against international standards of professional excellence."
+      "subtext": "Assess your standing against international standards of professional excellence.",
+      "eyebrow": "Requirements",
+      "weight": "Weighted score importance"
     },
     "cta": {
       "button": "Book Consultation",
-      "subtext": "Our experts will chart a bespoke path for your immigration journey. Begin with a single, confidential consultation."
+      "subtext": "Our experts will chart a bespoke path for your immigration journey. Begin with a single, confidential consultation.",
+      "eyebrow": "Private Consultation"
+    },
+    "process": {
+      "eyebrow": "The Process",
+      "heading": "Your path,",
+      "headingAccent": "step by step."
     }
   },
   "countries": {
@@ -243,22 +326,39 @@
       "prosperity": {
         "title": "Economic Prosperity",
         "description": "A dynamic, diversified economy with significant opportunities for entrepreneurs, investors, and skilled professionals."
-      }
+      },
+      "eyebrow": "Overview"
     },
     "pathways": {
       "badge": "Strategic Routes",
-      "heading": "Available Visa Pathways"
+      "heading": "Available Visa Pathways",
+      "consult": "Discuss this pathway"
     },
     "requirements": {
       "heading": "Residency Requirements",
-      "citizenshipHeading": "The Pathway to Citizenship"
+      "citizenshipHeading": "The Pathway to Citizenship",
+      "eyebrow": "Residency",
+      "step": "Step"
     },
     "cta": {
       "prefix": "Ready to Call",
       "suffix": "Your Home?",
-      "subtext": "Our team of ICCRC certified consultants provides end-to-end bespoke solutions for your immigration journey.",
+      "subtext": "Our licensed immigration consultants provide end-to-end bespoke solutions for your immigration journey.",
       "button": "Book a Private Consultation",
-      "trust": "Confidentiality Assured • Expert Legal Guidance • Bespoke Planning"
+      "trust": "Confidentiality Assured • Expert Legal Guidance • Bespoke Planning",
+      "eyebrow": "Private Consultation"
     }
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy Policy",
+    "metaDescription": "How KMS Consultants, Doha, collects, uses and protects the personal data of clients and website visitors.",
+    "lastUpdated": "Last updated: 21 March 2025",
+    "intro": "This Privacy Policy describes how KMS Consultants collects, uses and discloses your information when you use our website and services, and tells you about your privacy rights.",
+    "languageNote": ""
+  },
+  "whatsapp": {
+    "label": "Chat on WhatsApp",
+    "message": "Hi, I'm exploring immigration options and would like to speak with a KMS consultant."
   }
 }

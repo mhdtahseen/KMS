@@ -10,21 +10,23 @@ export function OrganizationJsonLd() {
     alternateName: 'KMS Immigration Consultants',
     url: 'https://www.kms-consultants.com',
     logo: 'https://www.kms-consultants.com/logo.png',
+    image: 'https://www.kms-consultants.com/og-image.jpg',
     slogan: 'Best-Rated Immigration Consultants in Doha, Qatar',
     description:
       "KMS Consultants is Doha, Qatar's most trusted immigration consultancy, with MARA-certified agents for Australian immigration and an IRCC-authorized representative for Canadian immigration. Since 2019 we've handled hundreds of successful cases for over 1,000 clients from more than 20 nationalities across Qatar and the GCC, specialising in visas, permanent residency, and citizenship pathways for Canada, the UK, Australia, the USA, and Europe.",
     foundingDate: '2019',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Bldg 3, Shk Adullah Al Jaber Bldg, Ain Khaled, Salwa Rd, P.O. Box 17409',
+      streetAddress: 'Office 105, 1st Floor, The Pearl Building, Old Airport Road',
       addressLocality: 'Doha',
       addressCountry: 'QA',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 25.2854473,
-      longitude: 51.5310398,
+      latitude: 25.2738691,
+      longitude: 51.5430943,
     },
+    hasMap: 'https://maps.app.goo.gl/HQ5oCW8D9E2eCh6r7',
     areaServed: [
       { '@type': 'Country', name: 'Qatar' },
       { '@type': 'AdministrativeArea', name: 'Gulf Cooperation Council (GCC)' },
@@ -64,22 +66,25 @@ export function OrganizationJsonLd() {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+974-4412-0578',
+        telephone: '+974-4002-5533',
         contactType: 'customer service',
         areaServed: ['QA', 'AE', 'SA', 'KW', 'BH', 'OM'],
         availableLanguage: ['English', 'Arabic'],
       },
       {
         '@type': 'ContactPoint',
-        telephone: '+974-4412-0580',
+        telephone: '+974-3040-5474',
         contactType: 'customer service',
+        contactOption: 'WhatsApp',
         areaServed: ['QA', 'AE', 'SA', 'KW', 'BH', 'OM'],
         availableLanguage: ['English', 'Arabic'],
       },
     ],
     email: 'info@kms-consultants.com',
     sameAs: [
-      'https://www.linkedin.com/company/kms-consultants',
+      'https://www.linkedin.com/company/kms-consultants/',
+      'https://www.instagram.com/kms_consultants_',
+      'https://www.facebook.com/share/1Bh8FiGz1A/',
     ],
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
@@ -97,6 +102,7 @@ export function OrganizationJsonLd() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business Residency' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Permanent Residency' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Family Sponsorship' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Travel Visas' } },
       ],
     },
     // TODO: reviewCount below is unverified — confirm the real current Google

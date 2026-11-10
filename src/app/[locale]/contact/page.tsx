@@ -1,26 +1,30 @@
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import Image from 'next/image';
 import { BookingForm } from '@/components/booking/BookingForm';
+import { TrustStrip } from '@/components/home/TrustStrip';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: 'Contact Us — Book a Free Consultation',
   description:
-    'Contact KMS Consultants in Doha, Qatar. Book a free immigration consultation with our certified specialists. Call +974 4412 0578 or email info@kms-consultants.com.',
+    'Contact KMS Consultants in Doha, Qatar. Book a free immigration consultation with our certified specialists. Call +974 4002 5533 or email info@kms-consultants.com.',
   alternates: {
-    canonical: 'https://www.kms-consultants.com/en/contact',
+    canonical: `https://www.kms-consultants.com/${locale}/contact`,
     languages: {
       en: 'https://www.kms-consultants.com/en/contact',
       ar: 'https://www.kms-consultants.com/ar/contact',
+      'x-default': 'https://www.kms-consultants.com/en/contact',
     },
   },
   openGraph: {
     title: 'Contact KMS Consultants | Book a Free Immigration Consultation',
     description: 'Speak with a certified immigration specialist in Doha, Qatar. We handle Canada, UK, Australia, USA & Europe visas.',
-    url: 'https://www.kms-consultants.com/en/contact',
+    url: `https://www.kms-consultants.com/${locale}/contact`,
   },
-};
+  };
+}
 
 export default async function ContactPage({
   params,
@@ -32,177 +36,111 @@ export default async function ContactPage({
   const t = await getTranslations('booking');
   const ft = await getTranslations('footer');
 
-  const contactCards = [
-    {
-      icon: 'call',
-      label: t('callUs'),
-      value: ft('phone'),
-      sub: `WhatsApp: ${ft('whatsapp')}`,
-      href: `tel:${ft('phone').replace(/\s/g, '')}`,
-    },
-    {
-      icon: 'mail',
-      label: t('mailUs'),
-      value: ft('email'),
-      sub: t('responseTime'),
-      href: `mailto:${ft('email')}`,
-    },
-    {
-      icon: 'location_on',
-      label: t('visitUs'),
-      value: ft('address'),
-      sub: t('hours'),
-      href: '#',
-    },
-  ];
+  const phone = ft('phone');
+  const whatsapp = ft('whatsapp');
+  const email = ft('email');
+
+  const rowClass = 'flex items-start gap-5 border-t border-white/10 py-7';
+  const ring =
+    'grid size-12 shrink-0 place-items-center rounded-full border border-gold-soft/35 bg-gold/15 text-champagne';
+  const labelClass = 'text-[0.6875rem] font-bold uppercase tracking-[0.24em] text-gold-soft';
 
   return (
-    <main className="min-h-screen">
-      {/* Hero */}
-      <section className="pt-40 pb-16 px-8 max-w-[1280px] mx-auto">
-        <span className="text-primary font-bold tracking-[0.2em] mb-4 block uppercase text-sm">
-          {t('badge')}
-        </span>
-        <h1
-          className="font-headline text-5xl md:text-6xl text-on-background mb-6"
-          style={{ fontFamily: 'var(--font-serif)' }}
-        >
-          {t('heading')}
-        </h1>
-        <p className="text-xl text-on-surface-variant max-w-2xl">{t('subtext')}</p>
-      </section>
-
-      {/* Help Cards */}
-      <section className="pb-16 px-8 max-w-[1280px] mx-auto">
-        <div className="glass-card rounded-3xl p-10 mb-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl -mr-32 -mt-32" />
-          <h2
-            className="font-headline text-2xl text-on-background mb-3"
-            style={{ fontFamily: 'var(--font-serif)' }}
-          >
-            {t('helpTitle')}
-          </h2>
-          <p className="text-on-surface-variant max-w-2xl mb-10">{t('helpSubtext')}</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {contactCards.map((card) => (
-              <a
-                key={card.label}
-                href={card.href}
-                className="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-primary/30 transition-colors group"
-              >
-                <div className="size-12 flex items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary shrink-0 group-hover:bg-primary/15 transition-colors">
-                  <span className="material-symbols-outlined">{card.icon}</span>
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-primary mb-1">
-                    {card.label}
-                  </p>
-                  <p className="text-sm text-on-surface font-medium whitespace-pre-line leading-snug">
-                    {card.value}
-                  </p>
-                  {card.sub && (
-                    <p className="text-xs text-on-surface-variant/60 mt-1">{card.sub}</p>
-                  )}
-                </div>
-              </a>
-            ))}
-          </div>
+    <main className="overflow-x-clip">
+      {/* ── Hero ───────────────────────────────────────── */}
+      <section className="relative isolate overflow-hidden">
+        <div aria-hidden="true" className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_30%_0%,rgba(196,154,48,0.16),transparent_70%)]" />
+          <div className="animate-drift absolute -top-[30%] start-[5%] size-[620px] rounded-full bg-gold/25 blur-[140px]" />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 md:px-8 pt-36 md:pt-44 pb-12 md:pb-14">
+          <p className="rise eyebrow" style={{ '--d': '0.1s' } as React.CSSProperties}>{t('badge')}</p>
+          <h1 className="rise display-1 mt-8 max-w-4xl text-on-background" style={{ '--d': '0.22s' } as React.CSSProperties}>
+            {t('heading')}
+          </h1>
+          <p className="rise mt-8 max-w-2xl text-base md:text-lg leading-relaxed text-on-surface-variant" style={{ '--d': '0.36s' } as React.CSSProperties}>
+            {t('subtext')}
+          </p>
         </div>
       </section>
 
-      {/* Main Split Layout */}
-      <section className="pb-32 px-8 max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left Panel: Office Image */}
-        <div className="lg:col-span-5 space-y-8">
-          {/* Strategic Map Image */}
-          <div className="h-[400px] rounded-3xl overflow-hidden glass-card relative group">
-            <Image
-              className="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 transition-all duration-700 scale-105 group-hover:scale-100"
-              alt="KMS Office Location — Doha, Qatar"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSywwJQk-Omxr8qXZS2M4e55Q23DDXQg_nTpGwT3nXF_pCofdDQDfUCWUle-GevqjZ6as8JCa67Qs1vIllMUfe62Tx9TIbeDvJQZGCzX7cXU5W868LJjnFFJAMy6VWPk8hfNVlVKn4gtAwlLV8igPi3WHAyLkBYFli541cyfJZc5IS3-llky_BVUqkLJOdaEMJ9iD9bZiU-4qGWP0EM6p9fM-9Vp6yg3pwG9hBYSbYdcTEpdqAX1anKB3Uaas13Kt8EOjXIVbY7zdS"
-              fill
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80" />
-            <div className="absolute bottom-6 left-6 flex items-center gap-2">
-              <span className="size-3 bg-primary rounded-full animate-pulse shadow-[0_0_12px_#ecc06f]" />
-              <span className="text-xs font-bold text-white uppercase tracking-widest">
-                {t('liveOps')}
-              </span>
-            </div>
-          </div>
+      {/* ── Details + form ─────────────────────────────── */}
+      <section className="pb-20 md:pb-28">
+        <div className="rise mx-auto max-w-7xl px-6 md:px-8 grid lg:grid-cols-12 gap-6" style={{ '--d': '0.5s' } as React.CSSProperties}>
+          {/* Left: dark information panel */}
+          <div className="lg:col-span-5">
+            <div className="relative h-full overflow-hidden rounded-[28px] border border-white/10 bg-surface-container-lowest p-8 md:p-10">
+              <div aria-hidden="true" className="absolute -top-32 -start-32 size-[420px] rounded-full bg-gold/30 blur-[120px]" />
+              <div className="relative">
+                <h2 className="font-headline text-3xl md:text-4xl leading-tight font-medium text-on-background">{t('helpTitle')}</h2>
+                <p className="mt-4 text-sm md:text-base leading-relaxed text-on-surface-variant">{t('helpSubtext')}</p>
 
-          {/* Office details card */}
-          <div className="glass-card p-8 rounded-3xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -mr-16 -mt-16" />
-            <h3
-              className="font-headline text-xl text-primary mb-6"
-              style={{ fontFamily: 'var(--font-serif)' }}
-            >
-              {t('officeHeading')}
-            </h3>
-            <div className="space-y-6 relative z-10">
-              <div className="flex items-start gap-4">
-                <div className="size-10 flex items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-primary shrink-0">
-                  <span className="material-symbols-outlined text-base">location_on</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-on-surface text-sm mb-1">Doha, Qatar</h4>
-                  <p className="text-on-surface-variant text-sm leading-relaxed whitespace-pre-line">
-                    {ft('address')}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="size-10 flex items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-primary shrink-0">
-                  <span className="material-symbols-outlined text-base">call</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-on-surface text-sm mb-1">Phone & WhatsApp</h4>
-                  <p className="text-on-surface-variant text-sm">
-                    <a href={`tel:${ft('phone').replace(/\s/g, '')}`} className="hover:text-primary transition-colors">{ft('phone')}</a>
-                  </p>
-                  <p className="text-on-surface-variant text-sm">
-                    <a href={`https://wa.me/${ft('whatsapp').replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp: {ft('whatsapp')}</a>
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="size-10 flex items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-primary shrink-0">
-                  <span className="material-symbols-outlined text-base">mail</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-on-surface text-sm mb-1">Email</h4>
-                  <p className="text-on-surface-variant text-sm">{ft('email')}</p>
-                  <p className="text-on-surface-variant/60 text-xs mt-1">{t('responseTime')}</p>
+                <div className="mt-10">
+                  <div className={rowClass}>
+                    <span className={ring}><span className="material-symbols-outlined icon-fine !text-[24px]" aria-hidden="true">call</span></span>
+                    <div>
+                      <p className={labelClass}>{t('callUs')}</p>
+                      <a href={`tel:${phone.replace(/\s/g, '')}`} className="latin numeral mt-2 block text-3xl text-on-background transition-colors duration-300 hover:text-champagne" dir="ltr">
+                        {phone}
+                      </a>
+                      <a
+                        href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="latin mt-2 inline-flex items-center gap-2 text-sm font-medium text-on-surface-variant transition-colors duration-300 hover:text-champagne"
+                        dir="ltr"
+                      >
+                        WhatsApp {whatsapp}
+                        <span className="material-symbols-outlined !text-[15px] text-gold-soft" aria-hidden="true">north_east</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className={rowClass}>
+                    <span className={ring}><span className="material-symbols-outlined icon-fine !text-[24px]" aria-hidden="true">mail</span></span>
+                    <div>
+                      <p className={labelClass}>{t('mailUs')}</p>
+                      <a href={`mailto:${email}`} className="mt-2 block break-all text-base font-medium text-on-background transition-colors duration-300 hover:text-champagne" dir="ltr">
+                        {email}
+                      </a>
+                      <p className="mt-1.5 text-xs text-on-surface-variant/75">{t('responseTime')}</p>
+                    </div>
+                  </div>
+
+                  <div className={rowClass}>
+                    <span className={ring}><span className="material-symbols-outlined icon-fine !text-[24px]" aria-hidden="true">location_on</span></span>
+                    <div>
+                      <p className={labelClass}>{t('visitUs')}</p>
+                      <address className="mt-2 not-italic whitespace-pre-line text-sm leading-relaxed text-on-background/90">{ft('address')}</address>
+                      <a
+                        href="https://maps.app.goo.gl/HQ5oCW8D9E2eCh6r7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-gold-soft transition-colors duration-300 hover:text-champagne"
+                      >
+                        {t('openMap')}
+                        <span className="material-symbols-outlined !text-[16px]" aria-hidden="true">north_east</span>
+                      </a>
+                      <p className="mt-2 flex items-center gap-2 text-xs text-on-surface-variant/75">
+                        <span className="material-symbols-outlined !text-[15px] text-gold-soft" aria-hidden="true">schedule</span>
+                        {t('hours')}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Right Panel: Premium Form */}
-        <div className="lg:col-span-7">
-          <BookingForm />
+          {/* Right: glass form */}
+          <div className="lg:col-span-7">
+            <BookingForm />
+          </div>
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <section className="py-20 border-t border-primary/10 bg-surface-container-lowest/50">
-        <div className="max-w-[1280px] mx-auto px-8 flex flex-wrap justify-around items-center gap-12 opacity-30 grayscale filter">
-          <span className="font-headline text-2xl font-bold tracking-[0.2em] text-on-surface">
-            LEGAL PARTNERS
-          </span>
-          <span className="font-headline text-2xl font-bold tracking-[0.2em] text-on-surface">
-            GLOBAL ALLIANCE
-          </span>
-          <span className="font-headline text-2xl font-bold tracking-[0.2em] text-on-surface">
-            QATAR CHAMBER
-          </span>
-          <span className="font-headline text-2xl font-bold tracking-[0.2em] text-on-surface">
-            ISO CERTIFIED
-          </span>
-        </div>
-      </section>
+      {/* Credentials */}
+      <TrustStrip />
     </main>
   );
 }

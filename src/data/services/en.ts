@@ -39,8 +39,7 @@ export const services: Service[] = [
     slug: 'skilled-immigration',
     title: 'Skilled Immigration',
     tagline: 'Elite Global Mobility',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCbxli4H5rKHK1b5WKbMGad64EY6ryZP228sc9P_we55dgf7uJ5pukWB9jkhkOjW0LqaFI277UOxISQOsUUl4fGh4M70_J5lubJa8bgjz0hnWaZCN9BLrxlZ6pG1ZeSEAbFYL2Z_kUjydQO3boR6XpG-mR_gVbPLSm8vnK6fpUVxqcHr-pullh7ZEBXrLs38qJPDUmopdWKl4CDe8HuThZeIl4MV8p9APJOQUkrcX7lwoxcTQXx0f_dJ7vumIcB2fTpj3RLWO5NW-8H',
+    heroImage: '/images/services/skilled-immigration-hero.jpg',
     heroHeadline: 'Skilled Immigration for',
     heroHeadlineAccent: 'Global Professionals',
     heroSubtext:
@@ -54,8 +53,7 @@ export const services: Service[] = [
       { value: '98%', label: 'Success Rate' },
       { value: '12+', label: 'Global Hubs' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCSywwJQk-Omxr8qXZS2M4e55Q23DDXQg_nTpGwT3nXF_pCofdDQDfUCWUle-GevqjZ6as8JCa67Qs1vIllMUfe62Tx9TIbeDvJQZGCzX7cXU5W868LJjnFFJAMy6VWPk8hfNVlVKn4gtAwlLV8igPi3WHAyLkBYFli541cyfJZc5IS3-llky_BVUqkLJOdaEMJ9iD9bZiU-4qGWP0EM6p9fM-9Vp6yg3pwG9hBYSbYdcTEpdqAX1anKB3Uaas13Kt8EOjXIVbY7zdS',
+    overviewImage: '/images/services/skilled-immigration-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'school',
@@ -108,7 +106,7 @@ export const services: Service[] = [
         title: 'Canada',
         description: 'Express Entry & Provincial Nomination programs for tech and healthcare professionals.',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCmBfA-XOc4fPL679Rm2pzATdyC57yQ9IbC10LvA3sLK3t80KK6wCyZaUVN6VoqBeawbd32iCjYaN_bq2Ovw4DUGp4Is7LwEIIn2xoL10_y6_5CWEusZLkd3iIQ_MF_3qn2j8p7L3pBboh9QOHSJAyLGf5uXDBeQStx42GX3--I9oV5rEK5Zjt9MIwCspw4bJAEf2qrEs1KbPlGwsopzrriOtY4VE17BDqEa-vI19C65prUYdek4HqYJrt5Vz-1a--v9n_aT7K0YHcH',
+          '/images/countries/canada-card.jpg',
         status: 'Open',
       },
       {
@@ -116,7 +114,7 @@ export const services: Service[] = [
         title: 'Australia',
         description: 'Subclass 189/190 pathways for specialized engineering and architectural expertise.',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+          '/images/countries/australia-card.jpg',
         status: 'Priority',
       },
       {
@@ -124,7 +122,7 @@ export const services: Service[] = [
         title: 'United Kingdom',
         description: 'Skilled Worker Visa sponsorship support for senior leadership and finance roles.',
         image:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+          '/images/countries/united-kingdom-card.jpg',
         status: 'New Track',
       },
     ],
@@ -135,8 +133,7 @@ export const services: Service[] = [
     slug: 'study-permits',
     title: 'Study Permits',
     tagline: 'Academic Excellence Pathways',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/study-permits-hero.jpg',
     heroHeadline: 'Your Academic Gateway to Global Residency',
     heroSubtext:
       "Secure your future with expert visa guidance for the world's most prestigious educational institutions.",
@@ -147,8 +144,7 @@ export const services: Service[] = [
       { value: '98%', label: 'Approval Rate' },
       { value: '500+', label: 'Partner Institutions' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/study-permits-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'school',
@@ -183,8 +179,7 @@ export const services: Service[] = [
     slug: 'business-residency',
     title: 'Business Residency',
     tagline: 'Commercial Mobility Solutions',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/business-residency-hero.jpg',
     heroHeadline: 'Strategic Business Residency & Citizenship',
     heroSubtext:
       'Establish your commercial presence in global markets through high-value investment and entrepreneur pathways.',
@@ -195,8 +190,7 @@ export const services: Service[] = [
       { value: '$1M+', label: 'Capital Managed' },
       { value: '100%', label: 'Compliance Rate' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/business-residency-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'account_balance',
@@ -224,8 +218,7 @@ export const services: Service[] = [
     slug: 'work-permits',
     title: 'Work Permits',
     tagline: 'Global Workforce Integration',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/work-permits-hero.jpg',
     heroHeadline: 'Authoritative Work Authorization',
     heroSubtext:
       'Bridge the gap between your talent and international opportunity through expert work permit representation.',
@@ -236,8 +229,7 @@ export const services: Service[] = [
       { value: '45 Days', label: 'Avg. Processing' },
       { value: 'Elite', label: 'Client Base' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/work-permits-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'work',
@@ -265,8 +257,7 @@ export const services: Service[] = [
     slug: 'permanent-residency',
     title: 'Permanent Residency',
     tagline: 'Generational Security',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/permanent-residency-hero.jpg',
     heroHeadline: 'The Ultimate Status in Global Mobility',
     heroSubtext:
       'Secure full permanent residency and a guaranteed pathway to citizenship for you and your family.',
@@ -277,8 +268,7 @@ export const services: Service[] = [
       { value: '1,500+', label: 'PRs Secured' },
       { value: '99.2%', label: 'Success Rate' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/permanent-residency-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'verified_user',
@@ -306,8 +296,7 @@ export const services: Service[] = [
     slug: 'family-sponsorship',
     title: 'Family Sponsorship',
     tagline: 'Reuniting Global Families',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDsEnrp6NOB0LBq4TT36HqeRCVZuAA0B2lpBLtPtQbzCJmxEaS-c_KBp7NYLQ2Ys7lFjy88n-P-YPNvGLRJoC6pcGtXiKbgcLKHzAruSi3Jmxph5UYa2eDqbbV5pLCuMzLaqoX13jkfVq9e5UjlEehtRUf76UxKAIBhsv-JJPdDOp6yQ4MHBUbfbGOjKn_KRJz3k1T-hRMBSKd1cSHn-lCXUhGrAbzJH4I7OSnVEhcRuRwcBTXfQjiBmn8l_TZ8x2m2pSjFD_LbFkCfU',
+    heroImage: '/images/services/family-sponsorship-hero.jpg',
     heroHeadline: 'Bring Your Family Together',
     heroSubtext:
       'Expert representation for spousal, parental, and dependent sponsorship in the world\'s most welcoming nations.',
@@ -318,8 +307,7 @@ export const services: Service[] = [
       { value: '500+', label: 'Families Reunited' },
       { value: 'Private', label: 'Case Handling' },
     ],
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBqpXEk8f9s7-S8U-jxh3_wKoVLSJdQn3WXAG5_WQiX4ufJhCqSCYPrmU7b2X9fF3mjzwWLB7Nxjte03B_rkFz7b9VRrXFYK-KmRCfDLsn-nFJ6vHGcEhIi91dRbGxHPbPBsqL5Lx3A_hBl3mMrP0vlcXaGFmHnflB3hBJvGIoJpqWlZDp8PadV3EhxHfHSwbB6VLrq9eMx0HO_AUBg4VZp6ACRy3g_sj2UJbJDxcbnM5C4_YJPQ',
+    overviewImage: '/images/services/family-sponsorship-overview.jpg',
     eligibilityCriteria: [
       {
         icon: 'favorite',
@@ -341,6 +329,63 @@ export const services: Service[] = [
     ],
     destinations: ['canada', 'united-kingdom', 'usa', 'australia'],
     ctaHeading: 'Bring Them Home.',
+    isPublished: true,
+  },
+  {
+    slug: 'travel-visas',
+    title: 'Travel Visas',
+    tagline: 'Visitor & Tourist Visas',
+    heroImage: '/images/services/travel-visas-hero.jpg',
+    heroHeadline: 'Visit the World',
+    heroHeadlineAccent: 'Without the Paperwork Stress',
+    heroSubtext:
+      'Visitor, tourist and business-visit visas for Qatar residents of every nationality — the UK, the Schengen Area, the United States, Canada and Australia — prepared to the standard consulates expect.',
+    overviewHeading: 'Short Stays, Handled Properly',
+    overviewBody:
+      'A refused visitor visa stays on your record and makes every later application harder. We prepare each file so that the purpose of travel, your ties to Qatar and your finances are evidenced clearly the first time.',
+    overviewBodySecondary:
+      'We cover UK Standard Visitor visas and the UK ETA, Schengen short-stay visas for all member states, US B-1/B-2 visitor visas, Canadian visitor visas (TRV) and eTAs, and Australian Visitor visas (subclass 600) — including appointment booking and interview preparation where required.',
+    overviewStats: [
+      { value: '90', label: 'Days per 180 in Schengen' },
+      { value: '10 yrs', label: 'US Visitor Visa Validity (up to)' },
+    ],
+    overviewImage: '/images/services/travel-visas-overview.jpg',
+    eligibilityCriteria: [
+      {
+        icon: 'flight_takeoff',
+        title: 'Purpose & Itinerary',
+        description: 'A clear purpose of travel with bookings or an invitation that matches the visa type.',
+        badge: 'Required',
+        featured: true,
+        checkPoints: ['Confirmed itinerary or invitation letter', 'Accommodation details', 'Return travel evidence'],
+      },
+      {
+        icon: 'payments',
+        title: 'Financial Means',
+        description: 'Bank statements and salary evidence showing you can fund the trip.',
+        badge: 'Documentary',
+      },
+      {
+        icon: 'home',
+        title: 'Ties to Qatar',
+        description: 'Employment, residence permit and family ties that show you will return.',
+        badge: 'Key Factor',
+      },
+      {
+        icon: 'health_and_safety',
+        title: 'Travel Insurance',
+        description: 'Medical insurance meeting the destination\'s minimum cover — mandatory for Schengen applications.',
+        badge: 'Schengen',
+      },
+    ],
+    processSteps: [
+      { icon: 'fact_check', title: 'Assessment', description: 'Choosing the right visa type and checking your travel history and ties.' },
+      { icon: 'description', title: 'Documentation', description: 'Preparing a complete, consistent file to the consulate\'s checklist.' },
+      { icon: 'event', title: 'Appointment & Biometrics', description: 'Booking the visa centre appointment and preparing you for any interview.' },
+      { icon: 'flight_takeoff', title: 'Decision & Travel', description: 'Tracking the decision and advising on entry requirements before you fly.' },
+    ],
+    destinations: ['united-kingdom', 'european-union', 'usa', 'canada', 'australia'],
+    ctaHeading: 'Travel with Confidence.',
     isPublished: true,
   },
 ];

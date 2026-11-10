@@ -44,13 +44,10 @@ export function StickyCtaBar({ title, ctaText, sentinelSelector = '[data-cta-sec
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 320, damping: 32 }}
-          className="fixed bottom-0 inset-x-0 z-40 flex items-center justify-between gap-4 px-6 py-3 bg-background/85 backdrop-blur-xl border-t border-white/10 shadow-[0_-8px_32px_-4px_rgba(0,0,0,0.5)]"
+          className="nav-dropdown fixed bottom-4 z-40 flex items-center justify-between gap-4 rounded-full py-2 ps-6 pe-2 start-4 end-20 md:start-1/2 md:end-auto md:w-[min(560px,calc(100vw-12rem))] md:-translate-x-1/2 rtl:md:translate-x-1/2"
         >
-          <p className="text-sm font-medium text-on-surface-variant hidden sm:block truncate">{title}</p>
-          <Link
-            href={`/${locale}/contact`}
-            className="bg-gold-gradient text-on-primary px-7 py-2.5 rounded-xl font-bold text-sm gold-glow hover:scale-[1.03] transition-transform shrink-0 ml-auto"
-          >
+          <p className="hidden sm:block truncate font-headline text-xl text-on-background">{title}</p>
+          <Link href={`/${locale}/contact`} className="btn-gold btn-sm ms-auto shrink-0">
             {ctaText}
           </Link>
         </motion.div>

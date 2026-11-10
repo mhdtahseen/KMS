@@ -5,18 +5,15 @@ export const countries: Country[] = [
     slug: 'canada',
     name: 'كندا',
     tagline: 'أرض الفرص',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuATxzHKdh_RLdAydsvY6nZI7shSgTTUJNTs23VimeU90Pe8cZi8wNNhnfRVlSIn23TuAhY5QvJt3PY4-Mv4thUSmZpOhdEEjXxbwyrGJwQhqaPzvfVJ5OirO2K-VIK2v8hdk5fOTa36QPM1d_TXtAJt0Tk3cZE9nKDaP863eJnSEMx0wCHCJk4CrJAr5jnIoTZTtCbedh-ztizB3BoBgH09BhubMAXDh8-yo6JSRb95xKYrexZ8aWyyB4oU260tn03nVD_7sk-z5Sw3',
+    homeImage: '/images/countries/canada-home.jpg',
     homeHighlight: 'الدخول السريع • الترشيح الإقليمي',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBoM5GHKUNqhbgGylRNS4PdjQKMHUd4Pp0HvkNtrTSu2K-Oip0w5EgDM1tXh9SvaHm4a7eBCYR7v66-g2l7dD_0TXVnQcRO4FwbHujgBiZPMry5p6xEf_t7tRcuUaQlfpva86KsMmbYxHBP97ZJe6LboKyA_Lm0K7dZJhUH5KjG25JKD-xS4u17STzTon44HXbDB4xP8gZgYwfeRMhqsJYSrdtdqXGD9lcsiXvCXKZPA0FsZhwgxCHw0Luwu53Rs_Kbw7ZeJtUroEy9',
+    heroImage: '/images/countries/canada-hero.jpg',
     heroHeadline: 'كندا',
     heroSubtext: 'أرض الفرص',
     overviewHeading: 'لماذا يختار القادة العالميون كندا',
     overviewBody:
       'تقدم كندا نوعية حياة لا مثيل لها، واقتصاداً مستقراً، وبيئة متعددة الثقافات ترحب بالجميع، مما يجعلها الخيار الأول للمهنيين والمستثمرين من الشرق الأوسط.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMp1evYlOpM0ZuDcwfwHgfqZDW7C5kLBlyenYSXonraWAe3tvM7OxpQyzxNUAny0-G_F9IW8Gi7UZU1cNynW43uNZjZFHi7Qbu5NEymp7nMdeyqmFwx8fKTJXuzRkfKaTk4k5gx-2rqNM6jWZ7uQG3pNv9NdYUEUwnO101uHtAp1099p0KlauV1vnWAqcYtgugzfdOfOq8Rs4gsiTe5eapBPuGwKivFev79znQYPC24hzX9zLvU7UCyzlQsm7lT1BYZcBdRmq_QO_k',
+    overviewImage: '/images/countries/canada-overview.jpg',
     overviewStats: [
       { value: '#1', label: 'أفضل جودة حياة عالمياً' },
       { value: '93%', label: 'معدل رضا المهاجرين' },
@@ -24,42 +21,52 @@ export const countries: Country[] = [
     pathways: [
       {
         id: 'express-entry',
-        title: 'نظام الدخول السريع (Express Entry)',
+        title: 'الدخول السريع (Express Entry)',
         description:
-          'أسرع طريق للعمال المهرة. نحن متخصصون في طلبات العمال المهرة الفيدراليين (FSW) وفئة الخبرة الكندية (CEC) بمعدلات نجاح عالية.',
+          'المسار الرئيسي للإقامة الدائمة للعمال المهرة في كندا. نقيّم أهليتك، ونحتسب نقاطك في نظام التصنيف الشامل (CRS)، ونبني ملفاً قوياً للحصول على دعوة التقديم — بما في ذلك السحوبات الفئوية للرعاية الصحية وتخصصات STEM والحرف والتعليم والناطقين بالفرنسية.',
         icon: 'rocket_launch',
         ctaLabel: 'استكشف المسار',
-      },
-      {
-        id: 'business',
-        title: 'المستثمر ورائد الأعمال',
-        description:
-          'حلول مخصصة للأفراد ذوي الملاءة المالية العالية الذين يبحثون عن تأشيرات الشركات الناشئة أو برامج الأعمال الإقليمية.',
-        icon: 'business_center',
-        ctaLabel: 'استشرنا',
-      },
-      {
-        id: 'family',
-        title: 'الكفالة العائلية',
-        description:
-          'لم شمل العائلة مع أحبائك من خلال خدماتنا الموجهة من الخبراء في كفالة الزوج والوالدين.',
-        icon: 'groups',
-        ctaLabel: 'استشرنا',
       },
       {
         id: 'pnp',
         title: 'برامج الترشيح الإقليمي (PNP)',
         description:
-          'مسارات مخصصة لمقاطعات معينة مثل أونتاريو، كولومبيا البريطانية، وألبرتا بناءً على احتياجات سوق العمل المحلي.',
+          'مسارات ترشيح تديرها كل مقاطعة وإقليم للمهن والملفات التي تحتاجها أسواق عملها، وتتيح الإقامة الدائمة إما عبر الدخول السريع (مع 600 نقطة إضافية في CRS) أو بالتقديم مباشرة إلى دائرة الهجرة الكندية.',
         icon: 'policy',
-        bgImage:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCLU4M-0CD2TGBLfMr8KKQdTp2DPYnyiSAS7TA_Jhc8tXtxfdpo_oHh_jRPQen_ig3XHlyd8F0uVBKyWhWWPOrbIMvLqhKDnTD2o9WMwLrstDT5jzfTFiInet0sC3Q0g0mRsI9eVXv2L7vdI9Pqtv6Gg6dm-d_RU-snCIlB7frSeiHtmbvrL-OlTC5ChsFkh9Ox9L-ZM7vBTrswGr0F66iAaDHb8EG6i_1zIK5Tvz6YP94MPN07xMxFBcNSd2FkxR5VhS-HqCiEFVkm',
-        ctaLabel: 'عرض المقاطعات',
+      },
+      {
+        id: 'community',
+        title: 'برامج المجتمعات الريفية والفرنكوفونية والأطلسية',
+        description:
+          'إقامة دائمة قائمة على عرض عمل في المجتمعات الأصغر: برنامج الهجرة إلى المجتمعات الريفية (الذي أصبح دائماً في نوفمبر 2026)، وبرنامج المجتمعات الفرنكوفونية التجريبي للناطقين بالفرنسية خارج كيبيك، وبرنامج الهجرة الأطلسي في مقاطعات كندا الأطلسية الأربع.',
+        icon: 'landscape',
+      },
+      {
+        id: 'work-permits',
+        title: 'تصاريح العمل',
+        description:
+          'تصاريح عمل مرتبطة بصاحب العمل عبر برنامج العمال الأجانب المؤقتين (القائم على تقييم LMIA) وبرنامج التنقل الدولي، إضافة إلى برنامج الخبرة الدولية في كندا (IEC) للشباب من الجنسيات المؤهلة. ندير امتثال صاحب العمل وطلب التصريح من البداية إلى النهاية.',
+        icon: 'work',
+        bgImage: '/images/countries/canada-bg.jpg',
+      },
+      {
+        id: 'study',
+        title: 'تصاريح الدراسة والعمل بعد التخرج',
+        description:
+          'طلبات تصاريح الدراسة في المؤسسات التعليمية المعتمدة، بما فيها خطاب التصديق الإقليمي المطلوب الآن لمعظم البرامج ضمن سقف تصاريح الدراسة في كندا، ثم تصريح العمل بعد التخرج (PGWP) — الجسر من التعليم الكندي إلى الخبرة العملية الكندية والإقامة الدائمة.',
+        icon: 'school',
+      },
+      {
+        id: 'family',
+        title: 'كفالة الأسرة والتأشيرة الممتازة',
+        description:
+          'كفالة الزوج أو الشريك، وكفالة الأبناء المعالين، والتأشيرة الممتازة (Super Visa) للوالدين والأجداد — تأشيرة متعددة الدخول تتيح إقامة تصل إلى خمس سنوات في كل زيارة، وهي المسار العملي للوالدين في ظل إغلاق برنامج الوالدين والأجداد أمام الكفلاء الجدد.',
+        icon: 'groups',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMp1evYlOpM0ZuDcwfwHgfqZDW7C5kLBlyenYSXonraWAe3tvM7OxpQyzxNUAny0-G_F9IW8Gi7UZU1cNynW43uNZjZFHi7Qbu5NEymp7nMdeyqmFwx8fKTJXuzRkfKaTk4k5gx-2rqNM6jWZ7uQG3pNv9NdYUEUwnO101uHtAp1099p0KlauV1vnWAqcYtgugzfdOfOq8Rs4gsiTe5eapBPuGwKivFev79znQYPC24hzX9zLvU7UCyzlQsm7lT1BYZcBdRmq_QO_k',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBHj0DxO6R6drT6QKPSGy5hllixI8GtEb81Ya2HfAD_zTmytR5_n6RqhOhANC_WjqmxvFyRylh2LaaDun_z74QO_KyGMaI8xbpHCgvYxMNm3NtYe4g1SX6yHhe40zwouQXCEXykWPsLvQKGZShXvbfEtkUZabHLNmqNWkEFL1Ls3IK4A9hxzNBGCUZClvmoVWODCyL2V2Me9d1jiOe3AhoEcLBeXbeTzBdVx9iyzF2LOH_8fBoNrXAQxwRgrcPaee0j2qw_HpJ89OQT',
+      '/images/countries/canada-why.jpg',
+      '/images/countries/canada-why-2.jpg',
     ],
     requirements: [
       {
@@ -105,19 +112,16 @@ export const countries: Country[] = [
     slug: 'united-kingdom',
     name: 'المملكة المتحدة',
     tagline: 'مركز مالي عالمي',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAY_mxwR0hBNeK-ko7Qt62XlqaCl1y5VLUvVfYSJgKbpN8ZPywLAWHStvI98W4WKxaDTErb28OxF1iiBVrtm47-YvwhIdvFaUZqPEec_0Put_7Ssd15lrsBLCiHDGC-Y0Y3q1pkqcWkewAlmle8C1F7O40teOGYpbz0W4jEgxNGno0geYMaZ7jPeBZwC2HZFs8Q9F8p-nE5CmjWmLSan9-xIoMtSaj3pxWEjUjjj40h2o6ugaktwMAWIh2VGTMPH2AO33mL2okCuV16',
-    homeHighlight: 'العمال المهرة • المواهب العالمية',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+    homeImage: '/images/countries/united-kingdom-home.jpg',
+    homeHighlight: 'العامل الماهر • المبتكر المؤسس',
+    heroImage: '/images/countries/united-kingdom-hero.jpg',
     heroHeadline: 'إقامة النخبة في المملكة المتحدة',
     heroSubtext:
       'احصل على فرص مالية لا مثيل لها وتعليم عالمي المستوى من خلال مسارات الإقامة والجنسية في المملكة المتحدة.',
     overviewHeading: 'التقاليد تلتقي بالطموح الحديث',
     overviewBody:
       'تظل المملكة المتحدة وجهة رائدة للمهنيين والمستثمرين العالميين. بفضل نظامها القانوني القوي، والجامعات الرائدة عالمياً، وموقعها الاستراتيجي في التجارة العالمية، توفر بيئة آمنة ومزدهرة لعائلتك.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+    overviewImage: '/images/countries/united-kingdom-overview.jpg',
     overviewStats: [
       { value: 'أفضل 5', label: 'الاقتصاد العالمي' },
       { value: '150+', label: 'فئة تأشيرة' },
@@ -125,22 +129,51 @@ export const countries: Country[] = [
     pathways: [
       {
         id: 'skilled-worker',
-        title: 'تأشيرة العمال المهرة',
+        title: 'تأشيرة العامل الماهر',
         description:
-          'للمهنيين الذين لديهم عرض عمل من صاحب عمل معتمد في المملكة المتحدة. نحن نتعامل مع عملية الكفالة والتقديم بأكملها.',
+          'عمل برعاية صاحب عمل في وظائف بمستوى جامعي (المستوى RQF 6 فما فوق منذ يوليو 2025) تستوفي حدود الرواتب ومتطلبات اللغة الإنجليزية الحالية. تبقى تأشيرة العاملين في الصحة والرعاية متاحة للممرضين والأطباء والمهن الصحية المساندة، رغم إغلاق استقدام عمال الرعاية من الخارج في 2025. الاستقرار ممكن حالياً بعد خمس سنوات؛ وقد أعلنت الحكومة إصلاح «الاستقرار المكتسب» الذي لم يصبح قانوناً بعد.',
         icon: 'work',
+        ctaLabel: 'استكشف المسار',
+      },
+      {
+        id: 'global-talent',
+        title: 'تأشيرة المواهب العالمية',
+        description:
+          'للقادة وقادة المستقبل في الأوساط الأكاديمية والبحث والتقنية الرقمية والفنون والثقافة، بتزكية من جهة معترف بها أو بحيازة جائزة مؤهلة. لا حاجة إلى عرض عمل أو كفيل، ويمكن الاستقرار بعد ثلاث سنوات لأصحاب المواهب الاستثنائية.',
+        icon: 'workspace_premium',
+      },
+      {
+        id: 'hpi',
+        title: 'تأشيرة الأفراد ذوي الإمكانات العالية',
+        description:
+          'تأشيرة عمل لمدة سنتين (ثلاث لحملة الدكتوراه) لخريجي أبرز جامعات العالم حديثاً، دون الحاجة إلى كفيل. أعلنت ميزانية أكتوبر 2026 توسيع قائمة الجامعات المؤهلة والسقف السنوي، ولم يدخل ذلك حيز التنفيذ بعد.',
+        icon: 'school',
+      },
+      {
+        id: 'student',
+        title: 'تأشيرة الطالب ومسار الخريجين',
+        description:
+          'طلبات تأشيرة الطالب مع خطاب قبول الدراسة (CAS) وإثبات الملاءة المالية، ثم مسار الخريجين للعمل بعد الشهادة — سنتان للطلبات المقدمة قبل 2027، و18 شهراً بعد ذلك، وثلاث سنوات لحملة الدكتوراه — ثم الانتقال إلى تأشيرة العامل الماهر للاستقرار طويل الأمد.',
+        icon: 'menu_book',
+      },
+      {
+        id: 'family',
+        title: 'تأشيرات الأسرة والزوج',
+        description:
+          'تأشيرات الزوج والشريك للانضمام إلى شريك بريطاني أو مقيم (الحد الأدنى للدخل حالياً 29,000 جنيه إسترليني سنوياً)، وتأشيرات الوالدين، وتأشيرات الأبناء المعالين دون 18 عاماً.',
+        icon: 'groups',
       },
       {
         id: 'innovator',
-        title: 'المؤسس المبتكر',
+        title: 'تأشيرة المبتكر المؤسس',
         description:
-          'لرواد الأعمال الذين يتطلعون إلى تأسيس عمل مبتكر في المملكة المتحدة. يتطلب ذلك تأييداً من هيئة معتمدة.',
-        icon: 'lightbulb',
+          'مسار المملكة المتحدة لرواد الأعمال الذين يطلقون مشروعاً مبتكراً وقابلاً للاستمرار والتوسع بتزكية من جهة معتمدة — دون حد أدنى للاستثمار منذ 2023 ومع مسار للاستقرار بعد ثلاث سنوات. حلّت محل تأشيرة الشركات الناشئة، فيما أُغلق مسار المستثمر (Tier 1) في 2022.',
+        icon: 'business_center',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+      '/images/countries/united-kingdom-why.jpg',
+      '/images/countries/united-kingdom-why-2.jpg',
     ],
     requirements: [
       {
@@ -188,35 +221,68 @@ export const countries: Country[] = [
     slug: 'australia',
     name: 'أستراليا',
     tagline: 'فرص الصليب الجنوبي',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAV-4_OarjIg9lquBoD2YtELh5fe-5YrMA8kCpTnrgbd72KvyNsjPZphpxWG2WGJl2gXO-51FxSvBl2bSsT171--kKGv9HBGSpJqSE6-GPQOvkVSlQUV_vPQ-YOhhps1eiD_CSKJjk6fmcYxSxgMNsbqjxnnY8ZF_zvRYEnXh1M6uw7Y0qUtLfHCpewZCJ5VhByG7tO0yVpxmtNKQyg1TpzUjyHxPI5M2xUE2dPNvo_80SM1MkfcrB9iVbkNSF8OxG0G3lwLVSr7Agg',
+    homeImage: '/images/countries/australia-home.jpg',
     homeHighlight: 'الفئة 189 • الفئة 190',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+    heroImage: '/images/countries/australia-hero.jpg',
     heroHeadline: 'هجرة مخصصة إلى أستراليا',
     heroSubtext:
       'اكتشف أسلوب حياة يتميز بالتميز واقتصاد مزدهر. يتنقل خبراؤنا في نظام النقاط الأسترالي المعقد نيابة عنك.',
     overviewHeading: 'نوعية حياة لا تضاهى',
     overviewBody:
       'تقدم أستراليا أكثر من مجرد أسلوب حياة نابض بالحياة؛ إنها أرض الفرص الاقتصادية والضمان الاجتماعي. مع الطلب القوي على المهنيين المهرة ونظام الهجرة الشفاف، فهي الخيار الأفضل للعائلات في دول مجلس التعاون الخليجي.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+    overviewImage: '/images/countries/australia-overview.jpg',
     overviewStats: [
       { value: '25+', label: 'سنة من النمو الاقتصادي' },
       { value: '92%', label: 'معدل منح الإقامة الدائمة' },
     ],
     pathways: [
       {
-        id: 'skilled-independent',
-        title: 'المهرة المستقلين (189)',
+        id: 'skilled',
+        title: 'الهجرة الماهرة (الفئات 189 و190 و491)',
         description:
-          'تأشيرة مختبرة بالنقاط للعمال المهرة الذين لا يتم رعايتهم من قبل صاحب عمل أو فرد من العائلة أو لم يتم ترشيحهم من قبل ولاية.',
-        icon: 'person_celebrate',
+          'تأشيرات دائمة ومؤقتة قائمة على النقاط: المستقلة الماهرة (189)، وترشيح الولاية (190)، والرعاية الإقليمية (491). نقيّم الأهلية، وننسق تقييم المهارات، ونقدّم تعبيراً قوياً عن الاهتمام عبر SkillSelect، ونرفع نقاطك إلى الحد الأقصى للحصول على دعوة.',
+        icon: 'rocket_launch',
+        ctaLabel: 'استكشف المسار',
+      },
+      {
+        id: 'employer',
+        title: 'تأشيرات العمل برعاية صاحب العمل',
+        description:
+          'تأشيرة المهارات المطلوبة (الفئة 482) التي حلّت محل تأشيرة نقص المهارات المؤقتة في ديسمبر 2024، ومسار برنامج ترشيح صاحب العمل (الفئة 186) إلى الإقامة الدائمة للعمال المكفولين.',
+        icon: 'work',
+      },
+      {
+        id: 'regional',
+        title: 'الرعاية الإقليمية من صاحب العمل (494 ← 191)',
+        description:
+          'تأشيرة العمل الماهر برعاية صاحب عمل إقليمي (الفئة 494) لمن لديهم عرض عمل في المناطق الإقليمية الأسترالية، وصولاً إلى تأشيرة الإقامة الدائمة الإقليمية الماهرة (الفئة 191) بعد ثلاث سنوات من العمل والإقامة في المنطقة.',
+        icon: 'landscape',
+      },
+      {
+        id: 'innovation',
+        title: 'تأشيرة الابتكار الوطنية (الفئة 858)',
+        description:
+          'التأشيرة الدائمة الأسترالية بالدعوة فقط للمواهب الاستثنائية عالمياً في القطاعات ذات الأولوية، والتي حلّت محل تأشيرة المواهب العالمية في ديسمبر 2024. أُغلق برنامج الابتكار والاستثمار التجاري (188) أمام المتقدمين الجدد في يوليو 2024، فأصبح هذا هو المسار الرئيسي لرواد الأعمال والباحثين المتميزين.',
+        icon: 'workspace_premium',
+      },
+      {
+        id: 'study',
+        title: 'تأشيرات الطلاب والعمل بعد التخرج',
+        description:
+          'تأشيرة الطالب (الفئة 500) للجامعات والكليات الأسترالية، وتأشيرة الخريج المؤقتة (الفئة 485) للعمل بعد الدراسة، والمشورة في تحويل المؤهلات والخبرة الأسترالية إلى إقامة دائمة.',
+        icon: 'school',
+      },
+      {
+        id: 'family',
+        title: 'تأشيرات الشريك والوالدين والأبناء',
+        description:
+          'تأشيرات الشريك للأزواج والشركاء بحكم الواقع (الفئات 820/801 داخل أستراليا و309/100 خارجها)، وتأشيرة الزواج المرتقب (300)، وتأشيرات الوالدين بما فيها الوالد المساهم (143) والوالد المسن (864)، وتأشيرات الأبناء (101 و802).',
+        icon: 'groups',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+      '/images/countries/australia-why.jpg',
+      '/images/countries/australia-why-2.jpg',
     ],
     requirements: [
       {
@@ -264,35 +330,68 @@ export const countries: Country[] = [
     slug: 'usa',
     name: 'الولايات المتحدة الأمريكية',
     tagline: 'الحلم الأمريكي',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA6I1buuDVATChAJOyjkRfeKIRoE-BPbvAx98cjw69XtXlmKwtzb8sfOU84cF0ZTaeFXY-DraC-CRoWKm6uZ8u1-TNrF9i9jUmJIl1wVEnNybkP3ODhkNGKdj32We6BLsGk-RhE-95kMurj92fTkMNJwbkIk9S4c2gXSo5hnae3gTwP72mqHZStUEMRJIMVqdRyEB_giqXUwgDh44JFhLcKCVw0YjM54IupLyqFYcdcc8mqoJHeIbi5ybusUXslvZjBvwflqylY1dlH',
-    homeHighlight: 'H-1B • EB-5 مستثمر',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+    homeImage: '/images/countries/usa-home.jpg',
+    homeHighlight: 'H-1B • البطاقة الخضراء للعائلة',
+    heroImage: '/images/countries/usa-hero.jpg',
     heroHeadline: 'حلول التأشيرة الأمريكية الاستراتيجية',
     heroSubtext:
       'من البطاقات الخضراء القائمة على التوظيف إلى تأشيرات المستثمرين، نوفر الدقة القانونية اللازمة للنجاح في الهجرة إلى الولايات المتحدة.',
     overviewHeading: 'المحرك الاقتصادي للعالم',
     overviewBody:
       'تظل الولايات المتحدة الرائدة عالمياً في الابتكار وريادة الأعمال. سواء من خلال التوظيف المتخصص أو الاستثمار الاستراتيجي، توفر البطاقة الخضراء الأمريكية وصولاً لا مثيل له إلى أكبر سوق في العالم.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+    overviewImage: '/images/countries/usa-overview.jpg',
     overviewStats: [
       { value: '#1', label: 'مركز الابتكار' },
       { value: '1M+', label: 'بطاقة خضراء مُصدرة' },
     ],
     pathways: [
       {
-        id: 'eb1',
-        title: 'القدرة الاستثنائية (EB-1)',
+        id: 'work-visas',
+        title: 'تأشيرات العمل (H-1B وL-1 وO-1)',
         description:
-          'للأفراد ذوي القدرات الاستثنائية في العلوم، الفنون، التعليم، الأعمال، أو الألعاب الرياضية. لا يشترط وجود عرض عمل.',
-        icon: 'star',
+          'طلبات تأشيرة H-1B للمهن التخصصية — التي يجري اختيارها الآن عبر قرعة مرجّحة بالأجر — إلى جانب تأشيرات L-1 للنقل داخل الشركة للمديرين والمتخصصين، وتأشيرات O-1 لأصحاب القدرات الاستثنائية. نُعدّ مستندات صاحب العمل والأدلة الداعمة، ونخطط للبدائل في حال عدم اختيارك.',
+        icon: 'work',
+        ctaLabel: 'استكشف المسار',
+      },
+      {
+        id: 'talent',
+        title: 'EB-1A والإعفاء للمصلحة الوطنية EB-2 NIW',
+        description:
+          'بطاقات خضراء على أساس العمل بتقديم ذاتي لأصحاب الشهرة الوطنية أو الدولية المستمرة (EB-1A) أو لمن يخدم عملهم المصلحة الوطنية الأمريكية (EB-2 NIW) — دون الحاجة إلى كفيل أو شهادة عمل. الطلب مرتفع، لذا تحسم قوة الأدلة القضية.',
+        icon: 'workspace_premium',
+      },
+      {
+        id: 'investor',
+        title: 'البطاقة الخضراء للمستثمر EB-5',
+        description:
+          'إقامة دائمة لك ولزوجك وأبنائك غير المتزوجين دون 21 عاماً عبر استثمار مؤهل في شركة أمريكية يخلق عشر وظائف على الأقل، مع حدود استثمار مخفضة للمناطق الريفية ومناطق البطالة المرتفعة بموجب قانون إصلاح ونزاهة EB-5. ننسق توثيق مصدر الأموال والعناية الواجبة بالمراكز الإقليمية.',
+        icon: 'account_balance',
+      },
+      {
+        id: 'study',
+        title: 'تأشيرات الطلاب وبرنامج OPT',
+        description:
+          'طلبات تأشيرة الطالب F-1 للجامعات الأمريكية، والتدريب العملي الاختياري (OPT) وتمديد STEM لمدة 24 شهراً لاكتساب خبرة عمل أمريكية بعد التخرج، والمشورة في الانتقال من وضع الطالب إلى تأشيرة عمل أو البطاقة الخضراء.',
+        icon: 'school',
+      },
+      {
+        id: 'family-green-cards',
+        title: 'البطاقة الخضراء على أساس عائلي',
+        description:
+          'التماسات الهجرة للأزواج والأبناء والوالدين والأشقاء للمواطنين الأمريكيين والمقيمين الدائمين، نُعدّها ونتابعها عبر دائرة الهجرة (USCIS) والمعالجة القنصلية حتى تسير قضية عائلتك دون تأخير يمكن تجنبه.',
+        icon: 'groups',
+      },
+      {
+        id: 'marriage',
+        title: 'تأشيرات الزواج والخطوبة',
+        description:
+          'تأشيرات الهجرة CR-1 وIR-1 لأزواج المواطنين الأمريكيين والمقيمين الدائمين، وتأشيرة الخطوبة K-1 للشركاء الذين يعتزمون الزواج في الولايات المتحدة — مع أدلة العلاقة والتحضير للمقابلة التي تتطلبها هذه القضايا.',
+        icon: 'favorite',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+      '/images/countries/usa-why.jpg',
+      '/images/countries/usa-why-2.jpg',
     ],
     requirements: [
       {
@@ -340,33 +439,68 @@ export const countries: Country[] = [
     slug: 'european-union',
     name: 'الاتحاد الأوروبي',
     tagline: 'الحرية القارية',
-    homeHighlight: 'التأشيرة الذهبية • دخول شنغن',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+    homeImage: '/images/countries/european-union-home.jpg',
+    homeHighlight: 'البطاقة الزرقاء • التأشيرة الذهبية',
+    heroImage: '/images/countries/european-union-hero.jpg',
     heroHeadline: 'الإقامة والجنسية الأوروبية',
     heroSubtext:
       'احصل على حرية العيش والعمل والدراسة في جميع أنحاء الاتحاد الأوروبي من خلال الاستثمار الاستراتيجي وبرامج الإقامة.',
     overviewHeading: 'بوابة إلى العالم القديم',
     overviewBody:
       'يقدم الاتحاد الأوروبي مزيجاً فريداً من التراث، والبنية التحتية الحديثة، والمعايير الاجتماعية العالية. من خلال برامج التأشيرة الذهبية ومسارات الإقامة المتخصصة، نساعدك في الحصول على موطئ قدم في منطقة شنغن.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+    overviewImage: '/images/countries/european-union-overview.jpg',
     overviewStats: [
       { value: '27', label: 'دولة عضو' },
       { value: 'رقم 1', label: 'الأنظمة الصحية' },
     ],
     pathways: [
       {
-        id: 'golden-visa',
-        title: 'برامج التأشيرة الذهبية',
+        id: 'blue-card',
+        title: 'البطاقة الزرقاء الأوروبية وتصاريح العمل',
         description:
-          'الإقامة من خلال الاستثمار العقاري أو تحويل رأس المال في دول مثل البرتغال، اليونان، وإسبانيا.',
-        icon: 'euro_symbol',
+          'البطاقة الزرقاء الأوروبية لحملة الشهادات الجامعية ممن لديهم عرض عمل مؤهل — في ألمانيا وهولندا وفرنسا ومعظم الدول الأعضاء — إضافة إلى تصاريح العمل الوطنية للعمال المهرة، مع مسار سريع إلى الإقامة طويلة الأمد.',
+        icon: 'work',
+        ctaLabel: 'استكشف المسار',
+      },
+      {
+        id: 'job-seeker',
+        title: 'بطاقة الفرص وتأشيرات البحث عن عمل',
+        description:
+          'بطاقة الفرص الألمانية (Chancenkarte)، وهي تصريح قائم على النقاط لدخول البلاد والبحث عن عمل لمدة تصل إلى سنة، إلى جانب تأشيرات البحث عن عمل في النمسا والبرتغال ودول أعضاء أخرى للمهنيين المؤهلين الذين لم يحصلوا على عرض بعد.',
+        icon: 'search',
+      },
+      {
+        id: 'study',
+        title: 'تأشيرات الطلاب والعمل بعد الدراسة',
+        description:
+          'تصاريح إقامة الطلاب في ألمانيا وفرنسا وهولندا وإسبانيا ودول الاتحاد الأخرى، ثم تصاريح البحث عن عمل بعد التخرج — حتى 18 شهراً في ألمانيا — والانتقال إلى البطاقة الزرقاء أو تصريح عمل وطني.',
+        icon: 'school',
+      },
+      {
+        id: 'family',
+        title: 'لمّ شمل الأسرة',
+        description:
+          'تصاريح إقامة للأزواج والشركاء والأبناء القاصرين للانضمام إلى مقيم في الاتحاد الأوروبي، بما في ذلك قواعد لمّ الشمل الميسّرة لحاملي البطاقة الزرقاء والعمال المهرة في ألمانيا.',
+        icon: 'groups',
+      },
+      {
+        id: 'investment',
+        title: 'التأشيرات الذهبية والإقامة عبر الاستثمار',
+        description:
+          'الإقامة عبر الاستثمار في البرامج التي لا تزال متاحة: اليونان (العقارات)، والبرتغال (صناديق الاستثمار؛ فالعقارات لم تعد مؤهلة منذ 2023)، وتأشيرة المستثمر الإيطالية، وبرنامج المستثمر الضيف في المجر، وبرنامج الإقامة الدائمة في مالطا، وقبرص. أما إسبانيا فأغلقت تأشيرتها الذهبية في 2025.',
+        icon: 'account_balance',
+      },
+      {
+        id: 'nomad',
+        title: 'تأشيرات العمل عن بُعد وريادة الأعمال',
+        description:
+          'تصاريح إقامة للعمل عن بُعد للمهنيين ذوي الدخل الأجنبي في البرتغال (D8) وإيطاليا وإسبانيا واليونان والمجر، إلى جانب تصاريح رواد الأعمال والعمل الحر والمهن المستقلة في ألمانيا وهولندا ودول أعضاء أخرى.',
+        icon: 'laptop_mac',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+      '/images/countries/european-union-why.jpg',
+      '/images/countries/european-union-why-2.jpg',
     ],
     requirements: [
       {

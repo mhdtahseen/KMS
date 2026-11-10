@@ -40,18 +40,15 @@ export const countries: Country[] = [
     slug: 'canada',
     name: 'Canada',
     tagline: 'A Land of Opportunity',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuATxzHKdh_RLdAydsvY6nZI7shSgTTUJNTs23VimeU90Pe8cZi8wNNhnfRVlSIn23TuAhY5QvJt3PY4-Mv4thUSmZpOhdEEjXxbwyrGJwQhqaPzvfVJ5OirO2K-VIK2v8hdk5fOTa36QPM1d_TXtAJt0Tk3cZE9nKDaP863eJnSEMx0wCHCJk4CrJAr5jnIoTZTtCbedh-ztizB3BoBgH09BhubMAXDh8-yo6JSRb95xKYrexZ8aWyyB4oU260tn03nVD_7sk-z5Sw3',
+    homeImage: '/images/countries/canada-home.jpg',
     homeHighlight: 'Express Entry • Provincial Nominee',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBoM5GHKUNqhbgGylRNS4PdjQKMHUd4Pp0HvkNtrTSu2K-Oip0w5EgDM1tXh9SvaHm4a7eBCYR7v66-g2l7dD_0TXVnQcRO4FwbHujgBiZPMry5p6xEf_t7tRcuUaQlfpva86KsMmbYxHBP97ZJe6LboKyA_Lm0K7dZJhUH5KjG25JKD-xS4u17STzTon44HXbDB4xP8gZgYwfeRMhqsJYSrdtdqXGD9lcsiXvCXKZPA0FsZhwgxCHw0Luwu53Rs_Kbw7ZeJtUroEy9',
+    heroImage: '/images/countries/canada-hero.jpg',
     heroHeadline: 'Canada',
     heroSubtext: 'A Land of Opportunity',
     overviewHeading: 'Why Global Leaders Choose Canada',
     overviewBody:
       'Canada offers an unparalleled quality of life, a stable economy, and a welcoming multicultural landscape, making it the premier choice for skilled professionals and investors from the Middle East.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMp1evYlOpM0ZuDcwfwHgfqZDW7C5kLBlyenYSXonraWAe3tvM7OxpQyzxNUAny0-G_F9IW8Gi7UZU1cNynW43uNZjZFHi7Qbu5NEymp7nMdeyqmFwx8fKTJXuzRkfKaTk4k5gx-2rqNM6jWZ7uQG3pNv9NdYUEUwnO101uHtAp1099p0KlauV1vnWAqcYtgugzfdOfOq8Rs4gsiTe5eapBPuGwKivFev79znQYPC24hzX9zLvU7UCyzlQsm7lT1BYZcBdRmq_QO_k',
+    overviewImage: '/images/countries/canada-overview.jpg',
     overviewStats: [
       { value: '#1', label: 'Best Quality of Life Globally' },
       { value: '93%', label: 'Immigrant Satisfaction Rate' },
@@ -59,42 +56,52 @@ export const countries: Country[] = [
     pathways: [
       {
         id: 'express-entry',
-        title: 'Express Entry System',
+        title: 'Express Entry',
         description:
-          'The fastest route for skilled workers. We specialize in Federal Skilled Worker (FSW) and Canadian Experience Class (CEC) applications with high success rates.',
+          'Canada\'s principal route to permanent residency for skilled workers. We assess your eligibility, calculate your Comprehensive Ranking System (CRS) score and build a strong profile for an Invitation to Apply — including the category-based draws for healthcare, STEM, trades, education and French-language candidates.',
         icon: 'rocket_launch',
         ctaLabel: 'Explore Pathway',
       },
       {
-        id: 'business',
-        title: 'Investor & Entrepreneur',
+        id: 'pnp',
+        title: 'Provincial Nominee Programs',
         description:
-          'Bespoke solutions for high-net-worth individuals seeking Start-up Visas or Provincial Business programs.',
-        icon: 'business_center',
-        ctaLabel: 'Consult',
+          'Nomination streams run by each province and territory for the occupations and profiles their labour markets need, giving a route to permanent residency either through Express Entry (with 600 additional CRS points) or directly to IRCC.',
+        icon: 'policy',
+      },
+      {
+        id: 'community',
+        title: 'Rural, Francophone & Atlantic Programs',
+        description:
+          'Employer-driven permanent residency in smaller communities: the Rural Community Immigration Program (made permanent in November 2026), the Francophone Community Immigration Pilot for French speakers settling outside Quebec, and the Atlantic Immigration Program in Canada\'s four Atlantic provinces.',
+        icon: 'landscape',
+      },
+      {
+        id: 'work-permits',
+        title: 'Work Permits',
+        description:
+          'Employer-specific permits through the Temporary Foreign Worker Program (LMIA-based) and the International Mobility Program, plus International Experience Canada (IEC) for eligible young nationals. We manage employer compliance and the permit application from start to finish.',
+        icon: 'work',
+        bgImage: '/images/countries/canada-bg.jpg',
+      },
+      {
+        id: 'study',
+        title: 'Study Permits & Post-Graduation Work',
+        description:
+          'Study permit applications for designated learning institutions, including the provincial attestation letter now required for most programs under Canada\'s study permit cap, followed by the Post-Graduation Work Permit (PGWP) — the bridge from Canadian education to Canadian work experience and permanent residency.',
+        icon: 'school',
       },
       {
         id: 'family',
-        title: 'Family Sponsorship',
+        title: 'Family Sponsorship & Super Visa',
         description:
-          'Reunite with your loved ones through our expert-guided spousal and parental sponsorship services.',
+          'Spousal and common-law partner sponsorship, dependent child sponsorship, and the Parent and Grandparent Super Visa — a multi-entry visa allowing stays of up to five years per visit, and the practical route for parents while the Parents and Grandparents Program remains closed to new sponsors.',
         icon: 'groups',
-        ctaLabel: 'Consult',
-      },
-      {
-        id: 'pnp',
-        title: 'Provincial Nominee Programs (PNP)',
-        description:
-          'Tailored routes for specific provinces like Ontario, British Columbia, and Alberta based on local labor market needs.',
-        icon: 'policy',
-        bgImage:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCLU4M-0CD2TGBLfMr8KKQdTp2DPYnyiSAS7TA_Jhc8tXtxfdpo_oHh_jRPQen_ig3XHlyd8F0uVBKyWhWWPOrbIMvLqhKDnTD2o9WMwLrstDT5jzfTFiInet0sC3Q0g0mRsI9eVXv2L7vdI9Pqtv6Gg6dm-d_RU-snCIlB7frSeiHtmbvrL-OlTC5ChsFkh9Ox9L-ZM7vBTrswGr0F66iAaDHb8EG6i_1zIK5Tvz6YP94MPN07xMxFBcNSd2FkxR5VhS-HqCiEFVkm',
-        ctaLabel: 'View Provinces',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMp1evYlOpM0ZuDcwfwHgfqZDW7C5kLBlyenYSXonraWAe3tvM7OxpQyzxNUAny0-G_F9IW8Gi7UZU1cNynW43uNZjZFHi7Qbu5NEymp7nMdeyqmFwx8fKTJXuzRkfKaTk4k5gx-2rqNM6jWZ7uQG3pNv9NdYUEUwnO101uHtAp1099p0KlauV1vnWAqcYtgugzfdOfOq8Rs4gsiTe5eapBPuGwKivFev79znQYPC24hzX9zLvU7UCyzlQsm7lT1BYZcBdRmq_QO_k',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBHj0DxO6R6drT6QKPSGy5hllixI8GtEb81Ya2HfAD_zTmytR5_n6RqhOhANC_WjqmxvFyRylh2LaaDun_z74QO_KyGMaI8xbpHCgvYxMNm3NtYe4g1SX6yHhe40zwouQXCEXykWPsLvQKGZShXvbfEtkUZabHLNmqNWkEFL1Ls3IK4A9hxzNBGCUZClvmoVWODCyL2V2Me9d1jiOe3AhoEcLBeXbeTzBdVx9iyzF2LOH_8fBoNrXAQxwRgrcPaee0j2qw_HpJ89OQT',
+      '/images/countries/canada-why.jpg',
+      '/images/countries/canada-why-2.jpg',
     ],
     requirements: [
       {
@@ -140,19 +147,16 @@ export const countries: Country[] = [
     slug: 'united-kingdom',
     name: 'United Kingdom',
     tagline: 'Global Financial Center',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAY_mxwR0hBNeK-ko7Qt62XlqaCl1y5VLUvVfYSJgKbpN8ZPywLAWHStvI98W4WKxaDTErb28OxF1iiBVrtm47-YvwhIdvFaUZqPEec_0Put_7Ssd15lrsBLCiHDGC-Y0Y3q1pkqcWkewAlmle8C1F7O40teOGYpbz0W4jEgxNGno0geYMaZ7jPeBZwC2HZFs8Q9F8p-nE5CmjWmLSan9-xIoMtSaj3pxWEjUjjj40h2o6ugaktwMAWIh2VGTMPH2AO33mL2okCuV16',
-    homeHighlight: 'Skilled Worker • Global Talent',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+    homeImage: '/images/countries/united-kingdom-home.jpg',
+    homeHighlight: 'Skilled Worker • Innovator Founder',
+    heroImage: '/images/countries/united-kingdom-hero.jpg',
     heroHeadline: 'Elite Residency in the United Kingdom',
     heroSubtext:
       'Access unparalleled financial opportunities and world-class education through curated UK residency and citizenship pathways.',
     overviewHeading: 'Tradition Meets Modern Ambition',
     overviewBody:
       'The United Kingdom remains a premier destination for global professionals and investors. With its robust legal system, world-leading universities, and strategic position in global trade, it offers a secure and prosperous environment for your family.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+    overviewImage: '/images/countries/united-kingdom-overview.jpg',
     overviewStats: [
       { value: 'Top 5', label: 'Global Economy' },
       { value: '150+', label: 'Visa Categories' },
@@ -162,20 +166,49 @@ export const countries: Country[] = [
         id: 'skilled-worker',
         title: 'Skilled Worker Visa',
         description:
-          'For professionals with a job offer from a licensed UK employer. We handle the entire sponsorship and application process.',
+          'Sponsored employment in graduate-level roles (RQF 6 and above since July 2025) that meet the current salary thresholds and English requirement. The Health and Care Worker visa remains open to nurses, doctors and allied health professionals, although overseas recruitment of care workers closed in 2025. Settlement is currently possible after five years; the government has announced an \'earned settlement\' reform that is not yet law.',
         icon: 'work',
+        ctaLabel: 'Explore Pathway',
+      },
+      {
+        id: 'global-talent',
+        title: 'Global Talent Visa',
+        description:
+          'For leaders and future leaders in academia, research, digital technology, arts and culture, endorsed by a recognised body or holding a qualifying prize. No job offer or sponsor is needed, and settlement can follow after three years for exceptional talent.',
+        icon: 'workspace_premium',
+      },
+      {
+        id: 'hpi',
+        title: 'High Potential Individual Visa',
+        description:
+          'A two-year work visa (three for PhDs) for recent graduates of the world\'s leading universities, with no sponsor required. The October 2026 Budget announced an expansion of the eligible-university list and cap, which has not yet taken effect.',
+        icon: 'school',
+      },
+      {
+        id: 'student',
+        title: 'Student Visa & Graduate Route',
+        description:
+          'Student visa applications with a Confirmation of Acceptance for Studies (CAS) and proof of funds, then the Graduate Route to work after your degree — two years for applications made before 2027, 18 months thereafter, and three years for PhDs — and the switch to a Skilled Worker visa for long-term settlement.',
+        icon: 'menu_book',
+      },
+      {
+        id: 'family',
+        title: 'Family & Spouse Visas',
+        description:
+          'Spouse and partner visas to join a British or settled partner (minimum income requirement currently £29,000 a year), parent visas, and dependent child visas for children under 18.',
+        icon: 'groups',
       },
       {
         id: 'innovator',
-        title: 'Innovator Founder',
+        title: 'Innovator Founder Visa',
         description:
-          'For entrepreneurs looking to establish an innovative business in the UK. Requires endorsement from an approved body.',
-        icon: 'lightbulb',
+          'The UK\'s route for entrepreneurs launching an innovative, viable and scalable business endorsed by an approved endorsing body — with no minimum investment requirement since 2023 and a path to settlement after three years. It replaced the Start-up visa; the Tier 1 Investor route closed in 2022.',
+        icon: 'business_center',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkgUXoesEMGs_vyyxUOjCkPvzawi5Ud_4cg6TTAIPFw5320mQwa9sVWW3M-uaMISsuAV8ssxWk6da6wOd2dQ0ZYMsfreve1BQfG-GE0eyK2CGm2d40seeXSnmrrz17B_gpzQ7tFWtPWHzOZJxZsepVecOzHp_s75r116j8JvEfOCjZ5VxKjFui3nm0SE7tjSqJjIRAUN2648puq62dr_cn28zVWkdfULmFlGAjnu0FfAJZX_xJYW3hxw7E90Qt5udsVtYXmD_fDfK',
+      '/images/countries/united-kingdom-why.jpg',
+      '/images/countries/united-kingdom-why-2.jpg',
     ],
     requirements: [
       {
@@ -223,35 +256,68 @@ export const countries: Country[] = [
     slug: 'australia',
     name: 'Australia',
     tagline: 'Southern Cross Opportunities',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAV-4_OarjIg9lquBoD2YtELh5fe-5YrMA8kCpTnrgbd72KvyNsjPZphpxWG2WGJl2gXO-51FxSvBl2bSsT171--kKGv9HBGSpJqSE6-GPQOvkVSlQUV_vPQ-YOhhps1eiD_CSKJjk6fmcYxSxgMNsbqjxnnY8ZF_zvRYEnXh1M6uw7Y0qUtLfHCpewZCJ5VhByG7tO0yVpxmtNKQyg1TpzUjyHxPI5M2xUE2dPNvo_80SM1MkfcrB9iVbkNSF8OxG0G3lwLVSr7Agg',
+    homeImage: '/images/countries/australia-home.jpg',
     homeHighlight: 'Subclass 189 • Subclass 190',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+    heroImage: '/images/countries/australia-hero.jpg',
     heroHeadline: 'Bespoke Australian Immigration',
     heroSubtext:
       'Discover a lifestyle of excellence and a thriving economy. Our experts navigate the complex Australian points system for you.',
     overviewHeading: 'Unrivaled Quality of Life',
     overviewBody:
       'Australia offers more than just a vibrant lifestyle; it is a land of economic opportunity and social security. With a strong demand for skilled professionals and a transparent immigration system, it is a top choice for GCC families.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+    overviewImage: '/images/countries/australia-overview.jpg',
     overviewStats: [
       { value: '25+', label: 'Years Economic Growth' },
       { value: '92%', label: 'PR Grant Rate' },
     ],
     pathways: [
       {
-        id: 'skilled-independent',
-        title: 'Skilled Independent (189)',
+        id: 'skilled',
+        title: 'Skilled Migration (Subclass 189, 190, 491)',
         description:
-          'A points-tested visa for skilled workers who are not sponsored by an employer or family member or nominated by a state.',
-        icon: 'person_celebrate',
+          'Points-tested permanent and provisional visas: Skilled Independent (189), State Nominated (190) and Regional Sponsored (491). We assess eligibility, arrange your skills assessment, lodge a strong Expression of Interest through SkillSelect and maximise your points for an invitation.',
+        icon: 'rocket_launch',
+        ctaLabel: 'Explore Pathway',
+      },
+      {
+        id: 'employer',
+        title: 'Employer-Sponsored Work Visas',
+        description:
+          'The Skills in Demand visa (subclass 482), which replaced the Temporary Skill Shortage visa in December 2024, and the Employer Nomination Scheme (subclass 186) pathway to permanent residency for sponsored workers.',
+        icon: 'work',
+      },
+      {
+        id: 'regional',
+        title: 'Regional Employer Sponsorship (494 → 191)',
+        description:
+          'The Skilled Employer Sponsored Regional visa (subclass 494) for workers with a job offer in regional Australia, leading to the Permanent Residence (Skilled Regional) visa (subclass 191) after three years of regional work and residence.',
+        icon: 'landscape',
+      },
+      {
+        id: 'innovation',
+        title: 'National Innovation Visa (Subclass 858)',
+        description:
+          'Australia\'s invitation-only permanent visa for globally exceptional talent in priority sectors, which replaced the Global Talent visa in December 2024. The Business Innovation and Investment (188) programme closed to new applicants in July 2024, so this is now the principal route for high-achieving entrepreneurs and researchers.',
+        icon: 'workspace_premium',
+      },
+      {
+        id: 'study',
+        title: 'Student Visas & Graduate Work',
+        description:
+          'Subclass 500 student visas for Australian universities and colleges, the Temporary Graduate visa (subclass 485) to work after your studies, and advice on turning Australian qualifications and experience into permanent residency.',
+        icon: 'school',
+      },
+      {
+        id: 'family',
+        title: 'Partner, Parent & Child Visas',
+        description:
+          'Partner visas for spouses and de facto partners (subclasses 820/801 onshore and 309/100 offshore), the Prospective Marriage visa (300), Parent visas including Contributory Parent (143) and Aged Parent (864), and Child visas (101 and 802).',
+        icon: 'groups',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDVUEzwsOLU9qpAH5nhGsT9uC37r3vbobtNZm5g6EQtKBd9NBmlIbgMa1JHxO-IlRaA0BX-2sEl9uqaIC_QtJ13LsN_xsyHm575kGRr50_aMIfCl6aw4ccEmgU20JFBLMk22Xm2DUt0N1hgqqNd2Goup2ZR9Wga_UF-PGkOgYl4Ckr1-6RSvIUlz0WxRRHdODDLGyifdU6_56fasuoSSHo0JIyRvEA3eBwLQYtCXkLsOGdJdGeg5mHKN5vfg5OVdk4nXwuEz_isB0Hh',
+      '/images/countries/australia-why.jpg',
+      '/images/countries/australia-why-2.jpg',
     ],
     requirements: [
       {
@@ -299,35 +365,68 @@ export const countries: Country[] = [
     slug: 'usa',
     name: 'USA',
     tagline: 'The American Dream',
-    homeImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA6I1buuDVATChAJOyjkRfeKIRoE-BPbvAx98cjw69XtXlmKwtzb8sfOU84cF0ZTaeFXY-DraC-CRoWKm6uZ8u1-TNrF9i9jUmJIl1wVEnNybkP3ODhkNGKdj32We6BLsGk-RhE-95kMurj92fTkMNJwbkIk9S4c2gXSo5hnae3gTwP72mqHZStUEMRJIMVqdRyEB_giqXUwgDh44JFhLcKCVw0YjM54IupLyqFYcdcc8mqoJHeIbi5ybusUXslvZjBvwflqylY1dlH',
-    homeHighlight: 'H-1B • EB-5 Investor',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+    homeImage: '/images/countries/usa-home.jpg',
+    homeHighlight: 'H-1B • Family Green Cards',
+    heroImage: '/images/countries/usa-hero.jpg',
     heroHeadline: 'Strategic US Visa Solutions',
     heroSubtext:
       'From employment-based green cards to investor visas, we provide the legal precision required for US immigration success.',
     overviewHeading: "The World's Economic Engine",
     overviewBody:
       "The United States remains the global leader in innovation and entrepreneurship. Whether through specialized employment or strategic investment, a US Green Card provides unparalleled access to the world's largest market.",
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+    overviewImage: '/images/countries/usa-overview.jpg',
     overviewStats: [
       { value: '#1', label: 'Innovation Hub' },
       { value: '1M+', label: 'Green Cards Issued' },
     ],
     pathways: [
       {
-        id: 'eb1',
-        title: 'Extraordinary Ability (EB-1)',
+        id: 'work-visas',
+        title: 'Work Visas (H-1B, L-1, O-1)',
         description:
-          'For individuals with extraordinary ability in sciences, arts, education, business, or athletics. No job offer required.',
-        icon: 'star',
+          'H-1B specialty-occupation petitions — now selected through a wage-weighted lottery — alongside L-1 intra-company transfers for executives and specialists and O-1 visas for individuals of extraordinary ability. We prepare the employer documentation and supporting evidence, and plan alternatives if you are not selected.',
+        icon: 'work',
+        ctaLabel: 'Explore Pathway',
+      },
+      {
+        id: 'talent',
+        title: 'EB-1A & EB-2 National Interest Waiver',
+        description:
+          'Self-petitioned employment-based green cards for people with sustained national or international acclaim (EB-1A) or whose work is in the US national interest (EB-2 NIW) — no employer sponsor or labour certification required. Demand is high, so the strength of the evidence decides the case.',
+        icon: 'workspace_premium',
+      },
+      {
+        id: 'investor',
+        title: 'EB-5 Investor Green Card',
+        description:
+          'Permanent residency for you, your spouse and unmarried children under 21 through a qualifying investment in a US business that creates at least ten jobs, with reduced thresholds for rural and high-unemployment areas under the EB-5 Reform and Integrity Act. We coordinate source-of-funds documentation and regional-centre due diligence.',
+        icon: 'account_balance',
+      },
+      {
+        id: 'study',
+        title: 'Student Visas & OPT',
+        description:
+          'F-1 student visa applications for US universities, Optional Practical Training (OPT) and the 24-month STEM extension to gain US work experience after graduation, and advice on moving from student status to a work visa or green card.',
+        icon: 'school',
+      },
+      {
+        id: 'family-green-cards',
+        title: 'Family-Based Green Cards',
+        description:
+          'Immigrant petitions for spouses, children, parents and siblings of US citizens and permanent residents, prepared and tracked through USCIS and consular processing so your family\'s case moves without avoidable delay.',
+        icon: 'groups',
+      },
+      {
+        id: 'marriage',
+        title: 'Marriage & Fiancé(e) Visas',
+        description:
+          'CR-1 and IR-1 immigrant visas for spouses of US citizens and permanent residents, and the K-1 fiancé(e) visa for partners planning to marry in the United States — with the relationship evidence and interview preparation these cases demand.',
+        icon: 'favorite',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDMJcxYDz5muIa45-x-SF_Dgv_oQ84h0BGo4jlhHG5XfNJSVubRs80UCU7BZTik4IezJeQNYdWf0JPk3A7JUfVBUh95-iQtw03vrZ0wM8HE3IIeAez2sg7C24LixIzJq_Ux8Q34dP5aWlgJhvm6IbXA3KW0sWNUXUt6KlEkydw6zcsM2bWZoL4k8lCyOxzShfVckY9VobvAEyM6xv9sKRP9yEAchAXfX6siMw2r8zj4Y24H3fV9DInJ9JH4zWo4f5X3t7eRPFzY0L8',
+      '/images/countries/usa-why.jpg',
+      '/images/countries/usa-why-2.jpg',
     ],
     requirements: [
       {
@@ -375,33 +474,68 @@ export const countries: Country[] = [
     slug: 'european-union',
     name: 'European Union',
     tagline: 'Continental Freedom',
-    homeHighlight: 'Golden Visa • Schengen Access',
-    heroImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+    homeImage: '/images/countries/european-union-home.jpg',
+    homeHighlight: 'EU Blue Card • Golden Visa',
+    heroImage: '/images/countries/european-union-hero.jpg',
     heroHeadline: 'European Residency & Citizenship',
     heroSubtext:
       'Gain the freedom to live, work, and study across the EU through strategic investment and residency programs.',
     overviewHeading: 'A Gateway to the Old World',
     overviewBody:
       'The European Union offers a unique blend of heritage, modern infrastructure, and high social standards. Through Golden Visa programs and specialized residency streams, we help you secure a foothold in the Schengen Area.',
-    overviewImage:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+    overviewImage: '/images/countries/european-union-overview.jpg',
     overviewStats: [
       { value: '27', label: 'Member States' },
       { value: 'No. 1', label: 'Health Systems' },
     ],
     pathways: [
       {
-        id: 'golden-visa',
-        title: 'Golden Visa Programs',
+        id: 'blue-card',
+        title: 'EU Blue Card & Work Permits',
         description:
-          'Residency through real estate investment or capital transfer in countries like Portugal, Greece, and Spain.',
-        icon: 'euro_symbol',
+          'The EU Blue Card for university-educated professionals with a qualifying job offer — in Germany, the Netherlands, France and most member states — plus national skilled-worker permits, with a fast track to long-term residence.',
+        icon: 'work',
+        ctaLabel: 'Explore Pathway',
+      },
+      {
+        id: 'job-seeker',
+        title: 'Opportunity Card & Job-Seeker Visas',
+        description:
+          'Germany\'s Opportunity Card (Chancenkarte), a points-based permit to enter the country and look for work for up to a year, together with job-seeker visas in Austria, Portugal and other member states for qualified professionals without an offer yet in hand.',
+        icon: 'search',
+      },
+      {
+        id: 'study',
+        title: 'Student Visas & Post-Study Work',
+        description:
+          'Student residence permits for Germany, France, the Netherlands, Spain and other EU countries, followed by post-study job-search permits — up to 18 months in Germany — and the transition to a Blue Card or national work permit.',
+        icon: 'school',
+      },
+      {
+        id: 'family',
+        title: 'Family Reunification',
+        description:
+          'Residence permits for spouses, partners and minor children joining an EU resident, including the simplified family reunion rules for Blue Card holders and skilled workers in Germany.',
+        icon: 'groups',
+      },
+      {
+        id: 'investment',
+        title: 'Golden Visas & Investor Residency',
+        description:
+          'Residency by investment in the programmes still open: Greece (real estate), Portugal (investment funds; property no longer qualifies since 2023), Italy\'s Investor Visa, Hungary\'s Guest Investor programme, Malta\'s Permanent Residence Programme and Cyprus. Spain closed its golden visa in 2025.',
+        icon: 'account_balance',
+      },
+      {
+        id: 'nomad',
+        title: 'Digital Nomad & Entrepreneur Visas',
+        description:
+          'Remote-work residence permits for professionals with foreign income in Portugal (D8), Italy, Spain, Greece and Hungary, alongside entrepreneur, freelancer and self-employed permits in Germany, the Netherlands and other member states.',
+        icon: 'laptop_mac',
       },
     ],
     whyChooseImages: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBxS_9B1WsvHNjqvddDf9HAzg67nzhjZMV2uW5abUU7h6NfLQNG1WEhT8AoYx9fTjn_9zHmCKe6JbJbF4yiyuuWUp7A6D5aIo9zFVqdk0DmM2-6TSkoHxLhrNiwJkP1jA8hUOOrYB1msS41m7aYbgn2IdM0xO9JH3xjox8w84qFM7c6k3uU2dYBKo3G8AWkD3xKg7rQjrH0sA1Kk8B4vR9jV2lM',
+      '/images/countries/european-union-why.jpg',
+      '/images/countries/european-union-why-2.jpg',
     ],
     requirements: [
       {
