@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope, Cairo } from "next/font/google";
+import { Cormorant_Garamond, Manrope, Cairo, Archivo_Black } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -33,6 +33,15 @@ const cairo = Cairo({
   subsets: ["arabic", "latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cairo",
+  display: "swap",
+});
+
+// Heavy, blocky display face used only for the "KMS" wordmark, to match the
+// brand logo's lettering (Cormorant/Manrope don't go dense enough).
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-wordmark",
   display: "swap",
 });
 
@@ -151,7 +160,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html
       lang={locale}
       dir={dir}
-      className={`dark ${cormorant.variable} ${manrope.variable} ${cairo.variable}`}
+      className={`dark ${cormorant.variable} ${manrope.variable} ${cairo.variable} ${archivoBlack.variable}`}
     >
       <head>
         <meta name="theme-color" content="#181918" />
