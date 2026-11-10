@@ -5,6 +5,7 @@ import { FadeInSection } from '@/components/shared/FadeInSection';
 import { SectionHeading } from '@/components/shared/SectionHeading';
 import { Spotlight } from '@/components/shared/Spotlight';
 import { ConsultationBanner } from '@/components/shared/ConsultationBanner';
+import { SmartImage } from '@/components/shared/SmartImage';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -76,6 +77,10 @@ export default async function AboutPage({
       {/* ── Hero ───────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 -z-10">
+          {/* Doha skyline — where the firm is based */}
+          <SmartImage src="/images/about/doha-skyline.jpg" alt="" fill priority sizes="100vw" className="object-cover object-[50%_62%] grayscale opacity-30" />
+          <div className="absolute inset-0 bg-gold-soft/30 mix-blend-color" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/70 to-background" />
           <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_50%_0%,rgba(196,154,48,0.16),transparent_70%)]" />
           <div className="animate-drift absolute -top-[25%] end-[5%] size-[620px] rounded-full bg-gold/25 blur-[140px]" />
         </div>

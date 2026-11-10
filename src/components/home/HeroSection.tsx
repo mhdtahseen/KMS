@@ -2,6 +2,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { getPublishedCountries } from '@/data/countries';
 import { WorldRoutes } from './WorldRoutes';
+import { TakeoffPlane } from './TakeoffPlane';
 
 export function HeroSection() {
   const t = useTranslations('home.hero');
@@ -28,6 +29,8 @@ export function HeroSection() {
         />
         <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background to-transparent" />
       </div>
+
+      <TakeoffPlane className="z-20 h-[600px] md:h-[680px]" />
 
       <div className="mx-auto max-w-7xl px-6 md:px-8 pt-32 md:pt-40">
         {/* ── Statement ────────────────────────────────── */}

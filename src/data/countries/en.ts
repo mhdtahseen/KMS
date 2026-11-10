@@ -186,6 +186,7 @@ export const countries: Country[] = [
       },
       {
         id: 'student',
+        bgImage: '/images/countries/united-kingdom-overview.jpg',
         title: 'Student Visa & Graduate Route',
         description:
           'Student visa applications with a Confirmation of Acceptance for Studies (CAS) and proof of funds, then the Graduate Route to work after your degree — two years for applications made before 2027, 18 months thereafter, and three years for PhDs — and the switch to a Skilled Worker visa for long-term settlement.',
@@ -295,6 +296,7 @@ export const countries: Country[] = [
       },
       {
         id: 'innovation',
+        bgImage: '/images/countries/australia-why-2.jpg',
         title: 'National Innovation Visa (Subclass 858)',
         description:
           'Australia\'s invitation-only permanent visa for globally exceptional talent in priority sectors, which replaced the Global Talent visa in December 2024. The Business Innovation and Investment (188) programme closed to new applicants in July 2024, so this is now the principal route for high-achieving entrepreneurs and researchers.',
@@ -404,6 +406,7 @@ export const countries: Country[] = [
       },
       {
         id: 'study',
+        bgImage: '/images/countries/usa-why-2.jpg',
         title: 'Student Visas & OPT',
         description:
           'F-1 student visa applications for US universities, Optional Practical Training (OPT) and the 24-month STEM extension to gain US work experience after graduation, and advice on moving from student status to a work visa or green card.',
@@ -513,6 +516,7 @@ export const countries: Country[] = [
       },
       {
         id: 'family',
+        bgImage: '/images/countries/european-union-why-2.jpg',
         title: 'Family Reunification',
         description:
           'Residence permits for spouses, partners and minor children joining an EU resident, including the simplified family reunion rules for Blue Card holders and skilled workers in Germany.',
