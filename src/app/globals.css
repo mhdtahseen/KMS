@@ -728,6 +728,65 @@ html[lang="ar"] .field-label {
   animation-delay: var(--d, 0s);
 }
 
+/* Hero plane loop. One cycle = fly out, pause, fly back, pause.
+   Plane and trail share one clock so the trail stays on the tail.
+   Keyframe percentages assume flight = 26.2% of the cycle (5.5s of 21s);
+   if --takeoff-dur or --takeoff-gap change, update them to match. */
+@keyframes kms-fly-loop {
+  0% {
+    offset-distance: 0%;
+    animation-timing-function: var(--fly-ease);
+  }
+  26.2%,
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes kms-trail-loop {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+    animation-timing-function: var(--fly-ease);
+  }
+  26.2% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    animation-timing-function: ease;
+  }
+  34%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+.takeoff {
+  --takeoff-delay: 1.3s;
+  --takeoff-dur: 5.5s;
+  --takeoff-gap: 5s;
+  --takeoff-cycle: calc((var(--takeoff-dur) + var(--takeoff-gap)) * 2);
+  --fly-ease: cubic-bezier(0.5, 0, 0.8, 0.65); /* accelerate off the runway */
+  direction: ltr; /* paths are drawn left-to-right; RTL mirrors the whole layer instead */
+}
+
+.takeoff-plane {
+  offset-distance: 0%;
+  offset-rotate: auto;
+  animation: kms-fly-loop var(--takeoff-cycle) linear var(--takeoff-delay) infinite;
+}
+
+.takeoff-trail {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: kms-trail-loop var(--takeoff-cycle) linear var(--takeoff-delay) infinite;
+}
+
+.takeoff-return {
+  --fly-ease: cubic-bezier(0.4, 0, 0.6, 1); /* steady cruise */
+  animation-delay: calc(var(--takeoff-delay) + var(--takeoff-dur) + var(--takeoff-gap));
+}
+
 .pulse-ring {
   transform-box: fill-box;
   transform-origin: center;
@@ -758,6 +817,10 @@ html[lang="ar"] .field-label {
   .pulse-ring,
   .marquee-track {
     animation: none;
+  }
+
+  .takeoff {
+    display: none;
   }
 
   .rise,
