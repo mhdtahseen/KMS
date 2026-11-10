@@ -13,6 +13,7 @@ const ALLOWED_SERVICES = [
   'work-permits',
   'permanent-residency',
   'family-sponsorship',
+  'travel-visas',
   'general-inquiry',
   '',
 ];

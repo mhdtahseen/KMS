@@ -174,7 +174,11 @@ export function CountryPageTemplate({ country }: { country: Country }) {
                     className={`glass-luxe is-liftable group flex min-h-[320px] flex-col overflow-hidden rounded-3xl p-8 md:p-10 ${isLarge ? 'md:col-span-2' : ''}`}
                   >
                     {pathway.bgImage && (
-                      <SmartImage src={pathway.bgImage} alt="" fill sizes="(max-width: 768px) 100vw, 800px" className="-z-10 object-cover grayscale opacity-20 transition-opacity duration-700 group-hover:opacity-30" />
+                      <>
+                        <SmartImage src={pathway.bgImage} alt="" fill sizes="(max-width: 768px) 100vw, 800px" className="-z-10 object-cover grayscale opacity-20 transition-opacity duration-700 group-hover:opacity-30" />
+                        {/* keeps the copy side clear of the photograph */}
+                        <div aria-hidden="true" className="absolute inset-0 -z-10 rounded-[inherit] bg-gradient-to-r rtl:bg-gradient-to-l from-surface-container-low via-surface-container-low/75 to-transparent" />
+                      </>
                     )}
                     <div className="flex items-start justify-between gap-6">
                       <span className={iconRing}>
