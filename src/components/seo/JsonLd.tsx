@@ -23,9 +23,10 @@ export function OrganizationJsonLd() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 25.2854473,
-      longitude: 51.5310398,
+      latitude: 25.2738691,
+      longitude: 51.5430943,
     },
+    hasMap: 'https://maps.app.goo.gl/HQ5oCW8D9E2eCh6r7',
     areaServed: [
       { '@type': 'Country', name: 'Qatar' },
       { '@type': 'AdministrativeArea', name: 'Gulf Cooperation Council (GCC)' },
@@ -101,6 +102,7 @@ export function OrganizationJsonLd() {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business Residency' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Permanent Residency' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Family Sponsorship' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Travel Visas' } },
       ],
     },
     // TODO: reviewCount below is unverified — confirm the real current Google

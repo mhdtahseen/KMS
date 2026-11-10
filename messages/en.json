@@ -37,7 +37,7 @@
       "badge": "Global Mobility Experts",
       "headline": "Making Dreams Come True,",
       "headlineAccent": "One Visa at a Time",
-      "subtext": "Trusted immigration consultancy helping families and professionals seamlessly move to Canada, UK, Australia, USA and Europe.",
+      "subtext": "Trusted immigration consultants in Doha, Qatar, helping families and professionals move to Canada, the UK, Australia, the USA and Europe.",
       "ctaPrimary": "Check Your Eligibility",
       "ctaSecondary": "Our Success Stories",
       "liveCount": "Live Success Count: 1,482+",
@@ -226,7 +226,8 @@
     "visitUs": "Visit Us",
     "hours": "Available 09:00 – 18:00 AST",
     "responseTime": "Expected response within 4 hours",
-    "address": "Office 105, 1st Floor, The Pearl Building, Old Airport Road, Next to HSBC Bank, Doha"
+    "address": "Office 105, 1st Floor, The Pearl Building, Old Airport Road, Next to HSBC Bank, Doha",
+    "openMap": "Open in Google Maps"
   },
   "about": {
     "badge": "Our Story",
@@ -342,10 +343,22 @@
     "cta": {
       "prefix": "Ready to Call",
       "suffix": "Your Home?",
-      "subtext": "Our team of ICCRC certified consultants provides end-to-end bespoke solutions for your immigration journey.",
+      "subtext": "Our licensed immigration consultants provide end-to-end bespoke solutions for your immigration journey.",
       "button": "Book a Private Consultation",
       "trust": "Confidentiality Assured • Expert Legal Guidance • Bespoke Planning",
       "eyebrow": "Private Consultation"
     }
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy Policy",
+    "metaDescription": "How KMS Consultants, Doha, collects, uses and protects the personal data of clients and website visitors.",
+    "lastUpdated": "Last updated: 21 March 2025",
+    "intro": "This Privacy Policy describes how KMS Consultants collects, uses and discloses your information when you use our website and services, and tells you about your privacy rights.",
+    "languageNote": ""
+  },
+  "whatsapp": {
+    "label": "Chat on WhatsApp",
+    "message": "Hi, I'm exploring immigration options and would like to speak with a KMS consultant."
   }
 }

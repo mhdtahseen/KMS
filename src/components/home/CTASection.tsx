@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { toast } from 'sonner';
 import { getPublishedCountries } from '@/data/countries';
 
@@ -207,9 +208,7 @@ export function CTASection() {
                 <span className="material-symbols-outlined !text-[15px] text-gold-soft" aria-hidden="true">lock</span>
                 <span>
                   {t('form.termsPrefix')}{' '}
-                  <a className="text-champagne underline-offset-4 hover:underline" href="#">{t('form.terms')}</a>
-                  {' '}&amp;{' '}
-                  <a className="text-champagne underline-offset-4 hover:underline" href="#">{t('form.privacy')}</a>.
+                  <Link className="text-champagne underline-offset-4 hover:underline" href={`/${locale}/privacy`}>{t('form.privacy')}</Link>.
                 </span>
               </p>
             </form>

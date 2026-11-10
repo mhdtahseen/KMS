@@ -167,7 +167,7 @@ export function CountryPageTemplate({ country }: { country: Country }) {
 
             <Spotlight className={`mt-16 grid gap-5 ${pathwayCols}`}>
               {country.pathways.map((pathway, idx) => {
-                const isLarge = pathwayCount >= 3 && (idx === 0 || idx === 3);
+                const isLarge = pathwayCount >= 3 && (idx === 0 || idx === 3 || idx === 5);
                 return (
                   <article
                     key={pathway.id}

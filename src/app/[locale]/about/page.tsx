@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     languages: {
       en: 'https://www.kms-consultants.com/en/about',
       ar: 'https://www.kms-consultants.com/ar/about',
+      'x-default': 'https://www.kms-consultants.com/en/about',
     },
   },
   openGraph: {

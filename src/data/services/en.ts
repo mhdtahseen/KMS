@@ -331,6 +331,63 @@ export const services: Service[] = [
     ctaHeading: 'Bring Them Home.',
     isPublished: true,
   },
+  {
+    slug: 'travel-visas',
+    title: 'Travel Visas',
+    tagline: 'Visitor & Tourist Visas',
+    heroImage: '/images/services/travel-visas-hero.jpg',
+    heroHeadline: 'Visit the World',
+    heroHeadlineAccent: 'Without the Paperwork Stress',
+    heroSubtext:
+      'Visitor, tourist and business-visit visas for Qatar residents of every nationality — the UK, the Schengen Area, the United States, Canada and Australia — prepared to the standard consulates expect.',
+    overviewHeading: 'Short Stays, Handled Properly',
+    overviewBody:
+      'A refused visitor visa stays on your record and makes every later application harder. We prepare each file so that the purpose of travel, your ties to Qatar and your finances are evidenced clearly the first time.',
+    overviewBodySecondary:
+      'We cover UK Standard Visitor visas and the UK ETA, Schengen short-stay visas for all member states, US B-1/B-2 visitor visas, Canadian visitor visas (TRV) and eTAs, and Australian Visitor visas (subclass 600) — including appointment booking and interview preparation where required.',
+    overviewStats: [
+      { value: '90', label: 'Days per 180 in Schengen' },
+      { value: '10 yrs', label: 'US Visitor Visa Validity (up to)' },
+    ],
+    overviewImage: '/images/services/travel-visas-overview.jpg',
+    eligibilityCriteria: [
+      {
+        icon: 'flight_takeoff',
+        title: 'Purpose & Itinerary',
+        description: 'A clear purpose of travel with bookings or an invitation that matches the visa type.',
+        badge: 'Required',
+        featured: true,
+        checkPoints: ['Confirmed itinerary or invitation letter', 'Accommodation details', 'Return travel evidence'],
+      },
+      {
+        icon: 'payments',
+        title: 'Financial Means',
+        description: 'Bank statements and salary evidence showing you can fund the trip.',
+        badge: 'Documentary',
+      },
+      {
+        icon: 'home',
+        title: 'Ties to Qatar',
+        description: 'Employment, residence permit and family ties that show you will return.',
+        badge: 'Key Factor',
+      },
+      {
+        icon: 'health_and_safety',
+        title: 'Travel Insurance',
+        description: 'Medical insurance meeting the destination\'s minimum cover — mandatory for Schengen applications.',
+        badge: 'Schengen',
+      },
+    ],
+    processSteps: [
+      { icon: 'fact_check', title: 'Assessment', description: 'Choosing the right visa type and checking your travel history and ties.' },
+      { icon: 'description', title: 'Documentation', description: 'Preparing a complete, consistent file to the consulate\'s checklist.' },
+      { icon: 'event', title: 'Appointment & Biometrics', description: 'Booking the visa centre appointment and preparing you for any interview.' },
+      { icon: 'flight_takeoff', title: 'Decision & Travel', description: 'Tracking the decision and advising on entry requirements before you fly.' },
+    ],
+    destinations: ['united-kingdom', 'european-union', 'usa', 'canada', 'australia'],
+    ctaHeading: 'Travel with Confidence.',
+    isPublished: true,
+  },
 ];
 
 export const publishedServices = services.filter((service) => service.isPublished);

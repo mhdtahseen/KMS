@@ -12,17 +12,15 @@ const ICONS: Record<string, string> = {
   'work-permits': 'business_center',
   'permanent-residency': 'verified_user',
   'family-sponsorship': 'diversity_1',
+  'travel-visas': 'flight_takeoff',
 };
 
-// Asymmetric bento: one signature card, two supporting, three compact.
-const SPANS = [
-  'lg:col-span-7 lg:row-span-2',
-  'lg:col-span-5',
-  'lg:col-span-5',
-  'lg:col-span-4',
-  'lg:col-span-4',
-  'lg:col-span-4',
-];
+// Asymmetric bento: one signature card, two supporting, then a row of compact cards.
+const spanFor = (index: number, total: number) => {
+  if (index === 0) return 'lg:col-span-7 lg:row-span-2';
+  if (index < 3) return 'lg:col-span-5';
+  return total > 6 ? 'lg:col-span-3' : 'lg:col-span-4';
+};
 
 export function ServicesSection() {
   const t = useTranslations('home.services');
@@ -44,7 +42,7 @@ export function ServicesSection() {
               <Link
                 key={service.slug}
                 href={`/${locale}/services/${service.slug}`}
-                className={`glass-luxe group flex flex-col overflow-hidden rounded-3xl ${SPANS[index] ?? 'lg:col-span-4'} ${
+                className={`glass-luxe group flex flex-col overflow-hidden rounded-3xl ${spanFor(index, services.length)} ${
                   featured ? 'md:col-span-2 min-h-[440px] lg:min-h-[560px] p-8 md:p-11' : 'min-h-[260px] p-7 md:p-8'
                 }`}
               >

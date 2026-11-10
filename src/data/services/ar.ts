@@ -292,4 +292,61 @@ export const servicesAr: Service[] = [
     ctaHeading: 'أحضرهم إلى المنزل.',
     isPublished: true,
   },
+  {
+    slug: 'travel-visas',
+    title: 'تأشيرات السفر',
+    tagline: 'تأشيرات الزيارة والسياحة',
+    heroImage: '/images/services/travel-visas-hero.jpg',
+    heroHeadline: 'اكتشف العالم',
+    heroHeadlineAccent: 'دون عناء الأوراق',
+    heroSubtext:
+      'تأشيرات الزيارة والسياحة وزيارات الأعمال للمقيمين في قطر من جميع الجنسيات — المملكة المتحدة، ومنطقة شنغن، والولايات المتحدة، وكندا، وأستراليا — مُعدّة وفق المعايير التي تتوقعها القنصليات.',
+    overviewHeading: 'إقامات قصيرة بإجراءات سليمة',
+    overviewBody:
+      'رفض تأشيرة الزيارة يبقى في سجلك ويُصعّب كل طلب لاحق. نُعدّ كل ملف بحيث يكون الغرض من السفر وروابطك بقطر ووضعك المالي موثقاً بوضوح من المرة الأولى.',
+    overviewBodySecondary:
+      'نغطي تأشيرة الزائر القياسية للمملكة المتحدة وتصريح ETA البريطاني، وتأشيرات شنغن قصيرة الإقامة لجميع الدول الأعضاء، وتأشيرات الزيارة الأمريكية B-1/B-2، وتأشيرات الزيارة الكندية (TRV) وتصاريح eTA، وتأشيرة الزائر الأسترالية (الفئة 600) — بما في ذلك حجز المواعيد والتحضير للمقابلة عند الحاجة.',
+    overviewStats: [
+      { value: '90', label: 'يوماً لكل 180 يوماً في شنغن' },
+      { value: '10 سنوات', label: 'صلاحية تأشيرة الزيارة الأمريكية (حتى)' },
+    ],
+    overviewImage: '/images/services/travel-visas-overview.jpg',
+    eligibilityCriteria: [
+      {
+        icon: 'flight_takeoff',
+        title: 'الغرض وبرنامج الرحلة',
+        description: 'غرض واضح من السفر مع حجوزات أو دعوة تتوافق مع نوع التأشيرة.',
+        badge: 'مطلوب',
+        featured: true,
+        checkPoints: ['برنامج رحلة مؤكد أو خطاب دعوة', 'تفاصيل الإقامة', 'إثبات رحلة العودة'],
+      },
+      {
+        icon: 'payments',
+        title: 'القدرة المالية',
+        description: 'كشوف حسابات بنكية وإثبات راتب يُظهر قدرتك على تمويل الرحلة.',
+        badge: 'مستندي',
+      },
+      {
+        icon: 'home',
+        title: 'الروابط بقطر',
+        description: 'العمل وتصريح الإقامة والروابط العائلية التي تُثبت عودتك.',
+        badge: 'عامل أساسي',
+      },
+      {
+        icon: 'health_and_safety',
+        title: 'تأمين السفر',
+        description: 'تأمين طبي يستوفي الحد الأدنى للتغطية في بلد الوجهة — إلزامي لطلبات شنغن.',
+        badge: 'شنغن',
+      },
+    ],
+    processSteps: [
+      { icon: 'fact_check', title: 'التقييم', description: 'اختيار نوع التأشيرة المناسب ومراجعة سجل سفرك وروابطك.' },
+      { icon: 'description', title: 'التوثيق', description: 'إعداد ملف كامل ومتسق وفق قائمة متطلبات القنصلية.' },
+      { icon: 'event', title: 'الموعد والبصمات', description: 'حجز موعد مركز التأشيرات وتحضيرك لأي مقابلة.' },
+      { icon: 'flight_takeoff', title: 'القرار والسفر', description: 'متابعة القرار وتقديم المشورة بشأن متطلبات الدخول قبل سفرك.' },
+    ],
+    destinations: ['united-kingdom', 'european-union', 'usa', 'canada', 'australia'],
+    ctaHeading: 'سافر بثقة.',
+    isPublished: true,
+  },
 ];

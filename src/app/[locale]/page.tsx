@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     languages: {
       en: 'https://www.kms-consultants.com/en',
       ar: 'https://www.kms-consultants.com/ar',
+      'x-default': 'https://www.kms-consultants.com/en',
     },
   },
   };

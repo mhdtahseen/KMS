@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     languages: {
       en: 'https://www.kms-consultants.com/en/contact',
       ar: 'https://www.kms-consultants.com/ar/contact',
+      'x-default': 'https://www.kms-consultants.com/en/contact',
     },
   },
   openGraph: {
@@ -111,6 +112,15 @@ export default async function ContactPage({
                     <div>
                       <p className={labelClass}>{t('visitUs')}</p>
                       <address className="mt-2 not-italic whitespace-pre-line text-sm leading-relaxed text-on-background/90">{ft('address')}</address>
+                      <a
+                        href="https://maps.app.goo.gl/HQ5oCW8D9E2eCh6r7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-gold-soft transition-colors duration-300 hover:text-champagne"
+                      >
+                        {t('openMap')}
+                        <span className="material-symbols-outlined !text-[16px]" aria-hidden="true">north_east</span>
+                      </a>
                       <p className="mt-2 flex items-center gap-2 text-xs text-on-surface-variant/75">
                         <span className="material-symbols-outlined !text-[15px] text-gold-soft" aria-hidden="true">schedule</span>
                         {t('hours')}

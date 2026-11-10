@@ -9,6 +9,7 @@ import { MotionConfig } from "framer-motion";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { BackToTop } from "@/components/shared/BackToTop";
+import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import "../globals.css";
 
@@ -64,7 +65,20 @@ export const metadata: Metadata = {
     "ethical immigration consulting Qatar",
     "RCIC consultant",
     "immigration lawyer Qatar",
+    "immigration consultancy Doha",
+    "Canada PR consultant Qatar",
+    "Canada visa consultant Doha",
+    "UK visa consultant Doha",
+    "Australia visa consultant Qatar",
+    "student visa consultant Qatar",
+    "travel visa agency Doha",
+    "Schengen visa Qatar",
+    "تأشيرة كندا قطر",
+    "استشارات هجرة الدوحة",
+    "مستشار هجرة قطر",
+    "أفضل مكتب استشارات هجرة في قطر",
     "KMS Consultants",
+    "KMS Consultants Doha",
   ],
   authors: [{ name: "KMS Consultants", url: "https://www.kms-consultants.com" }],
   creator: "KMS Consultants",
@@ -113,6 +127,7 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.kms-consultants.com/en",
       "ar": "https://www.kms-consultants.com/ar",
+      "x-default": "https://www.kms-consultants.com/en",
     },
   },
 };
@@ -141,6 +156,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       <head>
         <meta name="theme-color" content="#181918" />
         <meta name="color-scheme" content="dark" />
+        <meta name="geo.region" content="QA-DA" />
+        <meta name="geo.placename" content="Doha, Qatar" />
+        <meta name="geo.position" content="25.2738691;51.5430943" />
+        <meta name="ICBM" content="25.2738691, 51.5430943" />
         <OrganizationJsonLd />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -163,6 +182,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               {children}
             </div>
             <Footer />
+            <WhatsAppButton />
             <BackToTop />
             <Toaster
               position="top-right"

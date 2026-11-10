@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { getPublishedCountries } from '@/data/countries';
 import { CountryPageTemplate } from '@/components/templates/CountryPageTemplate';
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
   return getPublishedCountries('en').flatMap((country) =>
@@ -20,7 +20,7 @@ export async function generateMetadata({
   const country = getPublishedCountries(locale).find((c) => c.slug === slug);
   if (!country) return {};
 
-  const title = `${country.name} Immigration & Visa Services`;
+  const title = `${country.name} Immigration Consultants in Doha, Qatar`;
   const description = `Expert ${country.name} immigration consultants in Doha, Qatar. ${country.tagline}. KMS Consultants guides you through visas, PR, and citizenship pathways.`;
   const url = `https://www.kms-consultants.com/${locale}/countries/${slug}`;
   const enUrl = `https://www.kms-consultants.com/en/countries/${slug}`;
@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         en: enUrl,
         ar: `https://www.kms-consultants.com/ar/countries/${slug}`,
+        'x-default': enUrl,
       },
     },
     openGraph: {
@@ -67,6 +68,12 @@ export default async function CountryPage({ params }: { params: Promise<{ locale
         { name: 'Countries', url: `https://www.kms-consultants.com/${locale}/countries` },
         { name: country.name, url: `https://www.kms-consultants.com/${locale}/countries/${slug}` },
       ]} />
+      <ServiceJsonLd
+        name={`${country.name} Immigration Services`}
+        description={country.overviewBody}
+        url={`https://www.kms-consultants.com/${locale}/countries/${slug}`}
+        image={`https://www.kms-consultants.com${country.heroImage}`}
+      />
       <CountryPageTemplate country={country} />
     </>
   );

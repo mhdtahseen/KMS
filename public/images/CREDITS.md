@@ -47,6 +47,8 @@ All files in this folder are served from the repo so the site does not depend on
 | services/permanent-residency-overview.jpg | https://www.pexels.com/photo/7642037/ |
 | services/family-sponsorship-hero.jpg | https://www.pexels.com/photo/9207532/ |
 | services/family-sponsorship-overview.jpg | https://www.pexels.com/photo/4173222/ |
+| services/travel-visas-hero.jpg | https://www.pexels.com/photo/28553779/ |
+| services/travel-visas-overview.jpg | https://www.pexels.com/photo/4922080/ |
 
 
 ## Flags
