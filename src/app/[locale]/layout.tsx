@@ -4,6 +4,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+
+// Pre-render every page under [locale] for both locales at build time.
+// Without this Next.js falls back to dynamic rendering and Vercel returns
+// Cache-Control: no-store on every request.
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 import { Toaster } from "sonner";
 import { MotionConfig } from "framer-motion";
 import Header from "@/components/layout/Header";

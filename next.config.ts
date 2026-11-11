@@ -33,8 +33,13 @@ const nextConfig: NextConfig = {
       { source: '/about-us/', destination: '/en/about', permanent: true },
       { source: '/contact-us', destination: '/en/contact', permanent: true },
       { source: '/contact-us/', destination: '/en/contact', permanent: true },
+      // Old WordPress page slugs (continued)
+      { source: '/privacy-policy', destination: '/en/privacy', permanent: true },
+      { source: '/privacy-policy/', destination: '/en/privacy', permanent: true },
       // /book → /contact
       { source: '/:locale/book', destination: '/:locale/contact', permanent: true },
+      // Root → default locale (permanent 308, before next-intl middleware issues a 307)
+      { source: '/', destination: '/en', permanent: true },
     ];
   },
   images: {
