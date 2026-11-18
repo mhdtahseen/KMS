@@ -6,10 +6,10 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const m = await getTranslations({ locale, namespace: 'meta' });
   return {
-  title: 'Contact Us — Book a Free Consultation',
-  description:
-    'Contact KMS Consultants in Doha, Qatar. Book a free immigration consultation with our certified specialists. Call +974 4002 5533 or email info@kms-consultants.com.',
+  title: m('contactTitle'),
+  description: m('contactDescription'),
   alternates: {
     canonical: `https://www.kms-consultants.com/${locale}/contact`,
     languages: {
@@ -19,9 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   },
   openGraph: {
-    title: 'Contact KMS Consultants | Book a Free Immigration Consultation',
-    description: 'Speak with a certified immigration specialist in Doha, Qatar. We handle Canada, UK, Australia, USA & Europe visas.',
+    title: `${m('contactTitle')} | KMS Consultants`,
+    description: m('contactOgDescription'),
     url: `https://www.kms-consultants.com/${locale}/contact`,
+    locale: locale === 'ar' ? 'ar_QA' : 'en_US',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   };
 }

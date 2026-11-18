@@ -4,6 +4,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // Lets the old WordPress "/slug/" URLs redirect in one hop; the catch-all
+  // at the end of redirects() strips trailing slashes everywhere else.
+  skipTrailingSlashRedirect: true,
   async redirects() {
     return [
       // Old WordPress service slugs → new Next.js routes
@@ -40,6 +43,7 @@ const nextConfig: NextConfig = {
       { source: '/:locale/book', destination: '/:locale/contact', permanent: true },
       // Root → default locale (permanent 308, before next-intl middleware issues a 307)
       { source: '/', destination: '/en', permanent: true },
+      { source: '/:path+/', destination: '/:path+', permanent: true },
     ];
   },
   images: {

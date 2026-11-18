@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { getPublishedServices } from '@/data/services';
 import { ServicePageTemplate } from '@/components/templates/ServicePageTemplate';
@@ -22,8 +22,12 @@ export async function generateMetadata({
   const service = publishedServices.find((s) => s.slug === slug);
   if (!service) return {};
 
-  const title = `${service.title} Services in Doha, Qatar`;
-  const description = `${service.tagline}. ${service.heroSubtext.slice(0, 120).trim()}… KMS Consultants — immigration consultants in Doha, Qatar.`;
+  const m = await getTranslations({ locale, namespace: 'meta' });
+  const title = m('serviceTitle', { name: service.title });
+  const description = m('serviceDescription', {
+    tagline: service.tagline,
+    summary: service.heroSubtext.slice(0, 120).trim(),
+  });
   const url = `https://www.kms-consultants.com/${locale}/services/${slug}`;
   const enUrl = `https://www.kms-consultants.com/en/services/${slug}`;
 
@@ -42,6 +46,7 @@ export async function generateMetadata({
       title,
       description,
       url,
+      locale: locale === 'ar' ? 'ar_QA' : 'en_US',
       images: [{ url: service.heroImage, width: 1200, height: 630, alt: `${service.title} — KMS Consultants` }],
     },
     twitter: {

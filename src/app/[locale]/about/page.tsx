@@ -9,10 +9,10 @@ import { SmartImage } from '@/components/shared/SmartImage';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const m = await getTranslations({ locale, namespace: 'meta' });
   return {
-  title: 'About KMS Consultants | Elite Immigration & Visa Services — Doha, Qatar',
-  description:
-    'KMS Consultants — MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities, 98% success rate, 5-star rated on Google.',
+  title: m('aboutTitle'),
+  description: m('aboutDescription'),
   alternates: {
     canonical: `https://www.kms-consultants.com/${locale}/about`,
     languages: {
@@ -22,9 +22,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   },
   openGraph: {
-    title: 'About KMS Consultants | Elite Immigration & Visa Services — Doha, Qatar',
-    description: 'MARA-certified & IRCC-authorized. 1,000+ successful cases, 20+ nationalities served, 98% success rate. The trusted immigration partner for Qatar and the GCC.',
+    title: `${m('aboutTitle')} | KMS Consultants`,
+    description: m('aboutOgDescription'),
     url: `https://www.kms-consultants.com/${locale}/about`,
+    locale: locale === 'ar' ? 'ar_QA' : 'en_US',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   };
 }

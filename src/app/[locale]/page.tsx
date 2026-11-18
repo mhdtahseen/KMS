@@ -1,4 +1,4 @@
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { HeroSection } from '@/components/home/HeroSection';
 import { TrustStrip } from '@/components/home/TrustStrip';
@@ -13,7 +13,20 @@ import { FadeInSection } from '@/components/shared/FadeInSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  const title = t('homeTitle');
+  const description = t('homeDescription');
   return {
+  title: { absolute: title },
+  description,
+  openGraph: {
+    title,
+    description,
+    url: `https://www.kms-consultants.com/${locale}`,
+    locale: locale === 'ar' ? 'ar_QA' : 'en_US',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: title }],
+  },
+  twitter: { card: 'summary_large_image', title, description, images: ['/og-image.jpg'] },
   alternates: {
     canonical: `https://www.kms-consultants.com/${locale}`,
     languages: {

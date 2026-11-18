@@ -3,10 +3,14 @@ import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Thank You — Inquiry Received',
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const m = await getTranslations({ locale, namespace: 'meta' });
+  return {
+    title: m('thankYouTitle'),
+    robots: { index: false, follow: false },
+  };
+}
 
 export default async function ThankYouPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

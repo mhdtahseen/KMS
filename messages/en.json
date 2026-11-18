@@ -360,5 +360,21 @@
   "whatsapp": {
     "label": "Chat on WhatsApp",
     "message": "Hi, I'm exploring immigration options and would like to speak with a KMS consultant."
+  },
+  "meta": {
+    "homeTitle": "KMS Consultants — Best-Rated Immigration Consultants in Qatar",
+    "homeDescription": "KMS Consultants — the best-rated, MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities. Canada, UK, Australia, USA, Europe.",
+    "aboutTitle": "About Us — Elite Immigration & Visa Services in Doha, Qatar",
+    "aboutDescription": "KMS Consultants — MARA-certified & IRCC-authorized immigration consultancy in Doha, Qatar. 1,000+ clients from 20+ nationalities, 98% success rate, 5-star rated on Google.",
+    "aboutOgDescription": "MARA-certified & IRCC-authorized. 1,000+ successful cases, 20+ nationalities served, 98% success rate. The trusted immigration partner for Qatar and the GCC.",
+    "contactTitle": "Contact Us — Book a Free Consultation",
+    "contactDescription": "Contact KMS Consultants in Doha, Qatar. Book a free immigration consultation with our certified specialists. Call +974 4002 5533 or email info@kms-consultants.com.",
+    "contactOgDescription": "Speak with a certified immigration specialist in Doha, Qatar. We handle Canada, UK, Australia, USA & Europe visas.",
+    "thankYouTitle": "Thank You — Inquiry Received",
+    "countryTitle": "{name} Immigration Consultants in Doha, Qatar",
+    "countryDescription": "Expert {name} immigration consultants in Doha, Qatar. {tagline}. KMS Consultants guides you through visas, PR, and citizenship pathways.",
+    "countryImageAlt": "{name} immigration — KMS Consultants",
+    "serviceTitle": "{name} Services in Doha, Qatar",
+    "serviceDescription": "{tagline}. {summary}… KMS Consultants — immigration consultants in Doha, Qatar."
   }
 }

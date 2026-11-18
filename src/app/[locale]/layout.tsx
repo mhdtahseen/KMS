@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope, Cairo, Archivo_Black } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-
-// Pre-render every page under [locale] for both locales at build time.
-// Without this Next.js falls back to dynamic rendering and Vercel returns
-// Cache-Control: no-store on every request.
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 import { Toaster } from "sonner";
 import { MotionConfig } from "framer-motion";
 import Header from "@/components/layout/Header";
@@ -148,6 +141,10 @@ export const metadata: Metadata = {
   },
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -160,6 +157,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
+  setRequestLocale(locale);
   const messages = await getMessages();
   const dir = locale === "ar" ? "rtl" : "ltr";
 

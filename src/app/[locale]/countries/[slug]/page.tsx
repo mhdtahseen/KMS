@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { getPublishedCountries } from '@/data/countries';
 import { CountryPageTemplate } from '@/components/templates/CountryPageTemplate';
@@ -20,8 +20,9 @@ export async function generateMetadata({
   const country = getPublishedCountries(locale).find((c) => c.slug === slug);
   if (!country) return {};
 
-  const title = `${country.name} Immigration Consultants in Doha, Qatar`;
-  const description = `Expert ${country.name} immigration consultants in Doha, Qatar. ${country.tagline}. KMS Consultants guides you through visas, PR, and citizenship pathways.`;
+  const m = await getTranslations({ locale, namespace: 'meta' });
+  const title = m('countryTitle', { name: country.name });
+  const description = m('countryDescription', { name: country.name, tagline: country.tagline });
   const url = `https://www.kms-consultants.com/${locale}/countries/${slug}`;
   const enUrl = `https://www.kms-consultants.com/en/countries/${slug}`;
 
@@ -40,7 +41,8 @@ export async function generateMetadata({
       title,
       description,
       url,
-      images: [{ url: country.heroImage, width: 1200, height: 630, alt: `${country.name} immigration — KMS Consultants` }],
+      locale: locale === 'ar' ? 'ar_QA' : 'en_US',
+      images: [{ url: country.heroImage, width: 1200, height: 630, alt: m('countryImageAlt', { name: country.name }) }],
     },
     twitter: {
       card: 'summary_large_image',
